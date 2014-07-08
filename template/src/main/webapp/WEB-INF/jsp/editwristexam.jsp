@@ -1111,7 +1111,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 									</br>
 									<div>
 										<B style="font-size: 14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-											type="text" value="${wristexamdetails.signature}" name="signature" id="sign" onInput="return validatename(id)";><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
+											type="text" value="${wristexamdetails.signature}" name="signature" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
 									</div>
 
 
