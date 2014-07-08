@@ -341,20 +341,20 @@ function validatename(id){
 		if(document.getElementById("pname").value=="")
 		{
 		document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
-		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
 		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
-		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		 else if(document.getElementById("pname").value!="")
 		 {
 		  document.getElementById("pnameerror").innerHTML="";
 		  document.getElementById("btnvisible1").style.visibility="hidden";
 		 //document.getElementById("btnNext").style.display="block";
-		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
 		 //document.getElementById("btnNext").style.visibility="visible";
 		 }
 		
@@ -362,14 +362,14 @@ function validatename(id){
 	if(document.getElementById("datepicker").value=="")
 		{
 		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
-		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next2' onmouseover='checkValid(event);'>";
+		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
   	else if(document.getElementById("datepicker").value!="")
 		 {
 		  document.getElementById("datepickererror").innerHTML="";
 		  document.getElementById("btnvisible1").style.visibility="hidden";
 		 //document.getElementById("btnNext").style.display="block";
-		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next1' onmouseover='checkValid(event);'>";		 
+		  document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
 		 //document.getElementById("btnNext").style.visibility="visible";
 		 }
   	
