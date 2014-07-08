@@ -99,7 +99,37 @@ window.onload(){
 
 </script>
 
+ <script>
+		 window.onload = function()
+{
+if (document.getElementById("workcheck").value == "Other") {
+document.getElementById("warea").style.visibility = 'visible';
 
+
+}
+else  {
+document.getElementById("warea").style.visibility = 'hidden';
+
+
+}
+}
+</script>
+
+ <script>
+		 window.onload = function()
+{
+if (document.getElementById("type_of_light").value == "others") {
+document.getElementById("lighting_div").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("lighting_div").style.visibility = 'hidden';
+
+
+}
+}
+</script>
 <script>
   $(function() {
 	$("#doyou").on("keypress", function(e) {
@@ -797,7 +827,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				   <tr class="row1">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type of Lighting In The Building?</td>
                 						<td valign="top" align="left" class="input_txt">
-										  <select name="type_of_light" class="input_cmbbx1" id="type_of_light"onclick='Checklight();' onchange="if (this.value=='others'){this.form['lighting'].style.visibility='visible'}else {this.form['lighting'].style.visibility='hidden'};" >
+										  <select name="type_of_light" class="input_cmbbx1" id="type_of_light" onclick='Checklight();'  onchange='Checklight(this.value);' >
 					 						<option value="fluorescent" <c:if test="${workaccident.type_of_light=='fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
 						                     <option value="overhead" <c:if test="${workaccident.type_of_light=='overhead'}"><c:out value="selected"/></c:if>>Overhead</option>	
 						                     <option value="onmachine" <c:if test="${workaccident.type_of_light=='onmachine'}"><c:out value="selected"/></c:if>>On machine</option>
@@ -823,7 +853,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 						                      <%-- <c:if test="${workaccident.type_of_light=='others'}">
 						                     <td> <input type="text" name="lighting" id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
 						                 		</c:if>  --%>
-						                   <td> <input type="text" name="lighting" class="input_txtbx1" id="lighting_div" maxlength="32" style='display:none' onInput="return validatename(id)"; value="${workaccident.lighting}"  /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
+						                   <td> <input type="text" name="lighting" class="input_txtbx1" id="lighting_div" maxlength="32" value="${workaccident.lighting}" style='display:none' onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						             			 </tr>
 				  <tr class="row2">
@@ -968,7 +998,7 @@ document.getElementById("jobpp").style.visibility = 'hidden';
 					<option value="slippery" <c:if test="${workaccident.work_area=='slippery'}"><c:out value="selected"/></c:if>>Slippery</option>
 					 <option value="Other" <c:if test="${workaccident.work_area=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
 					 </select>
-					   <br><br> <input type="text" name="warea" class="input_txtbx1" id="warea" maxlength="32" style='display:none; width: 171px' onInput="return validatename(id)";  value="${workaccident.warea}" name="warea" /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
+					   <br><br> <input type="text" name="warea" class="input_txtbx1" id="warea" maxlength="32" value="${workaccident.warea}" name="warea" style='display:none; width: 171px' onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
 				      <script>
 		 window.onload = function()
 {

@@ -887,7 +887,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					<option value="others">Other</option>
 					</select>
 					<span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
-				   <input type="text" class="input_txtbx1" name="lighting" id="lighting" style='display:none; width: 171px' maxlength="32" onInput="return validatename(id)";/>
+				  <br><br> <input type="text" class="input_txtbx1" name="lighting" id="lighting" style='display:none; width: 171px' maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
 				  <tr class="row2">

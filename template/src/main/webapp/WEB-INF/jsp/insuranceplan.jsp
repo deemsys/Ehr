@@ -461,28 +461,27 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr><br><p id="mypar">To Whomsoever It May Concern:</p></tr>
         </table>
+        
+        
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
         <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have been injured in an accident.  I am a subscriber/enrollee in your company's health insurance plan.</p>
         <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have decided that I do not want to use available coverage benefits to which I may be entitled for my medical treatment with [Name of Clinic] for my above accident.  I have chosen to pay for treatment from any liability settlement and/or my own liability insurer, if available.</p>
         <p id="mypar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please advise if your company has no objection:</p>
         </tr>
-        <tr class="row1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="checkbox" name="no_objection" value="no_objection">No Objection<br><br><br>
+        <tr class="row1">
+        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="no_objection" value="no_objection">No Objection<br><br><br></td>
         </tr>
         <tr>
-        <td style="width: 295px; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>By&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" onInput="return validateusername3()"; id="agentname"  placeholder="Authorized Company Representative" style="width: 215px; "/><br> <span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
+        <td style="width: 295px; "colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>By&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" onInput="return validateusername3()"; id="agentname"  placeholder="Authorized Company Representative" style="width: 215px; "/><br> <span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
         </tr> 
-         <tr class="row1">
-       
-        <td></td>
-        <td></td>
-        </tr>
+        
         <tr class="row1">
-        <td width="100%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Please eMail this back to&nbsp;&nbsp;
+        <td width="100%"colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Please eMail this back to&nbsp;&nbsp;
         <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" style="width: 215px; "/><br><span id="faxerror" style="color: red;font-style:italic;"></span> <form:errors path="Insuranceplan.fax"></form:errors> </td>
-        <td width="100%"></td>
-        <td></td>
+        
+        
         </tr>
         <tr >
         <td></td>
@@ -491,15 +490,23 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <tr class="row1">
         <td style="width: 164px; "></td>
         
-        <td ><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic"  placeholder="Name of clinic" style="width: 155px; "/><br> <span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
-        <td></td>
+        <td align="center"><span class="err">* </span>
+        &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic"  placeholder="Name of clinic" style="width: 155px; "/><br> <span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
+        
         </tr>
         <tr class="row1">
-        <td><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername6()"; name="pat" id="pat" placeholder="Patient"  style="width: 215px; "/><br><span id="paterror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.pat"></form:errors></span> </td>
-        <td align="center" style="width: 239px; "><span class="err">*</span><input type="text" class="input_txtbx1" onInput="return validateusername5()"; name="authorized" id="authorized" placeholder="Authorized Clinic Representative" style="width: 155px; "/><br> <span id="authorizederror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.authorized"></form:errors></span> </td>
-        <td></td>
+        <td><span class="err">* </span>
+        <input type="text" class="input_txtbx1" onInput="return validateusername6()"; name="pat" id="pat" placeholder="Patient"  style="width: 215px; "/>
+        <br><span id="paterror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.pat"></form:errors></span> </td>
+        
+        <td align="center" style="width: 239px; "><span class="err">* </span>
+        &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername5()"; name="authorized" id="authorized" placeholder="Authorized Clinic Representative" style="width: 155px; "/><br>
+         <span id="authorizederror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.authorized"></form:errors></span> </td>
+        
         </tr>
        </table>
+       
+       
       </c:when>
       <c:otherwise>
        <table cellpadding="0" cellspacing="0" border="0" width="100%">
