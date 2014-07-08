@@ -1259,7 +1259,7 @@ var note = document.getElementById('comments').value;
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${hipexamdetails.signature }" id="sign"name="signature" onInput="return validatename(id);"><span id="signerror" class="err"><form:errors path="hipexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="${hipexamdetails.signature }" id="sign"name="signature" onInput="return validatename(id);"><br><span id="signerror" class="err"><form:errors path="hipexamdetails.signature"></form:errors></div>
            
          
          <table align="right"><tr><td><input type="submit" value="Save" onclick="return checkSubmit1('this');"class="submit_btn"></td><td> <a href="viewhipexam" style="color: white" onclick="myclose()"   class="submit_btn">Cancel</a></td></tr></table>
