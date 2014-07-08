@@ -845,921 +845,913 @@ function validateusernamepolicy(){
 }
 
 </script>
+<script>
+document.getElementById("myText").readOnly = true;
+</script>
  <script>
+function checkValid(e)
+{
+	var error="";
+	document.getElementById("nameerror").innerHTML="";
+	if(document.getElementById("name").value=="")
+		{
+		document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		 return false;
+		}
 
-
-	function checkSubmit()
-	{
-	
-	document.getElementById("nameerror").innerHTML=" ";
-	
-	if(document.getElementById("name").value.substring(0,1)==" ")
-	{
-	document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
-	
-	return false;
-	}
-	
 	document.getElementById("nameerror").innerHTML="";
     if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
     {
     	
-    	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("nameerror").innerHTML="Name should be of length 4 to 32";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+    document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		 return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	document.getElementById("streetaddresserror").innerHTML="";
+	if(document.getElementById("streetaddress").value=="")
+	{
+	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	document.getElementById("streetaddresserror").innerHTML="";
+    if(document.getElementById("streetaddress").value.length<4 || document.getElementById("streetaddress").value.length>=32)
+    {
     	
-        return false;
+    	document.getElementById("streetaddresserror").innerHTML="should be of length 4 to 32";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+
+	
+	document.getElementById("Cityerror").innerHTML="";
+	if(document.getElementById("City").value=="")
+	{
+	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+    if(document.getElementById("City").value.length<4 || document.getElementById("City").value.length>=32)
+    {
+    	
+    	document.getElementById("Cityerror").innerHTML="should be of length 4 to 32";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+
+	document.getElementById("Stateerror").innerHTML="";
+	if(document.getElementById("State").value=="")
+	{
+	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	document.getElementById("Stateerror").innerHTML="";
+    if(document.getElementById("State").value.length<4 || document.getElementById("State").value.length>=32)
+    {
+    	
+    	document.getElementById("Stateerror").innerHTML="should be of length 4 to 32";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value=="")
+	{
+	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value.length<5)
+	{
+	document.getElementById("zipcode1error").innerHTML="Zipcode format should be 5numbers";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	
+	}
+	
+	
+	
+	var txt1=document.getElementById("zipcode1").value;
+   if( txt1==00000){
+   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+   }
+   
+   
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value=="")
+	{
+	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value.length<13)
+	{
+	document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	
+	}
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("homephone").value.match(phoneno)==null)
+    {
+    	document.getElementById("homephoneerror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
     }
 	
-	document.getElementById("datepickererror").innerHTML="";
-if(document.getElementById("datepicker").value=="")
+   document.getElementById("homephoneerror").innerHTML="";
+    var txt1=document.getElementById("homephone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+ 
+   if(txt2==000 && txt3==000){
+   document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+   }
+  
+	document.getElementById("Emailiderror").innerHTML="";
+	if(document.getElementById("Emailid").value=="")
 	{
-	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("Emailid").value.match(mail)==null)
+    {
+    	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value=="")
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value.length<13)
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	
+	}
+	
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("mobilenumber").value.match(phoneno)==null)
+    {
+    	document.getElementById("mobilenumbererror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	document.getElementById("mobilenumbererror").innerHTML="";
+    var txt1=document.getElementById("mobilenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   
+   if(txt2==000 && txt3==000)
+	   {
+   document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+    }
+   
+   document.getElementById("workphoneerror").innerHTML="";
+   if(document.getElementById("workphone").value!="")
+   {
+	if(document.getElementById("workphone").value.length<13)
+	{
+	document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	
+	}
+   }
+   
+  document.getElementById("workphoneerror").innerHTML="";
+  if(document.getElementById("workphone").value!="")
+  {
+   var txt1=document.getElementById("workphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+  }
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	document.getElementById("datepicker1error").innerHTML="";
+	var matches = /(\d{4})[-\/](\d{2})[-\/](\d{2})/.exec(date_val);
+
+    if (document.getElementById("datepicker1").value.match(matches)==null)
+     {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+     }
+        
+	/* var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    } */
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	if(document.getElementById("socialsecuritynumber").value=="")
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("socialsecuritynumber").value.match(phoneno)==null)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid SSN Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	var txt1=document.getElementById("socialsecuritynumber").value;
+	var txt2=txt1.substring(0,3);
+	if(txt2==000)
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	}
+	
+    document.getElementById("socialsecuritynumbererror").innerHTML="";
+    if(document.getElementById("socialsecuritynumber").value.length<11)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+    
+   
+	document.getElementById("EmployerNameerror").innerHTML="";
+	if(document.getElementById("EmployerName").value!="")
+	{
+    if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerNameerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+    }
+	
+	/* document.getElementById("Occupationerror").innerHTML="";
+	if(document.getElementById("Occupation").value!="")
+	{
+    if(document.getElementById("Occupation").value.length<4 || document.getElementById("Occupation").value.length>=32)
+    {
+    	
+    	document.getElementById("Occupationerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	return false;
+    }
+    }   */
+	  document.getElementById("EmployerAddresserror").innerHTML="";
+	if(document.getElementById("EmployerAddress").value!="")
+	{
+    if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerAddresserror").innerHTML="Address should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+    } 
+	
+	 /* document.getElementById("workphoneerror").innerHTML="";
+	   if(document.getElementById("workphone").value!="")
+	   {
+		if(document.getElementById("workphone").value.length<13)
+		{
+		document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		
+		}
+	   }
+	  document.getElementById("workphoneerror").innerHTML="";
+	  if(document.getElementById("workphone").value!="")
+	  {
+	   var txt1=document.getElementById("workphone").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	   
+	   if(txt2==000 && txt3==000)
+	   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	   return false;
+	  }
+	  document.getElementById("zipcode2error").innerHTML="";
+		if(document.getElementById("zipcode2").value!="")
+		{
+		if(document.getElementById("zipcode2").value.length<5)
+		{
+		document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+		}
+		document.getElementById("zipcode2error").innerHTML="";
+		if(document.getElementById("zipcode2").value!="")
+		{
+		var txt1=document.getElementById("zipcode2").value;
+	   if( txt1==00000){
+	   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	   return false;
+	   }
+	  var txt2=txt1.substring(1,3);
+	   
+	   if(txt2==000){
+	   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	   return false;
+	   }
+		}
+		
+	 document.getElementById("EmployerCityerror").innerHTML="";
+	if(document.getElementById("EmployerCity").value!="")
+	{
+    if(document.getElementById("EmployerCity").value.length<4 || document.getElementById("EmployerCity").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerCityerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	return false;
+    }
+    }
+	document.getElementById("Estateerror").innerHTML="";
+	if(document.getElementById("Estate").value!="")
+	{
+    if(document.getElementById("Estate").value.length<4 || document.getElementById("Estate").value.length>=32)
+    {
+    	
+    	document.getElementById("Estateerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	return false;
+    }
+    }  
+		 */
+	document.getElementById("SpousesNameerror").innerHTML="";
+	   if(document.getElementById("SpousesName").value!="")
+	   {
+	
+    if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+    {
+    	
+    	document.getElementById("SpousesNameerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	   }
+
+	document.getElementById("SpousesEmperror").innerHTML="";
+	   if(document.getElementById("SpousesEmp").value!="")
+	   {
+	
+    if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+    {
+    	
+    	document.getElementById("SpousesEmperror").innerHTML=" should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	   }
+	
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+	  if(document.getElementById("spouseworkphone").value!="")
+	  {
+	
+    var txt1=document.getElementById("spouseworkphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+   }
+	  }
+	  document.getElementById("spouseworkphoneerror").innerHTML="";
+	   if(document.getElementById("spouseworkphone").value!="")
+	   {
+  
+	if(document.getElementById("spouseworkphone").value.length<13)
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	
+	}
+	   }
+	document.getElementById("Name_frienderror").innerHTML="";
+	if(document.getElementById("Name_friend").value=="")
+	{
+	document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 	
 	return false;
 	}
-	document.getElementById("datepickererror").innerHTML="";
-var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-if(document.getElementById("datepicker").value.match(datechk)==null)
-{
-	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
 	
-    return false;
-}
-document.getElementById("streetaddresserror").innerHTML="";
-if(document.getElementById("streetaddress").value=="")
-{
-document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	document.getElementById("Name_frienderror").innerHTML="";
+    if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_frienderror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
 
-return false;
-}
-document.getElementById("streetaddresserror").innerHTML="";
-if(document.getElementById("streetaddress").value.length<4 || document.getElementById("streetaddress").value.length>=32)
-{
-	
-	document.getElementById("streetaddresserror").innerHTML="should be min 4 and max 32";
-	
-    return false;
-}
-
-
-document.getElementById("Cityerror").innerHTML="";
-if(document.getElementById("City").value=="")
-{
-document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Cityerror").innerHTML="";
-if(document.getElementById("City").value.length<4 || document.getElementById("City").value.length>=32)
-{
-	
-	document.getElementById("Cityerror").innerHTML="should be min 4 and max 32";
-	
-    return false;
-}
-
-document.getElementById("Stateerror").innerHTML="";
-if(document.getElementById("State").value=="")
-{
-document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("Stateerror").innerHTML="";
-if(document.getElementById("State").value.length<4 || document.getElementById("State").value.length>=32)
-{
-	
-	document.getElementById("Stateerror").innerHTML="should be min 4 and max 32";
-	
-    return false;
-}
-document.getElementById("zipcode1error").innerHTML="";
-if(document.getElementById("zipcode1").value=="")
-{
-document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("zipcode1error").innerHTML="";
-if(document.getElementById("zipcode1").value.length<5)
-{
-document.getElementById("zipcode1error").innerHTML="Zipcode format should be 5numbers";
-return false;
-
-}
-
-document.getElementById("zipcode1error").innerHTML="";
-if(isNaN(document.getElementById("zipcode1").value))
-{
-document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
-return false;
-}
-
-var txt1=document.getElementById("zipcode1").value;
-if( txt1==00000){
-document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
-return false;
-}
-var txt2=txt1.substring(1,3);
-
-if(txt2==000){
-document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
-return false;
-}
-
-
-document.getElementById("homephoneerror").innerHTML="";
-if(document.getElementById("homephone").value=="")
-{
-document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("homephoneerror").innerHTML="";
-if(document.getElementById("homephone").value.length<13)
-{
-document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
-return false;
-
-}
-
-document.getElementById("homephoneerror").innerHTML="";
-var txt1=document.getElementById("homephone").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-
-if(txt2==000 && txt3==000){
-document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
-return false;
-}
-
-document.getElementById("Emailiderror").innerHTML="";
-if(document.getElementById("Emailid").value=="")
-{
-document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-if(document.getElementById("Emailid").value.match(mail)==null)
-{
-	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
-	
-    return false;
-}
-
-document.getElementById("mobilenumbererror").innerHTML="";
-if(document.getElementById("mobilenumber").value=="")
-{
-document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("mobilenumbererror").innerHTML="";
-if(document.getElementById("mobilenumber").value.length<13)
-{
-document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
-return false;
-
-}
-
-
-document.getElementById("mobilenumbererror").innerHTML="";
-var txt1=document.getElementById("mobilenumber").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-
-if(txt2==000 && txt3==000)
-   {
-document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
- return false;
-}
-
-document.getElementById("workphoneerror").innerHTML="";
-if(document.getElementById("workphone").value!="")
-{
-if(document.getElementById("workphone").value.length<13)
-{
-document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
-return false;
-
-}
-}
-document.getElementById("workphoneerror").innerHTML="";
-if(document.getElementById("workphone").value!="")
-{
-var txt1=document.getElementById("workphone").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-// alert(txt2);
-// alert(txt3);
-if(txt2==000 && txt3==000)
-document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
-return false;
-}
-document.getElementById("datepicker1error").innerHTML="";
-if(document.getElementById("datepicker1").value=="")
-{
-document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("datepicker1error").innerHTML="";
-var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-if(document.getElementById("datepicker1").value.match(datechk)==null)
-{
-	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-	
-    return false;
-}
-document.getElementById("socialsecuritynumbererror").innerHTML="";
-if(document.getElementById("socialsecuritynumber").value=="")
-{
-document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-
-
-document.getElementById("socialsecuritynumbererror").innerHTML="";
-var txt1=document.getElementById("socialsecuritynumber").value;
-var txt2=txt1.substring(0,3);
-if(txt2==000)
-{
-document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
-return false;
-}
-//alert(txt2);
-//var phone = /^[0-9-]{11}$/;
- //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
-//{
-	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid socialsecuritynumber";
-	
-    //return false;
-// }
-document.getElementById("socialsecuritynumbererror").innerHTML="";
-if(document.getElementById("socialsecuritynumber").value.length<11)
-{
-	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
-	
-    return false;
-}
-
-
-//document.getElementById("socialsecuritynumbererror").innerHTML="";
-//if(isNaN(document.getElementById("socialsecuritynumber").value))
-//{
-//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
-//return false;
-//}
- document.getElementById("Gendererror").innerHTML=""; 
-if( ( document.getElementById("Male").checked == false ) && ( document.getElementById("Female").checked == false ) && ( document.getElementById("Transgender").checked == false ))
-
- {
- document.getElementById("Gendererror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-document.getElementById("MaritalStatuserror").innerHTML=""; 
-if( ( document.getElementById("Single").checked == false ) && ( document.getElementById("Married").checked == false ) && ( document.getElementById("Divorced").checked == false ))
-
- {
- document.getElementById("MaritalStatuserror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-document.getElementById("Areyouerror").innerHTML=""; 
-if( ( document.getElementById("Student").checked == false ) && ( document.getElementById("Employee").checked == false ) )
-
- {
- document.getElementById("Areyouerror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-
-document.getElementById("EmployerNameerror").innerHTML="";
-if(document.getElementById("EmployerName").value!="")
-{
-if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
-{
-	
-	document.getElementById("EmployerNameerror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-}
-
-document.getElementById("Occupationerror").innerHTML="";
-if(document.getElementById("Occupation").value!="")
-{
-if(document.getElementById("Occupation").value.length<4 || document.getElementById("Occupation").value.length>=32)
-{
-	
-	document.getElementById("Occupationerror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-}
-document.getElementById("EmployerAddresserror").innerHTML="";
-if(document.getElementById("EmployerAddress").value!="")
-{
-if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
-{
-	
-	document.getElementById("EmployerAddresserror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-}
-document.getElementById("EmployerCityerror").innerHTML="";
-if(document.getElementById("EmployerCity").value!="")
-{
-if(document.getElementById("EmployerCity").value.length<4 || document.getElementById("EmployerCity").value.length>=32)
-{
-	
-	document.getElementById("EmployerCityerror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-}
-document.getElementById("Estateerror").innerHTML="";
-if(document.getElementById("Estate").value!="")
-{
-if(document.getElementById("Estate").value.length<4 || document.getElementById("Estate").value.length>=32)
-{
-	
-	document.getElementById("Estateerror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-}
-/* document.getElementById("workphoneerror").innerHTML="";
-if(document.getElementById("workphone").value=="")
-{
-document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-} */
-
-/*  document.getElementById("zipcode2error").innerHTML="";
-if(document.getElementById("zipcode2").value=="")
-{
-document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
-
-return false;
-} */
-
-document.getElementById("zipcode2error").innerHTML="";
-if(isNaN(document.getElementById("zipcode2").value))
-{
-document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
-return false;
-}
-document.getElementById("zipcode2error").innerHTML="";
-if(document.getElementById("zipcode2").value!="")
-{
-if(document.getElementById("zipcode2").value.length<5)
-{
-document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
-return false;
-}
-}
-document.getElementById("zipcode2error").innerHTML="";
-if(document.getElementById("zipcode2").value!="")
-{
-var txt1=document.getElementById("zipcode2").value;
-if( txt1==00000){
-document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
-return false;
-}
-var txt2=txt1.substring(1,3);
-
-if(txt2==000){
-document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
-return false;
-}
-}
-
-
-document.getElementById("zipcode3error").innerHTML="";
-if(isNaN(document.getElementById("zipcode3").value))
-{
-document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
-return false;
-}
-document.getElementById("zipcode3error").innerHTML="";
-	if(document.getElementById("zipcode3").value!="")
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value=="")
 	{
-if(document.getElementById("zipcode3").value.length<5)
-{
-document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
-return false;
-}
-}
-	document.getElementById("zipcode3error").innerHTML="";
-	if(document.getElementById("zipcode3").value!="")
+	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	
+	return false;
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value.length<13)
 	{
-var txt1=document.getElementById("zipcode3").value;
-if( txt1==00000){
-document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
-return false;
-}
-var txt2=txt1.substring(1,3);
+	document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	 return false;
+	
+	}
+	
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
 
-if(txt2==000){
-document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
-return false;
+    
+    if(document.getElementById("Phone_friend").value.match(phoneno)==null)
+    {
+    	document.getElementById("Phone_frienderror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+    	 return false;
+    }
+	document.getElementById("Phone_frienderror").innerHTML="";
+    var txt1=document.getElementById("Phone_friend").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+  
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+    }
+   if(error=="true")
+	   {
+	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	return false;
+	   }
+   else	 {
+		  document.getElementById("Phone_frienderror").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  //document.getElementById('btnNext').style.visibility='visible';
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid(event);'>";		 
+		 }
+		
 }
+
+</script>
+<script>
+function checkValid1(e)
+{
+	document.getElementById("symptom1error").innerHTML="";
+	if(document.getElementById("symptom1").value=="")
+	{
+	document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
+	
+	/* document.getElementById("symptom1error").innerHTML="";
+    if(document.getElementById("symptom1").value.length<4 || document.getElementById("symptom1").value.length>=32)
+    {
+    	
+    	document.getElementById("symptom1error").innerHTML=" should be of length 4 to 32";
+    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    } */ 
+    
+    document.getElementById("type_of_accidenterror").innerHTML="";
+	if(document.getElementById("type_of_accident").value==0)
+	{
+
+		document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+
 	}
 
-document.getElementById("SpousesNameerror").innerHTML="";
-if(document.getElementById("SpousesName").value=="")
-{
-document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("SpousesNameerror").innerHTML="";
-if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
-{
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
+	document.getElementById("datepicker2error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker2").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
+    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+	document.getElementById("datepicker5error").innerHTML="";
+	if(document.getElementById("datepicker5").value=="")
+	{
+	document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
+	document.getElementById("datepicker5error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker5").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
+    	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+	document.getElementById("where1error").innerHTML="";
+	if(document.getElementById("where1").value=="")
+	{
+	document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-	document.getElementById("SpousesNameerror").innerHTML="Name should be min 4 and max 32";
+	document.getElementById("where1error").innerHTML="";
+    if(document.getElementById("where1").value.length<4 || document.getElementById("where1").value.length>=32)
+    {
+    	
+    	document.getElementById("where1error").innerHTML=" should be of length 4 to 32";
+    	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+    document.getElementById("NameOfAttorneyerror").innerHTML="";
+	if(document.getElementById("NameOfAttorney").value=="")
+	{
+	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-    return false;
-}
-
-
-document.getElementById("SpousesEmperror").innerHTML="";
-if(document.getElementById("SpousesEmp").value=="")
-{
-document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("SpousesEmperror").innerHTML="";
-if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
-{
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+    if(document.getElementById("NameOfAttorney").value.length<4 || document.getElementById("NameOfAttorney").value.length>=32)
+    {
+    	
+    	document.getElementById("NameOfAttorneyerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+    document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value=="")
+	{
+	document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value.length<13)
+	{
+	document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
 	
-	document.getElementById("SpousesEmperror").innerHTML=" should be min 4 and max 32";
+	}
 	
-    return false;
-}
-document.getElementById("spouseworkphoneerror").innerHTML="";
-if(document.getElementById("spouseworkphone").value=="")
-{
-document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
 
-return false;
-}
-document.getElementById("spouseworkphoneerror").innerHTML="";
-var txt1=document.getElementById("spouseworkphone").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-// alert(txt2);
-// alert(txt3);
-if(txt2==000 && txt3==000){
-document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-return false;
-}
-
-document.getElementById("spouseworkphoneerror").innerHTML="";
-if(document.getElementById("spouseworkphone").value.length<13)
-{
-document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-return false;
-
-}
-document.getElementById("Name_frienderror").innerHTML="";
-if(document.getElementById("Name_friend").value=="")
-{
-document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Name_frienderror").innerHTML="";
-if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
-{
+    
+    if(document.getElementById("phonenumber").value.match(phoneno)==null)
+    {
+    	document.getElementById("phonenumbererror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+	 document.getElementById("phonenumbererror").innerHTML="";
+    var txt1=document.getElementById("phonenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+   document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+    }
+   document.getElementById("Fault_accidenterror").innerHTML="";
+	if(document.getElementById("Fault_accident").value=="")
+	{
+	document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 	
-	document.getElementById("Name_frienderror").innerHTML="Name should be min 4 and max 32";
+	return false;
+	}
+	document.getElementById("Fault_accidenterror").innerHTML="";
+   if(document.getElementById("Fault_accident").value.length<4 || document.getElementById("Fault_accident").value.length>=32)
+   {
+   	
+   	document.getElementById("Fault_accidenterror").innerHTML="s should be of length 4 to 32";
+   	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+       return false;
+   }
+
+   document.getElementById("phynameerror").innerHTML="";
+	if(document.getElementById("phyname").value=="")
+	{
+	document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-    return false;
-}
-
-document.getElementById("Phone_frienderror").innerHTML="";
-if(document.getElementById("Phone_friend").value=="")
-{
-document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("Phone_frienderror").innerHTML="";
-if(document.getElementById("Phone_friend").value.length<13)
-{
-document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-return false;
-
-}
-document.getElementById("Phone_frienderror").innerHTML="";
-var txt1=document.getElementById("Phone_friend").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-// alert(txt2);
-// alert(txt3);
-if(txt2==000 && txt3==000){
-document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-
-
-return false;
-}
-
-document.getElementById("Chiropratic_careerror").innerHTML=""; 
-if( ( document.getElementById("yes1").checked == false ) && ( document.getElementById("No1").checked == false ) )
-
- {
- document.getElementById("Chiropratic_careerror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
- document.getElementById("Hazardouserror").innerHTML=""; 
-if( ( document.getElementById("Hazardous").checked == false ) && ( document.getElementById("Hazardous1").checked == false ) )
-
- {
- document.getElementById("Hazardouserror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-
-
-
-
-
-
-document.getElementById("symptom1error").innerHTML="";
-if(document.getElementById("symptom1").value=="")
-{
-document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("symptom1error").innerHTML="";
-if(document.getElementById("symptom1").value.length<4 || document.getElementById("symptom1").value.length>=32)
-{
+	document.getElementById("phynameerror").innerHTML="";
+   if(document.getElementById("phyname").value.length<4 || document.getElementById("phyname").value.length>=32)
+   {
+   	
+   	document.getElementById("phynameerror").innerHTML="Name should be of length 4 to 32";
+   	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+       return false;
+   }
+   document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value=="")
+	{
+	document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-	document.getElementById("symptom1error").innerHTML=" should be min 4 and max 32";
 	
-    return false;
-}
-document.getElementById("Symptom_Accidenterror").innerHTML=""; 
-if( ( document.getElementById("yes").checked == false ) && ( document.getElementById("No").checked == false ) )
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
 
- {
- document.getElementById("Symptom_Accidenterror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-document.getElementById("type_of_accidenterror").innerHTML="";
-if(document.getElementById("type_of_accident").value==0)
-{
-
-	document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
-
-return false;
-
-}
-
-document.getElementById("datepicker2error").innerHTML="";
-if(document.getElementById("datepicker2").value=="")
-{
-document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("datepicker2error").innerHTML="";
-var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-if(document.getElementById("datepicker2").value.match(datechk)==null)
-{
-	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
+	    
+	    if(document.getElementById("phyphone").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("phyphoneerror").innerHTML="Invalid phone Format";
+	    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	        return false;
+	    }
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value.length<13)
+	{
+	document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 	
-    return false;
-}
-document.getElementById("Accident_Reportederror").innerHTML=""; 
-if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
-
- {
- document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-document.getElementById("datepicker5error").innerHTML="";
-if(document.getElementById("datepicker5").value=="")
-{
-document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("datepicker5error").innerHTML="";
-var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-if(document.getElementById("datepicker5").value.match(datechk)==null)
-{
-	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
+	return false;
 	
-    return false;
-}
-document.getElementById("where1error").innerHTML="";
-if(document.getElementById("where1").value=="")
-{
-document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("where1error").innerHTML="";
-if(document.getElementById("where1").value.length<4 || document.getElementById("where1").value.length>=32)
-{
+	}
+	 document.getElementById("phyphoneerror").innerHTML="";
+   var txt1=document.getElementById("phyphone").value;
+  var txt2=txt1.substring(1,4);
+  var txt3=txt1.substring(5,8);
+  // alert(txt2);
+  // alert(txt3);
+  if(txt2==000 && txt3==000){
+  document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+   }
+  document.getElementById("car11error").innerHTML=""; 
+	if(document.getElementById("car11").value=="")
+	{
+	 document.getElementById("car11error").innerHTML="Required Field Should not be Empty";
+	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	 		return false;
+	 		
+	 }
 	
-	document.getElementById("where1error").innerHTML=" should be min 4 and max 32";
+	document.getElementById("car11error").innerHTML="";
+  if(document.getElementById("car11").value.length<4 || document.getElementById("car11").value.length>=32)
+  {
+  	
+  	document.getElementById("car11error").innerHTML=" should be of length 4 to 32";
+  	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+      return false;
+  }
+  document.getElementById("xrayerror").innerHTML="";
+	if(document.getElementById("xray").value=="")
+	{
+	document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-    return false;
-}
-document.getElementById("Attorney_accidenterror").innerHTML=""; 
-if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
-
- {
- document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-
-document.getElementById("NameOfAttorneyerror").innerHTML="";
-if(document.getElementById("NameOfAttorney").value=="")
-{
-document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("NameOfAttorneyerror").innerHTML="";
-if(document.getElementById("NameOfAttorney").value.length<4 || document.getElementById("NameOfAttorney").value.length>=32)
-{
+	document.getElementById("xrayerror").innerHTML="";
+  if(document.getElementById("xray").value.length<4 || document.getElementById("xray").value.length>=32)
+  {
+  	
+  	document.getElementById("xrayerror").innerHTML=" should be of length 4 to 32";
+  	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+      return false;
+  }
+  document.getElementById("treaterror").innerHTML="";
+	if(document.getElementById("treat").value=="")
+	{
+	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
+	document.getElementById("treaterror").innerHTML="";
+  if(document.getElementById("treat").value.length<4 || document.getElementById("treat").value.length>=32)
+  {
+  	
+  	document.getElementById("treaterror").innerHTML=" should be of length 4 to 32";
+  	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+      return false;
+  }
+  document.getElementById("Insuranceerror").innerHTML="";
+	if(document.getElementById("Insurance").value=="")
+	{
+	document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-	document.getElementById("NameOfAttorneyerror").innerHTML="Name should be min 4 and max 32";
+	document.getElementById("Insuranceerror").innerHTML="";
+  if(document.getElementById("Insurance").value.length<4 || document.getElementById("Insurance").value.length>=32)
+  {
+  	
+  	document.getElementById("Insuranceerror").innerHTML=" should be of length 4 to 32";
+  	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+      return false;
+  }
+
+  document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value=="")
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-    return false;
-}
-
-
-
- 	document.getElementById("retainerror").innerHTML=""; 
-if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
-
- {
- document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-
-
-document.getElementById("recorderror").innerHTML=""; 
-if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
-
- {
- document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-document.getElementById("phynameerror").innerHTML="";
-if(document.getElementById("phyname").value=="")
-{
-document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("phynameerror").innerHTML="";
-if(document.getElementById("phyname").value.length<4 || document.getElementById("phyname").value.length>=32)
-{
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value.length<13)
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
 	
-	document.getElementById("phynameerror").innerHTML="Name should be min 4 and max 32";
+	}
 	
-    return false;
-}
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
 
-document.getElementById("phyphoneerror").innerHTML="";
-if(document.getElementById("phyphone").value=="")
-{
-document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("phyphoneerror").innerHTML="";
-if(document.getElementById("phyphone").value.length<13)
-{
-document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
-return false;
-
-}
- document.getElementById("phyphoneerror").innerHTML="";
-var txt1=document.getElementById("phyphone").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-// alert(txt2);
-// alert(txt3);
-if(txt2==000 && txt3==000){
-document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
-
-return false;
-}
-document.getElementById("xrayerror").innerHTML="";
-if(document.getElementById("xray").value=="")
-{
-document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("xrayerror").innerHTML="";
-if(document.getElementById("xray").value.length<4 || document.getElementById("xray").value.length>=32)
-{
-	
-	document.getElementById("xrayerror").innerHTML=" should be min 4 and max 32";
-	
-    return false;
-}
-document.getElementById("treaterror").innerHTML="";
-if(document.getElementById("treat").value=="")
-{
-document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("treaterror").innerHTML="";
-if(document.getElementById("treat").value.length<4 || document.getElementById("treat").value.length>=32)
-{
-	
-	document.getElementById("treaterror").innerHTML=" should be min 4 and max 32";
-	
-    return false;
-}
-document.getElementById("phonenumbererror").innerHTML="";
-if(document.getElementById("phonenumber").value=="")
-{
-document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("phonenumbererror").innerHTML="";
-if(document.getElementById("phonenumber").value.length<13)
-{
-document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
-return false;
-
-}
- document.getElementById("phonenumbererror").innerHTML="";
-var txt1=document.getElementById("phonenumber").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-// alert(txt2);
-// alert(txt3);
-if(txt2==000 && txt3==000){
-document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
-return false;
-}
-document.getElementById("Fault_accidenterror").innerHTML="";
-if(document.getElementById("Fault_accident").value=="")
-{
-document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("Fault_accidenterror").innerHTML="";
-if(document.getElementById("Fault_accident").value.length<4 || document.getElementById("Fault_accident").value.length>=32)
-{
-	
-	document.getElementById("Fault_accidenterror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-
-
-document.getElementById("Insuranceerror").innerHTML="";
-if(document.getElementById("Insurance").value=="")
-{
-document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Insuranceerror").innerHTML="";
-if(document.getElementById("Insurance").value.length<4 || document.getElementById("Insurance").value.length>=32)
-{
-	
-	document.getElementById("Insuranceerror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-
-
-document.getElementById("Insurance_phoneerror").innerHTML="";
-if(document.getElementById("Insurance_phone").value=="")
-{
-document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Insurance_phoneerror").innerHTML="";
-if(document.getElementById("Insurance_phone").value.length<13)
-{
-document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
-return false;
-
-}
-
-
- document.getElementById("Insurance_phoneerror").innerHTML="";
-var txt1=document.getElementById("Insurance_phone").value;
-var txt2=txt1.substring(1,4);
-var txt3=txt1.substring(5,8);
-// alert(txt2);
-// alert(txt3);
-if(txt2==000 && txt3==000){
-document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+    
+    if(document.getElementById("Insurance_phone").value.match(phoneno)==null)
+    {
+    	document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+	 document.getElementById("Insurance_phoneerror").innerHTML="";
+  var txt1=document.getElementById("Insurance_phone").value;
+ var txt2=txt1.substring(1,4);
+ var txt3=txt1.substring(5,8);
+ // alert(txt2);
+ // alert(txt3);
+ if(txt2==000 && txt3==000){
+ document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+ document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
  return false;
-}
-document.getElementById("Name_autoerror").innerHTML="";
-if(document.getElementById("Name_auto").value=="")
-{
-document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Name_autoerror").innerHTML="";
-if(document.getElementById("Name_auto").value.length<4 || document.getElementById("Name_auto").value.length>=32)
-{
+  }
+ document.getElementById("Name_autoerror").innerHTML="";
+	if(document.getElementById("Name_auto").value=="")
+	{
+	document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
 	
-	document.getElementById("Name_autoerror").innerHTML="Name should be min 4 and max 32";
+	document.getElementById("Name_autoerror").innerHTML="";
+ if(document.getElementById("Name_auto").value.length<4 || document.getElementById("Name_auto").value.length>=32)
+ {
+ 	
+ 	document.getElementById("Name_autoerror").innerHTML=" should be of length 4 to 32";
+ 	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+     return false;
+ }
+
+
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value=="")
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value.length<13)
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
 	
-    return false;
-}
+	}
+	
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
 
-
-document.getElementById("Phone_autoerror").innerHTML="";
-if(document.getElementById("Phone_auto").value=="")
-{
-document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("Phone_autoerror").innerHTML="";
-if(document.getElementById("Phone_auto").value.length<13)
-{
-document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
-return false;
-
-}
-document.getElementById("Phone_autoerror").innerHTML="";
-var txt1=document.getElementById("Phone_auto").value;
+    
+    if(document.getElementById("Phone_auto").value.match(phoneno)==null)
+    {
+    	document.getElementById("Phone_autoerror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
+	document.getElementById("Phone_autoerror").innerHTML="";
+ var txt1=document.getElementById("Phone_auto").value;
 var txt2=txt1.substring(1,4);
 var txt3=txt1.substring(5,8);
 // alert(txt2);
 // alert(txt3);
 if(txt2==000 && txt3==000){
 document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
-return false;
-}
-      
- 
-
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	return false;
+ }
+       
+  
 document.getElementById("policyerror").innerHTML="";
 if(document.getElementById("policy").value=="")
 {
 document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
-
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 return false;
 }
+
+document.getElementById("policyerror").innerHTML="";
+if(document.getElementById("policy").value.length<4 || document.getElementById("policy").value.length>=32)
+{
+	
+	document.getElementById("policyerror").innerHTML="Policy should be min 4 and max 32";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+    return false;
+}
+
 document.getElementById("Name_healtherror").innerHTML="";
 if(document.getElementById("Name_health").value=="")
 {
 document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
-
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 return false;
 }
 
@@ -1767,26 +1759,36 @@ document.getElementById("Name_healtherror").innerHTML="";
 if(document.getElementById("Name_health").value.length<4 || document.getElementById("Name_health").value.length>=32)
 {
 	
-	document.getElementById("Name_healtherror").innerHTML="Name should be min 4 and max 32";
-	
+	document.getElementById("Name_healtherror").innerHTML="Name should be of length 4 to 32";
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
     return false;
 }
-
-
 document.getElementById("phhealtherror").innerHTML="";
 if(document.getElementById("phhealth").value=="")
 {
 document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
-
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 return false;
 }
 document.getElementById("phhealtherror").innerHTML="";
 if(document.getElementById("phhealth").value.length<13)
 {
 document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 return false;
 
 }
+
+
+var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("phhealth").value.match(phoneno)==null)
+    {
+    	document.getElementById("phhealtherror").innerHTML="Invalid phone Format";
+    	 document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+        return false;
+    }
  document.getElementById("phhealtherror").innerHTML="";
 var txt1=document.getElementById("phhealth").value;
 var txt2=txt1.substring(1,4);
@@ -1795,23 +1797,15 @@ var txt3=txt1.substring(5,8);
 // alert(txt3);
 if(txt2==000 && txt3==000){
 document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 return false;
 }
      
-document.getElementById("Prev_accidenterror").innerHTML=""; 
-if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
-
- {
- document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
 document.getElementById("datepicker6error").innerHTML="";
 if(document.getElementById("datepicker6").value=="")
 {
 document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
-
+document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
 return false;
 }
 	document.getElementById("datepicker6error").innerHTML="";
@@ -1819,143 +1813,1590 @@ var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 if(document.getElementById("datepicker6").value.match(datechk)==null)
 {
 	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
-	
-    return false;
-}
-document.getElementById("Illnesserror").innerHTML="";
-if(document.getElementById("Illness").value=="")
-{
-document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Illnesserror").innerHTML="";
-if(document.getElementById("Illness").value.length<4 || document.getElementById("Illness").value.length>=32)
-{
-	
-	document.getElementById("Illnesserror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-document.getElementById("datepicker3error").innerHTML="";
-if(document.getElementById("datepicker3").value=="")
-{
-document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("datepicker3error").innerHTML="";
-var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
-if(document.getElementById("datepicker3").value.match(datechk)==null)
-{
-	document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
-	
-    return false;
-}
-document.getElementById("Medicationserror").innerHTML="";
-if(document.getElementById("Medications").value=="")
-{
-document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("Medicationserror").innerHTML="";
-if(document.getElementById("Medications").value.length<4 || document.getElementById("Medications").value.length>=32)
-{
-	
-	document.getElementById("Medicationserror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
-}
-document.getElementById("doyouerror").innerHTML=""; 
-if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
-
- {
- document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-/* document.getElementById("listerror").innerHTML="";
-if(document.getElementById("list").value=="")
-{
-document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-} */
-document.getElementById("Femaleerror").innerHTML=""; 
-if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
-
- {
- document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
-document.getElementById("Drerror").innerHTML="";
-if(document.getElementById("Dr").value=="")
-{
-document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-
-document.getElementById("Drerror").innerHTML="";
-if(document.getElementById("Dr").value.length<4 || document.getElementById("Dr").value.length>=32)
-{
-	
-	document.getElementById("Drerror").innerHTML="Name should be min 4 and max 32";
-	
+	document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
     return false;
 }
 
-
-document.getElementById("Patienterror").innerHTML="";
-if(document.getElementById("Patient").value=="")
-{
-document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
-
-return false;
-}
-document.getElementById("Patienterror").innerHTML="";
-if(document.getElementById("Patient").value.length<4 || document.getElementById("Patient").value.length>=32)
-{
 	
-	document.getElementById("Patienterror").innerHTML="Name should be min 4 and max 32";
-	
-    return false;
+	 else
+		 {
+		  document.getElementById("datepicker6error").innerHTML="";
+		  document.getElementById('btnvisible1').style.visibility='hidden';
+		  //document.getElementById('btnNext1').style.visibility='visible';
+		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid1(event);'>";		 
+		 }
+		
 }
 
-document.getElementById("claim_openerror").innerHTML=""; 
-if( ( document.getElementById("claim_open").checked == false ) && ( document.getElementById("claim_open1").checked == false ) )
+</script>
+ <script>
 
- {
- document.getElementById("claim_openerror").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
+	function checkSubmit()
+	{
+		/* var error="";
+		document.getElementById("nameerror").innerHTML="";
+		if(document.getElementById("name").value=="")
+			{
+			document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+			 
+			 return false;
+			}
 
-document.getElementById("car11error").innerHTML=""; 
-if(document.getElementById("car11").value=="")
-{
- document.getElementById("car11error").innerHTML="Required Field Should not be Empty";
- 		
- 		return false;
- 		
- }
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	    	 return false;
+	    }
+	    document.getElementById("datepickererror").innerHTML="";
+		if(document.getElementById("datepicker").value=="")
+			{
+			document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+			
+			 return false;
+			}
+			document.getElementById("datepickererror").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+	    	 
+	    	 return false;
+	    }
+		document.getElementById("streetaddresserror").innerHTML="";
+		if(document.getElementById("streetaddress").value=="")
+		{
+		document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		document.getElementById("streetaddresserror").innerHTML="";
+	    if(document.getElementById("streetaddress").value.length<4 || document.getElementById("streetaddress").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("streetaddresserror").innerHTML="should be of length 4 to 32";
+	    	
+	    	 return false;
+	    }
 
-document.getElementById("car11error").innerHTML="";
-if(document.getElementById("car11").value.length<4 || document.getElementById("car11").value.length>=32)
-{
+		
+		document.getElementById("Cityerror").innerHTML="";
+		if(document.getElementById("City").value=="")
+		{
+		document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		
+		document.getElementById("Cityerror").innerHTML="";
+	    if(document.getElementById("City").value.length<4 || document.getElementById("City").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("Cityerror").innerHTML="should be of length 4 to 32";
+	    	 
+	    	 return false;
+	    }
+
+		document.getElementById("Stateerror").innerHTML="";
+		if(document.getElementById("State").value=="")
+		{
+		document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		document.getElementById("Stateerror").innerHTML="";
+	    if(document.getElementById("State").value.length<4 || document.getElementById("State").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("Stateerror").innerHTML="should be of length 4 to 32";
+	    	 
+	    	 return false;
+	    }
+		document.getElementById("zipcode1error").innerHTML="";
+		if(document.getElementById("zipcode1").value=="")
+		{
+		document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		document.getElementById("zipcode1error").innerHTML="";
+		if(document.getElementById("zipcode1").value.length<5)
+		{
+		document.getElementById("zipcode1error").innerHTML="Zipcode format should be 5numbers";
+		
+		 return false;
+		
+		}
+		
+		
+		
+		var txt1=document.getElementById("zipcode1").value;
+	   if( txt1==00000){
+	   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+	   
+	   return false;
+	   }
+	  var txt2=txt1.substring(1,3);
+	   
+	   if(txt2==000){
+	   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+	  
+	   return false;
+	   }
+	   
+	   
+		document.getElementById("homephoneerror").innerHTML="";
+		if(document.getElementById("homephone").value=="")
+		{
+		document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		document.getElementById("homephoneerror").innerHTML="";
+		if(document.getElementById("homephone").value.length<13)
+		{
+		document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+		 
+		 return false;
+		
+		}
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+	    
+	    if(document.getElementById("homephone").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("homephoneerror").innerHTML="Invalid phone Format";
+	    	
+	    	 return false;
+	    }
+		
+	   document.getElementById("homephoneerror").innerHTML="";
+	    var txt1=document.getElementById("homephone").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	 
+	   if(txt2==000 && txt3==000){
+	   document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+	  
+	   return false;
+	   }
+	  
+		document.getElementById("Emailiderror").innerHTML="";
+		if(document.getElementById("Emailid").value=="")
+		{
+		document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+	    
+	    if(document.getElementById("Emailid").value.match(mail)==null)
+	    {
+	    	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
+	    	
+	    	 return false;
+	    }
+
+		document.getElementById("mobilenumbererror").innerHTML="";
+		if(document.getElementById("mobilenumber").value=="")
+		{
+		document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+		 
+		 return false;
+		}
+		
+		document.getElementById("mobilenumbererror").innerHTML="";
+		if(document.getElementById("mobilenumber").value.length<13)
+		{
+		document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+		
+		 return false;
+		
+		}
+		
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+	    
+	    if(document.getElementById("mobilenumber").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("mobilenumbererror").innerHTML="Invalid phone Format";
+	    	
+	    	 return false;
+	    }
+		document.getElementById("mobilenumbererror").innerHTML="";
+	    var txt1=document.getElementById("mobilenumber").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	   
+	   if(txt2==000 && txt3==000)
+		   {
+	   document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	 
+	   return false;
+	    }
+	   
+	   document.getElementById("workphoneerror").innerHTML="";
+	   if(document.getElementById("workphone").value!="")
+	   {
+		if(document.getElementById("workphone").value.length<13)
+		{
+		document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+		
+		 return false;
+		
+		}
+	   }
+	   
+	  document.getElementById("workphoneerror").innerHTML="";
+	  if(document.getElementById("workphone").value!="")
+	  {
+	   var txt1=document.getElementById("workphone").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	   // alert(txt2);
+	   // alert(txt3);
+	   if(txt2==000 && txt3==000)
+	   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+	 
+	   return false;
+	  }
+		document.getElementById("datepicker1error").innerHTML="";
+		if(document.getElementById("datepicker1").value=="")
+		{
+		document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
 	
-	document.getElementById("car11error").innerHTML=" should be min 4 and max 32";
-	
-    return false;
-}
-}
+		 return false;
+		}
+		document.getElementById("datepicker1error").innerHTML="";
+		var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+		if(document.getElementById("datepicker1").value.match(datechk)==null)
+	    {
+	    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+	    	
+	    	 return false;
+	    }
+		document.getElementById("socialsecuritynumbererror").innerHTML="";
+		if(document.getElementById("socialsecuritynumber").value=="")
+		{
+		document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+		
+		 return false;
+		}
+		var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;  
 
+	    
+	    if(document.getElementById("socialsecuritynumber").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid SSN Format";
+	    	
+	    	 return false;
+	    }
+		
+		document.getElementById("socialsecuritynumbererror").innerHTML="";
+		var txt1=document.getElementById("socialsecuritynumber").value;
+		var txt2=txt1.substring(0,3);
+		if(txt2==000)
+		{
+		document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+		
+		 return false;
+		}
+		
+	    document.getElementById("socialsecuritynumbererror").innerHTML="";
+	    if(document.getElementById("socialsecuritynumber").value.length<11)
+	    {
+	    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+	    
+	    	 return false;
+	    }
+	    
+	   
+		document.getElementById("EmployerNameerror").innerHTML="";
+		if(document.getElementById("EmployerName").value!="")
+		{
+	    if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("EmployerNameerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	    	 return false;
+	    }
+	    }
+		
+		/* document.getElementById("Occupationerror").innerHTML="";
+		if(document.getElementById("Occupation").value!="")
+		{
+	    if(document.getElementById("Occupation").value.length<4 || document.getElementById("Occupation").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("Occupationerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	    	return false;
+	    }
+	    }   */
+		  /* document.getElementById("EmployerAddresserror").innerHTML="";
+		if(document.getElementById("EmployerAddress").value!="")
+		{
+	    if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("EmployerAddresserror").innerHTML="Address should be of length 4 to 32";
+	    	
+	    	 return false;
+	    }
+	    }  */
+		
+		 /* document.getElementById("workphoneerror").innerHTML="";
+		   if(document.getElementById("workphone").value!="")
+		   {
+			if(document.getElementById("workphone").value.length<13)
+			{
+			document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+			
+			return false;
+			
+			}
+		   }
+		  document.getElementById("workphoneerror").innerHTML="";
+		  if(document.getElementById("workphone").value!="")
+		  {
+		   var txt1=document.getElementById("workphone").value;
+		   var txt2=txt1.substring(1,4);
+		   var txt3=txt1.substring(5,8);
+		   
+		   if(txt2==000 && txt3==000)
+		   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+		   
+		   return false;
+		  }
+		  document.getElementById("zipcode2error").innerHTML="";
+			if(document.getElementById("zipcode2").value!="")
+			{
+			if(document.getElementById("zipcode2").value.length<5)
+			{
+			document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+			
+			return false;
+			}
+			}
+			document.getElementById("zipcode2error").innerHTML="";
+			if(document.getElementById("zipcode2").value!="")
+			{
+			var txt1=document.getElementById("zipcode2").value;
+		   if( txt1==00000){
+		   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+		
+		   return false;
+		   }
+		  var txt2=txt1.substring(1,3);
+		   
+		   if(txt2==000){
+		   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+		  
+		   return false;
+		   }
+			}
+			
+		 document.getElementById("EmployerCityerror").innerHTML="";
+		if(document.getElementById("EmployerCity").value!="")
+		{
+	    if(document.getElementById("EmployerCity").value.length<4 || document.getElementById("EmployerCity").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("EmployerCityerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	    	return false;
+	    }
+	    }
+		document.getElementById("Estateerror").innerHTML="";
+		if(document.getElementById("Estate").value!="")
+		{
+	    if(document.getElementById("Estate").value.length<4 || document.getElementById("Estate").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("Estateerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	    	return false;
+	    }
+	    }  
+			 */
+		/* document.getElementById("SpousesNameerror").innerHTML="";
+		   if(document.getElementById("SpousesName").value!="")
+		   {
+		
+	    if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("SpousesNameerror").innerHTML="Name should be of length 4 to 32";
+	    
+	    	 return false;
+	    }
+		   }
+
+		document.getElementById("SpousesEmperror").innerHTML="";
+		   if(document.getElementById("SpousesEmp").value!="")
+		   {
+		
+	    if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("SpousesEmperror").innerHTML=" should be of length 4 to 32";
+	    	
+	    	 return false;
+	    }
+		   }
+		
+		document.getElementById("spouseworkphoneerror").innerHTML="";
+		  if(document.getElementById("spouseworkphone").value!="")
+		  {
+		
+	    var txt1=document.getElementById("spouseworkphone").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	   // alert(txt2);
+	   // alert(txt3);
+	   if(txt2==000 && txt3==000){
+	   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+	 
+	   return false;
+	   }
+		  }
+		  document.getElementById("spouseworkphoneerror").innerHTML="";
+		   if(document.getElementById("spouseworkphone").value!="")
+		   {
+	  
+		if(document.getElementById("spouseworkphone").value.length<13)
+		{
+		document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+		
+		 return false;
+		
+		}
+		   } */
+		  
+		document.getElementById("Name_frienderror").innerHTML="";
+		if(document.getElementById("Name_friend").value=="")
+		{
+		document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+	
+		
+		return false;
+		}
+		
+		document.getElementById("Name_frienderror").innerHTML="";
+	    if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("Name_frienderror").innerHTML="Name should be of length 4 to 32";
+	    	
+	    	 return false;
+	    }
+
+		document.getElementById("Phone_frienderror").innerHTML="";
+		if(document.getElementById("Phone_friend").value=="")
+		{
+		document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+		
+		
+		return false;
+		}
+		document.getElementById("Phone_frienderror").innerHTML="";
+		if(document.getElementById("Phone_friend").value.length<13)
+		{
+		document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+		
+		 return false;
+		
+		}
+		
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+	    
+	    if(document.getElementById("Phone_friend").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("Phone_frienderror").innerHTML="Invalid phone Format";
+	    	 
+	    	 return false;
+	    }
+		document.getElementById("Phone_frienderror").innerHTML="";
+	    var txt1=document.getElementById("Phone_friend").value;
+	   var txt2=txt1.substring(1,4);
+	   var txt3=txt1.substring(5,8);
+	   // alert(txt2);
+	   // alert(txt3);
+	   if(txt2==000 && txt3==000){
+	   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+	  
+	  
+	   return false;
+	    }
+	  /*  if(error=="true")
+		   {
+		 
+		return false;
+		   } */ 
+		 document.getElementById("nameerror").innerHTML="";
+		if(document.getElementById("name").value=="")
+			{
+			document.getElementById("nameerror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
+			}
+		
+		
+		document.getElementById("nameerror").innerHTML="";
+	    if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("nameerror").innerHTML="Name should be of length 4 to 32";
+	    	
+	        return false;
+	    }
+		
+		document.getElementById("datepickererror").innerHTML="";
+	if(document.getElementById("datepicker").value=="")
+		{
+		document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+		
+		return false;
+		}
+		document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+	document.getElementById("streetaddresserror").innerHTML="";
+	if(document.getElementById("streetaddress").value=="")
+	{
+	document.getElementById("streetaddresserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("streetaddresserror").innerHTML="";
+    if(document.getElementById("streetaddress").value.length<4 || document.getElementById("streetaddress").value.length>=32)
+    {
+    	
+    	document.getElementById("streetaddresserror").innerHTML="should be of length 4 to 32";
+    	
+        return false;
+    }
+
+	
+	document.getElementById("Cityerror").innerHTML="";
+	if(document.getElementById("City").value=="")
+	{
+	document.getElementById("Cityerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Cityerror").innerHTML="";
+    if(document.getElementById("City").value.length<4 || document.getElementById("City").value.length>=32)
+    {
+    	
+    	document.getElementById("Cityerror").innerHTML="should be of length 4 to 32";
+    	
+        return false;
+    }
+
+	document.getElementById("Stateerror").innerHTML="";
+	if(document.getElementById("State").value=="")
+	{
+	document.getElementById("Stateerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Stateerror").innerHTML="";
+    if(document.getElementById("State").value.length<4 || document.getElementById("State").value.length>=32)
+    {
+    	
+    	document.getElementById("Stateerror").innerHTML="should be of length 4 to 32";
+    	
+        return false;
+    }
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value=="")
+	{
+	document.getElementById("zipcode1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("zipcode1error").innerHTML="";
+	if(document.getElementById("zipcode1").value.length<5)
+	{
+	document.getElementById("zipcode1error").innerHTML="Zipcode format should be 5numbers";
+	return false;
+	
+	}
+	
+	document.getElementById("zipcode1error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode1").value))
+	{
+	document.getElementById("zipcode1error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	
+	var txt1=document.getElementById("zipcode1").value;
+   if( txt1==00000){
+   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
+   return false;
+   }
+   
+   
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value=="")
+	{
+	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("homephoneerror").innerHTML="";
+	if(document.getElementById("homephone").value.length<13)
+	{
+	document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	
+   document.getElementById("homephoneerror").innerHTML="";
+    var txt1=document.getElementById("homephone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+ 
+   if(txt2==000 && txt3==000){
+   document.getElementById("homephoneerror").innerHTML="Invalid phone number format";
+   return false;
+   }
+  
+	document.getElementById("Emailiderror").innerHTML="";
+	if(document.getElementById("Emailid").value=="")
+	{
+	document.getElementById("Emailiderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    
+    if(document.getElementById("Emailid").value.match(mail)==null)
+    {
+    	document.getElementById("Emailiderror").innerHTML="Invalid E-Mail Format";
+    	
+        return false;
+    }
+
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value=="")
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("mobilenumbererror").innerHTML="";
+	if(document.getElementById("mobilenumber").value.length<13)
+	{
+	document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	
+	
+	document.getElementById("mobilenumbererror").innerHTML="";
+    var txt1=document.getElementById("mobilenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   
+   if(txt2==000 && txt3==000)
+	   {
+   document.getElementById("mobilenumbererror").innerHTML="Invalid phone number format";
+	 return false;
+    }
+   
+   document.getElementById("workphoneerror").innerHTML="";
+   if(document.getElementById("workphone").value!="")
+   {
+	if(document.getElementById("workphone").value.length<13)
+	{
+	document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+   }
+  document.getElementById("workphoneerror").innerHTML="";
+  if(document.getElementById("workphone").value!="")
+  {
+   var txt1=document.getElementById("workphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000)
+   document.getElementById("workphoneerror").innerHTML="Invalid phone number format";
+  return false;
+  }
+	document.getElementById("datepicker1error").innerHTML="";
+	if(document.getElementById("datepicker1").value=="")
+	{
+	document.getElementById("datepicker1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	/* document.getElementById("datepicker1error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker1").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+ */	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	if(document.getElementById("socialsecuritynumber").value=="")
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	
+	
+	document.getElementById("socialsecuritynumbererror").innerHTML="";
+	var txt1=document.getElementById("socialsecuritynumber").value;
+	var txt2=txt1.substring(0,3);
+	if(txt2==000)
+	{
+	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social security number";
+	return false;
+	}
+	//alert(txt2);
+	//var phone = /^[0-9-]{11}$/;
+	 //if(document.getElementById("socialsecuritynumber").value.match(phone)==null)
+    //{
+    	//document.getElementById("socialsecuritynumbererror").innerHTML="Invalid socialsecuritynumber";
+    	
+        //return false;
+   // }
+    document.getElementById("socialsecuritynumbererror").innerHTML="";
+    if(document.getElementById("socialsecuritynumber").value.length<11)
+    {
+    	document.getElementById("socialsecuritynumbererror").innerHTML="Invalid social  security number";
+    	
+        return false;
+    }
+    
+    
+    
+
+	
+	
+	 /*document.getElementById("EmployerNameerror").innerHTML="";
+	if(document.getElementById("EmployerName").value!="")
+	{
+    if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerNameerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	
+	document.getElementById("Occupationerror").innerHTML="";
+	if(document.getElementById("Occupation").value!="")
+	{
+    if(document.getElementById("Occupation").value.length<4 || document.getElementById("Occupation").value.length>=32)
+    {
+    	
+    	document.getElementById("Occupationerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+    }  */ 
+	/*  document.getElementById("EmployerAddresserror").innerHTML="";
+	if(document.getElementById("EmployerAddress").value!="")
+	{
+    if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerAddresserror").innerHTML="Address should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("EmployerCityerror").innerHTML="";
+	if(document.getElementById("EmployerCity").value!="")
+	{
+    if(document.getElementById("EmployerCity").value.length<4 || document.getElementById("EmployerCity").value.length>=32)
+    {
+    	
+    	document.getElementById("EmployerCityerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+    }
+	document.getElementById("Estateerror").innerHTML="";
+	if(document.getElementById("Estate").value!="")
+	{
+    if(document.getElementById("Estate").value.length<4 || document.getElementById("Estate").value.length>=32)
+    {
+    	
+    	document.getElementById("Estateerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+    }  */
+	/* document.getElementById("workphoneerror").innerHTML="";
+	if(document.getElementById("workphone").value=="")
+	{
+	document.getElementById("workphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	
+   /*  document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value=="")
+	{
+	document.getElementById("zipcode2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	
+	/* document.getElementById("zipcode2error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode2").value))
+	{
+	document.getElementById("zipcode2error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!="")
+	{
+	if(document.getElementById("zipcode2").value.length<5)
+	{
+	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+	return false;
+	}
+	}
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!="")
+	{
+	var txt1=document.getElementById("zipcode2").value;
+   if( txt1==00000){
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+   return false;
+   }
+	}
+	
+	
+	document.getElementById("zipcode3error").innerHTML="";
+	if(isNaN(document.getElementById("zipcode3").value))
+	{
+	document.getElementById("zipcode3error").innerHTML="Enter Only Numbers";
+	return false;
+	}
+	document.getElementById("zipcode3error").innerHTML="";
+		if(document.getElementById("zipcode3").value!="")
+		{
+	if(document.getElementById("zipcode3").value.length<5)
+	{
+	document.getElementById("zipcode3error").innerHTML="Invalid zipcode format";
+	return false;
+	}
+	}
+		document.getElementById("zipcode3error").innerHTML="";
+		if(document.getElementById("zipcode3").value!="")
+		{
+	var txt1=document.getElementById("zipcode3").value;
+   if( txt1==00000){
+   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode3error").innerHTML="Invalid Zipcode format ";
+   return false;
+   }
+		} */
+   
+	/* document.getElementById("SpousesNameerror").innerHTML="";
+	if(document.getElementById("SpousesName").value=="")
+	{
+	document.getElementById("SpousesNameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	/* document.getElementById("SpousesNameerror").innerHTML="";
+	   if(document.getElementById("SpousesName").value!="")
+	   {
+	
+    if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+    {
+    	
+    	document.getElementById("SpousesNameerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+	   } */
+/* 
+	document.getElementById("SpousesEmperror").innerHTML="";
+	if(document.getElementById("SpousesEmp").value=="")
+	{
+	document.getElementById("SpousesEmperror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	document.getElementById("SpousesEmperror").innerHTML="";
+	   if(document.getElementById("SpousesEmp").value!="")
+	   {
+	
+    if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
+    {
+    	
+    	document.getElementById("SpousesEmperror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	   }
+	/* document.getElementById("spouseworkphoneerror").innerHTML="";
+	if(document.getElementById("spouseworkphone").value=="")
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	document.getElementById("spouseworkphoneerror").innerHTML="";
+	  if(document.getElementById("spouseworkphone").value!="")
+	  {
+	
+    var txt1=document.getElementById("spouseworkphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+  return false;
+   }
+	  }
+	  document.getElementById("spouseworkphoneerror").innerHTML="";
+	   if(document.getElementById("spouseworkphone").value!="")
+	   {
+  
+	if(document.getElementById("spouseworkphone").value.length<13)
+	{
+	document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	   }
+	document.getElementById("Name_frienderror").innerHTML="";
+	if(document.getElementById("Name_friend").value=="")
+	{
+	document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Name_frienderror").innerHTML="";
+    if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_frienderror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value=="")
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+	if(document.getElementById("Phone_friend").value.length<13)
+	{
+	document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	document.getElementById("Phone_frienderror").innerHTML="";
+    var txt1=document.getElementById("Phone_friend").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
+  
+	
+	return false;
+    }
+		
+   document.getElementById("symptom1error").innerHTML="";
+   if(document.getElementById("symptom1").value=="")
+   {
+   document.getElementById("symptom1error").innerHTML="Required Field Should not be Empty";
+
+   return false;
+   }
+
+	
+	
+	
+	
+   
+ document.getElementById("type_of_accidenterror").innerHTML="";
+	if(document.getElementById("type_of_accident").value==0)
+	{
+
+		document.getElementById("type_of_accidenterror").innerHTML="Required Field Should not be Empty";
+		
+	return false;
+
+	}
+
+	document.getElementById("datepicker2error").innerHTML="";
+	if(document.getElementById("datepicker2").value=="")
+	{
+	document.getElementById("datepicker2error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker2error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker2").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker2error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+	document.getElementById("Accident_Reportederror").innerHTML=""; 
+	if( ( document.getElementById("yes2").checked == false ) && ( document.getElementById("No2").checked == false ) )
+
+	 {
+	 document.getElementById("Accident_Reportederror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker5error").innerHTML="";
+	if(document.getElementById("datepicker5").value=="")
+	{
+	document.getElementById("datepicker5error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker5error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker5").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker5error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+	document.getElementById("where1error").innerHTML="";
+	if(document.getElementById("where1").value=="")
+	{
+	document.getElementById("where1error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("where1error").innerHTML="";
+    if(document.getElementById("where1").value.length<4 || document.getElementById("where1").value.length>=32)
+    {
+    	
+    	document.getElementById("where1error").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	document.getElementById("Attorney_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes5").checked == false ) && ( document.getElementById("No5").checked == false ) )
+
+	 {
+	 document.getElementById("Attorney_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+	if(document.getElementById("NameOfAttorney").value=="")
+	{
+	document.getElementById("NameOfAttorneyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("NameOfAttorneyerror").innerHTML="";
+    if(document.getElementById("NameOfAttorney").value.length<4 || document.getElementById("NameOfAttorney").value.length>=32)
+    {
+    	
+    	document.getElementById("NameOfAttorneyerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+
+    
+    
+	 	document.getElementById("retainerror").innerHTML=""; 
+	if( ( document.getElementById("R").checked == false ) && ( document.getElementById("L").checked == false ) )
+
+	 {
+	 document.getElementById("retainerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+
+	document.getElementById("recorderror").innerHTML=""; 
+	if( ( document.getElementById("yes6").checked == false ) && ( document.getElementById("No6").checked == false ) )
+
+	 {
+	 document.getElementById("recorderror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("phynameerror").innerHTML="";
+	if(document.getElementById("phyname").value=="")
+	{
+	document.getElementById("phynameerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("phynameerror").innerHTML="";
+    if(document.getElementById("phyname").value.length<4 || document.getElementById("phyname").value.length>=32)
+    {
+    	
+    	document.getElementById("phynameerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value=="")
+	{
+	document.getElementById("phyphoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phyphoneerror").innerHTML="";
+	if(document.getElementById("phyphone").value.length<13)
+	{
+	document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	 document.getElementById("phyphoneerror").innerHTML="";
+    var txt1=document.getElementById("phyphone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("phyphoneerror").innerHTML="Invalid phone number format";
+  
+	return false;
+    }
+	document.getElementById("xrayerror").innerHTML="";
+	if(document.getElementById("xray").value=="")
+	{
+	document.getElementById("xrayerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("xrayerror").innerHTML="";
+    if(document.getElementById("xray").value.length<4 || document.getElementById("xray").value.length>=32)
+    {
+    	
+    	document.getElementById("xrayerror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	document.getElementById("treaterror").innerHTML="";
+	if(document.getElementById("treat").value=="")
+	{
+	document.getElementById("treaterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("treaterror").innerHTML="";
+    if(document.getElementById("treat").value.length<4 || document.getElementById("treat").value.length>=32)
+    {
+    	
+    	document.getElementById("treaterror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value=="")
+	{
+	document.getElementById("phonenumbererror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phonenumbererror").innerHTML="";
+	if(document.getElementById("phonenumber").value.length<13)
+	{
+	document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	 document.getElementById("phonenumbererror").innerHTML="";
+    var txt1=document.getElementById("phonenumber").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("phonenumbererror").innerHTML="Invalid phone number format";
+	return false;
+    }
+	document.getElementById("Fault_accidenterror").innerHTML="";
+	if(document.getElementById("Fault_accident").value=="")
+	{
+	document.getElementById("Fault_accidenterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Fault_accidenterror").innerHTML="";
+    if(document.getElementById("Fault_accident").value.length<4 || document.getElementById("Fault_accident").value.length>=32)
+    {
+    	
+    	document.getElementById("Fault_accidenterror").innerHTML="s should be of length 4 to 32";
+    	
+        return false;
+    }
+
+
+	document.getElementById("Insuranceerror").innerHTML="";
+	if(document.getElementById("Insurance").value=="")
+	{
+	document.getElementById("Insuranceerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Insuranceerror").innerHTML="";
+    if(document.getElementById("Insurance").value.length<4 || document.getElementById("Insurance").value.length>=32)
+    {
+    	
+    	document.getElementById("Insuranceerror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+
+
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value=="")
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Insurance_phoneerror").innerHTML="";
+	if(document.getElementById("Insurance_phone").value.length<13)
+	{
+	document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	
+	
+	 document.getElementById("Insurance_phoneerror").innerHTML="";
+    var txt1=document.getElementById("Insurance_phone").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("Insurance_phoneerror").innerHTML="Invalid phone number format";
+	 return false;
+    }
+	document.getElementById("Name_autoerror").innerHTML="";
+	if(document.getElementById("Name_auto").value=="")
+	{
+	document.getElementById("Name_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Name_autoerror").innerHTML="";
+    if(document.getElementById("Name_auto").value.length<4 || document.getElementById("Name_auto").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_autoerror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+
+
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value=="")
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+	if(document.getElementById("Phone_auto").value.length<13)
+	{
+	document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	document.getElementById("Phone_autoerror").innerHTML="";
+    var txt1=document.getElementById("Phone_auto").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("Phone_autoerror").innerHTML="Invalid phone number format";
+	return false;
+    }
+          
+     
+    
+	document.getElementById("policyerror").innerHTML="";
+	if(document.getElementById("policy").value=="")
+	{
+	document.getElementById("policyerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("policyerror").innerHTML="";
+    if(document.getElementById("policy").value.length<4 || document.getElementById("policy").value.length>=32)
+    {
+    	
+    	document.getElementById("policyerror").innerHTML="Policy should be min 4 and max 32";
+    	
+        return false;
+    }
+
+	document.getElementById("Name_healtherror").innerHTML="";
+	if(document.getElementById("Name_health").value=="")
+	{
+	document.getElementById("Name_healtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Name_healtherror").innerHTML="";
+    if(document.getElementById("Name_health").value.length<4 || document.getElementById("Name_health").value.length>=32)
+    {
+    	
+    	document.getElementById("Name_healtherror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+
+
+	document.getElementById("phhealtherror").innerHTML="";
+	if(document.getElementById("phhealth").value=="")
+	{
+	document.getElementById("phhealtherror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("phhealtherror").innerHTML="";
+	if(document.getElementById("phhealth").value.length<13)
+	{
+	document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+	return false;
+	
+	}
+	 document.getElementById("phhealtherror").innerHTML="";
+    var txt1=document.getElementById("phhealth").value;
+   var txt2=txt1.substring(1,4);
+   var txt3=txt1.substring(5,8);
+   // alert(txt2);
+   // alert(txt3);
+   if(txt2==000 && txt3==000){
+   document.getElementById("phhealtherror").innerHTML="Invalid phone number format";
+	return false;
+    }
+         
+	document.getElementById("Prev_accidenterror").innerHTML=""; 
+	if( ( document.getElementById("yes7").checked == false ) && ( document.getElementById("No7").checked == false ) )
+
+	 {
+	 document.getElementById("Prev_accidenterror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("datepicker6error").innerHTML="";
+	if(document.getElementById("datepicker6").value=="")
+	{
+	document.getElementById("datepicker6error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+		document.getElementById("datepicker6error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker6").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker6error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+	document.getElementById("Illnesserror").innerHTML="";
+	if(document.getElementById("Illness").value=="")
+	{
+	document.getElementById("Illnesserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Illnesserror").innerHTML="";
+    if(document.getElementById("Illness").value.length<4 || document.getElementById("Illness").value.length>=32)
+    {
+    	
+    	document.getElementById("Illnesserror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	document.getElementById("datepicker3error").innerHTML="";
+	if(document.getElementById("datepicker3").value=="")
+	{
+	document.getElementById("datepicker3error").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("datepicker3error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker3").value.match(datechk)==null)
+    {
+    	document.getElementById("datepicker3error").innerHTML="Invalid Date Format";
+    	
+        return false;
+    }
+	document.getElementById("Medicationserror").innerHTML="";
+	if(document.getElementById("Medications").value=="")
+	{
+	document.getElementById("Medicationserror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Medicationserror").innerHTML="";
+    if(document.getElementById("Medications").value.length<4 || document.getElementById("Medications").value.length>=32)
+    {
+    	
+    	document.getElementById("Medicationserror").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	document.getElementById("doyouerror").innerHTML=""; 
+	if( ( document.getElementById("Drink").checked == false ) && ( document.getElementById("Smoke").checked == false ) && ( document.getElementById("Drugs").checked == false )&& ( document.getElementById("Diet").checked == false )&& ( document.getElementById("Exercise").checked == false ))
+
+	 {
+	 document.getElementById("doyouerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	/* document.getElementById("listerror").innerHTML="";
+	if(document.getElementById("list").value=="")
+	{
+	document.getElementById("listerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	} */
+	document.getElementById("Femaleerror").innerHTML=""; 
+	if( ( document.getElementById("yes9").checked == false ) && ( document.getElementById("No9").checked == false ) )
+
+	 {
+	 document.getElementById("Femaleerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	document.getElementById("Drerror").innerHTML="";
+	if(document.getElementById("Dr").value=="")
+	{
+	document.getElementById("Drerror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	
+	document.getElementById("Drerror").innerHTML="";
+    if(document.getElementById("Dr").value.length<4 || document.getElementById("Dr").value.length>=32)
+    {
+    	
+    	document.getElementById("Drerror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+
+
+	document.getElementById("Patienterror").innerHTML="";
+	if(document.getElementById("Patient").value=="")
+	{
+	document.getElementById("Patienterror").innerHTML="Required Field Should not be Empty";
+	
+	return false;
+	}
+	document.getElementById("Patienterror").innerHTML="";
+    if(document.getElementById("Patient").value.length<4 || document.getElementById("Patient").value.length>=32)
+    {
+    	
+    	document.getElementById("Patienterror").innerHTML="Name should be of length 4 to 32";
+    	
+        return false;
+    }
+	
+	document.getElementById("claim_openerror").innerHTML=""; 
+	if( ( document.getElementById("claim_open").checked == false ) && ( document.getElementById("claim_open1").checked == false ) )
+
+	 {
+	 document.getElementById("claim_openerror").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	document.getElementById("car11error").innerHTML=""; 
+	if(document.getElementById("car11").value=="")
+	{
+	 document.getElementById("car11error").innerHTML="Required Field Should not be Empty";
+	 		
+	 		return false;
+	 		
+	 }
+	
+	document.getElementById("car11error").innerHTML="";
+    if(document.getElementById("car11").value.length<4 || document.getElementById("car11").value.length>=32)
+    {
+    	
+    	document.getElementById("car11error").innerHTML=" should be of length 4 to 32";
+    	
+        return false;
+    }
+	}
 
 	</script>
 
@@ -2213,19 +3654,19 @@ document.getElementById("inp_id").value=phone;
                         	 							<td><span class="err">*&nbsp;</span>Name :</td>
                         	 							 <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.patient_id}" name="patient_id" /> 
                                  					 <input type="hidden" class="input_txtbx1" id="patientid" value="${patientDetails.username}" onInput="return validatename(id)"; name="username" />
-                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="name"   value="${patientDetails.name }" onInput="return validatename(id)"; name="name" /></br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.Name"></form:errors></span></td>
+                                 						<td class="input_txt"><input type="text" class="input_txtbx1" id="name" name="name"  value="${patientDetails.name }" onInput="return validatename(id)";  /></br><span id="nameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.Name"></form:errors></span></td>
                       								  </tr>
                         <tr class="row2">
                         	<td><span class="err">*&nbsp;</span>Date:</td>
-                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker"   value="${patientDetails.date }" name="date" /></br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Date"></form:errors></span></td>
+                        	 <td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker" name="date"   value="${patientDetails.date }" /></br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Date"></form:errors></span></td>
                         </tr> 
                         <tr class="row1">
                         	<td><span class="err">*&nbsp;</span>Street Address:</td>
-							<td class="input_txt"><input type="text" class="input_txtbx1" id="streetaddress"   value="${patientDetails.streetAddress }" name="streetAddress" onInput="return validatename(id)";/></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
+							<td class="input_txt"><input type="text" class="input_txtbx1" id="streetaddress"   name="streetAddress" value="${patientDetails.streetAddress }"  onInput="return validatename(id)";/></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
                         </tr> 
                         <tr class="row2">
                         	<td><span class="err">*&nbsp;</span>City:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="City"   value="${patientDetails.city}" name="city" onInput="return validatename(id)";/></br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.City"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="City"  name="city" value="${patientDetails.city}"  onInput="return validatename(id)";/></br><span id="Cityerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.City"></form:errors></span></td>
 						</tr>                        
 						<tr class="row1">
                         	<td><span class="err">*&nbsp;</span>State:</td>
@@ -2253,7 +3694,7 @@ document.getElementById("inp_id").value=phone;
 						
 						<tr class="row2">
                         	<td><span class="err">*&nbsp;</span>Date Of Birth:</td>
-                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1"   value="${patientDetails.dateOfBirth}" name="dateOfBirth" /></br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.DateOfBirth"></form:errors></span></td>
+                        	<td class="input_txt"><input type="text" class="input_txtbx1" id="datepicker1" name="dateOfBirth"  value="${patientDetails.dateOfBirth}"  /></br><span id="datepicker1error" style="color: red;font-style:italic;"><form:errors path="PatientDetails.DateOfBirth"></form:errors></span></td>
 						</tr>                        
 						
 						<tr class="row1">
@@ -2285,7 +3726,7 @@ document.getElementById("inp_id").value=phone;
 								<table cellpadding="0" cellspacing="0" border="0" width="100%">
 							 	<tr class="row1">
 							 	
-									<td style="padding-right:100px;" valign="middle" align="left" class="input_txt" ><span class="err">*&nbsp;</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td style="padding-right:100px; width: 335px" valign="middle" align="left" class="input_txt" ><span class="err">*&nbsp;</span>Are you:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="areyou" value="Student" id="studentchecked" class="input_txt" onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Student'}"><c:out value="checked=checked"/></c:if>>Student
 				                  	<input type="radio" name="areyou" value="Employee" id="employeechecked" class="input_txt"  onclick="radiocheck();" <c:if test="${patientDetails.areyou=='Employee'}"><c:out value="checked=checked"/></c:if>>&nbsp;Employee
 				                 <span id="Areyouerror" style="color: red;font-style:italic;"></span>
@@ -2297,7 +3738,7 @@ document.getElementById("inp_id").value=phone;
 				            	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 				            	
 				           			 <tr class="row2">
-							 			<td valign="middle" style="padding-right:150px;" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							 			<td valign="middle" style="padding-right:150px; width: 303px" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;Student:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				            		    <td  valign="top" class="input_txt">
 				                  			<input type="radio" name="student" value="FullTime" id="fulltime" class="input_txt" <c:if test="${patientDetails.student=='FullTime'}"><c:out value="checked=checked"/></c:if>>Full Time&nbsp;&nbsp;&nbsp;
 				                  			<input type="radio" name="student" value="PartTime" id="parttime" class="input_txt" <c:if test="${patientDetails.student=='PartTime'}"><c:out value="checked=checked"/></c:if>>Part Time
@@ -2370,29 +3811,29 @@ document.getElementById('employee').style.display="block";
 							</div>
 							 <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				                
-				 			 <tr class="row2">
+				 			 <tr class="row1">
 				               
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">&nbsp;&nbsp;</span>Spouse's Or Significant Others Name:</td>
 				                  <td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesName"   value="${patientDetails.spousesName}" name="spousesName" onInput="return validatename56(id)"; /></br><span id="SpousesNameerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesName"></form:errors></span></td>
 							</tr>
-							 <tr class="row1">
+							 <tr class="row2">
                         		<td><span class="err">&nbsp;&nbsp;</span>Spouses Employer:&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         		<td class="input_txt"><input type="text" class="input_txtbx1" id="SpousesEmp"  onInput="return validatename(id)"; value="${patientDetails.spousesEmp}" name="spousesEmp" /></br><span id="SpousesEmperror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.SpousesEmp"></form:errors></span></td>
 							</tr>   	                     
 						
-						    <tr class="row2">
+						    <tr class="row1">
                         		<td><span class="err">&nbsp;&nbsp;</span>Spouse's Workphone:</td>
                         		<td class="input_txt"><input type="text" class="input_txtbx1" id="spouseworkphone"  maxlength="13"  onkeypress="return validate(event)"; value="${patientDetails.spousesph}" name="spousesph" /></br><span id="spouseworkphoneerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Spousesph"></form:errors></span></td>
 							</tr>                        
-						    <tr class="row1">
+						    <tr class="row2">
                         		<td><span class="err">*&nbsp;</span>Name Of Nearest Friend/ Relative Not Living With You:</td>
                         		<td class="input_txt"><input type="text" class="input_txtbx1" id="Name_friend" onInput="return validatename(id)";  value="${patientDetails.name_friend}" name="name_friend" /></br><span id="Name_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Name_friend"></form:errors></span></td>
 							</tr>                        
-						 	<tr class="row2">
+						 	<tr class="row1">
                         		<td><span class="err">*&nbsp;</span>Phone Of Nearest Friend/ Relative Not Living With You:</td>
                         		<td class="input_txt"><input type="text" class="input_txtbx1" id="Phone_friend"  maxlength="13" value="${patientDetails.phone_friend}" onkeypress="return validate(event)"; name="phone_friend" /></br><span id="Phone_frienderror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.Phone_friend"></form:errors></span></td>
 							</tr>                        
-						    <tr class="row1">
+						    <tr class="row2">
                         		<td><span class="err">*&nbsp;</span>Have You Ever Had Chiropractic Care: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                <td> 	<input type="radio" name="chiropratic_care" value="yes" id="yes1" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  		<input type="radio" name="chiropratic_care" value="No" id="No1" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No
@@ -2408,7 +3849,7 @@ document.getElementById('employee').style.display="block";
                    <table align="right">
 				               <tr>
 				  
-                     <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                     <td id="tblbtn"><br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/><br></td>
                      <td>&nbsp;&nbsp;</td>
                      <td>
                      <script>
@@ -2583,7 +4024,7 @@ function checkAjaxPost() {
 				                  		<td>	<select name="type_Of_Accident" id="type_of_accident" class="input_cmbbx1" onchange='Checklight();' onclick="checkAjaxPost()">
 						                  <option value="autoaccident" <c:if test="${patientDetails.type_Of_Accident=='autoaccident'}"><c:out value="selected"/></c:if>>Auto</option>
 						                  <option value="workaccident" <c:if test="${patientDetails.type_Of_Accident=='workaccident'}"><c:out value="selected"/></c:if>>Work</option>
-						                  <option value="mobileaccident" <c:if test="${patientDetails.type_Of_Accident=='mobileaccident'}"><c:out value="selected"/></c:if>>Mobile</option>
+						                <%--   <option value="mobileaccident" <c:if test="${patientDetails.type_Of_Accident=='mobileaccident'}"><c:out value="selected"/></c:if>>Mobile</option> --%>
 						                  <option value="otheraccident"  <c:if test="${patientDetails.type_Of_Accident=='otheraccident'}"><c:out value="selected"/></c:if>>Other</option>
 						                    </select>
 						                     <span id="type_of_accidenterror" style="color: red;font-style:italic;"></span>
@@ -2754,7 +4195,7 @@ function checkAjaxPost() {
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+                  <td id="tblbtn1"><br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid1(event);"/><br></td>
                   </tr>
 				                </table>
 				                </td>
