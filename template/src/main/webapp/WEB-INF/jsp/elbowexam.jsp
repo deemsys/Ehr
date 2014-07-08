@@ -142,6 +142,12 @@ $(function() {
 		        e.preventDefault();
 		});
 		});
+	$(function() {
+		$("#break3").on("keypress", function(e) {
+			if (e.which === 32 && !this.value.length)
+		        e.preventDefault();
+		});
+		});	
   </script>
   <script>
   var currentTab=0;
@@ -546,7 +552,7 @@ $(function() {
  <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td>
  <td width="150"><input type="checkbox" name="overheadactivities" value="Overhead Activities">Overhead Activities &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lifting" value="Lifting">Lifting</td>
  <td width="150"><input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td>
- <td> <input type="text" id="break3" name="break_text3" style="visibility:hidden" /></td>
+ <td> <input type="text" id="break3" name="break_text3" style="visibility:hidden" onInput="return validatename(id)";/></td>
  <td width="150"></td>
   <td width="150"></td>
  </tr>         
