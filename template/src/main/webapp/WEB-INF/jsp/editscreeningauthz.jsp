@@ -103,7 +103,7 @@ function validatename()
       <td valign="top" align="left">
         	<div>
 	            <div class="headings altheading">
-	              <h2>Editing Screening Disclosure:</h2>
+	              <h2>Editing Screening Disclosure</h2>
 	            </div>
 	            <div class="contentbox">
   <table cellpadding="0" cellspacing="0" border="0" width="100%">
