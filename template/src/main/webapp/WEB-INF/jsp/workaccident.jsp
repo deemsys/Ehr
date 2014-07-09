@@ -816,7 +816,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr class="row1" width="30%">
-                  <td valign="middle" align="left" class="input_txt" width="18%"><span class="err">* </span>What Is The Job Classification Of Your Normal Job?</td>
+                  <td valign="middle" align="left" class="input_txt" width="18%"><span class="err">* </span>What is the job classification of your normal job?</td>
 				  <td valign="top" align="left" class="input_txt" >
 				  <input type="text" class="input_txtbx1" id="job_classification" name="job_classification"  maxlength="32" onInput="return validatename(id)";/><br><span id="job_classificationerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.job_classification"></form:errors></span>
 				  </td>
@@ -840,45 +840,45 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Carry Anything Or Pick Anything Up?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you carry anything or pick anything up?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="yes" checked="true" class="input_txt" id="yes1" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" id="No1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
 				   <input type="hidden" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
 				 <span id="carryerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Did The Injury Occur?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How did the injury occur?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="injury_occur" maxlength="32" name="injury_occur" onInput="return validatename(id)"; /><br><span id="injury_occurerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.injury_occur"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who Saw The Accident?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who saw the accident?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="saw_accident"  maxlength="32" name="saw_accident" onInput="return validatename(id)"; /><br><span id="saw_accidenterror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.saw_accident"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Job Title</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Job Title:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="title" maxlength="32" name="title" onInput="return validatename(id)"; /><br><span id="titleerror" style="color: red;font-style:italic;"><form:errors path="Workaccident.title"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Long Have You Been At Your Present Job?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How long have you been at your present job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="present_job"  maxlength="32" name="present_job" onInput="return validatename(id)";/><br><span id="present_joberror" style="color: red;font-style:italic;"><form:errors path="Workaccident.present_job"></form:errors>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Has There Been A Time Loss or Absentee Caused From Job Injury?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Has there been a time loss or absentee caused from job injury?</td>
 				  <td valign="top" align="left" class="input_txt" width="20%"><input type="radio" name="time_loss" value="yes" checked="true" class="input_txt" id="yes2" onclick="time('show1')">Yes
 				  <input type="radio" name="time_loss" value="No"  id="No2" class="input_txt" onclick="time('hide1')">No 
 				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" maxlength="32" onInput="return validatename(id)"; placeholder="If yes, explain(include dates)"  ></textarea><br><span id="absenteeismerror" style="color: red;font-style:italic;"></span></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
 				  
 				   </tr>
 				   <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type Of Lighting In The Building:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type of lighting in the building:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="type_of_light" class="input_cmbbx1" onchange='Checklight(this.value);' id="type_of_light">
 					<option selected="selected" value="fluorescent" >Fluorescent</option>
@@ -891,28 +891,28 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Pick Up or Lift?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you pick up or lift heavy objects?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="yes" id="yes3" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" id="No3"class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
 				 <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				 
 				 				  <tr class="row1" >
-                  <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>If Yes, How Muchs <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
+                  <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>If "Yes,"" How Much? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				  <td valign="top" align="left" class="input_txt" >
 				  <input type="text" class="input_txtbx1" id="how_much" maxlength="32" name="how_much" onkeypress="return validate(event)"; />
 				  <br><span id="how_mucherror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Often?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How often?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="how_often" maxlength="32" name="how_often" onInput="return validatename(id)";/>
 				  <br><span id="how_oftenerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>From Where To Where:</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>From where to where:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" name="where_to_where" maxlength="32" id="where_to_where" onInput="return validatename(id)"; />
 				  <br><span id="where_to_whereerror" style="color: red;font-style:italic;"></span>
@@ -922,7 +922,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  
 				 
                   <tr class="row1">
-                <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>Do You Lift From? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
+                <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>Do you lift from? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lift_from" class="input_cmbbx1" id="lift_from">
 					<option selected="selected" value="ground" >Ground</option>
@@ -933,13 +933,13 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					</td>
 					</tr>
 					<tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Lift In or Out Of A Machine?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you lift in or out of a machine?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="yes" checked="true"  id="yes4"class="input_txt"  >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="No" id="No4"class="input_txt">No&nbsp;&nbsp;&nbsp;
 				 <span id="liftin_orouterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Working At A Machine,Do you</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If working at a machine,do you:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="workpos" class="input_cmbbx1" id="workpos">
 					<option selected="selected" value="sit" >Sit</option>
@@ -950,7 +950,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 					</td>
 					</tr>
 					<tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>In Your Job, Do You Push or Pull?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>In your job, do you push or pull?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5"value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5"value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" placeholder="If yes, give specifics" onInput="return validatename(id)";/> <span id="jobpperror" style="color: red;font-style:italic;"></span>
 				 <span id="push_pullerror" style="color: red;font-style:italic;"></span>
@@ -1002,7 +1002,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Is Your Work Area?</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Is your work area:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="work_area" class="input_cmbbx1" onchange='work(this.value);'>
 					<option selected="selected" value="oily" >Oily</option>
@@ -1014,38 +1014,38 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Use Foot or Hand Levers?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you use foot or hand levers?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="levers" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="levers" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Work Overhead?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you work overhead?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="overhead" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="overhead" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Many Employees Have Been Injured Doing Your job?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How many employees have been injured doing your job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="emp"onkeypress="return validate(event)"; maxlength="32" name="no_of_employees" /><span id="emperror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.no_of_employees"></form:errors></span><span class="err" id="emperr"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do You Like Your Job?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you like your job?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="like_job" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="like_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was a Pre-Employment Exam Performed or Required?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was a pre-employment exam performed or required?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pre_employment" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pre_employment" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Off Work, Do You Want to Return to Your Job?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Off work, Do you want to return to your job?</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" name="return_job" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="return_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Changes Would You Make In Your Job?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What changes would you make in your job?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="changes_in_job" maxlength="32" onInput="return validatename(id)"; name="changes_in_job" /><span id="changes_in_joberror" style="color: red;font-style:italic;" ><form:errors path="Workaccident.changes_in_job"></form:errors>
 				  </td>
