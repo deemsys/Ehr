@@ -561,7 +561,7 @@ function checkSubmit()
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>&nbsp;Date:
-              <input type="text" class="input_txtbx1" name="date" id="datepicker" readonly="readonly" /><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.date"></form:errors></span></td>
+              <input type="text" class="input_txtbx1" name="date" id="datepicker" readonly="readonly" /><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span  id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.date"></form:errors></span></td>
               </tr>
               </table><br><br>
               <table width="100%" border="0">
@@ -572,7 +572,7 @@ function checkSubmit()
               </tr>
               <tr>
               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <span class="err" id="lettererror"></span><form:errors path="Workschool.letter"></form:errors></td>
+             <font size="+1" color="red"> <span  id="lettererror"></span></font><form:errors path="Workschool.letter"></form:errors></td>
               <tr>
               </table><br><br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -717,9 +717,9 @@ function checkSubmit()
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td ><span class="err">*</span>&nbsp;From(Date):&nbsp;&nbsp;
-              <input type="text" class="input_txtbx1" name="froms" id="datepicker1" readonly="readonly"/><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="Workschool.froms"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="froms" id="datepicker1" readonly="readonly"/><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span  id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="Workschool.froms"></form:errors></td>
               <td ><span class="err">*</span>&nbsp;To(Date):&nbsp;&nbsp;
-              <input type="text" class="input_txtbx1" name="tos" id="datepicker2" readonly="readonly"/><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Workschool.tos"></form:errors></td>
+              <input type="text" class="input_txtbx1" name="tos" id="datepicker2" readonly="readonly"/><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span  id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Workschool.tos"></form:errors></td>
               </tr>
               </table><br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -731,7 +731,7 @@ function checkSubmit()
         	  <td>
         	  <span class="err" id="worderror"></span><form:errors path="Workschool.returns"></form:errors>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        	  <span class="err" id="datepicker3error"  style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors>
+        	  <span  id="datepicker3error"  style="color: red;font-style:italic;"></span><form:errors path="Hardshipagreement.date"></form:errors>
         	  </td>
         	  </tr>
         	  </table><br>

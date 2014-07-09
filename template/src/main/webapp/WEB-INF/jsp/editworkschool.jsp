@@ -145,13 +145,13 @@
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>Date:</td>
-              <td ><input type="hidden" name="workid" value="${workschooldetails.workid}"><input type="text" class="input_txtbx1" name="date"  value="${workschooldetails.date }"  id="datepicker" /><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.date"></form:errors></td>
+              <td ><input type="hidden" name="workid" value="${workschooldetails.workid}"><input type="text" class="input_txtbx1" name="date"  value="${workschooldetails.date }"  id="datepicker" /><span  id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="Workschool.date"></form:errors></td>
               </tr>
               </table><br>
               <table>
               <tr>
               <td>
-              This is to certify that&nbsp;&nbsp;&nbsp;<span class="err">*</span> <input type="text" class="input_txtbx1" name="letter" value="${workschooldetails.letter }"  id="letter" /><span class="err" id="lettererror"></span><form:errors path="Workschool.date"></form:errors> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
+              This is to certify that&nbsp;&nbsp;&nbsp;<span class="err">*</span> <input type="text" class="input_txtbx1" name="letter" value="${workschooldetails.letter }"  id="letter" /><span style="color: red;font-style:italic;" id="lettererror"></span><form:errors path="Workschool.date"></form:errors> is under my care.  In order to avoid aggravation of his/her condition, I recommend that he/she...
 
               
               </td>
@@ -297,15 +297,15 @@
         	   <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err">*</span>From(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="froms" value="${workschooldetails.froms }" id="datepicker1" /><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="froms" value="${workschooldetails.froms }" id="datepicker1" /><span  id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               <td height="25" width="120"><span class="err">*</span>To(Date):</td>
-              <td ><input type="text" class="input_txtbx1" name="tos" value="${workschooldetails.tos }" id="datepicker2" /><span class="err" id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="tos" value="${workschooldetails.tos }" id="datepicker2" /><span id="datepicker2error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr> <td ><input type="text" class="input_txtbx1" name="returns" value="${workschooldetails.returns }" id="datepicker" /><span class="err"><form:errors path="Workschool.returns"></form:errors></td>
         	  <td >Return to Regular<select width="50%" name="regular"><option value="Duty" <c:if test="${workschooldetails.regular=='Duty'}"><c:out value="selected"/></c:if>>Duty</option><option value="School" <c:if test="${workschooldetails.regular=='School'}"><c:out value="selected"/></c:if>>School</option><option value="P.E" <c:if test="${workschooldetails.regular=='P.E'}"><c:out value="selected"/></c:if>>P.E</option></select> </td>
-        	  <td ><span class="err">*</span>on<input type="text" class="input_txtbx1" name="returndate" value="${workschooldetails.returndate }" id="datepicker3" /><span class="err" id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+        	  <td ><span class="err">*</span>on<input type="text" class="input_txtbx1" name="returndate" value="${workschooldetails.returndate }" id="datepicker3" /><span  id="datepicker3error"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
         	  </tr></table><br>
         	
         	  <table cellpadding="0" cellspacing="0" border="0" width="100%">

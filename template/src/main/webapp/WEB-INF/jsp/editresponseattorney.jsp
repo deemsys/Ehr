@@ -234,7 +234,7 @@
               </tr>
               <tr>
               <td height="20" width="120"><span class="err">&nbsp;</span> Address:</td>
-              <td><textarea rows="" cols="" name="address"   class="input_txtarea" style="width: 156px; " > ${responseattorneydetail.address }</textarea><span style="color: red;font-style:italic;" id="addrerror">
+              <td><textarea rows="" cols="" name="address" id="addr"   class="input_txtarea" style="width: 156px; " > ${responseattorneydetail.address }</textarea><span style="color: red;font-style:italic;" id="addrerror">
             </td></tr>
               </tr>
              

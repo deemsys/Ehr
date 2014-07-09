@@ -101,7 +101,7 @@ function checkSubmitpage1(e)
 	error="true";
 	}
 	
-	document.getElementById("piderror").innerHTML="";
+	
 	if(isNaN(document.getElementById("pid").value))
 	{		document.getElementById("piderror").innerHTML="Invalid character Please enter numbers only.";
 	error="true";
@@ -618,17 +618,17 @@ function validateusername(){
           <c:set value="${dcfeeslipForm.dcfeeslip[0]}" var="dcfeeslip"/> 
  <tr class="row1">
  <input type="hidden" name="dcfeeid" id="inp_id" value="${dcfeeslip.dcfeeid}">
-<td width="90"><h2><span class="err">* </span>Patient Id:</h2></td><td><input type="text"   class="input_txtbx1"  name="pid" onInput="return validateusername()"; size="25" value="${dcfeeslip.pid}" id="pid" /><span class="err" id="piderror" style="color: red;font-style:italic;" ><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="90"><h2><span class="err">* </span>Patient Id:</h2></td><td><input type="text"   class="input_txtbx1"  name="pid" onInput="return validateusername()"; size="25" value="${dcfeeslip.pid}" id="pid" /><br><span  id="piderror" style="color: red;font-style:italic;" ><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td></td>
 <td width="500">
-<td align="right"><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  class="input_txtbx1"  id="datepicker" name="date" value="${dcfeeslip.date}" /><span class="err" id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
+<td align="right"><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  class="input_txtbx1"  id="datepicker" name="date" value="${dcfeeslip.date}" /><span  id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
 </tr>
 </table>
 <table>
  <tr class="row1">
-<td><h2><span class="err">* </span> Patient Name:</h2></td><td><input type="text"  class="input_txtbx1"  name="pname" id="pname" size="25" value="${dcfeeslip.pname}" onInput="return validatename()";/><span class="err" id="pnameerror"><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span> Patient Name:</h2></td><td><input type="text"  class="input_txtbx1"  name="pname" id="pname" size="25" value="${dcfeeslip.pname}" onInput="return validatename()";/><br><font size="+1" color="red"><span  id="pnameerror"></font><form:errors path="dcfeeslipdetail.pname"></form:errors></span></td>
 <td>
-<td><h2><span class="err">* </span>Treating Physician Name:</h2></td><td><input type="text"  class="input_txtbx1" name="dr1" size="14" value="${dcfeeslip.dr1}" id="dr1"/><span class="err" id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
+<td><h2><span class="err">* </span>Treating Physician Name:</h2></td><td><input type="text"  class="input_txtbx1" name="dr1" size="14" value="${dcfeeslip.dr1}" id="dr1"/><br><span  id="dr1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.dr1"></form:errors></span></td>
 <td><h2>RPT:</h2></td><td><input type="text"   class="input_txtbx1" name="rpt" size="14" value="${dcfeeslip.rpt}"/></td>
 <td><h2>PTA:</h2></td><td><input type="text"   class="input_txtbx1" name="pta" size="14" value="${dcfeeslip.pta}"/></td>
 </tr>
@@ -1397,7 +1397,7 @@ function validateusername(){
 
   <tr class="row1">
   <td></td><td> </td>
- <td width="200"><span class="err">* </span>Date </td><td><input type="text"  class="input_txtbx1" id="datepicker1" name="date1" value="${dcfeeslip.date1}"/><span class="err" id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
+ <td width="200"><span class="err">* </span>Date </td><td><input type="text"  class="input_txtbx1" id="datepicker1" name="date1" value="${dcfeeslip.date1}"/><span  id="datepicker1error"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date1"></form:errors></span></td> </td> 
   
  </tr>
  <tr class="row1">
@@ -1409,13 +1409,13 @@ charges."</b></td>
  <tr class="row1">
  <td> </td><td></td>
   <td><span class="err">* </span>Patient/Guardian Signature:</td>
- <td width="200"><input type="text" class="input_txtbx1" name="parentsign" value="${dcfeeslip.parentsign}" id="parentsign"><span class="err" id="parentsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
+ <td width="200"><input type="text" class="input_txtbx1" name="parentsign" value="${dcfeeslip.parentsign}" id="parentsign"><span  id="parentsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.parentsign"></form:errors></span></td> 
   
  </tr>
   <tr class="row1">
   <td> </td> <td></td>
   <td><span class="err">* </span>Dr. / Tech. Signature(s)</td>
- <td width="200"><input type="text"  class="input_txtbx1" name="doctorsign" value="${dcfeeslip.doctorsign}" id="doctorsign"><span class="err" id="doctorsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
+ <td width="200"><input type="text"  class="input_txtbx1" name="doctorsign" value="${dcfeeslip.doctorsign}" id="doctorsign"><span  id="doctorsignerror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.doctorsign"></form:errors></span></td> 
  
  </tr>
  <tr class="row1">
