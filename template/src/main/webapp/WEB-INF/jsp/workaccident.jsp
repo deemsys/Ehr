@@ -898,7 +898,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </tr>
 				 
 				 				  <tr class="row1" >
-                  <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>If "Yes,"" How Much? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
+                  <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>If "Yes," How Much? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				  <td valign="top" align="left" class="input_txt" >
 				  <input type="text" class="input_txtbx1" id="how_much" maxlength="32" name="how_much" onkeypress="return validate(event)"; />
 				  <br><span id="how_mucherror" style="color: red;font-style:italic;"></span>
