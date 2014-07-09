@@ -552,7 +552,7 @@ document.getElementById("leftproxi").style.display="none";
 					newdiv.innerHTML = '<table width="100%" border="0" cellspacing="0" cellpadding="0" id="newtbl'
 							+ $im
 							+ '"><tr>'
-							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="diagonosis1" onInput="return validatename1(id)";name="diagnosis[]"/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
+							+ '<td valign="top" align="left" class="input_txt" width="70%">&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="diagonosis1" name="diagnosis[]" onInput="return validatename1(id)";/></td></tr><tr class="row1"><td align="left" valign="top"><a javascript:void(0);" onclick="removechoice('
 							+ $im
 							+ ')" style="text-decoration:none;"><input type="submit" class="submit_btn" value="CANCEL"  /></a></td></tr></table>';
 							
@@ -571,7 +571,7 @@ document.getElementById("leftproxi").style.display="none";
 				}
 			</script>
  &nbsp &nbspDiagonosis:<br/>
-&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" id="diagonosis"onInput="return validatename1(id)";class="input_txtbx1"><br/>
+&nbsp;&nbsp;&nbsp;<input type="text" name="diagnosis[]" id="diagonosis" onInput="return validatename1(id)";class="input_txtbx1"><br/>
 
 <!-- &nbsp &nbsp 2&nbsp &nbsp &nbsp<input type="text" name="diagnosis2"><br/><br/>
 &nbsp &nbsp 3&nbsp &nbsp &nbsp<input type="text" name="diagnosis3"><br/><br/>
