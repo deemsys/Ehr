@@ -196,8 +196,8 @@ function validatename1(id){
                         <tr>
                         <div align="justify">
 				                <p id="mypar">&nbsp;I, <input type="text" class="input_txtbx1" name="name" id="iname" onInput="return validatename(id)"; /><span id="inameerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.name"></form:errors></span>
-				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;&nbsp;<br><br><input type="text" class="input_txtbx1" id="medicalinformation" name="medicalinformation" onInput="return validatename(id)";/><span id="medicalinformationerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, <br>Dr. Darrin Pordash D.C.<br>
-				                5190 Deroit Rd.<br>
+				                &nbsp;&nbsp;give my permission to release Medical Information, Records, X-ray Reports, or the following &nbsp;&nbsp;&nbsp;<br><br><input type="text" class="input_txtbx1" id="medicalinformation" name="medicalinformation" onInput="return validatename(id)";/><span id="medicalinformationerror" style="color: red;font-style:italic;"><form:errors path="MedicalRecords.medicalinformation"></form:errors></span> &nbsp;&nbsp;to Lorain Injury Center, Dr. Darrin Pordash D.C.<br>
+				                <br>5190 Deroit Rd.<br>
                                 Sheffield Village, Ohio 44035<br>
                                 Fax 440-934-3107  </p>
                          <tr class="row1">
