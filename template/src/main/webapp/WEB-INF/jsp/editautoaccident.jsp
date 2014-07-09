@@ -416,7 +416,321 @@ function validatename(id){
     document.getElementById(id).value = textInput;
 }
 </script>
+<script>
+function checkValid(e)
+{
+	
+	document.getElementById("claimnoerror").innerHTML=""; 
+	 if(document.getElementById("claimno").value=="")
+	 {
+	  document.getElementById("claimnoerror").innerHTML="Required field should not be empty";
+      document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+      return false;
+	 }
+	 
+	 document.getElementById("claimnoerror").innerHTML="";
+	 if(document.getElementById("claimno").value.length<9 )
+	 {
+	 	
+	 	document.getElementById("claimnoerror").innerHTML="Claim Number should be of length 9";
+	 	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	     return false;
+	 }
+	
+	 
+	 
 
+	  document.getElementById("adjustersnameerror").innerHTML=""; 
+	 if(document.getElementById("adjustersname").value=="")
+	 {
+	  document.getElementById("adjustersnameerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+	 
+		document.getElementById("adjustersnameerror").innerHTML="";
+	    if(document.getElementById("adjustersname").value.length<4 || document.getElementById("adjustersname").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("adjustersnameerror").innerHTML="Name should be of length 4 to 32";
+	    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+
+		
+	  document.getElementById("companionerror").innerHTML="";
+	  if(document.getElementById("companion").value=="")
+	 {
+	  document.getElementById("companionerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		
+	  
+
+	 	document.getElementById("companionerror").innerHTML="";
+	    if(document.getElementById("companion").value.length<4 || document.getElementById("companion").value.length>=32)
+	    {
+	    	
+	    	document.getElementById("companionerror").innerHTML="Name should be of length 4 to 32";
+	    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	        return false;
+	    }
+
+	 document.getElementById("vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("vehicle_make").value=="")
+	 {
+	  document.getElementById("vehicle_makeerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		document.getElementById("vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("vehicle_make").value.length<4 || document.getElementById("vehicle_make").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("vehicle_makeerror").innerHTML="Name should be of length 4 to 32";
+	  	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	      return false;
+	  }
+
+	 document.getElementById("vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("vehicle_model").value=="")
+	 {
+	  document.getElementById("vehicle_modelerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		
+	
+		document.getElementById("vehicle_modelerror").innerHTML="";
+	if(document.getElementById("vehicle_model").value.length<4 || document.getElementById("vehicle_model").value.length>=32)
+	{
+		
+		document.getElementById("vehicle_modelerror").innerHTML=" should be of length 4 to 32";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	    return false;
+	}
+
+	
+	 document.getElementById("vehicle_yearerror").innerHTML="";
+	  if(document.getElementById("vehicle_year").value=="")
+	 {
+	  document.getElementById("vehicle_yearerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+
+		
+	 document.getElementById("vehicle_yearerror").innerHTML="";
+		if(document.getElementById("vehicle_year").value.length<4)
+		{
+		document.getElementById("vehicle_yearerror").innerHTML="Invalid year format";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		
+		}
+	
+	  document.getElementById("other_vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_make").value=="")
+	 {
+	  document.getElementById("other_vehicle_makeerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+	
+	  document.getElementById("other_vehicle_makeerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_make").value.length<4 || document.getElementById("other_vehicle_make").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("other_vehicle_makeerror").innerHTML="should be of length 4 to 32";
+	  	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	      return false;
+	  }
+	
+	  document.getElementById("other_vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_model").value=="")
+	 {
+	  document.getElementById("other_vehicle_modelerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+	
+	  document.getElementById("other_vehicle_modelerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_model").value.length<4 || document.getElementById("other_vehicle_model").value.length>=32)
+	  {
+	  	
+	  	document.getElementById("other_vehicle_modelerror").innerHTML="should be of length 4 to 32";
+	  	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	      return false;
+	  }
+	 
+	  document.getElementById("other_vehicle_yearerror").innerHTML="";
+	  if(document.getElementById("other_vehicle_year").value=="")
+	 {
+	  document.getElementById("other_vehicle_yearerror").innerHTML="Required field should not be empty";
+	  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	  return false;
+	 }
+	 
+	 document.getElementById("other_vehicle_yearerror").innerHTML="";
+		if(document.getElementById("other_vehicle_year").value.length<4)
+		{
+		document.getElementById("other_vehicle_yearerror").innerHTML="Invalid year format";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		
+		}
+	
+	
+	document.getElementById("speederror").innerHTML="";
+		if(document.getElementById("speed").value=="")
+		{
+		document.getElementById("speederror").innerHTML="Required Field Should not be Empty";
+		 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+		return false;
+		}
+
+		 else
+			 {
+			  document.getElementById("speederror").innerHTML="";
+			  document.getElementById('btnvisible1').style.visibility='hidden';
+			  document.getElementById('btnNext').style.visibility='visible';
+			  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
+			 }
+	 
+}
+
+
+</script>
+
+<script>
+function checkValid2(e){
+	
+	 document.getElementById("head_hiterror").innerHTML="";
+	if(document.getElementById("head_hit").value!="")
+	{
+    if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("head_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";		 
+        return false;
+    }
+    }
+	
+	document.getElementById("rlshoulder_hiterror").innerHTML="";
+	if(document.getElementById("rlshoulder_hit").value!="")
+	{
+    if(document.getElementById("rlshoulder_hit").value.length<4 || document.getElementById("rlshoulder_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlshoulder_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    }
+	
+	
+	document.getElementById("rlhip_hiterror").innerHTML="";
+	if(document.getElementById("rlhip_hit").value!="")
+	{
+    if(document.getElementById("rlhip_hit").value.length<4 || document.getElementById("rlhip_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlhip_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("rlknee_hiterror").innerHTML="";
+	if(document.getElementById("rlknee_hit").value!="")
+	{
+    if(document.getElementById("rlknee_hit").value.length<4 || document.getElementById("rlknee_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlknee_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("chest_hiterror").innerHTML="";
+	if(document.getElementById("chest_hit").value!="")
+	{
+    if(document.getElementById("chest_hit").value.length<4 || document.getElementById("chest_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("chest_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    }
+	else
+	 {
+	  document.getElementById("chest_hiterror").innerHTML="";
+	  document.getElementById('btnvisible1').style.visibility='hidden';
+	  document.getElementById('btnNext').style.visibility='visible';
+	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";		 
+	 }
+	
+	document.getElementById("rlarm_hiterror").innerHTML="";
+	if(document.getElementById("rlarm_hit").value!="")
+	{
+    if(document.getElementById("rlarm_hit").value.length<4 || document.getElementById("rlarm_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlarm_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("rlleg_hiterror").innerHTML="";
+	if(document.getElementById("rlleg_hit").value!="")
+	{
+    if(document.getElementById("rlleg_hit").value.length<4 || document.getElementById("rlleg_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("rlleg_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    }
+	
+	document.getElementById("otherpart_hiterror").innerHTML="";
+	if(document.getElementById("otherpart_hit").value!="")
+	{
+    if(document.getElementById("otherpart_hit").value.length<4 || document.getElementById("otherpart_hit").value.length>=32)
+    {
+    	
+    	document.getElementById("otherpart_hiterror").innerHTML="Should be of length 4 to 32";
+    	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+        return false;
+    }
+    } 
+	
+	document.getElementById("estimateddamageerror").innerHTML="";
+	if(document.getElementById("estimateddamage").value=="")
+	{
+	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+	return false;
+	}
+	else
+	 {
+	  document.getElementById("estimateddamageerror").innerHTML="";
+	  document.getElementById('btnvisible1').style.visibility='hidden';
+	  document.getElementById('btnNext').style.visibility='visible';
+	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next'>";		 		 
+	 }
+}
+
+</script>
    <script>
   function checksub()
   {
@@ -877,20 +1191,20 @@ document.getElementById("injury").style.visibility = 'hidden';
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
                  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What Is The Claim Number Of Your Accident?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>What is the Claim Number of your accident?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="hidden" class="input_txtbx1" id="inp_id" value="${autoaccident.patient_number}" name="patient_number" />
-				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" value="${autoaccident.claimnumber }" onInput="return validateusername()"; /><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
+				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" maxlength="10" value="${autoaccident.claimnumber }" onInput="return validateusername()"; /><br><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
 
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Adjuster's Name:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" min="4" maxlength="32" onInput="return validatename(id)";/><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" min="4" maxlength="32" onInput="return validatename(id)";/><br><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who Gave You The Estimate?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who gave you the estimate?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select  name="estimate" class="input_cmbbx1">
 					<option  value="your insurance" <c:if test="${autoaccident.estimate=='your insurance'}"><c:out value="selected"/></c:if>>Your Insurance company</option>
@@ -900,7 +1214,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were You The:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were you the:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="seating" class="input_cmbbx1">
 					<option  value="driver" <c:if test="${autoaccident.seating=='driver'}"><c:out value="selected"/></c:if>>Driver</option>
@@ -911,13 +1225,13 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was Anyone Else In The Car With You During The Accident?Who?</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was anyone else in the car with you during the accident? </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="companion" min="4" maxlength="32" onInput="return validatename1()"; name="companion" value="${autoaccident.companion }"/><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="companion" min="4" maxlength="32" onInput="return validatename1()"; name="companion" value="${autoaccident.companion }"/><br><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description Of Vehicle You Were In:</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description of vehicle you were in: </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" onInput="return validatename2()"; value="${autoaccident.vehicle_make }"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" onInput="return validatename3()"; value="${autoaccident.vehicle_model }" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
@@ -925,7 +1239,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Portion Of The Vehicle Hit?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Portion of the vehicle hit: </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="vehicle_hit" class="input_cmbbx1">
 					<option  value="right front" <c:if test="${autoaccident.vehicle_hit=='right front'}"><c:out value="selected"/></c:if>>Right Front</option>
@@ -934,11 +1248,14 @@ document.getElementById("injury").style.visibility = 'hidden';
 					<option value="left rear" <c:if test="${autoaccident.vehicle_hit=='left rear'}"><c:out value="selected"/></c:if>>Left Rear</option>
 					<option value="right side" <c:if test="${autoaccident.vehicle_hit=='right side'}"><c:out value="selected"/></c:if>>Right side</option>
 					<option value="left side" <c:if test="${autoaccident.vehicle_hit=='left side'}"><c:out value="selected"/></c:if>>Left side</option>
+					
+						<option value="Other" <c:if test="${autoaccident.vehicle_hit=='Other'}"><c:out value="selected"/></c:if>>Other</option>
+					
 				  </select><span class="err"><form:errors path="Autoaccident.vehicle_hit"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description Of Other Vehicle: </td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description of other vehicle: </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" value="${autoaccident.other_vehicle_make }" onInput="return validatename4()"; style="width:70px" value="${autoaccident.other_vehicle_make }" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" onInput="return validatename5()";style="width:70px" value="${autoaccident.other_vehicle_model }" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
@@ -946,25 +1263,25 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was You Car Stopped At The Time Of Accident?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was your car stopped at the time of the accident? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="carstopped" value="yes" class="input_txt"  <c:if test="${autoaccident.carstopped=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="carstopped" value="no" class="input_txt"  <c:if test="${autoaccident.carstopped=='no'}"><c:out value="Checked"/></c:if>>No<span class="err"><form:errors path="Autoaccident.carstopped"></form:errors></span></td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If You Were The Driver,Was Your Foot On The Brake?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If you were the driver, was your foot on the brake? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="driverposition" value="yes" class="input_txt" <c:if test="${autoaccident.driverposition=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="driverposition" value="no" class="input_txt" <c:if test="${autoaccident.driverposition=='no'}"><c:out value="Checked"/></c:if>>No <span class="err"><form:errors path="Autoaccident.driverposition"></form:errors></span></td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was Your Vehicle Moving At Time Of Impact?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was your vehicle moving at time of impact?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="vehicle_moving_time" value="yes" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="vehicle_moving_time" value="no" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='no'}"><c:out value="Checked"/></c:if>>No<span class="err"><form:errors path="Autoaccident.vehicle_moving_time"></form:errors></span></td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was Car:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was car:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="wascar" class="input_cmbbx1">
 					<option  value="slowing down" <c:if test="${autoaccident.wascar=='slowing down'}"><c:out value="selected"/></c:if> >Slowing Down</option>
@@ -974,13 +1291,13 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Estimated Rate Of Speed:</td>
+                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Estimated rate of speed?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="text" class="input_txtbx1" id="speed" name="estimated_rate" maxlength="18"  onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
+				  <input type="text" class="input_txtbx1" id="speed" placeholder="MPH"  name="estimated_rate" maxlength="18"  onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><br><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Time Of Day:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Time of day:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="time_of_day" class="input_cmbbx1">
 					<option  value="day light" <c:if test="${autoaccident.time_of_day=='day light'}"><c:out value="selected"/></c:if>>DayLight</option>
@@ -992,7 +1309,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr> 
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Road Conditions:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Road conditions:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="road_conditions" class="input_cmbbx1" id="road" onclick='CheckConditions();'>
 					<option  value=" conditions" <c:if test="${autoaccident.road_conditions==' conditions'}"><c:out value="selected"/></c:if> > conditions</option>
@@ -1023,7 +1340,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </table>
 				  <table align="right">
 				  <tr>
-				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				  <td id="tblbtn"><br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
 				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/> --><br></td>
 				  </tr>
@@ -1064,7 +1381,7 @@ document.getElementById("injury").style.visibility = 'hidden';
   				<td align="left" valign="top" width="50%" style="padding-right:25px;">
   				<table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat Position After Accident:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat position after accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seatpos_after_accident" class="input_cmbbx1">
 					<option  value="was_altered" <c:if test="${autoaccident.seatpos_after_accident=='was_altered'}"><c:out value="selected"/></c:if>>Was Altered</option>
@@ -1074,7 +1391,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat After The Accident:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat after the accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seat_after_accident" class="input_cmbbx1">
 					<option  value="broken" <c:if test="${autoaccident.seat_after_accident=='broken'}"><c:out value="selected"/></c:if> >Broken</option>
@@ -1083,7 +1400,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Lap Seat belt:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Lap seat belt:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lap_seat_belt" class="input_cmbbx1">
 					<option  value="worn" <c:if test="${autoaccident.lap_seat_belt=='worn'}"><c:out value="selected"/></c:if>>Worn</option>
@@ -1093,7 +1410,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Shoulder Seat Belt:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Shoulder seat belt:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="shoulder_seat_belt" class="input_cmbbx1">
 					<option  value="worns" <c:if test="${autoaccident.shoulder_seat_belt=='worns'}"><c:out value="selected"/></c:if>>Worn</option>
@@ -1103,7 +1420,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Air Bag Deployed:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Air bag deployed:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="airbag" value="yes" class="input_txt" id="airbagcheck" onclick="toggle()"<c:if test="${autoaccident.airbag=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="airbag" value="No" class="input_txt" onclick="toggle()"<c:if test="${autoaccident.airbag=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
@@ -1123,7 +1440,7 @@ document.getElementById('mytext').style.display="block";
 				            	}
 				           </script> 	
 				  <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Body Position At Time Of Accident:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Body position at time of accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="body_position" class="input_cmbbx1" id="bodyposition" onclick='Checkposition();'>
 					<option  value="good" <c:if test="${autoaccident.body_position=='good'}"><c:out value="selected"/></c:if>>Good</option>
@@ -1151,13 +1468,13 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr>
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Hands On Wheel:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Hands on wheel:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="hands_on_wheel" value="one" class="input_txt" <c:if test="${autoaccident.hands_on_wheel=='one'}"><c:out value="Checked"/></c:if>>One&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="hands_on_wheel" value="two" class="input_txt" <c:if test="${autoaccident.hands_on_wheel=='two'}"><c:out value="Checked"/></c:if>>Two<span class="err"><form:errors path="Autoaccident.hands_on_wheel"></form:errors></span></td>
 				  </tr>
 				  <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Aware Of Crash:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Aware of crash:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="aware_of_crash" class="input_cmbbx1" >
 					<option value="aware" <c:if test="${autoaccident.aware_of_crash=='aware'}"><c:out value="selected"/></c:if> >Aware</option>
@@ -1166,7 +1483,7 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr>
 				   <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did You Brace Yourself?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did you brace yourself?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="brace" value="yes" class="input_txt" id="bracecheck" onclick="toggle1();"<c:if test="${autoaccident.brace=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.brace"></form:errors></span>
@@ -1195,11 +1512,11 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr>  -->
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did This Cause Further Injury?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did this cause further injury?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="further_injury" value="yes" class="input_txt" id="furthercheck" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2();" <c:if test="${autoaccident.further_injury=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.further_injury"></form:errors></span>
-				  <textarea rows='3' cols='35' id="injury"  style='display:none' min="4" maxlength="32" onInput="return validatename(id)"; placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><span class="err" id="injuryerror"><form:errors path="Autoaccident.injurytext"></form:errors></span>
+				  <textarea rows='3' cols='35' id="injury"  style='display:none' min="4" maxlength="32" onInput="return validatename(id)"; placeholder="Please explain" name="injurytext">${autoaccident.injurytext}</textarea><br><span class="err" id="injuryerror"><form:errors path="Autoaccident.injurytext"></form:errors></span>
 				  </td>
 				  </tr>
 				  
@@ -1307,7 +1624,7 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr> 
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did Patient's Body Strike Interior Of Car:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did patient’s body strike interior of car? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="body_strike"  value="yes" id="yeschecked" onchange="change44();" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="body_strike" id="body_strike" value="no" id="nochecked" onchange="change44();" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
@@ -1320,49 +1637,49 @@ document.getElementById('mytext').style.display="block";
 				
 				  
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My head hit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My head hit:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="head_hit" name="head_hit" min="4" maxlength="32" onInput="return validatename(id);" value="${autoaccident.head_hit}"/>
 				  <br/><span id="head_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Shoulder hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Shoulder hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlshoulder_hit" name="rlshoulder_hit" min="4" maxlength="32" onInput="return validatename(id)" value="${autoaccident.rlshoulder_hit }" />
 				  <br/><span id="rlshoulder_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Hip hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Hip hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlhip_hit" name="rlhip_hit" value="${autoaccident.rlhip_hit }" min="4" maxlength="32" onInput="return validatename(id);"/>
 				  <br/><span id="rlhip_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Knee hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Knee hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlknee_hit" name="rlknee_hit" value="${autoaccident.rlknee_hit }" min="4" maxlength="32" onInput="return validatename(id);"/>
 				  <br/><span id="rlknee_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Chest hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Chest hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="chest_hit" name="chest_hit" value="${autoaccident.chest_hit }" onInput="return validatename(id);" min="4" maxlength="32"/>
 				  <br/><span id="chest_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Arm hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Arm hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlarm_hit" name="rlarm_hit" value="${autoaccident.rlarm_hit }" onInput="return validatename(id);" min="4" maxlength="32"/>
 				  <br/><span id="rlarm_hiterror" class="err"></span></td>
 				  </tr>
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Leg hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Right Left Leg hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="rlleg_hit" name="rlleg_hit" value="${autoaccident.rlleg_hit }" onInput="return validatename(id);" min="4" maxlength="32"/>
 				  <br/><span class="err" id="rlleg_hiterror"></span></td>
 				  </tr>
 				  <tr class="row1">
-                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Other body part hit</td>
+                  <td valign="middle" align="left" class="input_txt">&nbsp;&nbsp;&nbsp;My Other body part hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="otherpart_hit" name="otherpart_hit" value="${autoaccident.otherpart_hit }" onInput="return validatename(id);" min="4" maxlength="32" />
 				  <br/><span class="err" id="otherpart_hiterror"></span>
@@ -1385,14 +1702,14 @@ document.getElementById('mytext').style.display="block";
 				  
 				  
 				  <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt" width = "54%"><span class="err">* </span>Were You Wearing Glasses At The Time Of Accident?nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				  <td valign="middle" align="left" class="input_txt" width = "54%"><span class="err">* </span>Were you wearing glasses at the time of the accident? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" <c:if test="${autoaccident.wearing_glasses=='yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="wearing_glasses" value="no" class="input_txt" <c:if test="${autoaccident.wearing_glasses=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.wearing_glasses"></form:errors></span>
 			      </td>
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were The Glasses Still In Place After Impact?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were the glasses still in place after impact?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="glasses_impact" value="yes" class="input_txt" <c:if test="${autoaccident.glasses_impact=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="glasses_impact" value="no" class="input_txt" <c:if test="${autoaccident.glasses_impact=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.glasses_impact"></form:errors></span>
@@ -1403,7 +1720,7 @@ document.getElementById('mytext').style.display="block";
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.unconscious"></form:errors></span>
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" onkeypress="return validate(event)";  maxlength="18"; value="${autoaccident.uncon }"  style='display:none'> (minutes)<span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon"  placeholder="If yes, unconscious for (minutes) " onkeypress="return validate(event)";  maxlength="18"; value="${autoaccident.uncon }"  style='display:none'> <span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
 			      </td>
 				  </tr>
 				  <script>
@@ -1422,7 +1739,7 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr>
 				  <tr class="row2">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damage To The other Car:</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damage to the other car:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="damage" class="input_cmbbx1" >
 					<option ed="ed" value="minimal" <c:if test="${autoaccident.damage=='minimal'}"><c:out value="selected"/></c:if>>Minimal</option>
@@ -1437,7 +1754,7 @@ document.getElementById('mytext').style.display="block";
 				  <tr>
 				  	<td><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  /></td>
 				  	<td>&nbsp;&nbsp;</td>
-				  <td><br><input type="button" id="btnNext" class="submit_btn" value="Next"/><br></td>
+				  <td id="tblbtn2"><br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid2(event);"/><br></td>
 				  <td>&nbsp;&nbsp;</td>
 				  <td><br><!-- <input type="button"  class="submit_btn" value="Cancel" onclick="window.location.href='viewautoaccident'"/> --><br></td>
 				  </tr>
@@ -1471,7 +1788,7 @@ document.getElementById('mytext').style.display="block";
 	            <div class="contentbox">
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
 				 <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was Anyone Cited?</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was anyone cited?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="was_anyone_cited" value="yes" class="input_txt" <c:if test="${autoaccident.was_anyone_cited=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="was_anyone_cited" value="no" class="input_txt" <c:if test="${autoaccident.was_anyone_cited=='no'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.was_anyone_cited"></form:errors></span>
@@ -1487,7 +1804,7 @@ document.getElementById('mytext').style.display="block";
 				  </td><td width="680" ></td>
 				  </tr> 
 				  <tr class="row1">
-                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After Accident,I Had The Following?</td>
+                <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After Accident,I had the following:</td>
 				 <td valign="top" align="left" class="input_txt" style="width: 886px; ">
 				 <input type="checkbox" id="headache" name="headache" value="headache" <c:if test="${autoaccident.headache=='headache'}"><c:out value="Checked"/></c:if> >Headache&nbsp;&nbsp;&nbsp;&nbsp; 
 				 <input type="checkbox" id="dizziness" name="dizziness" value="dizziness" <c:if test="${autoaccident.dizziness=='dizziness'}"><c:out value="Checked"/></c:if> >Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1499,11 +1816,11 @@ document.getElementById('mytext').style.display="block";
 				 <input type="checkbox" id="otherpain" name="otherpain" value="other pain" id="othercheck" onclick="Other();" <c:if test="${autoaccident.otherpain=='other pain'}"><c:out value="Checked"/></c:if> >Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="other1" name="otherpaintext"  placeholder="If other" value="${autoaccident.otherpaintext}" style='display:none'/>
 				 
-				 <span id="afteraccidenterror" style="color: red;font-style:italic;">
+				<br> <span id="afteraccidenterror" style="color: red;font-style:italic;">
 				 </td><form:errors path="Autoaccident.after_accident"></form:errors></span>
 				 </tr>
 				 <tr class="row2">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Symptoms First Appeared:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Symptoms first appeared:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="first_symptom" class="input_cmbbx1" id="firstsymptom"  onchange='Checksymptom();'>
 					<option  value="immediately" <c:if test="${autoaccident.first_symptom=='immediately'}"><c:out value="selected"/></c:if> >Immediately</option>
@@ -1515,7 +1832,7 @@ document.getElementById('mytext').style.display="block";
 				  </td><td width="680" ></td>
 				  </tr> 
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After The Accident I Went:</td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After the accident i went:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident"onclick='Check();'>
 					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital'}"><c:out  value="selected"/></c:if>  >Hospital</option>
@@ -1533,7 +1850,7 @@ document.getElementById('mytext').style.display="block";
 				   <!-- <div id="accident_hospital" style='display:none' > -->
 				  	
 				   <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt"  width = "17.5%" >&nbsp;&nbsp;&nbsp;Name Of The Hospital:</td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                  <td valign="middle" align="left" class="input_txt"  width = "17.5%" >&nbsp;&nbsp;&nbsp;Name of the hospital:</td><!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  
 				 
 				  <td><input type="text" align="left" class="input_txtbx1" id="hosname" onInput="return validatename(id);" name="hosname" value="${autoaccident.hosname }" /></td>
@@ -1557,7 +1874,7 @@ document.getElementById('mytext').style.display="block";
 				  
 				  </tr>
 				  <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How Did You Get to the  &nbsp;&nbsp;Hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How did you get to the  &nbsp;&nbsp;hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</td><td>
 				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange='Checkhospital(this.value);'>
 					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
@@ -1567,7 +1884,7 @@ document.getElementById('mytext').style.display="block";
 				  </td>
 				  </tr> 
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt" style="width: 465px; ">&nbsp;&nbsp;&nbsp;What Body Parts Were X-Rayed,What &nbsp;&nbsp;&nbsp;&nbsp;Treatment   Was Given?
+                  <td valign="middle" align="left" class="input_txt" style="width: 465px; ">&nbsp;&nbsp;&nbsp;What body parts were X-rayed,what &nbsp;&nbsp;&nbsp;&nbsp;treatment was given?
 				  </td><td>
 				  <input type="text" class="input_txtbx1" id="xray" name="xray" value="${autoaccident.xray }" onInput="return validatename(id)";min="4" maxlength="32"/>
 				  </td>
@@ -1575,7 +1892,7 @@ document.getElementById('mytext').style.display="block";
 				 
 				  </tr>
 				   <tr class="row1">
-                  <td valign="middle"  align="left" class="input_txt">&nbsp;&nbsp;&nbsp;What Did They Tell You Was Wrong?<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                  <td valign="middle"  align="left" class="input_txt">&nbsp;&nbsp;&nbsp;What did they tell you was wrong?<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				  </td><td>
 				  <input type="text" onInput="return validatename(id);" class="input_txtbx1" id="wrong" name="wrong" value="${autoaccident.wrong }" />
 				  </td>

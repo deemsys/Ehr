@@ -668,7 +668,7 @@ function checkValid1(e)
  <script>
 function checkValid2(e){
 	
-	/* document.getElementById("head_hiterror").innerHTML="";
+	document.getElementById("head_hiterror").innerHTML="";
 	if(document.getElementById("head_hit").value!="")
 	{
     if(document.getElementById("head_hit").value.length<4 || document.getElementById("head_hit").value.length>=32)
@@ -770,7 +770,7 @@ function checkValid2(e){
     	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
         return false;
     }
-    } */
+    } 
 	
 	document.getElementById("estimateddamageerror").innerHTML="";
 	if(document.getElementById("estimateddamage").value=="")
@@ -784,7 +784,7 @@ function checkValid2(e){
 	  document.getElementById("estimateddamageerror").innerHTML="";
 	  document.getElementById('btnvisible1').style.visibility='hidden';
 	  document.getElementById('btnNext').style.visibility='visible';
-	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid2(event);'>";		 		 
+	  document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next'>";		 		 
 	 }
 }
 
@@ -2080,7 +2080,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				                  	 <tr>
 				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
-                  <td > <br><input type="button" id="btnNext" class="submit_btn" value="Next"  /><br>
+                  <td id="tblbtn2"> <br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid2(event);" /><br>
                    
                   </td>
                   </tr>
