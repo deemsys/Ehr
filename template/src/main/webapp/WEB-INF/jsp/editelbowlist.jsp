@@ -493,7 +493,7 @@ document.getElementById("pnameerror").innerHTML=" ";
   <td>Common Extensors:</td><td width="200"><input type="radio" name="commonextensors" value="Left" <c:if test="${elbowexam.commonextensors=='Left'}"><c:out value="checked=checked"/></c:if>>Left  <input type="radio" name="commonextensors" value="Right" <c:if test="${elbowexam.commonextensors=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
  </tr>
  <tr class="row1">
- <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" values="${elbowexam.othernotes }" onInput="return validatename(id)";></td> 
+ <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" value="${elbowexam.othernotes }" onInput="return validatename(id)";></td> 
  <td></td><td></td>
  <td></td><td></td>
  </tr>
