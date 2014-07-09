@@ -262,9 +262,9 @@ document.getElementById("bperror").innerHTML=" ";
 		error="true";
 		
 		}
-		else if((document.getElementById("bp").value.length < 4) ||(document.getElementById("bp").value.length > 32))
+		else if((document.getElementById("bp").value.length < 2) ||(document.getElementById("bp").value.length > 32))
 	   {
-	   document.getElementById('bperror').innerHTML="Required field should be length 4 to 32";
+	   document.getElementById('bperror').innerHTML="Required field should be length 2 to 32";
 	  error="true";
 	   }
 		
@@ -461,6 +461,18 @@ document.getElementById("abnormalerror").innerHTML=" ";
        function validate(event) {
           
            var regex = new RegExp("^[0-9.]+$");
+           var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+           if (!regex.test(key)) {
+             // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
+               event.preventDefault();
+               return false;
+           }
+       }       
+    </script>
+    <script type="text/javascript">
+       function checksub(event) {
+          
+           var regex = new RegExp("^[0-9/.]+$");
            var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
            if (!regex.test(key)) {
              // document.getElementById("cmaerr").innerHTML="enter numerics or decimals only";
@@ -834,7 +846,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> BP:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" onkeypress="return validate(event)"; /><br><span class="err" id="bperror" ><form:errors path="Physicalexam.bp"></form:errors>
+				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" onkeypress="return checksub(event)"; /><br><span class="err" id="bperror" ><form:errors path="Physicalexam.bp"></form:errors>
 				                  </td>
 				                </tr>
 				                </table>
@@ -2535,7 +2547,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>BP:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="inp_id" name="bp" value="${physical.bp}"/><span class="err"><form:errors path="Physicalexam.bp"></form:errors></span>
+				                  	<input type="text" class="input_txtbx1" id="bp" name="bp" value="${physical.bp}"/><span class="err"><form:errors path="Physicalexam.bp"></form:errors></span>
 				                  </td>
 				                </tr>
 				                </table>
