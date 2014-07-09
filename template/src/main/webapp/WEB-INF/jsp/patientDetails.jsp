@@ -1716,7 +1716,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
 		  document.getElementById("Phone_frienderror").innerHTML="";
 		  document.getElementById('btnvisible1').style.visibility='hidden';
 		  //document.getElementById('btnNext').style.visibility='visible';
-		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid(event);'>";		 
+		  document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";		 
 		 }
 		
 }
@@ -2172,7 +2172,7 @@ if(document.getElementById("datepicker6").value.match(datechk)==null)
 		  document.getElementById("datepicker6error").innerHTML="";
 		  document.getElementById('btnvisible1').style.visibility='hidden';
 		  //document.getElementById('btnNext1').style.visibility='visible';
-		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid1(event);'>";		 
+		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";		 
 		 }
 		
 }
@@ -2571,115 +2571,7 @@ if(document.getElementById("datepicker6").value.match(datechk)==null)
 	    }
 	    }  
 			 */
-		document.getElementById("SpousesNameerror").innerHTML="";
-		   if(document.getElementById("SpousesName").value!="")
-		   {
 		
-	    if(document.getElementById("SpousesName").value.length<4 || document.getElementById("SpousesName").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("SpousesNameerror").innerHTML="Name should be of length 4 to 32";
-	    
-	    	 return false;
-	    }
-		   }
-
-		document.getElementById("SpousesEmperror").innerHTML="";
-		   if(document.getElementById("SpousesEmp").value!="")
-		   {
-		
-	    if(document.getElementById("SpousesEmp").value.length<4 || document.getElementById("SpousesName").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("SpousesEmperror").innerHTML=" should be of length 4 to 32";
-	    	
-	    	 return false;
-	    }
-		   }
-		
-		document.getElementById("spouseworkphoneerror").innerHTML="";
-		  if(document.getElementById("spouseworkphone").value!="")
-		  {
-		
-	    var txt1=document.getElementById("spouseworkphone").value;
-	   var txt2=txt1.substring(1,4);
-	   var txt3=txt1.substring(5,8);
-	   // alert(txt2);
-	   // alert(txt3);
-	   if(txt2==000 && txt3==000){
-	   document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-	 
-	   return false;
-	   }
-		  }
-		  document.getElementById("spouseworkphoneerror").innerHTML="";
-		   if(document.getElementById("spouseworkphone").value!="")
-		   {
-	  
-		if(document.getElementById("spouseworkphone").value.length<13)
-		{
-		document.getElementById("spouseworkphoneerror").innerHTML="Invalid phone number format";
-		
-		 return false;
-		
-		}
-		   }
-		document.getElementById("Name_frienderror").innerHTML="";
-		if(document.getElementById("Name_friend").value=="")
-		{
-		document.getElementById("Name_frienderror").innerHTML="Required Field Should not be Empty";
-	
-		
-		return false;
-		}
-		
-		document.getElementById("Name_frienderror").innerHTML="";
-	    if(document.getElementById("Name_friend").value.length<4 || document.getElementById("Name_friend").value.length>=32)
-	    {
-	    	
-	    	document.getElementById("Name_frienderror").innerHTML="Name should be of length 4 to 32";
-	    	
-	    	 return false;
-	    }
-
-		document.getElementById("Phone_frienderror").innerHTML="";
-		if(document.getElementById("Phone_friend").value=="")
-		{
-		document.getElementById("Phone_frienderror").innerHTML="Required Field Should not be Empty";
-		
-		
-		return false;
-		}
-		document.getElementById("Phone_frienderror").innerHTML="";
-		if(document.getElementById("Phone_friend").value.length<13)
-		{
-		document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-		
-		 return false;
-		
-		}
-		
-	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
-
-	    
-	    if(document.getElementById("Phone_friend").value.match(phoneno)==null)
-	    {
-	    	document.getElementById("Phone_frienderror").innerHTML="Invalid phone Format";
-	    	 
-	    	 return false;
-	    }
-		document.getElementById("Phone_frienderror").innerHTML="";
-	    var txt1=document.getElementById("Phone_friend").value;
-	   var txt2=txt1.substring(1,4);
-	   var txt3=txt1.substring(5,8);
-	   // alert(txt2);
-	   // alert(txt3);
-	   if(txt2==000 && txt3==000){
-	   document.getElementById("Phone_frienderror").innerHTML="Invalid phone number format";
-	  
-	  
-	   return false;
-	    }
 	  /*  if(error=="true")
 		   {
 		 
@@ -3089,7 +2981,7 @@ if(document.getElementById("datepicker6").value.match(datechk)==null)
 	
 	return false;
 	} */
-	/* document.getElementById("SpousesNameerror").innerHTML="";
+	document.getElementById("SpousesNameerror").innerHTML="";
 	   if(document.getElementById("SpousesName").value!="")
 	   {
 	
@@ -3100,7 +2992,7 @@ if(document.getElementById("datepicker6").value.match(datechk)==null)
     	
         return false;
     }
-	   } */
+	   } 
 /* 
 	document.getElementById("SpousesEmperror").innerHTML="";
 	if(document.getElementById("SpousesEmp").value=="")
@@ -3184,6 +3076,16 @@ if(document.getElementById("datepicker6").value.match(datechk)==null)
 	return false;
 	
 	}
+	
+	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+    
+    if(document.getElementById("Phone_friend").value.match(phoneno)==null)
+    {
+    	document.getElementById("Phone_frienderror").innerHTML="Invalid phone Format";
+    	 
+    	 return false;
+    }
 	document.getElementById("Phone_frienderror").innerHTML="";
     var txt1=document.getElementById("Phone_friend").value;
    var txt2=txt1.substring(1,4);
