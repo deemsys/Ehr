@@ -943,7 +943,7 @@ var swelling = document.getElementById('diagnosis1').value;
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span> PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign" value="${footexamdetails.signature}"onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="footexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp; PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign" value="${footexamdetails.signature}"onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="footexamdetails.signature"></form:errors></div>
            
          
         <table align="right"><tr><td><input type="submit" value="Update" class="submit_btn" onclick="return checkSubmit1('this');"></td><td> <a href="viewfootexam" style="color: white" class="submit_btn" onclick="myclose()">Cancel</a></td></tr></table>
