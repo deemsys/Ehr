@@ -13,11 +13,7 @@
   P#mypar {font-style:calibri;
   line-height:18px;}
    </STYLE>
-   <c:if test="${duties==1}">
- <script>
- window.close();
- </script>
-</c:if>
+ 
 <script>
  function myclose()
  {
@@ -941,7 +937,7 @@ function validatename(id){
  <br><br>
 <form action="dutiesunderduress" method="POST" name="dutiesunder">
 <c:choose>
-            <c:when test="${empty duties}">
+            <c:when test="${empty dutiesunder}">
 <table cellpadding="0" cellspacing="0" border="0" width="98%" class="margin_table">
 <tr>
 <td valign="top" align="left">

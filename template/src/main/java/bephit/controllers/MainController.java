@@ -3883,7 +3883,12 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 		if(patientDAO.getUsername(principal).size()>0)
 		{			
 	   model.addAttribute("patientno","0");
-	}
+	   PatientDetailsForm patientdetailsform = new PatientDetailsForm();
+		patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));	
+       model.addAttribute("patientDetailsForm", patientdetailsform);  
+       model.addAttribute("menu", "patientInfo");
+	   return "viewpatient";
+		}
 		int username=docDAO.usernamevalidation(principal .getName());
 		if(patientDAO.getUsername(principal).size()==0)
 		{
@@ -4037,10 +4042,8 @@ HippaPrivacyForm hippaprivacyform = new HippaPrivacyForm();
 	   model.addAttribute("patientno","0");
 	}
 		PatientDetailsForm patientdetailsform = new PatientDetailsForm();
-		patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));
-		//patientdetailsform.setPatientDetails(patientDAO.getPatientDetails());
-        model.addAttribute("patientDetailsForm", patientdetailsform);
-       // System.out.println("patient="+patientdetailsform.getPatientDetails().size());
+		patientdetailsform.setPatientDetails(patientDAO.getUsername(principal));	
+        model.addAttribute("patientDetailsForm", patientdetailsform);  
         model.addAttribute("menu", "patientInfo");
         /*System.out.println("Patient");
         model.addAttribute("noofrows",patientdetailsform.getPatientDetails().size());       

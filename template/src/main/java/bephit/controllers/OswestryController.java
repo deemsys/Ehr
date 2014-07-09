@@ -51,7 +51,7 @@ public class OswestryController
 	public String oswestryindex(@RequestParam("symptom") String symptom,HttpSession session,ModelMap model)
 	{
 		session.removeAttribute("oswestrydisability");
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu","sign");
 		model.addAttribute("symptom",symptom);
 		return "oswestryindex";
 	}
@@ -150,7 +150,7 @@ public class OswestryController
 		OswestryForm oswestryindexform=new OswestryForm();
 		oswestryindexform.setOswestrydetails(oswestrydao.getoswestryindexDetails(oswestryno));
 		model.addAttribute("oswestryform", oswestryindexform);
-		model.addAttribute("menu","wristindex");
+		model.addAttribute("menu","sign");
 		return "editoswestryindex";
 	}
 	

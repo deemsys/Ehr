@@ -148,7 +148,7 @@
 
  $(function() {
     $( "#slider" ).slider({
-      value:1,
+      value:document.getElementById("amount").value,
       min: 0,
       max: 10,
       step: 1,
@@ -174,7 +174,7 @@
   });
 $(function() {
     $( "#slider1" ).slider({
-      value:0,
+      value:document.getElementById("amount1").value,
       min: 0,
        max: 10,
         step: 1,
@@ -207,7 +207,7 @@ $(function() {
 
  $(function() {
     $( "#slider2" ).slider({
-      value:1,
+      value:document.getElementById("amount2").value,
       min: 0,
       max: 10,
       step: 1,
@@ -232,7 +232,7 @@ $(function() {
 
  $(function() {
 	    $( "#slider3" ).slider({
-	      value:1,
+	      value:document.getElementById("amount3").value,
 	      min: 0,
 	      max: 10,
 	      step: 1,

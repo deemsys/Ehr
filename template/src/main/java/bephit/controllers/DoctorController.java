@@ -1717,7 +1717,7 @@ if(result.hasErrors())
 	}
 	@RequestMapping(value="/dutiesunderduress", method = RequestMethod.POST)
 	public String insert_duties(Principal principal,HttpServletRequest request,HttpSession session,@ModelAttribute("Dutiesunderduress")  @Valid Dutiesunderduress dutiesunderduress,BindingResult result,ModelMap model) {
-		session.setAttribute("duties", dutiesunderduress);
+		//session.setAttribute("duties", dutiesunderduress);
  
 		if(result.hasErrors())
 		{
@@ -1815,10 +1815,11 @@ if(result.hasErrors())
 	public String editduties(HttpServletRequest request,@RequestParam("dutiesno") String dutiesno,ModelMap model,Dutiesunderduress dutiesunderduress) 
 	{
 		/*String lumbopelvicexam=request.getParameter("lumbopelvicexam");*/
+		
 		DutiesduressForm dutiesduressForm = new DutiesduressForm();       
         dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getDutiesunderduress(dutiesno));
         model.addAttribute("dutiesduressForm",dutiesduressForm);
-        model.addAttribute("menu","duties"); 
+        model.addAttribute("menu","sign");	
 		return "editduties";
 	}
 	@RequestMapping(value="/check_ajax",method=RequestMethod.POST)
@@ -1902,7 +1903,7 @@ if(result.hasErrors())
 		DutiesduressForm dutiesduressForm = new DutiesduressForm();       
         dutiesduressForm.setDutiesunderduressdetails(dutiesDAO.getusernameDutiesunderduress(username));
         model.addAttribute("dutiesduressForm",dutiesduressForm);
-        model.addAttribute("menu","duties"); 
+        model.addAttribute("menu","sign"); 
 		return "editduties";
 	}
 	@RequestMapping(value="/updateduties", method=RequestMethod.POST)
@@ -2163,7 +2164,7 @@ String name="";
 	public String viewingshoulderpainscore(@RequestParam("symptom") String symptom,HttpSession session, ModelMap model) {
 		
 		session.removeAttribute("shoulderpain");
-		model.addAttribute("symptom",symptom);
+		model.addAttribute("menu","sign");
 		return "shoulderpainscore";
  
 	}
@@ -2280,7 +2281,7 @@ String name="";
 		ShoulderpainscoreForm shoulderpainscoreForm = new ShoulderpainscoreForm();       
         shoulderpainscoreForm.setShoulderpainscore(shoulderDAO.getShoulder(shoulderpainno));
         model.addAttribute("shoulderpainscoreForm",shoulderpainscoreForm);
-		 
+        model.addAttribute("menu","sign");
 		return "editshoulderpainscore";
 	}
 	@RequestMapping(value="/updateshoulderpainscore", method=RequestMethod.POST)
