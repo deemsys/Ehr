@@ -131,6 +131,19 @@
             $("#btnNext").show();
         }
     });
+  $("#btnPrevious").live("click", function () {
+      var tabs = $('#tabs').tabs();
+      var c = $('#tabs').tabs("length");
+      currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+      tabs.tabs('select', currentTab);
+      if (currentTab == 0) {
+          $("#btnNext").show();
+          $("#btnPrevious").hide();
+      }
+      if (currentTab < (c - 1)) {
+          $("#btnNext").show();
+      }
+  });
   
   
   </script>
@@ -695,6 +708,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${cervicalexam.sign}" onInput="return validatename(id)";></B><br><span class="err" id="signerror"><form:errors path="Cervicalexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
+<td><input type="submit" class="submit_btn" value="previous" id="btnPrevious"></td>
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>
