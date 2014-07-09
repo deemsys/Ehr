@@ -4194,7 +4194,7 @@ function check(id)
                                   <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Street Address:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="text" class="input_txtbx1" id="streetaddress" name="StreetAddress" value="${patientajax.StreetAddress }"/><br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.streetAddress"></form:errors></span>
+				                  <textarea rows="3" cols="25"  name="StreetAddress" id="streetaddress" placeholder="Address"  onInput="return validatename(id)"; style="width: 171px; ">${patientajax.StreetAddress }</textarea>	<br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.streetAddress"></form:errors></span>
 				                  </td>
 				                </tr>
                                   <tr class="row2">
@@ -4866,7 +4866,7 @@ function check(id)
 				  <input type="radio" name="Hazardous" value="yes" id="Hazardous" class="input_txt" checked="true"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				 
     <!-- <span id="listerror" style="color: red;font-style:italic;"></span> --><input type="radio" name="Hazardous" id="Hazardous1" value="No" class="input_txt"onclick="toggle2('hide2')">No
-			       <label>If yes,Please List: </label><input type="text" id="list" name="Hazardousyes" onInput="return validatename55(id)"; /><span class="err" id="Hazardouserror"></span>
+			       <label> </label><input type="text" id="list" name="Hazardousyes" placeholder="If yes,Please List"  onInput="return validatename55(id)"; /><span class="err" id="Hazardouserror"></span>
 			      </div>
 			      </td>
 				  </tr>
