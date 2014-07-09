@@ -270,7 +270,7 @@ function validatename1(){
                         </table>
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>Signed:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;Signed:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="signed" onInput="return validatename1()"; name="signed"><br><span style="color: red;font-style:italic;" id="signederror"><form:errors path="TreatMinor.signed"></form:errors></span></td>
 				                  <tr> <td></td></tr>

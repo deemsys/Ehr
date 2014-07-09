@@ -223,20 +223,20 @@ function validatename1(){
                         </table>
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>Signed:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;Signed:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="signed" onInput="return validatename1()"; name="signed" value="${Minordetails.signed}"><br><span style="color: red;font-style:italic;" id="signederror"><form:errors path="TreatMinor.signed"></form:errors></span></td>
 				                  <tr> <td></td></tr>
                         
                         </tr>
                         <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Date:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="datepicker" name="pdate" value="${Minordetails.pdate}"/><br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="TreatMinor.pdate"></form:errors></span>
                         </td>
                         </tr>
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Witness: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Witness: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="pwitness" name="pwitness"  onInput="return validatename(id)"; value="${Minordetails.pwitness}"/><br><span id="pwitnesserror" style="color: red;font-style:italic;" ><form:errors path="TreatMinor.pwitness"></form:errors></span>
 				                  	</tr>

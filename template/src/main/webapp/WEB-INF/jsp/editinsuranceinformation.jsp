@@ -488,11 +488,13 @@ document.getElementById("phone").value=phone;
 	             <h2>Editing Health Insurance Information</h2> 
 	            </div>
 	            <div class="contentbox">
+	            
+	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr><br>
+              <p id="mypar" align="center"><b>Patient Information</b></p></tr></table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <c:set value="${InsuranceinformationForm.insuranceinformation[0]}" var="Insuranceinformation"> </c:set>
-              <tr class="row1">
-              <u align="center"><h6>Patient Information</h6></u>
-              </tr>
+            
               <br>
               <tr class="row1">
               <td><span class="err">* </span>Patient's Name:</td>
