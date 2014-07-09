@@ -295,21 +295,21 @@ function validatesign(id)
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
        		  <tr >
-       		  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Print Patients Name
+       		  <td valign="middle" align="left" class="input_txt"> *Print Patient's Name:
               <input type="text" class="input_txtbx1" name="print_pat_name" id="print_pat_name" value="${hard.print_pat_name}"/><span id="print_pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.print_pat_name"></form:errors></span></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Patients Signature&nbsp;&nbsp;&nbsp;
+       		  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Patient's Signature:&nbsp;&nbsp;&nbsp;
               <input type="text" class="input_txtbx1" name="pat_sign" id="pat_sign" value="${hard.pat_sign}"/><span id="pat_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.pat_sign"></form:errors></td>
               </tr>
               </table>
               <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-       		  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Witness Signature&nbsp;&nbsp;&nbsp;  
+       		  <td valign="middle" align="left" class="input_txt"><span class="err"> * </span>Witness Signature&nbsp;:&nbsp;&nbsp;  
               <input type="text" class="input_txtbx1" name="witness_sign" id="witness_sign"  value="${hard.witness_sign}"/><span id="witness_signerror" style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.witness_sign"></form:errors></td>
               </tr>
               </table>
