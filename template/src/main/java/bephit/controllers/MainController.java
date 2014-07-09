@@ -5870,7 +5870,7 @@ String name="";
 	@RequestMapping(value="/soapnotes", method = RequestMethod.POST)
 	public String insert_soapnotes(HttpServletRequest request,HttpSession session,@ModelAttribute("SoapNotes")  @Valid SoapNotes soapnotes,BindingResult result,ModelMap model) {
 		
-		session.setAttribute("soap", soapnotes);
+	//	session.setAttribute("soap", soapnotes);
 		
 		if(result.hasErrors())
 		{
@@ -6043,14 +6043,15 @@ String name="";
 	}
 	@RequestMapping(value="/deletesoapnotes", method=RequestMethod.GET)
 	public String removesoapnotes(@RequestParam("soapid") String soapid,ModelMap model, Principal principal,HttpSession session) {
-	
+		  session.removeAttribute("soapnotes");
 		int status=soapDAO.deletesoapnotes(soapid);
 		if(patientDAO.getUsername((String)session.getAttribute("username")).size()>0)
 		 {
 			 String name=patientDAO.getUsername((String)session.getAttribute("username")).get(0).getName();
 			 model.addAttribute("name",name);
 		 }	
-		if(status==1)
+		model.addAttribute("menu","doctorsearch");
+		/*if(status==1)
 		{
         model.addAttribute("success","true");
 		SoapnotesForm soapnotesForm = new SoapnotesForm();
@@ -6060,9 +6061,9 @@ String name="";
         model.addAttribute("menu", "soapnotes");
         session.removeAttribute("soapnotes");
       
-		}
+		}*/
 		
-		return "soapnotes";
+		return "doctorsearch";
 	}
 
 	}
