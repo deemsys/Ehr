@@ -589,7 +589,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td>&nbsp;&nbsp;</td>
          <td><br><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
          
-         <td><br><button type="reset" class="submit_btn" value="Reset">Reset</button></td>
+       
           <!-- <td valign="top" align="right"><br> <input type="button"   class="submit_btn" value=" Print" onclick="window.print();return false;" /></td> -->
         <td><br><!-- <a href="insuranceplanlist"  class="submit_btn" style="color:white">Cancel</a> --></td>
         <td>&nbsp;&nbsp;</td>

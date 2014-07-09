@@ -747,8 +747,9 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
         <table width="100%">
        <tr>
 	    <td valign="top" align="right" width="500"><br><input type="submit" class="submit_btn" id="saveid" value="Save" onclick ="return checkSubmit('this');"></td>
-      
+    
          <td><br><a href="viewpatient"style="color:white" class="submit_btn" id="cancelid">Cancel</a></td>
+        
      <!--   <td valign="top" align="right"><br> <input type="button"   class="submit_btn" value=" Print" onclick="window.print();return false;" /></td> -->
        <!--  <td>&nbsp;&nbsp;</td>
         <td valign="top" align="center"><br><a href="insuranceinfolist" class="submit_btn" style="color: white">Cancel</a> </td>
