@@ -406,12 +406,12 @@ $(function() {
 	             <h2>Editing Health Insurance Plan</h2> 
 	            </div>
 	            <div class="contentbox">
+	            
+	              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr><br>
+              <p id="mypar" align="center"><b>Notice and Request to Not Bill Private Health Insurer</b></p></tr></table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-               
-              <tr  >
-              <u align="center"><h6>Notice and Request to Not Bill Private Health Insurer</h6></u>
-              </tr>
-               
+             
               <tr class="row1">
               <c:set value="${insuranceplanform.insuranceplan[0]}" var="Insuranceplan"> </c:set>
               <td width="100%"><span class="err">* </span><input type="text" class="input_txtbx1" name="insure_comp" onInput="return validatename()"; id="insure_comp" placeholder="Name of Insurance Company" value="${Insuranceplan.insure_comp}" /><br> <span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors> </td>
@@ -424,8 +424,7 @@ $(function() {
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><br>
-              <p id="mypar" align="center">Re:	SUBSCRIBER/ENROLLEE'S DECISION TO NOT USE INSURANCE 
-		BENEFITS FOR ACCIDENT</p></tr></table>
+              <p id="mypar" align="center"><b>Re:	SUBSCRIBER/ENROLLEE'S DECISION TO NOT USE INSURANCE BENEFITS FOR ACCIDENT</b></p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
         <td ><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername2()"; name="pat_name" id="pat_name" placeholder="Patient's Name" value="${Insuranceplan.pat_name}"/><br><span id="pat_nameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.pat_name"></form:errors> </td>
@@ -455,14 +454,14 @@ $(function() {
         </td>
         </tr>
         <tr>
-        <td >By</td><td><font color="#fff">......................................................0000000000000</font></td>
+        <td > <span class="err">* </span>By: &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername3()"; name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><br><span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.by"></form:errors></td><td><font color="#fff">......................................................0000000000000</font></td>
         </tr> 
          <tr class="row1">
-        <td colspan="2"><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validateusername3()"; name="agentname" id="agentname" placeholder="Authorized Company Representative" value="${Insuranceplan.agentname}"/><br><span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.by"></form:errors></td>
         
-        </tr>
+        
+        </tr><br><br>
         <tr class="row1">
-        <td width="100%"><span class="err">* </span>Please eMail this back  to&nbsp;&nbsp;
+        <td width="100%"><span class="err">* </span>Please Email this Backto:&nbsp;&nbsp;
        <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" value="${Insuranceplan.fax}"/><br><span id="faxerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.fax"></form:errors> </td>
         <td ></td>
        

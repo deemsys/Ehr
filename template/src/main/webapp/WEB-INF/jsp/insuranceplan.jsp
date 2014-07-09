@@ -428,11 +428,13 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 	            <div class="contentbox">
 	            <c:choose>
 	            <c:when test="${empty waiver}">
+	            
+	              <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr><br>
+              <p id="mypar" align="center"><b>Notice and Request to Not Bill Private Health Insurer</b></p></tr></table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
-              
-              <tr  >
-              <u align="center"><h6>Notice and Request to Not Bill Private Health Insurer</h6></u>
-              </tr>
+             
+             
               <tr class="row1">
               <td width="100%"><span class="err">* </span><input type="text" class="input_txtbx1" onInput="return validatename()"; name="insure_comp" id="insure_comp" placeholder="Name of Insurance Company" style="width: 215px; "/> <br><span id="insure_comperror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.insure_comp"></form:errors></span> </td>
               </tr>
@@ -443,8 +445,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr><br>
-              <p id="mypar" align="center">Re:	SUBSCRIBER/ENROLLEE'S DECISION TO NOT USE INSURANCE 
-		BENEFITS FOR ACCIDENT</p></tr></table>
+              <p id="mypar" align="center"><b>Re:	SUBSCRIBER/ENROLLEE'S DECISION TO NOT USE INSURANCE BENEFITS FOR ACCIDENT</b></p></tr></table>
 		<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr class="row1">
         <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="pat_name" onInput="return validateusername2()"; value="${name}" id="pat_name" placeholder="Patient's Name" style="width: 215px; "/> <br><span id="pat_nameerror" style="color: red;font-style:italic;" ><form:errors path="Insuranceplan.pat_name"></form:errors></span></td>
@@ -453,13 +454,13 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="accident_date"  id="datepicker" placeholder="Date of Accident" style="width: 215px; "/> <br><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.accident_date"></form:errors> </span></td>
         </tr>
         <tr class="row1">
-        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" maxlength="18"  onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" style="width: 215px; "/> <br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
+        <td ><span class="err">* </span><input type="text" class="input_txtbx1" name="enrollee" id="enrollee" maxlength="10"  onInput="return validateusername1()"; placeholder="Subscriber/Enrollee No" style="width: 215px; "/> <br><span id="enrolleeerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.enrollee"></form:errors> </span>
         <br><span class="err" id="enrolleeerror"></span>
         </td>
         </tr>
         </table>
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr><br><p id="mypar">To Whomsoever It May Concern:</p></tr>
+        <tr><br><p id="mypar">To Whom It May Concern:</p></tr>
         </table>
         
         
@@ -474,11 +475,11 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <input type="checkbox" name="no_objection" value="no_objection">No Objection<br><br><br></td>
         </tr>
         <tr>
-        <td style="width: 295px; "colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>By&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" onInput="return validateusername3()"; id="agentname"  placeholder="Authorized Company Representative" style="width: 215px; "/><br> <span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
+        <td style="width: 295px; "colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>By:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="agentname" onInput="return validateusername3()"; id="agentname"  placeholder="Authorized Company Representative" style="width: 215px; "/><br> <span id="agentnameerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.agentname"></form:errors>  </td>
         </tr> 
         
         <tr class="row1">
-        <td width="100%"colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Please eMail this back to&nbsp;&nbsp;
+        <td width="100%"colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="err">* </span>Please Email this back to:&nbsp;&nbsp;
         <input type="text" class="input_txtbx1" name="fax" id="fax" placeholder="Clinic's EMail Id" style="width: 215px; "/><br><span id="faxerror" style="color: red;font-style:italic;"></span> <form:errors path="Insuranceplan.fax"></form:errors> </td>
         
         
@@ -491,7 +492,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td style="width: 164px; "></td>
         
         <td align="center"><span class="err">* </span>
-        &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic"  placeholder="Name of clinic" style="width: 155px; "/><br> <span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
+        &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername4()"; name="name_of_clinic" id="name_of_clinic"  placeholder="Name of clinic" style="width: 200px; "/><br> <span id="name_of_clinicerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.name_of_clinic"></form:errors> </td>
         
         </tr>
         <tr class="row1">
@@ -500,7 +501,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <br><span id="paterror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.pat"></form:errors></span> </td>
         
         <td align="center" style="width: 239px; "><span class="err">* </span>
-        &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername5()"; name="authorized" id="authorized" placeholder="Authorized Clinic Representative" style="width: 155px; "/><br>
+        &nbsp;<input type="text" class="input_txtbx1" onInput="return validateusername5()"; name="authorized" id="authorized" placeholder="Authorized Clinic Representative" style="width: 200px; "/><br>
          <span id="authorizederror" style="color: red;font-style:italic;"> <form:errors path="Insuranceplan.authorized"></form:errors></span> </td>
         
         </tr>
@@ -587,6 +588,8 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         <td align="center"><br><input type="submit" class="submit_btn" id="saveid" value="Save" onclick="return checkSubmit('this');"></td>
         <td>&nbsp;&nbsp;</td>
          <td><br><a href="viewpatient"style="color:white" id="cancelid" class="submit_btn">Cancel</a></td>
+         
+         <td><br><button type="reset" class="submit_btn" value="Reset">Reset</button></td>
           <!-- <td valign="top" align="right"><br> <input type="button"   class="submit_btn" value=" Print" onclick="window.print();return false;" /></td> -->
         <td><br><!-- <a href="insuranceplanlist"  class="submit_btn" style="color:white">Cancel</a> --></td>
         <td>&nbsp;&nbsp;</td>
