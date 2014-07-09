@@ -244,7 +244,7 @@ function validatesign()
                         <p id="mypar">Signature below is only acknowledgement that you have received this Notice of our Privacy Practices:</p>
                        
                         <tr class="row1">
-                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>PrintPatientname: </td>
+                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Print Patient name: </td>
 				                  <input type="hidden" class="input_txtbx1" id="inp_id" value="${privacydetails.hippa_no}" name="hippa_no" />
 				                   <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" onInput="return validatename(id);" value="${privacydetails.printpname}"/>
@@ -259,7 +259,7 @@ function validatesign()
 				           </td>
 				         </tr>
 				         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Signature Of parent or Legal Guardian: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Signature of parent or Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" onInput="return validatesign();" value="${privacydetails.legalguardian }"/>
 				                    <br><span id="legalguardianerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.legalguardian"></form:errors>

@@ -248,7 +248,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
                         <p id="mypar">Signature below is only acknowledgement that you have received this Notice of our Privacy Practices:</p>
                        
                         <tr class="row1">
-                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>PrintPatientname: 
+                        <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Print Patient Name: 
 				                  </td>
 				               <td>   	<input type="text" class="input_txtbx1" id="printpname" onInput="return validatename(id);" name="printpname" value="${name}"/>
 				                  	<br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
@@ -261,7 +261,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 				         </span></td>
 				         </tr>
 				         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>Signature Of parent or &nbsp;&nbsp;&nbsp;Legal Guardian: </td>
+				                  <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>Signature of parent or &nbsp;&nbsp;&nbsp;Legal Guardian: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="legalguardian" name="legalguardian" onInput="return validatesign();"/><span id="legalguardianerror" style="color: red;font-style:italic;" ></span>
 				                  	</tr>
@@ -309,7 +309,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
                         <p id="mypar">Signature below is only acknowledgement that you have received this Notice of our Privacy Practices:</p>
                        
                         <tr class="row1">
-                        <td valign="middle" align="left" width="200" class="input_txt"><span class="err">* </span>PrintPatientname: </td>
+                        <td valign="middle" align="left" width="200" class="input_txt"><span class="err">* </span>Print Patient Name: </td>
 				                   <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="printpname" name="printpname" value="${hippa.printpname}"/>
 				                  <br><span id="printpnameerror" style="color: red;font-style:italic;"><form:errors path="HippaPrivacy.printpname"></form:errors>
