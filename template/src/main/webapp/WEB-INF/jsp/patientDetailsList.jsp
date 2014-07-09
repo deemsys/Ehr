@@ -536,7 +536,7 @@
                         
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                 <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>CheckBox if it applies to you,parents,siblings,children</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;&nbsp;CheckBox if it applies to you,parents,siblings,children</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                 <table>
 				                 
@@ -757,10 +757,40 @@
 				        </tr>
 				        <tr class="row1">
 				        	<td><span class="err">* </span>Do You:</td>
-				         	<td>${patientDetails.drink}  ${patientDetails.smoke}
-				         	${patientDetails.drugs}
-				         	${patientDetails.diet}
-				         	${patientDetails.exercise}</td>
+				         	<td>
+				         	<c:choose>
+	            <c:when test="${patientDetails.drink=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.drink}</c:otherwise>
+	          
+	            </c:choose>
+	            
+	            <c:choose>
+	            <c:when test=" ${patientDetails.smoke=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.smoke}</c:otherwise>
+	          
+	            </c:choose>
+	            
+	            <c:choose>
+	            <c:when test=" ${patientDetails.drugs=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.drugs}</c:otherwise>
+	          
+	            </c:choose>
+	            
+	            <c:choose>
+	            <c:when test=" ${patientDetails.diet=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise>${patientDetails.diet}</c:otherwise>
+	          
+	            </c:choose>
+	          
+	            <c:choose>
+	            <c:when test="${patientDetails.exercise=='null'}"><c:out value=""></c:out></c:when>
+	            <c:otherwise> ${patientDetails.exercise}</c:otherwise>
+	          
+	            </c:choose>
+				         	 
+				         	
+				         	
+				         	</td>
 				        </tr>
 				        <tr class="row2">
 				        	<td><span class="err">* </span>Do You Work Around Hazardous Substances:
