@@ -251,7 +251,7 @@ color:#fff;
 			   <a href="#"><img src="<c:url value="/resources/images/title1.png" />" alt="Company Logo" /></a>
 		
 		
-			   <ul class="menu" style="width: 1340">
+			   <ul class="menu" style="width:100% auto;">
 			   </c:when> <c:otherwise>
 			   <div id="main">
 		<div id="header">
@@ -460,7 +460,7 @@ color:#fff;
 	text-transform:uppercase;
 }
 </style> -->
-  <ul class="menu" style="width: 1350">
+  <ul class="menu" style="width:100% auto;">
 <c:choose><c:when test="${visit==0}">
 
 						<li>
