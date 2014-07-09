@@ -265,6 +265,7 @@ function check(id)
 						{
 					if($in==11)
 						{
+						alert("Symptoms cannot add more than 10");
 						var cancel="cancel"+$id;
 						//document.getElementById(symptomid).style.display="none";
 						document.getElementById(cancel).style.display="none";
@@ -848,10 +849,10 @@ function validateusernamepolicy(){
 <script>
 document.getElementById("myText").readOnly = true;
 </script>
- <script>
+<script>
 function checkValid(e)
 {
-	var error="";
+	
 	document.getElementById("nameerror").innerHTML="";
 	if(document.getElementById("name").value=="")
 		{
@@ -947,9 +948,7 @@ function checkValid(e)
 	 return false;
 	
 	}
-	
-	
-	
+		
 	var txt1=document.getElementById("zipcode1").value;
    if( txt1==00000){
    document.getElementById("zipcode1error").innerHTML="Invalid Zipcode format ";
@@ -964,8 +963,7 @@ function checkValid(e)
    return false;
    }
    
-   
-	document.getElementById("homephoneerror").innerHTML="";
+   	document.getElementById("homephoneerror").innerHTML="";
 	if(document.getElementById("homephone").value=="")
 	{
 	document.getElementById("homephoneerror").innerHTML="Required Field Should not be Empty";
@@ -981,7 +979,6 @@ function checkValid(e)
 	
 	}
 var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
-
     
     if(document.getElementById("homephone").value.match(phoneno)==null)
     {
@@ -1087,17 +1084,8 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
 	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 	 return false;
 	}
-	document.getElementById("datepicker1error").innerHTML="";
-	var matches = /(\d{4})[-\/](\d{2})[-\/](\d{2})/.exec(date_val);
-
-    if (document.getElementById("datepicker1").value.match(matches)==null)
-     {
-    	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
-    	 document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
-    	 return false;
-     }
-        
-	/* var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	/* document.getElementById("datepicker1error").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 	if(document.getElementById("datepicker1").value.match(datechk)==null)
     {
     	document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
@@ -1140,7 +1128,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
     }
     
    
-	document.getElementById("EmployerNameerror").innerHTML="";
+	/* document.getElementById("EmployerNameerror").innerHTML="";
 	if(document.getElementById("EmployerName").value!="")
 	{
     if(document.getElementById("EmployerName").value.length<4 || document.getElementById("EmployerName").value.length>=32)
@@ -1151,7 +1139,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
     	 return false;
     }
     }
-	
+	 */
 	/* document.getElementById("Occupationerror").innerHTML="";
 	if(document.getElementById("Occupation").value!="")
 	{
@@ -1163,7 +1151,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
     	return false;
     }
     }   */
-	  document.getElementById("EmployerAddresserror").innerHTML="";
+	  /* document.getElementById("EmployerAddresserror").innerHTML="";
 	if(document.getElementById("EmployerAddress").value!="")
 	{
     if(document.getElementById("EmployerAddress").value.length<4 || document.getElementById("EmployerAddress").value.length>=32)
@@ -1173,7 +1161,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
     	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
     	 return false;
     }
-    } 
+    }  */
 	
 	 /* document.getElementById("workphoneerror").innerHTML="";
 	   if(document.getElementById("workphone").value!="")
@@ -1249,7 +1237,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
     }
     }  
 		 */
-	document.getElementById("SpousesNameerror").innerHTML="";
+	/* document.getElementById("SpousesNameerror").innerHTML="";
 	   if(document.getElementById("SpousesName").value!="")
 	   {
 	
@@ -1301,7 +1289,9 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
 	 return false;
 	
 	}
-	   }
+	   } */
+	   
+	  
 	document.getElementById("Name_frienderror").innerHTML="";
 	if(document.getElementById("Name_friend").value=="")
 	{
@@ -1358,12 +1348,13 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
    document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
    return false;
     }
-   if(error=="true")
+  /*  if(error=="true")
 	   {
 	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 	return false;
-	   }
+	   } */
    else	 {
+	   
 		  document.getElementById("Phone_frienderror").innerHTML="";
 		  document.getElementById('btnvisible1').style.visibility='hidden';
 		  //document.getElementById('btnNext').style.visibility='visible';
@@ -1822,8 +1813,8 @@ if(document.getElementById("datepicker6").value.match(datechk)==null)
 		 {
 		  document.getElementById("datepicker6error").innerHTML="";
 		  document.getElementById('btnvisible1').style.visibility='hidden';
-		  //document.getElementById('btnNext1').style.visibility='visible';
-		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='NEXT' onmouseover='checkValid1(event);'>";		 
+		 // document.getElementById('btnNext1').style.visibility='visible';
+		  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";		 
 		 }
 		
 }
@@ -3662,7 +3653,7 @@ document.getElementById("inp_id").value=phone;
                         </tr> 
                         <tr class="row1">
                         	<td><span class="err">*&nbsp;</span>Street Address:</td>
-							<td class="input_txt"><input type="text" class="input_txtbx1" id="streetaddress"   name="streetAddress" value="${patientDetails.streetAddress }"  onInput="return validatename(id)";/></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
+							<td class="input_txt"><textarea rows="3" cols="25"  name="StreetAddress" id="streetaddress" placeholder="Address"  onInput="return validatename(id)"; style="width: 171px; ">${patientDetails.streetAddress }</textarea></br><span id="streetaddresserror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.StreetAddress"></form:errors></span></td>
                         </tr> 
                         <tr class="row2">
                         	<td><span class="err">*&nbsp;</span>City:</td>
@@ -4193,7 +4184,7 @@ function checkAjaxPost() {
 						</table>
 				                  		<table align="right">
 				                  	 <tr>
-				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous" style = "display:none" />&nbsp;</td>
+				  <td><br><input type="button" id="btnPrevious" class="submit_btn" value="Previous"  />&nbsp;</td>
                   <td>&nbsp;&nbsp;</td>
                   <td id="tblbtn1"><br><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid1(event);"/><br></td>
                   </tr>
@@ -4331,8 +4322,8 @@ function checkAjaxPost() {
 				 						 
 										
 										  <input type="radio" name="hazardous" value="No" class="input_txt"  onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
-			    				  <label>If yes,Please List:</label>
-				 						  <input type="text" class="input_txtbx1"   value="${patientDetails.hazardousyes}" name="hazardousyes" id="hazardousyes1" style='display:none'/></br><span class="err"><form:errors path="PatientDetails.Hazardousyes"></form:errors></span>
+			    				
+				 						  <input type="text" class="input_txtbx1"  placeholder="If yes,Please List"  value="${patientDetails.hazardousyes}" name="hazardousyes" id="hazardousyes1" style='display:none'/></br><span class="err"><form:errors path="PatientDetails.Hazardousyes"></form:errors></span>
 			    				 </td>
 					  </tr>
 					   <tr class="row1">
