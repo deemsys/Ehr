@@ -163,7 +163,7 @@ $(function() {
     
  	 if((document.getElementById("diagonosis").value.length < 4) || (document.getElementById("diagonosis").value.length > 32))
 		{
-		alert("DFGDF");
+		//alert("DFGDF");
 		document.getElementById("diagnosiserr1").innerHtml="Required Field Should between 4 to 32";	
 		error="true";
 		}
@@ -317,7 +317,7 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		 if(error == "true")
 			{
-			 alert("false");
+			// alert("false");
 			return false;
 			}
 		}
