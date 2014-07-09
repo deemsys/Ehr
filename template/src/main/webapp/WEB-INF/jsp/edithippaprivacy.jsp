@@ -23,7 +23,7 @@
 	  <script type="text/javascript">
   function confirmation() 
 	{
-	var answer = confirm("Are you Sure You Want to Delete Participant ?")
+	var answer = confirm("Are you Sure You Want to Delete Patient ?")
 	if (answer){
 		return true;
 	}
