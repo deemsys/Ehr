@@ -3829,6 +3829,7 @@ function validate(){
 						{
 					if($in==11)
 						{
+						alert("Symptoms cannot add more than 10");
 						var cancel="cancel"+$id;
 						//document.getElementById(symptomid).style.display="none";
 						document.getElementById(cancel).style.display="none";

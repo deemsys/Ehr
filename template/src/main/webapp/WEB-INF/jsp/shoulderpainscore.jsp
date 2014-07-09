@@ -6,6 +6,7 @@
 <head>
 <link rel="stylesheet" href="resources/css/jquery-ui.css" type="text/css" />
   <link rel="stylesheet" href="/resources/css/style.css" />
+ <script src="resources/js/jquery.js"></script> 
  <script src="resources/js/jquery.min.js"></script> 
  <script src="resources/js/jquery-ui.js"></script>
  <script src="resources/js/jquey-1.9.1.js"></script>
@@ -120,6 +121,103 @@ $(function() {
     }
      
     }
+	</script>
+	<script>
+	 $("#btnNext").live("click", function () {
+		 var currentTab=0;
+	     var tabs = $('#tabs').tabs();
+	     var c = $('#tabs').tabs("length");
+	     currentTab = currentTab == (c - 1) ? currentTab : (currentTab + 1);
+	     tabs.tabs('select', currentTab);
+	     $("#btnPrevious").show();
+	     if (currentTab == (c - 1)) {
+	         $("#btnNext").hide();
+	     } else {
+	         $("#btnNext").show();
+	     }
+	 });
+	 $("#btnPrevious").live("click", function () {
+	        var tabs = $('#tabs').tabs();
+	        var c = $('#tabs').tabs("length");
+	        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+	        tabs.tabs('select', currentTab);
+	        if (currentTab == 0) {
+	            $("#btnNext").show();
+	            $("#btnPrevious").hide();
+	        }
+	        if (currentTab < (c - 1)) {
+	            $("#btnNext").show();
+	        }
+	    });
+	</script>
+	<script>
+	function checkSubmitpage1(e)
+	{
+		var error="";
+		document.getElementById("pnameerror").innerHTML=" ";
+	
+	if(document.getElementById("pname").value=="")
+	{
+	document.getElementById("pnameerror").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	
+	document.getElementById("pnameerror").innerHTML="";
+    if(document.getElementById("pname").value.length<4 || document.getElementById("pname").value.length>=32)
+    {
+    	
+    	document.getElementById("pnameerror").innerHTML="Name should be of length 4 to 32";
+    	
+    	error="true";
+    }
+
+document.getElementById("number1error").innerHTML=" ";
+	
+	if(document.getElementById("number1").value=="")
+	{
+	document.getElementById("number1error").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	document.getElementById("datepickererror").innerHTML="";
+	
+	if(document.getElementById("datepicker").value=="")
+	{
+	document.getElementById("datepickererror").innerHTML="Required Field Should not be Empty";
+	
+	error="true";
+	}
+	document.getElementById("datepickererror").innerHTML="";
+	var datechk = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	if(document.getElementById("datepicker").value.match(datechk)==null)
+    {
+    	document.getElementById("datepickererror").innerHTML="Invalid Date Format";
+    	
+    	error="true";
+    }
+	document.getElementById("datepicker1error").innerHTML="";
+var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
+	
+	
+	if (document.getElementById("datepicker1").value !="") {
+	  if (re.test(document.getElementById("datepicker1").value) == false) {
+		  document.getElementById("datepicker1error").innerHTML="Invalid Date Format";
+		  error="true";
+	  }
+	}
+	
+	if(error=="true")
+	{
+	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkSubmitpage1(event);'>";
+
+	return false;
+	}
+else
+	{
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnNext' class='submit_btn' value='Next'>";
+	}
+	}
 	</script>
   <script>
 
@@ -301,7 +399,11 @@ function validatename(id){
 </tr>
 <tr height="30">
 <td><div id="slider" style="width: 827px; "></div> </td>
+
+ 
 </tr>
+<tr>
+<td align="right"><span id="tblbtn"><input type="button" class="submit_btn" value="Next" onmouseover="checkSubmitpage1(event);"/></span></td></tr>
 </table>
 <!-- <td>
 <div id="slider"></div>
