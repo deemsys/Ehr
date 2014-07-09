@@ -437,6 +437,7 @@
               </tr>
               <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Save"></td>
+				                   <td><a href="hamiltonchiropractic" style="color:white" class="submit_btn" value="cancel" id="cancelid">Cancel</a></td>
 				                   </tr>
 				                   </table>
               </table>
