@@ -508,7 +508,7 @@ function doAjaxPost() {
   <!-- <script>
 i=0;
 $(document).ready(function(){
-  $("#fax").keypress(function(){
+  $("#:").keypress(function(){
 var phone=document.getElementById("fax").value;
 phone = phone.replace(/(\d{3})(\d{3})(\d+)/, '($1)$2-$3');
 document.getElementById("fax").value=phone;
@@ -580,7 +580,7 @@ document.getElementById("fax").value=phone;
               <br>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="(513)421-2764" name="fax" id="fax" maxlength="12" onkeypress="return validate(event)";><br>&nbsp;&nbsp;&nbsp;<span class="err" id="faxerror"></span></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="(513)421-2764" name="fax" id="fax" maxlength="12" onkeypress="return validate(event)";><br>&nbsp;&nbsp;&nbsp;<font size="+1" color="red"><span  id="faxerror"></span></font></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>

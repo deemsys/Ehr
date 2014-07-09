@@ -46,7 +46,16 @@
             <p><img alt="Success" src="images/icons/icon_success.png"><span>Success!</span>.</p>
           </div>
       </tr> 
-      <tr>
+      <tr><script>
+      function validation()
+      {
+    	  if(document.getElementById("username").value=="")
+    		  {
+    		  alert("Required Field should not be empty");
+    		 return false;
+    		  }
+      }
+      </script>
         <td valign="top" align="left">
         	<div id="search_div">
 	            <div class="headings altheading">
@@ -55,9 +64,9 @@
 	            <div class="contentbox">
 	           <table cellpadding="0" cellspacing="0" border="0" width="100%">
 	            <tr class="row1">
-	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please Enter Patient &nbsp;&nbsp;UserName:</td>
+	             <td valign="middle" align="left" class="input_txt" width="250"><span class="err">*</span> Please Enter Patient UserName:</td>
 				  <td valign="top" align="left" class="input_txt" width="200">
-				   <input type="text" class="input_txtbx1" id="inp_id" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
+				   <input type="text" class="input_txtbx1" id="username" name="username" /><br/><span class="err"><form:errors path="Doctorsearch.emailid"></form:errors></span>
 				  </td>
 				  </tr>
 				
@@ -65,7 +74,7 @@
 				   <br>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr >
-              <td valign="top" align="center"><input type="submit" class="submit_btn" value="Submit"></td>
+              <td valign="top" align="center"><input type="submit" onclick="return validation()" class="submit_btn" value="Submit"></td>
              <td><a href="viewallpatientdetails" class="submit_btn" style="text-decoration: none;color: white">Cancel</a></td>
               </tr>
               </table>

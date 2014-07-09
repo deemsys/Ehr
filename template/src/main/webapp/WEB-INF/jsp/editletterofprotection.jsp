@@ -266,7 +266,7 @@ $(function() {
              </table><br><br>
              <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td  width="62"><span class="err">*</span> Dear Dr</td>
+              <td  width="56"><span class="err">*</span> Dear Dr</td>
               <td  height="25" width="160" ><input type="text" class="input_txtbx1" name="dearsir" value="${letterofprotectiondetails.dearsir}"  id="dearsir" onInput="return validatename(id)";/><br><font size="+1" color="red"><span  id="suberr"></font><form:errors path="noticeofassignment.address"></form:errors>
            </span></td></tr>	
              </table>
