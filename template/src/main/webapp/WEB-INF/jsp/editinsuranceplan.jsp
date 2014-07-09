@@ -419,7 +419,7 @@ $(function() {
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <span class="err">* </span><input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" value="${Insuranceplan.addr}"/><br><span id="addrerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.addr"></form:errors> </td>
+              <span class="err">* </span><textarea rows="3" cols="25" name="addr" id="addr" placeholder="Address"  style="width: 171px; ">${Insuranceplan.addr}</textarea><br><span id="addrerror" style="color: red;font-style:italic;"></span><form:errors path="Insuranceplan.addr"></form:errors> </td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">

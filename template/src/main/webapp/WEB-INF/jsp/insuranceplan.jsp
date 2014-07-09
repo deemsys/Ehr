@@ -440,7 +440,7 @@ var mail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
               </tr>
               <tr class="row1"> 
               <td width="100%">
-              <span class="err">* </span><input type="text" class="input_txtbx1" name="addr" id="addr" placeholder="Address" style="width: 215px; "/> <br><span id="addrerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.addr"></form:errors> </span></td>
+              <span class="err">* </span><textarea rows="3" cols="25"  name="addr" id="addr" placeholder="Address"  style="width: 215px; "></textarea> <br><span id="addrerror" style="color: red;font-style:italic;"><form:errors path="Insuranceplan.addr"></form:errors> </span></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
