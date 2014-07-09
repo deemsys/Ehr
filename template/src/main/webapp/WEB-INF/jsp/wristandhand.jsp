@@ -825,9 +825,9 @@ function validatename(id){
 	     <c:choose>
 <c:when test="${empty wristdetails}">
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="130"><span class="err">*</span>Patient Name:</td>
+           <tr><td width="130"><span class="err">*</span>&nbsp;&nbsp;Patient Name:</td>
            <td width="200"><input type="text" name="pname" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="wristexamdetails.pname"></form:errors></td><td width="650"></td>
-           <td width="50"><span class="err">*</span>Date:&nbsp;</td> <td width="200"><input type="text" name="date" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="wristexamdetails.date"></form:errors></td>
+           <td width="50"><span class="err">*</span>&nbsp;&nbsp;Date:&nbsp;</td> <td width="200"><input type="text" name="date" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="wristexamdetails.date"></form:errors></td>
            </tr>
             </table>
             </br>
@@ -998,7 +998,7 @@ function validatename(id){
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="signature" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors></div>
            </c:when>
            <c:otherwise>
            <table cellpadding="0" cellspacing="0" border="0">

@@ -544,13 +544,13 @@ document.getElementById("pnameerror").innerHTML=" ";
 											var="wristexamdetails" />
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tr>
-												<td width="130"><span class="err">*</span>Patient Name:</td>
+												<td width="130"><span class="err">*</span>&nbsp;Patient Name:</td>
 												<td width="200"><input type="hidden" name="wristexamno"
 													value="${wristexamdetails.wristexamno}" /><input type="text" value="${wristexamdetails.pname}" name="pname" id="pname" onInput="return validatename(id)";>
 													<br><span class="err" id="pnameerror"><form:errors path="wristexamdetails.pname"></form:errors>
 													</td>
 												<td width="650"></td>
-												<td width="50"><span class="err" >*</span>Date:&nbsp;</td>
+												<td width="50"><span class="err" >*</span>&nbsp;Date:&nbsp;</td>
 												<td width="200"><input type="text" name="date"
 													value="${wristexamdetails.date}" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="wristexamdetails.date"></form:errors></td>
 											</tr>
@@ -1110,7 +1110,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 									</table>
 									</br>
 									<div>
-										<B style="font-size: 14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+										<B style="font-size: 14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
 											type="text" value="${wristexamdetails.signature}" name="signature" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="wristexamdetails.signature"></form:errors>
 									</div>
 
