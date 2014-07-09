@@ -261,19 +261,19 @@ The Sheffield Village Plaza
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span> Regarding:</td>
-              <td ><input type="text" class="input_txtbx1" name="reg"  value="${perrychiropracticdetails.reg}"  id="reg" onInput="return validatename(id)";/><span class="err" id="regerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="reg"  value="${perrychiropracticdetails.reg}"  id="reg" onInput="return validatename(id)";/><span  id="regerror" style="color: red;font-style:italic;" ><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*</span> Patient's Name/ Name of Person Entitled To Coverage: </td>
-              <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" onInput="return validatename(id)";/><span class="err" id="nameofpersonerror"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="nameofperson" value="${perrychiropracticdetails.nameofperson}"   id="nameofperson" onInput="return validatename(id)";/><span id="nameofpersonerror"  style="color: red;font-style:italic;"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="50%"><span class="err">*&nbsp;</span>Date of Accident: </td>
-              <td ><input type="text" class="input_txtbx1" name="dateofaccident"  value="${perrychiropracticdetails.dateofaccident}" id="datepicker" /><span class="err" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
+              <td ><input type="text" class="input_txtbx1" name="dateofaccident"  value="${perrychiropracticdetails.dateofaccident}" id="datepicker" /><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Hardshipagreement.date"></form:errors></td>
               </tr>
               </table>
               
@@ -291,7 +291,7 @@ The Sheffield Village Plaza
      </p>
      <br>
      
-  <p><span class="err" id="subjecterror"  style="color: red;font-style:italic;">*</span>&nbsp;<input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" onInput="return validatename(id)";/> has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
+  <p><span  style="color: red;font-style:italic;">*</span>&nbsp;<input type="text" class="input_txtbx1" name="subject" value="${perrychiropracticdetails.subject}"   id="subject" onInput="return validatename(id)";/> <span  id="subjecterror"  style="color: red;font-style:italic;"></span>has sought medical treatment from this clinic.  This patient has been injured to an extent where the patient has determined that they cannot afford to pay for treatment on a fee for service basis.  We would definitely prefer to simply render the required treatment on a fee for service basis.  However, because fees for service presents a hardship to this patient, we have agreed to postpone payment for treatment pursuant to the attached medical proceeds assignment. </p>	
  <br>
      
 

@@ -261,7 +261,7 @@ return false;
           <tr height="30">
           <input type="hidden" class="input_txtbx1" id="inp_id" value="${copyofrequest.copyofrequestno}" name="copyofrequestno" />
           <td><span class="err">*</span> Patients Attorney or Insurance Adjuster: </td>
-          <td><input type="text"  class="input_txtbx1" name="patient" size="40" value="${copyofrequest.patient}" id="patient" onInput="return validatename(id)";><br/><span class="err" id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
+          <td><input type="text"  class="input_txtbx1" name="patient" size="40" value="${copyofrequest.patient}" id="patient" onInput="return validatename(id)";><br/><span id="patienterror"  style="color: red;font-style:italic;"><form:errors path="Copyofrequest.patient"></form:errors></span></td>
           </tr>   
           <tr height="30">
           <td><span class="err">&nbsp;</span>Address: </td>
