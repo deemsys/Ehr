@@ -431,6 +431,10 @@ document.getElementById("datepicker3error").innerHTML="";
             <div class="contentbox">
             <c:choose>
             <c:when test="${empty assignment}">
+            
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr><br>
+              <p id="mypar" align="center"><b>AOB-LIEN RELEASE OF RECORDS</b></p></tr></table>
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<tr>
     				<td align="left" valign="top" width="100%" style="padding-right:25px;">
@@ -438,7 +442,7 @@ document.getElementById("datepicker3error").innerHTML="";
                         <table cellpadding="0" cellspacing="0" border="0" width="70%">
                         <tr>
                         <div align="justify">
-				                <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day"  onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
+				                <p id="mypar">&nbsp;This agreement made this the <input type="text" class="input_txtbx1" id="day" name="day"  onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
 				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
 				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>

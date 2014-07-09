@@ -409,6 +409,9 @@ document.getElementById("datepicker3error").innerHTML="";
 	            <div class="headings altheading">
 	              <h2>Editing Authorization To Release Records/Assignment Of Benefits</h2>
 	            </div>
+	             <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr><br>
+              <p id="mypar" align="center"><b>AOB-LIEN RELEASE OF RECORDS</b></p></tr></table>
             <div class="contentbox">
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
   				<c:set value="${AssignmentDetailsForm.assignmentDetails[0]}" var="assignmentdetails"> </c:set>
@@ -420,7 +423,7 @@ document.getElementById("datepicker3error").innerHTML="";
                         <div align="justify">
                         <input type="hidden" class="input_txtbx1" id="inp_id" value="${assignmentdetails.assignment_no}" name="assignment_no" />
                           
-				                  <p id="mypar">&nbsp;This agreement made this the: <input type="text" class="input_txtbx1" id="day" name="day" value="${assignment.day }" onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
+				                  <p id="mypar">&nbsp;This agreement made this the <input type="text" class="input_txtbx1" id="day" name="day" value="${assignment.day }" onInput="return validatename(id)";/><span id="dayerror" style="color: red;font-style:italic;"><form:errors path="Assignment.day"></form:errors></span>
 				                  	  
 				                  	day of <input type="text" class="input_txtbx1" id="month" name="month" value="${assignment.month}" onInput="return validatename(id)";/><span id="montherror" style="color: red;font-style:italic;"><form:errors path="Assignment.month"></form:errors></span>
 				                  	2013 between <input type="text" class="input_txtbx1" id="year" name="year" value="${assignment.year}" onkeypress="return validate55(event)";/><span id="yearerror" style="color: red;font-style:italic;"><form:errors path="Assignment.year"></form:errors></span>
@@ -452,7 +455,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
                        </tr>
                        <tr class="row1">
                        
-				                  <td valign="top" align="left" class="input_txt"><span class="err">*  </span>PatientName: </td>
+				                  <td valign="top" align="left" class="input_txt"><span class="err">*  </span>Patient Name: </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                
 				                  	<input type="text" class="input_txtbx1" id="patientname" name="patientname" value="${assignmentdetails.patientname}" onInput="return validatename(id);"/><br><span id="patientnameerror" style="color: red;font-style:italic;"><form:errors path="Assignment.patientname"></form:errors>
@@ -483,7 +486,7 @@ and exclusively in the name of Perry Chiropractic and Therapy Center, such sums 
 				                  	</tr> 
 				                  	
 				                  	<tr class="row1">
-				                  <td valign="top" align="left" class="input_txt"><span class="err">* </span>Perry Chiropractic and Therapy Center Representative:  </td>
+				                  <td valign="top" align="left" class="input_txt"><span class="err">* </span>Perry Chiropractic and Therapy Center &nbsp;&nbsp;Representative:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="representative" name="representative" value="${assignmentdetails.representative}" onInput="return validatename(id);" /><br><span id="representativeerror" style="color: red;font-style:italic;"><form:errors path="Assignment.representative"></form:errors>
 				                  	<td valign="top" align="left" class="input_txt"><span class="err">* </span>Date:  </td>
