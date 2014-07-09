@@ -951,9 +951,9 @@ function validatename(id){
           <table cellpadding="0" cellspacing="0" border="0" width="98%">
            
  <tr class="row1">
-<td style="width: 172px; "><h4><span class="err">* </span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td style="width: 172px; "><h4><span class="err">* </span> Patient Name:</h4></td><td style="width: 192px; "><input type="text"  name="pname" id="pname" onInput="return validatename(id)";/><br><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600" style="width: 265px; ">
-<td style="width: 73px; "><h4><span class="err">* </span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td style="width: 73px; "><h4><span class="err">* </span> Date:</h4></td><td><input type="text"  id="datepicker" name="date" /><br><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>

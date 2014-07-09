@@ -1530,9 +1530,9 @@ window.onload = function()
           <c:set value="${dutiesduressForm.dutiesunderduressdetails[0]}" var="dutiesunderduressdetails"/> 
  <tr class="row1">
  <input type="hidden" name="dutiesno" id="inp_id" value="${dutiesunderduressdetails.dutiesno}">
-<td><h2><span class="err">* </span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${dutiesunderduressdetails.pname }" onInput="return validatename(id)";/><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span>Patient Name:</h2></td><td><input type="text"  name="pname" id="pname" value="${dutiesunderduressdetails.pname }" onInput="return validatename(id)";/><br><span class="err" id="pnameerr"><form:errors path="Dutiesunderduress.pname"></form:errors></span></td>
 <td width="600">
-<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
+<td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${dutiesunderduressdetails.date }"/><br><span class="err" id="dateerr"><form:errors path="Dutiesunderduress.date"></form:errors></span></td>
 </tr>
 </table>
 <br/>
