@@ -1232,9 +1232,9 @@ function validatename(){
 	     <div class="contentbox">
 	  <c:set value="${symptomform.symptomdetails[0]}" var="symptomdetails"/>
           <table cellpadding="0" cellspacing="0" border="0" width="100%" height="20">
-          <tr><td width="5%" ><span class="err">* </span>Name</td><td ><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" onInput="return validatename()"; id="pname" value="${symptomdetails.pname} "><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="symptom.pname"></form:errors></td>
-<td  width="5%">Number</td><td ><input type="text" name="number" value="${symptomdetails.number}" id="number" onkeypress="return validate(event)";><span id="numbererror" style="color: red;font-style:italic;"></span></td>
-<td width="5%"><span class="err">* </span>Date</td><td ><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="symptom.date"></form:errors></td>
+          <tr><td width="5%" ><span class="err">* </span>Name:</td><td ><input type="hidden" name="symptomno" value="${symptomdetails.symptomno} "><input type="text" name="pname" onInput="return validatename()"; id="pname" value="${symptomdetails.pname} "><span id="pnameerror" style="color: red;font-style:italic;"><form:errors path="symptom.pname"></form:errors></td>
+<td  width="5%">Number:</td><td ><input type="text" name="number" value="${symptomdetails.number}" id="number" onkeypress="return validate(event)";><span id="numbererror" style="color: red;font-style:italic;"></span></td>
+<td width="5%"><span class="err">* </span>Date:</td><td ><input type="text" name="date" value="${symptomdetails.date}" id="datepicker"><span id="datepickererror" style="color: red;font-style:italic;"><form:errors path="symptom.date"></form:errors></td>
 </tr></table>
 </br>
 <table cellpadding="0" cellspacing="0" border="0" width="98%" >
