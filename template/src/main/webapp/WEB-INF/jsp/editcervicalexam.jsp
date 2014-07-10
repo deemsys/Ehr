@@ -268,7 +268,7 @@ element.style.display='none';
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
-		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		else if(document.getElementById("pname").value.length<4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
@@ -708,7 +708,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${cervicalexam.sign}" onInput="return validatename(id)";></B><br><span class="err" id="signerror"><form:errors path="Cervicalexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
-<td><input type="submit" class="submit_btn" value="previous" id="btnPrevious"></td>
+<!-- <td><input type="submit" class="submit_btn" value="previous" id="btnPrevious"></td> -->
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>
