@@ -304,7 +304,7 @@ $(function() {
             $("#btnNext").show();
         }
     });
-    $("#btnPrevious").live("click", function () {
+    /* $("#btnPrevious").live("click", function () {
         var tabs = $('#tabs').tabs();
         var c = $('#tabs').tabs("length");
         currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
@@ -316,7 +316,7 @@ $(function() {
         if (currentTab < (c - 1)) {
             $("#btnNext").show();
         }
-    });
+    }); */
 </script>
 
  <STYLE type="text/css">
@@ -351,7 +351,7 @@ $(function() {
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
-		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		else if(document.getElementById("pname").value.length<4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
