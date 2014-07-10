@@ -639,22 +639,26 @@ function checkValid(e)
 <script>
 function checkValid1(e)
 {
-
-	
-	document.getElementById("injuryerror").innerHTML=""; 
-	if(document.getElementById("injury").value!="")
+/* 
+	if(document.getElementById("further_injury").checked)
 	{
+		if(document.getElementById("injury").value=="")
+		{
+		document.getElementById("injuryerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+		return false;
+		}
 		if(document.getElementById("injury").value.length<4 || document.getElementById("injury").value.length>=32)
 	    {
 	    	
 	    	document.getElementById("injuryerror").innerHTML="Should be of length 4 to 32";
-	    	
-	       
-	   
+	    		       	   
 	    	  document.getElementById('tblbtn1').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid1(event);'>";
+	    	  return false;
 	    }
-	    
-	    }
+		
+	} */
+	
 	 else
 		 {
 		  document.getElementById("injuryerror").innerHTML="";
@@ -668,15 +672,6 @@ function checkValid1(e)
  <script>
 function checkValid2(e){
 	
-	
-	document.getElementById("estimateddamageerror").innerHTML="";
-	if(document.getElementById("estimateddamage").value=="")
-	{
-	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
-	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
-	return false;
-	}
-	
 	if(document.getElementById("unconscious").checked)
 	{
 		if(document.getElementById("uncon").value=="")
@@ -686,6 +681,17 @@ function checkValid2(e){
 		return false;
 		}
 	}
+	
+	
+	document.getElementById("estimateddamageerror").innerHTML="";
+	if(document.getElementById("estimateddamage").value=="")
+	{
+	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+	return false;
+	}
+	
+	
 	document.getElementById("head_hiterror").innerHTML="";
 	if(document.getElementById("head_hit").value!="")
 	{
@@ -1921,9 +1927,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr>  -->
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did this cause further injury: </td>
-				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" id="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
-				  <textarea rows='3' cols='35' id="injury" name="injurytext" onInput="return validatename(id)"; min="4" maxlength="32" placeholder="Please explain"></textarea>
+				  <textarea rows='3' cols='35' id="injury" name="injurytext" onInput="return validatename(id)"; min="4" maxlength="32" placeholder="Please explain"></textarea><br><span id="injuryerror" style="color: red;font-style:italic;">
 				  </td>
 				  </tr>
 				  
@@ -2066,7 +2072,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Unconscious:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="unconscious" id="unconscious" value="yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" placeholder="If yes, unconscious for (minutes) " onkeypress="return validate(event)";  maxlength="18" style="width: 222px; "/> <span id="unconerror" style="color: red;font-style:italic;">
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" placeholder="If yes, unconscious for (minutes) " onkeypress="return validate(event)";  maxlength="18" style="width: 222px; "/><br> <span id="unconerror" style="color: red;font-style:italic;">
 			      </td><td width="55"></td>
 				  </tr>
 				  <tr class="row1">

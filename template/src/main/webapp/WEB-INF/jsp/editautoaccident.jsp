@@ -610,6 +610,24 @@ function checkValid(e)
 <script>
 function checkValid2(e){
 	
+	if(document.getElementById("unconscious").checked)
+	{
+		if(document.getElementById("uncon").value=="")
+		{
+		document.getElementById("unconerror").innerHTML="Required Field Should not be Empty";
+		document.getElementById('uncon').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+		return false;
+		}
+	}
+	document.getElementById("estimateddamageerror").innerHTML="";
+	if(document.getElementById("estimateddamage").value=="")
+	{
+	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
+	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
+	return false;
+	}
+	
+	
 	 document.getElementById("head_hiterror").innerHTML="";
 	if(document.getElementById("head_hit").value!="")
 	{
@@ -714,13 +732,7 @@ function checkValid2(e){
     }
     } 
 	
-	document.getElementById("estimateddamageerror").innerHTML="";
-	if(document.getElementById("estimateddamage").value=="")
-	{
-	document.getElementById("estimateddamageerror").innerHTML="Required Field Should not be Empty";
-	document.getElementById('tblbtn2').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid2(event);'>";
-	return false;
-	}
+
 	else
 	 {
 	  document.getElementById("estimateddamageerror").innerHTML="";
@@ -1718,9 +1730,9 @@ document.getElementById('mytext').style.display="block";
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Unconscious:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="unconscious" id="unconscious" value="yes" class="input_txt" id="unconcheck"onclick="toggle4();" <c:if test="${autoaccident.unconscious=='yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4();" <c:if test="${autoaccident.unconscious=='no'}"><c:out value="Checked"/></c:if> >No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.unconscious"></form:errors></span>
-			      <input type="text" class="input_txtbx1" id="uncon" name="uncon"  placeholder="If yes, unconscious for (minutes) " onkeypress="return validate(event)";  maxlength="18"; value="${autoaccident.uncon }"  style='display:none'> <span class="err"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
+			      <input type="text" class="input_txtbx1" id="uncon" name="uncon"  placeholder="If yes, unconscious for (minutes) " onkeypress="return validate(event)";  maxlength="18"; value="${autoaccident.uncon }"  style='display:none'>  <br><span id="unconerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.uncon"></form:errors></span></input>
 			      </td>
 				  </tr>
 				  <script>
