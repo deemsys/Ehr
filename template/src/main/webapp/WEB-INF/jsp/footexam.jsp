@@ -344,7 +344,7 @@ function validatename(id){
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
-		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		else if(document.getElementById("pname").value.length<4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
@@ -911,9 +911,9 @@ function validatename(id){
 	     <br>
 <br>
           <table cellpadding="0" cellspacing="0" border="0" >
-           <tr><td width="200"><span class="err">*</span>Patient Name:</td>
+           <tr><td width="200"><span class="err">*</span>&nbsp;&nbsp;Patient Name:</td>
            <td width="200"><input type="text" name="pname" id="pname" onInput="return validatename(id)";><br><span class="err" id="pnameerror"><form:errors path="footexamdetails.signature"></form:errors></td><td width="635"></td>
-           <td width="50"><span class="err">*</span>Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="footexamdetails.signature"></form:errors></td>
+           <td width="50"><span class="err">*</span>&nbsp;&nbsp;Date:&nbsp;</td> <td><input type="text" name="date" id="datepicker"><br><span class="err" id="datepickererror"><form:errors path="footexamdetails.signature"></form:errors></td>
            </tr>
             </table>
             </br>
@@ -1082,7 +1082,7 @@ function validatename(id){
                       
            </table>
            </br>
-           <div><B style="font-size:14px"><span class="err">*</span>PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sign" name="signature" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="footexamdetails.signature"></form:errors></div>
+           <div><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sign" name="signature" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="footexamdetails.signature"></form:errors></div>
            
          </c:when>
          <c:otherwise>
