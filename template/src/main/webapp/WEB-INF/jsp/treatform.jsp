@@ -203,7 +203,7 @@ document.getElementById("patientsnameerror").innerHTML=" ";
                         </tr>
                         
                         <tr class="row1">
-				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>PatientsName: </td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patients Name: </td>
 				                  <td valign="top" align="left" class="input_txt" width="200">
 				                  	<input type="text" class="input_txtbx1" id="patientsname" name="patientsname" onInput="return validatename()"; value="${name}"/><br><span id="patientsnameerror" style="color: red;font-style:italic;"><form:errors path="Treatform.patientsname"></form:errors></span></td>
 				                  	</tr>

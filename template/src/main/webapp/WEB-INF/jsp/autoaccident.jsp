@@ -2230,7 +2230,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </td>
 				  </tr> 
 				  <tr class="row2">
-                  <td valign="middle" align="left" class="input_txt" style="width: 503px; ">&nbsp;&nbsp;What body parts were x-rayed, what treatment was given?
+                  <td valign="middle" align="left" class="input_txt" style="width: 503px; ">&nbsp;&nbsp;What body parts were x-rayed, what treatment &nbsp;&nbsp;was given?
 				  </td><td>
 				  <input type="text" class="input_txtbx1" id="xray" onInput="return validatename(id)";min="4" maxlength="32" name="xray" /><span id="xrayerror" style="color: red;font-style:italic;"> </span>
 				  </td>
