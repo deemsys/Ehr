@@ -170,7 +170,19 @@ $(function() {
         }
     });
   
-  
+  $("#btnPrevious").live("click", function () {
+	        var tabs = $('#tabs').tabs();
+	        var c = $('#tabs').tabs("length");
+	        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+	        tabs.tabs('select', currentTab);
+	        if (currentTab == 0) {
+	            $("#btnNext").show();
+	            $("#btnPrevious").hide();
+	        }
+	        if (currentTab < (c - 1)) {
+	            $("#btnNext").show();
+	        }
+	    });
   </script>
   <script>
   function validatename(id){
@@ -633,6 +645,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE:</B> </td><td><input type="text" name="sign" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="Elbowexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
+<td><input type="button" id="btnPrevious" class="submit_btn" name="Previous1" value="Previous" /></td>
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
