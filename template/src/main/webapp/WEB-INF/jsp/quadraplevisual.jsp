@@ -167,7 +167,7 @@
   });
 $(function() {
     $( "#slider1" ).slider({
-      value:0,
+      value:1,
       min: 0,
        max: 10,
         step: 1,
@@ -235,12 +235,12 @@ $(function() {
 	        if(document.getElementById("amount3").value==0)
 	        {
 	        document.getElementById("amount3err").innerHTML="No Pain";
-	        return false;
+	        //return false;
 	        }
 	         if(document.getElementById("amount3").value==10)
 	        {
 	        document.getElementById("amount3err").innerHTML="Severe Pain";
-	        return false;
+	        //return false;
 	        }
 	      }
 	    });
@@ -352,6 +352,18 @@ function validatename(id){
   	
       return false;
   }
+	
+	 document.getElementById("painnameerror").innerHTML="";
+		if(document.getElementById("painname").value==0)
+		{
+
+			document.getElementById("painnameerror").innerHTML="Required Field Should not be Empty";
+			
+		return false;
+
+		}
+		
+		
 	document.getElementById("otherpainnameerror").innerHTML="";
 	if(document.getElementById("otherpainname").value!="")
 	{
@@ -509,9 +521,9 @@ function checkLength1(){
 	            
 	             <table>
 	             <tr height="30">
-	             <td width="100"><span class="err">* </span>Name:</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name" onInput="return validatename(id)"><span style="color: red;font-style:italic;" id="nameerror"></span></td>
-	             <td width="100">Number</td><td width="400"><input type="text" name="number" id="number" onkeypress="return validate(event)"; ><span id="numbererror"></span></td>
-	             <td width="100"><span class="err">* </span>Date:</td><td width="400"><input type="text"  name="date" id="datepicker" /><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
+	             <td width="100"><span class="err">* </span>Name:</td><td width="400"><input type="hidden" name="patient_id" value="${patientid}"><input type="hidden" name="symptom" id="symptom" value="${symptom}"><input type="text" name="name" id="name" onInput="return validatename(id)"><br><span style="color: red;font-style:italic;" id="nameerror"></span></td>
+	             <td width="100">Number</td><td width="400"><input type="text" name="number" id="number" onkeypress="return validate(event)"; ><br><span id="numbererror"></span></td>
+	             <td width="100"><span class="err">* </span>Date:</td><td width="400"><input type="text"  name="date" id="datepicker" /><br><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
 	             </tr>
 	             </table>
 	             <table>
@@ -521,7 +533,7 @@ function checkLength1(){
 	             </table>
 	             <table>
 	             <tr height="30">
-	             <td>Pain Name : <select name="painname" id="painname" onchange="doajax()">
+	             <td><span class="err">* </span>Pain Name : <select name="painname" id="painname" onchange="doajax()">
 	             <option value="">--Select--</option>
 	             <option value="Wrist/Hand">Wrist/Hand</option>
 	              <option value="Low Back">Low Back</option>
@@ -529,7 +541,7 @@ function checkLength1(){
 	              <option value="Oswestry">Oswestry</option>
 	              <option value="Shoulder">Shoulder</option>
 	               <option value="Other">Other</option>
-	             </select> <input type="text" name="otherpainname" id="otherpainname" style="display: none" onInput="return validatename(id)";><span style="color: red;font-style:italic;" id="otherpainnameerror"></span> </td>
+	             </select> <span style="color: red;font-style:italic;" id="painnameerror"></span><input type="text" name="otherpainname" id="otherpainname" style="display: none" onInput="return validatename(id)";><br><span style="color: red;font-style:italic;" id="otherpainnameerror"></span> </td>
 	             </tr>
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>

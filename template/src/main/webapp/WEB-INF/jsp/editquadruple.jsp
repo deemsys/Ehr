@@ -242,12 +242,12 @@ $(function() {
 	        if(document.getElementById("amount3").value==0)
 	        {
 	        document.getElementById("amount3err").innerHTML="No Pain";
-	        return false;
+	      //  return false;
 	        }
 	         if(document.getElementById("amount3").value==10)
 	        {
 	        document.getElementById("amount3err").innerHTML="Severe Pain";
-	        return false;
+	        //return false;
 	        }
 	      }
 	    });
@@ -298,7 +298,7 @@ function validatename(id){
   if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
   {
   	
-  	document.getElementById("nameerror").innerHTML="Name should be min 4 and max 32";
+  	document.getElementById("nameerror").innerHTML="should be of length 4 to 32";
   	
       return false;
   }
@@ -315,13 +315,26 @@ function validatename(id){
   	
       return false;
   }
+	
+	 document.getElementById("painnameerror").innerHTML="";
+		if(document.getElementById("painname").value==0)
+		{
+
+			document.getElementById("painnameerror").innerHTML="Required Field Should not be Empty";
+			
+		return false;
+
+		}
+		
+		
+		
 	document.getElementById("otherpainnameerror").innerHTML="";
 	if(document.getElementById("otherpainname").value!="")
 	{
     if(document.getElementById("otherpainname").value.length<4 || document.getElementById("otherpainname").value.length>=32)
     {
     	
-    	document.getElementById("otherpainnameerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("otherpainnameerror").innerHTML="should be of length 4 to 32";
     	
         return false;
     }
@@ -437,7 +450,7 @@ $(function() {
 	             </table>
 	             <table>
 	             <tr height="10"><c:out value=""></c:out>
-	             <td>Pain Name : <select name="painname" id="painname" onchange="doajax()">
+	             <td><span class="err">* </span>Pain Name : <select name="painname" id="painname" onchange="doajax()">
 	             <option value="">--Select--</option>
 	             <option  value="Wrist/Hand" <c:if test="${quadraplevisualdetails.painname=='Wrist/Hand'}"><c:out value="selected"></c:out></c:if>>Wrist/Hand</option>
 	              <option value="Low Back" <c:if test="${quadraplevisualdetails.painname=='Low Back'}"><c:out value="selected"></c:out></c:if>>Low Back</option>
@@ -446,7 +459,7 @@ $(function() {
 	              <option value="Shoulder"<c:if test="${quadraplevisualdetails.painname=='Shoulder'}"><c:out value="selected"></c:out></c:if>>Shoulder</option>
 	               <option value="Other"<c:if test="${quadraplevisualdetails.painname=='Other'}"><c:out value="selected"></c:out></c:if>>Other</option>
 	               
-	             </select><input type="text" name="otherpainname" id="otherpainname" onInput="return validatename(id)"; value="${quadraplevisualdetails.otherpainname }" style="display: none"><span class="err" id="otherpainnameerror"></span>
+	             </select><span style="color: red;font-style:italic;" id="painnameerror"></span><input type="text" name="otherpainname" id="otherpainname" onInput="return validatename(id)"; value="${quadraplevisualdetails.otherpainname }" style="display: none"><span class="err" id="otherpainnameerror"></span>
 	           </td><td><a href="#" id="editurl" onclick="doajax()" style="display: none">Edit</a></td>
 	           </td> </tr></table>
 	             <table>

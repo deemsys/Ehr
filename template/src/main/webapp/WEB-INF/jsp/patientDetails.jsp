@@ -1500,6 +1500,33 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
     	 return false;
     }
     }
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!="")
+	{
+	if(document.getElementById("zipcode2").value.length<5)
+	{
+	document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
+	document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+	return false;
+	}
+	}
+	document.getElementById("zipcode2error").innerHTML="";
+	if(document.getElementById("zipcode2").value!="")
+	{
+	var txt1=document.getElementById("zipcode2").value;
+   if( txt1==00000){
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+   }
+  var txt2=txt1.substring(1,3);
+   
+   if(txt2==000){
+   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
+   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
+   return false;
+   }
+	}
 	
 	/* document.getElementById("Occupationerror").innerHTML="";
 	if(document.getElementById("Occupation").value!="")
@@ -1547,34 +1574,7 @@ var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;
 	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 	   return false;
 	  }
-	  document.getElementById("zipcode2error").innerHTML="";
-		if(document.getElementById("zipcode2").value!="")
-		{
-		if(document.getElementById("zipcode2").value.length<5)
-		{
-		document.getElementById("zipcode2error").innerHTML="Invalid zipcode format";
-		document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
-		return false;
-		}
-		}
-		document.getElementById("zipcode2error").innerHTML="";
-		if(document.getElementById("zipcode2").value!="")
-		{
-		var txt1=document.getElementById("zipcode2").value;
-	   if( txt1==00000){
-	   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
-	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
-	   return false;
-	   }
-	  var txt2=txt1.substring(1,3);
-	   
-	   if(txt2==000){
-	   document.getElementById("zipcode2error").innerHTML="Invalid Zipcode format ";
-	   document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
-	   return false;
-	   }
-		}
-		
+	  
 	 document.getElementById("EmployerCityerror").innerHTML="";
 	if(document.getElementById("EmployerCity").value!="")
 	{
