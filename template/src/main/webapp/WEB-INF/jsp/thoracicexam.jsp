@@ -28,7 +28,19 @@
         }
     });
   
-  
+   /* $("#btnPrevious").live("click", function () {
+      var tabs = $('#tabs').tabs();
+      var c = $('#tabs').tabs("length");
+      currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+      tabs.tabs('select', currentTab);
+      if (currentTab == 0) {
+          $("#btnNext").show();
+          $("#btnPrevious").hide();
+      }
+      if (currentTab < (c - 1)) {
+          $("#btnNext").show();
+      }
+  });  */
   </script>
    <script>
     $(function() {
@@ -226,7 +238,7 @@ $(function() {
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
-		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		else if(document.getElementById("pname").value.length<4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
@@ -577,6 +589,7 @@ $(function() {
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" onInput="return validatename(id)";><br><span class="err" id="signerror"><form:errors path="Thoracicexam.sign"></form:errors></span></B></td></tr></table>
 <table align="right">
 <tr>
+<!-- <td><input type="submit" class="submit_btn" value="previous" id="btnPrevious" ></td> -->
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
