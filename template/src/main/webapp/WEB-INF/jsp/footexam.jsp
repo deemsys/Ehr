@@ -269,19 +269,19 @@ function validatename(id){
             $("#btnNext").show();
         }
     });
-    $("#btnPrevious").live("click", function () {
-        var tabs = $('#tabs').tabs();
-        var c = $('#tabs').tabs("length");
-        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
-        tabs.tabs('select', currentTab);
-        if (currentTab == 0) {
-            $("#btnNext").show();
-            $("#btnPrevious").hide();
-        }
-        if (currentTab < (c - 1)) {
-            $("#btnNext").show();
-        }
-    });
+   $("#btnPrevious").live("click", function () {
+	        var tabs = $('#tabs').tabs();
+	        var c = $('#tabs').tabs("length");
+	        currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+	        tabs.tabs('select', currentTab);
+	        if (currentTab == 0) {
+	            $("#btnNext").show();
+	            $("#btnPrevious").hide();
+	        }
+	        if (currentTab < (c - 1)) {
+	            $("#btnNext").show();
+	        }
+	    });
 </script>
 
  <STYLE type="text/css">
@@ -1276,13 +1276,14 @@ function validatename(id){
          
          </c:otherwise>
          </c:choose>
-        <table align="right"><tr><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');" ></td><td> <a href="viewfootexam" style="color: white" class="submit_btn" id="cancelid" onclick="myclose()">Cancel</a></td></tr></table>
+        <table align="right"><tr><td><input type="button" id="btnPrevious" class="submit_btn" name="Previous1" value="Previous" /></td><td><input type="submit" value="Save" id="saveid" class="submit_btn" onclick="return checkSubmit('this');" ></td><td> <a href="viewfootexam" style="color: white" class="submit_btn" id="cancelid" onclick="myclose()">Cancel</a></td></tr></table>
          <script>
  function myclose()
  {
 	 window.close();
  }
  </script>
+ 
          </div></td></tr></table></div></div></div>
          
          
