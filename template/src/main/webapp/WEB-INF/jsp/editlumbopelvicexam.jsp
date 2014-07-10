@@ -342,7 +342,7 @@ element.style.display='none';
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
-		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		else if(document.getElementById("pname").value.length<4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
@@ -584,7 +584,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table>
  <tr class="row1">
- <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" vlaue="${lumbopelvic.othernotes }" onInput="return validatename(id)";></td> 
+ <td>Other/Notes:<input type="text" name="othernotes" id="othernotes" value="${lumbopelvic.othernotes }" onInput="return validatename(id)";></td> 
  <td width="150">
  <td></td><td></td>
  <td width="150">
@@ -612,7 +612,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
   <tr class="row1">
  <td><b>Lateral Flexion:</b> </td><td> (25)&nbsp;&nbsp;&nbsp;L <input type="text" name="lflexion" size="7" value="${lumbopelvicexam.lflexion}" onkeypress="return validate(event)"><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R <input type="text" name="rflexion" size="7" value="${lumbopelvicexam.rflexion}" onkeypress="return validate(event)"></td> 
- <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" size="7" value="${lumbopelvicexam.t12l1}" onkeypress="return validate(event)"></td><td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" value="${lumbopelvicexam.l12}" onkeypress="return validate(event)"> </td> 
+ <td width="100">T12-L1:&nbsp;<input type="text" name="t12l1" id="t12l1" size="7" value="${lumbopelvicexam.t12l1}" onkeypress="return validate(event)"></td><td width="50">	L1-2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<input type="text" name="l12" size="7" value="${lumbopelvicexam.l12}" onkeypress="return validate(event)"> </td> 
  <td><b>Slump:</b> </td><td><input type="text" name="slumpl" size="5" onkeypress="return validate(event)" value="${lumbopelvic.slumpl}"> <input type="text" name="slumpr" size="5" onkeypress="return validate(event)" value="${lumbopelvic.slumpr}"></td>
  </tr>
   <tr class="row1">
@@ -640,7 +640,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td></td><td> </td> 
  <td><b>Positive Adam's:	</b> </td><td><input type="text" name="positiveadam" onkeypress="return validate(event)" size="15" value="${lumbopelvicexam.positiveadam}"> </td>
  </tr>
- <tr><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td></tr>
  </table>
  
 </div>
@@ -816,6 +816,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <table><tr><td><B style="font-size:14px"><span class="err">*</span>&nbsp;&nbsp;PHYSICIAN SIGNATURE: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="sign" id="sign" value="${lumbopelvicexam.sign}" onInput="return validatename(id)";></B><br><span class="err" id="signerror"><form:errors path="Lumbopelvicexam.sign"></form:errors></span></td></tr></table>
 <table align="right">
 <tr>
+<!-- <td><input type="submit" class="submit_btn" value="previous" id="btnPrevious"></td> -->
 <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" onclick="myclose()"></td>
 <script>

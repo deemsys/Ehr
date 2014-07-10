@@ -101,8 +101,20 @@
             $("#btnNext").show();
         }
     });
-  
-  
+  /* var currentTab=0;
+  $("#btnPrevious").live("click", function () {
+      var tabs = $('#tabs').tabs();
+      var c = $('#tabs').tabs("length");
+      currentTab = currentTab == 0 ? currentTab : (currentTab - 1);
+      tabs.tabs('select', currentTab);
+      if (currentTab == 0) {
+          $("#btnNext").show();
+          $("#btnPrevious").hide();
+      }
+      if (currentTab < (c - 1)) {
+          $("#btnNext").show();
+      }
+  });  */
   </script>
    <script>
    function validatename(id){
@@ -246,7 +258,7 @@ $("#flexion").keyup(function() {
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 		}
 		
-		else if(document.getElementById("pname").value.length<=4 && document.getElementById("pname").value.length<=32)
+		else if(document.getElementById("pname").value.length<4 && document.getElementById("pname").value.length<=32)
 		{
 		document.getElementById("pnameerror").innerHTML="Name should be length of 4 to 32";
 		document.getElementById("tblbtn").innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
@@ -447,7 +459,7 @@ document.getElementById("pnameerror").innerHTML=" ";
        </ul><form action="lumbopelvicexam" method="POST" name="lumbopelvic">
        <input type="hidden" name="username" value="${username}">
         <c:choose>
-    		<c:when test="${empty lumbopelvic}"> 
+    		<c:when test="${empty lumbopelvicad}"> 
    <div id="tabs-1"> 
  <div id="right_content">
  <table width="98%" class="margin_table">
@@ -520,7 +532,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
   <tr class="row1">
  <td width="200" style="width: 241px; ">Leg Length Discrepancy:Short Leg-  </td> 
- <td><input type="checkbox" name="leglengthcheckl" value="left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
+ <td style="width: 250px; "><input type="checkbox" name="leglengthcheckl" value="left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
  <select name="leglengthl" id="break5" style="visibility:hidden" onchange="Checksymptom(this.value);">
 					<option selected="selected" value="1/8">1/8</option>
 					<option value="1/4">1/4</option>
@@ -531,9 +543,8 @@ document.getElementById("pnameerror").innerHTML=" ";
 					<option value="7/8">7/8</option>
 					<option value="1">1</option>
 					<option value="other">other</option>
-					<input type="text" name="other1" id="other1" style="display:none">
-					</select></td>
-					<td style="width: 211px; "><input type="checkbox" name="leglengthcheckr" value="right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
+					</select><input type="text" name="other1" id="other1" style="display:none"></td>
+					<td style="width: 252px; "><input type="checkbox" name="leglengthcheckr" value="right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
 					<select name="leglengthr" id="break6" style="visibility:hidden" onchange="Checksymptom(this.value);">
 					<option selected="selected" value="1/8">1/8</option>
 					<option value="1/4">1/4</option>
@@ -638,7 +649,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  <input type="button"  id="btnvisible1" class="submit_btn" value="Next" onmouseover="checkValid(event);"/>
  
 </td> -->
-<td id="tblbtn"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td>
+<td></td><td></td><td></td><td></td><td></td>
+<td id="tblbtn" align="right"><input type="button" id="btnNext" class="submit_btn" value="Next" onmouseover="checkValid(event);"/></td>
  </tr>
  </table>
  </div></div>
@@ -816,6 +828,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
  <table align="right">
 <tr>
+<!-- <td><input type="submit" class="submit_btn" value="previous" id="btnPrevious"></td> -->
 <td><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return checkSubmit1('this');"></td>
 <td><input type="reset" class="submit_btn" value="Cancel" id="cancelid" onclick="myclose()"></td>
 <script>
