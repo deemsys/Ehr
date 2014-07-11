@@ -839,7 +839,7 @@ else
           <table cellpadding="0" cellspacing="0" border="0" width="98%" >
            
  <tr class="row1">
-<td width="90"><h4><span class="err" style="margin-left:2px;">* </span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" onInput="return validateusername()"; name="pid" size="25" id="pid" /><br/><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="90"><h4><span class="err" style="margin-left:2px;">* </span>Patient Id:</h4></td><td><input type="text"  class="input_txtbx1" onInput="return validateusername()"; name="pid" size="25" id="pid" maxlength="18" /><br/><span  id="piderror"   style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td></td>
 <td width="500">
 <td align="right"><h4><span class="err">* </span>Date:</h4></td><td><input type="text"  class="input_txtbx1" id="datepicker" name="date" readonly="readonly"/><br/><span class="err" id="datepickererror"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
@@ -1614,7 +1614,7 @@ function validateusername(){
  </tr>
  <tr class="row1">
   <td></td>
- <td width="200">Payment:(Circle)</td><td><input type="radio" name="payment" value="Cash" checked="true" onclick="toggle3('hide3')" >Cash &nbsp;&nbsp;&nbsp; <input type="radio" name="payment" value="Check"  onchange="toggle3('show3')" >Check &nbsp;&nbsp; Amt: $  </td>
+ <td width="200">Payment:(Circle)</td><td><input type="radio" name="payment" value="Cash" checked="true" onclick="toggle3('hide3')" >Cash &nbsp;&nbsp;&nbsp; <input type="radio" name="payment" value="Cheque"  onchange="toggle3('show3')" >Cheque ( &nbsp;&nbsp; Amt: $  </td>
  <td><input type="text"  class="input_txtbx1" name="paymentcashcheck" size="20"  onkeypress="return validate(event)";> </td> 
  </tr>
  </table>

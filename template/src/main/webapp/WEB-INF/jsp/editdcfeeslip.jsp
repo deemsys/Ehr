@@ -618,7 +618,7 @@ function validateusername(){
           <c:set value="${dcfeeslipForm.dcfeeslip[0]}" var="dcfeeslip"/> 
  <tr class="row1">
  <input type="hidden" name="dcfeeid" id="inp_id" value="${dcfeeslip.dcfeeid}">
-<td width="90"><h2><span class="err">* </span>Patient Id:</h2></td><td><input type="text"   class="input_txtbx1"  name="pid" onInput="return validateusername()"; size="25" value="${dcfeeslip.pid}" id="pid" /><br><span  id="piderror" style="color: red;font-style:italic;" ><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
+<td width="90"><h2><span class="err">* </span>Patient Id:</h2></td><td><input type="text"   class="input_txtbx1"  name="pid" onInput="return validateusername()"; size="25" value="${dcfeeslip.pid}" id="pid" maxlength="18"/><br><span  id="piderror" style="color: red;font-style:italic;" ><form:errors path="dcfeeslipdetail.pid"></form:errors></span></td>
 <td></td>
 <td width="500">
 <td align="right"><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  class="input_txtbx1"  id="datepicker" name="date" value="${dcfeeslip.date}" /><span  id="datepickererror"  style="color: red;font-style:italic;"><form:errors path="dcfeeslipdetail.date"></form:errors></span></td>
@@ -1372,7 +1372,7 @@ function validateusername(){
  </tr>
  <tr class="row1">
   <td></td>
- <td width="200">Payment:(Circle)</td><td><input type="radio" name="payment" value="Cash" checked="true" onclick="toggle3('hide3')" <c:if test="${dcfeeslip.payment=='Cash'}"><c:out value="checked=checked"/></c:if> >Cash &nbsp;&nbsp;&nbsp; <input type="radio" name="payment" value="Check"  onchange="toggle3('show3')" <c:if test="${dcfeeslip.payment=='Check'}"><c:out value="checked=checked"/></c:if>>Check &nbsp;&nbsp; Amt: $  </td>
+ <td width="200">Payment:(Circle)</td><td><input type="radio" name="payment" value="Cash" checked="true" onclick="toggle3('hide3')" <c:if test="${dcfeeslip.payment=='Cash'}"><c:out value="checked=checked"/></c:if> >Cash &nbsp;&nbsp;&nbsp; <input type="radio" name="payment" value="Cheque"  onchange="toggle3('show3')" <c:if test="${dcfeeslip.payment=='Cheque'}"><c:out value="checked=checked"/></c:if>>Cheque &nbsp;&nbsp; Amt: $  </td>
  <td><input type="text"  class="input_txtbx1" name="paymentcashcheck" size="20" value="${dcfeeslip.paymentcashcheck}" onkeypress="return validate(event)";> </td> 
  </tr>
  </table>
