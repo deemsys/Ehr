@@ -276,15 +276,26 @@ function validatename(){
 		
 		error="true";
 		} 
-	var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/;  
 
+	    
+	    if(document.getElementById("fax").value.match(phoneno)==null)
+	    {
+	    	document.getElementById("faxerror").innerHTML="Invalid Fax Format";
+	    	
+	        return false;
+	    }
     
-    if(document.getElementById("fax").value.match(phoneno)==null)
-    {
-    	document.getElementById("faxerror").innerHTML="Invalid phone Format";
-    	// document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
-      error="true";
-    }
+    document.getElementById("faxerror").innerHTML="";
+	var txt1=document.getElementById("fax").value;
+	var txt2=txt1.substring(0,3);
+	if(txt2==000)
+	{
+	document.getElementById("faxerror").innerHTML="Invalid Fax Format";
+	return false;
+	}
+	
+	
     var txt1=document.getElementById("fax").value;
    var txt2=txt1.substring(1,4);
    var txt3=txt1.substring(5,8);

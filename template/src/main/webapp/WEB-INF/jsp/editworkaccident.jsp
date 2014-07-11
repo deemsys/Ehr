@@ -130,6 +130,31 @@ document.getElementById("lighting_div").style.visibility = 'hidden';
 }
 }
 </script>
+
+<script>
+function change44()
+{
+
+if(document.getElementById("pick_lift").checked)
+{
+
+		document.getElementById("how_much").style.visibility = 'hidden';
+		document.getElementById("how_often").style.visibility = 'hidden';
+		document.getElementById("where_to_where").style.visibility = 'hidden';
+		
+
+
+
+		}
+		else  {
+			document.getElementById("how_much").style.visibility = 'visible';
+		document.getElementById("how_often").style.visibility = 'visible';
+		document.getElementById("where_to_where").style.visibility = 'visible';
+		
+		
+		}
+}
+</script>
 <script>
   $(function() {
 	$("#doyou").on("keypress", function(e) {
@@ -746,12 +771,12 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 						                      
 						                    
 						                   
-						                     <td><input type="text" class="input_txtbx1"  id="doyou" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span id="doyouerror" style="color: red;font-style:italic;"></span><form:errors path="workAcc.doyou"></form:errors></span></td>
+						                   <%--   <td><input type="text" class="input_txtbx1"   name="doyou"  id="doyou" value="${workaccident.doyou}" style="visibility:hidden;"  onInput="return validatename(id)";  /></br><span id="doyouerror" style="color: red;font-style:italic;"></span><form:errors path="workAcc.doyou"></form:errors></span> --%> 
 						                 	
 						                 		 </select>
 						                 		 <span id="doyou_poserror" style="color: red;font-style:italic;"></span>
 						                 		 
-						                     <br><br><input type="text" name="doyou" class="input_txtbx1" maxlength="32" onInput="return validatename(id)"; id="doyou" style="visibility:hidden;" width: 171px' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span>
+						                     <br><br><input type="text" name="doyou" id="doyou" class="input_txtbx1" maxlength="32"  value="${workaccident.doyou}" onInput="return validatename(id)";  style="visibility:hidden;"   /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span> 
 						             </td> <td></td>
 						              <td></td>
 						              <td></td>
@@ -851,7 +876,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 </script>
 						                    <span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
 						                     
-						                  <td> <input type="text" name="lighting" class="input_txtbx1"  id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
+						                <%--   <td> <input type="text" name="lighting" class="input_txtbx1"  id="lighting" onInput="return validatename(id)";  onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" style="visibility:hidden;"/></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td> --%>
 						                 		
 						                   <td> <input type="text" name="lighting" class="input_txtbx1" id="lighting_div" maxlength="32" value="${workaccident.lighting}" style="visibility:hidden;" onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -859,8 +884,8 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you pick up or lift heavy objects?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="pick_lift" value="Yes" id="yes3" class="input_txt" id="pickcheck1" onclick="toggle3();" <c:if test="${workaccident.pick_lift=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="pick_lift" value="No" id="No3" class="input_txt"  onclick="toggle3();" <c:if test="${workaccident.pick_lift=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pick_lift" value="Yes" id="yes3" class="input_txt" id="pickcheck1" onchange="change44(); onclick="toggle3();" <c:if test="${workaccident.pick_lift=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pick_lift" id="pick_lift onchange="change44();" value="No" id="No3" class="input_txt"  onclick="toggle3();" <c:if test="${workaccident.pick_lift=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				   <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  <td></td>  <td></td><td></td><td></td><td></td><td></td><td></td>
