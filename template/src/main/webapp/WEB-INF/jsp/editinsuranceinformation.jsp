@@ -507,7 +507,7 @@ document.getElementById("phone").value=phone;
               </tr>
               <tr class="row1">
               <td>&nbsp;&nbsp;Do you have health insurance?</td>
-              <td><input type="radio" name="have_insurance" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="No" class="input_txt">No</td>
+              <td><input type="radio" name="have_insurance" value="Yes" class="input_txt" <c:if test="${Insuranceinformation.have_insurance=='Yes'}"><c:out value="checked=checked"/></c:if> checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="have_insurance" value="No" class="input_txt" <c:if test="${Insuranceinformation.have_insurance=='No'}"><c:out value="checked=checked"/></c:if>>No</td>
               </tr>
               <tr class="row1">
               <td><span class="err">* </span>Employer's Name:</td>
