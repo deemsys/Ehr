@@ -262,7 +262,7 @@ public class AssignmentDAO {
 	    	 DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    	 Date date = new Date();
 	    	 //System.out.println(dateFormat.format(date));
-	    	String cmd="UPDATE assignment_details SET day='"+assignment.getDay()+"',month='"+assignment.getMonth()+"',year='"+assignment.getYear()+"',day1='"+assignment.getMonth1()+"',patientname='"+assignment.getPatientname()+"',patientsign='"+assignment.getPatientsign()+"',patientdate='"+assignment.getPatientdate()+"',parentname='"+assignment.getParentname()+"',parentsign='"+assignment.getParentsign()+"',parentdate='"+assignment.getParentdate()+"',representative='"+assignment.getRepresentative()+"',representativedate='"+assignment.getRepresentativedate()+"' WHERE assignment_no='"+assignment_no+"';";
+	    	String cmd="UPDATE assignment_details SET day='"+assignment.getDay()+"',month='"+assignment.getMonth()+"',year='"+assignment.getYear()+"',day1='"+assignment.getDay1()+"',month1='"+assignment.getMonth1()+"',patientname='"+assignment.getPatientname()+"',patientsign='"+assignment.getPatientsign()+"',patientdate='"+assignment.getPatientdate()+"',parentname='"+assignment.getParentname()+"',parentsign='"+assignment.getParentsign()+"',parentdate='"+assignment.getParentdate()+"',representative='"+assignment.getRepresentative()+"',representativedate='"+assignment.getRepresentativedate()+"' WHERE assignment_no='"+assignment_no+"';";
 	    			
 	    			String Desc="Update assignment "+assignment.getPatientname();
 	    	System.out.println(cmd);
