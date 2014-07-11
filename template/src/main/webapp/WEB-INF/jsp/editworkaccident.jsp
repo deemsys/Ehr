@@ -733,25 +733,25 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 <tr class="row2">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Work Posture:</td>
                 						 <td valign="top" align="left" class="input_txt">
-				  							<select name="doyou_pos" class="input_cmbbx1" id="doyoucheck"  onclick='Checkpos();'>	
-				  							 <option value="sit_at_desk" <c:if test="${workaccident.doyou_pos=='sit_at_desk'}"><c:out value="selected"/></c:if>>Sit at desk</option>
-						                     <option value="walk" <c:if test="${workaccident.doyou_pos=='walk'}"><c:out value="selected"/></c:if>>Walk</option>	
-						                     <option value="stand" <c:if test="${workaccident.doyou_pos=='stand'}"><c:out value="selected"/></c:if>>Stand</option>
-						                     <option value="stoop" <c:if test="${workaccident.doyou_pos=='stoop'}"><c:out value="selected"/></c:if>>Stoop</option>
-						                     <option value="hold" <c:if test="${workaccident.doyou_pos=='hold'}"><c:out value="selected"/></c:if>>Hold</option>
-						                     <option value="carry" <c:if test="${workaccident.doyou_pos=='carry'}"><c:out value="selected"/></c:if>>Carry</option>
-						                     <option value="drive_comp_vehi" <c:if test="${workaccident.doyou_pos=='drive_comp_vehi'}"><c:out value="selected"/></c:if>>Drive a company vehicle</option>
-						                     <option value="load" <c:if test="${workaccident.doyou_pos=='load'}"><c:out value="selected"/></c:if>>Load</option>
-						                   <option value="other" <c:if test="${workaccident.doyou_pos=='other'}"><c:out value="selected"/></c:if>>Other</option> 
+				  							<select name="doyou_pos" class="input_cmbbx1" id="doyoucheck"  onchange="if (this.value=='Other'){this.form['doyou'].style.visibility='visible'}else {this.form['doyou'].style.visibility='hidden'};">	
+				  							 <option value="Sit at desk" <c:if test="${workaccident.doyou_pos=='Sit at desk'}"><c:out value="selected"/></c:if>>Sit at desk</option>
+						                     <option value="Walk" <c:if test="${workaccident.doyou_pos=='Walk'}"><c:out value="selected"/></c:if>>Walk</option>	
+						                     <option value="Stand" <c:if test="${workaccident.doyou_pos=='Stand'}"><c:out value="selected"/></c:if>>Stand</option>
+						                     <option value="Stoop" <c:if test="${workaccident.doyou_pos=='Stoop'}"><c:out value="selected"/></c:if>>Stoop</option>
+						                     <option value="Hold" <c:if test="${workaccident.doyou_pos=='Hold'}"><c:out value="selected"/></c:if>>Hold</option>
+						                     <option value="Carry" <c:if test="${workaccident.doyou_pos=='Carry'}"><c:out value="selected"/></c:if>>Carry</option>
+						                     <option value="Drive a company vehicle" <c:if test="${workaccident.doyou_pos=='Drive a company vehicle'}"><c:out value="selected"/></c:if>>Drive a company vehicle</option>
+						                     <option value="Load" <c:if test="${workaccident.doyou_pos=='Load'}"><c:out value="selected"/></c:if>>Load</option>
+						                   <option value="Other" <c:if test="${workaccident.doyou_pos=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
 						                      
 						                    
-						                    <%--  <c:if test="${workaccident.doyou_pos=='other'}">
-						                     <td><input type="text" id="doyou" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span></td>
-						                 		</c:if> --%>
+						                   
+						                     <td><input type="text" class="input_txtbx1"  id="doyou" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span id="doyouerror" style="color: red;font-style:italic;"></span><form:errors path="workAcc.doyou"></form:errors></span></td>
+						                 	
 						                 		 </select>
 						                 		 <span id="doyou_poserror" style="color: red;font-style:italic;"></span>
 						                 		 
-						                     <br><br><input type="text" name="doyou" class="input_txtbx1" maxlength="32" onInput="return validatename(id)"; id="doyou" style='display:none; width: 171px' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span>
+						                     <br><br><input type="text" name="doyou" class="input_txtbx1" maxlength="32" onInput="return validatename(id)"; id="doyou" style="visibility:hidden;" width: 171px' onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.doyou}" name="doyou" /></br><span class="err"><form:errors path="workAcc.doyou"></form:errors></span>
 						             </td> <td></td>
 						              <td></td>
 						              <td></td>
@@ -764,7 +764,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 			  	 <tr class="row1">
 			  	 				 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you carry anything or pick anything up?</td>
 				 				 <td valign="top" align="left" class="input_txt">
-				 				 <input type="radio" name="pick" value="yes" class="input_txt" id="pickcheck" onclick="any();" <c:if test="${workaccident.pick=='yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
+				 				 <input type="radio" name="pick" value="Yes" class="input_txt" id="pickcheck" onclick="any();" <c:if test="${workaccident.pick=='Yes'}"><c:out value="checked=checked"/></c:if>>yes&nbsp;&nbsp;&nbsp;
 				 				 <input type="radio" name="pick" value="No" class="input_txt" id="pickun" onclick="any();"<c:if test="${workaccident.pick=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="carry" maxlength="32" onInput="return validatename(id)";name="carry" placeholder="If yes, What"  style='display:none' value="${workaccident.carry}" name="carry" /></br><span class="err"><form:errors path="workAcc.carry"></form:errors></span></td>
 				  <span id="carryerror" style="color: red;font-style:italic;"></span>
@@ -804,7 +804,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 </tr>	
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Has there been a time loss or absentee caused from job injury?</td>
-				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="yes" class="input_txt" id="yes2" onchange="if (this.value=='yes'){this.form['absenteeism'].style.visibility='visible'}else {this.form['absenteeism'].style.visibility='hidden'};" onclick="time();"<c:if test="${workaccident.time_loss=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" id="No2" class="input_txt" onchange="if (this.value=='No'){this.form['absenteeism'].style.visibility='hidden'}else {this.form['absenteeism'].style.visibility='visible'};" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt" width = "5%"><input type="radio" name="time_loss" value="Yes" class="input_txt" id="yes2" onchange="if (this.value=='yes'){this.form['absenteeism'].style.visibility='visible'}else {this.form['absenteeism'].style.visibility='hidden'};" onclick="time();"<c:if test="${workaccident.time_loss=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="time_loss" value="No" id="No2" class="input_txt" onchange="if (this.value=='No'){this.form['absenteeism'].style.visibility='hidden'}else {this.form['absenteeism'].style.visibility='visible'};" onclick="time();"<c:if test="${workaccident.time_loss=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  <td><textarea rows='3' cols='35' id="absenteeism"  onInput="return validatename(id)"; maxlength="32" name="absenteeism" placeholder="If yes, explain(include dates)">${workaccident.absenteeism}</textarea></td>
 				   <span id="time_losserror" style="color: red;font-style:italic;"></span>
 				  </td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -827,11 +827,11 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				   <tr class="row1">
                 						<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type of lighting in the building:</td>
                 						<td valign="top" align="left" class="input_txt">
-										  <select name="type_of_light" class="input_cmbbx1" id="type_of_light" onclick='Checklight();'  onchange='Checklight(this.value);' >
-					 						<option value="fluorescent" <c:if test="${workaccident.type_of_light=='fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
-						                     <option value="overhead" <c:if test="${workaccident.type_of_light=='overhead'}"><c:out value="selected"/></c:if>>Overhead</option>	
-						                     <option value="onmachine" <c:if test="${workaccident.type_of_light=='onmachine'}"><c:out value="selected"/></c:if>>On machine</option>
-						                    <option value="others" <c:if test="${workaccident.type_of_light=='others'}"><c:out value="selected"/></c:if>>Others</option> 
+										  <select name="type_of_light" class="input_cmbbx1" id="type_of_light" onchange="if (this.value=='Other'){this.form['lighting'].style.visibility='visible'}else {this.form['lighting'].style.visibility='hidden'};" >
+					 						<option value="Fluorescent" <c:if test="${workaccident.type_of_light=='Fluorescent'}"><c:out value="selected"/></c:if>>Fluorescent</option>
+						                     <option value="Overhead" <c:if test="${workaccident.type_of_light=='Overhead'}"><c:out value="selected"/></c:if>>Overhead</option>	
+						                     <option value="On Machine" <c:if test="${workaccident.type_of_light=='On Machine'}"><c:out value="selected"/></c:if>>On machine</option>
+						                    <option value="Other" <c:if test="${workaccident.type_of_light=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
 						                    </select>
 						                    
 						                    <script>
@@ -850,16 +850,16 @@ document.getElementById("lighting").style.visibility = 'hidden';
 }
 </script>
 						                    <span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
-						                      <%-- <c:if test="${workaccident.type_of_light=='others'}">
-						                     <td> <input type="text" name="lighting" id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
-						                 		</c:if>  --%>
-						                   <td> <input type="text" name="lighting" class="input_txtbx1" id="lighting_div" maxlength="32" value="${workaccident.lighting}" style='display:none' onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
+						                     
+						                  <td> <input type="text" name="lighting" class="input_txtbx1"  id="lighting" onmouseover="showTooltip('tooltip_id','inp_id3');" onmouseout="hideTooltip('tooltip_id');" value="${workaccident.lighting}" name="lighting" /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>
+						                 		
+						                   <td> <input type="text" name="lighting" class="input_txtbx1" id="lighting_div" maxlength="32" value="${workaccident.lighting}" style="visibility:hidden;" onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.lighting"></form:errors></span></td>  
 											<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 						             			 </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you pick up or lift heavy objects?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="pick_lift" value="yes" id="yes3" class="input_txt" id="pickcheck1" onclick="toggle3();" <c:if test="${workaccident.pick_lift=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pick_lift" value="Yes" id="yes3" class="input_txt" id="pickcheck1" onclick="toggle3();" <c:if test="${workaccident.pick_lift=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="pick_lift" value="No" id="No3" class="input_txt"  onclick="toggle3();" <c:if test="${workaccident.pick_lift=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				   <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -896,9 +896,9 @@ document.getElementById("lighting").style.visibility = 'hidden';
                 						<td valign="middle" align="left" class="input_txt" width = "37%"><span class="err">* </span>Do you lift from?</td>
                 						<td valign="top" align="left" class="input_txt">
 										  <select name="lift_from" class="input_cmbbx1" id="lift_from">
-					 						<option value="ground" <c:if test="${workaccident.lift_from=='ground'}"><c:out value="selected"/></c:if>>Ground</option>
-						                     <option value="bench" <c:if test="${workaccident.lift_from=='bench'}"><c:out value="selected"/></c:if>>Bench</option>	
-						                     <option value="platform" <c:if test="${workaccident.lift_from=='platform'}"><c:out value="selected"/></c:if>>Platform</option>
+					 						<option value="Ground" <c:if test="${workaccident.lift_from=='Ground'}"><c:out value="selected"/></c:if>>Ground</option>
+						                     <option value="Bench" <c:if test="${workaccident.lift_from=='Bench'}"><c:out value="selected"/></c:if>>Bench</option>	
+						                     <option value="Platform" <c:if test="${workaccident.lift_from=='Platform'}"><c:out value="selected"/></c:if>>Platform</option>
 						                   </select>
 						                    <span id="lift_fromerror" style="color: red;font-style:italic;"></span>
 										</td>
@@ -907,7 +907,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 					<tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you lift in or out of a machine?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="liftin_orout" value="yes" id="yes4" class="input_txt" <c:if test="${workaccident.liftin_orout=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="liftin_orout" value="Yes" id="yes4" class="input_txt" <c:if test="${workaccident.liftin_orout=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="liftin_orout" value="No" id="No4"class="input_txt"<c:if test="${workaccident.liftin_orout=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				 <span id="liftin_orouterror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -916,9 +916,9 @@ document.getElementById("lighting").style.visibility = 'hidden';
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If working at a machine,Do You?</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="workpos" class="input_cmbbx1" id="workpos" >
-					<option value="sit" <c:if test="${workaccident.workpos=='sit'}"><c:out value="selected"/></c:if>>Sit</option>
-					<option value="stand" <c:if test="${workaccident.workpos=='stand'}"><c:out value="selected"/></c:if>>Stand</option>	
-					<option value="kneel" <c:if test="${workaccident.workpos=='kneel'}"><c:out value="selected"/></c:if>>Kneel</option>
+					<option value="Sit" <c:if test="${workaccident.workpos=='Sit'}"><c:out value="selected"/></c:if>>Sit</option>
+					<option value="Stand" <c:if test="${workaccident.workpos=='Stand'}"><c:out value="selected"/></c:if>>Stand</option>	
+					<option value="Kneel" <c:if test="${workaccident.workpos=='Kneel'}"><c:out value="selected"/></c:if>>Kneel</option>
 				  </select>
 				<span id="workposerror" style="color: red;font-style:italic;"></span>
 				 </td>
@@ -927,7 +927,7 @@ document.getElementById("lighting").style.visibility = 'hidden';
 				<tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>In your job, Do you push or pull?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="push_pull" value="yes" id="pushcheck"  class="input_txt"  onclick="pull();"<c:if test="${workaccident.push_pull=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="push_pull" value="Yes" id="pushcheck"  class="input_txt"  onclick="pull();"<c:if test="${workaccident.push_pull=='Yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="push_pull" value="No" id="No5"class="input_txt" onclick="pull();"<c:if test="${workaccident.push_pull=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="jobpp" maxlength="32"  onInput="return validatename(id)"; name="jobpp" placeholder="If yes, give specifics"  value="${workaccident.jobpp}" name="jobpp" /></br><span class="err"><form:errors path="workAcc.jobpp"></form:errors></span>
 				   <span id="push_pullerror" style="color: red;font-style:italic;"></span>
@@ -993,13 +993,11 @@ document.getElementById("jobpp").style.visibility = 'hidden';
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Is your work area?</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="work_area" class="input_cmbbx1" id="workcheck" onclick='work();'>
-					<option value="oily" <c:if test="${workaccident.work_area=='oily'}"><c:out value="selected"/></c:if>>Oily</option>
-					<option value="dirty" <c:if test="${workaccident.work_area=='dirty'}"><c:out value="selected"/></c:if>>Dirty</option>	
-					<option value="slippery" <c:if test="${workaccident.work_area=='slippery'}"><c:out value="selected"/></c:if>>Slippery</option>
+					<option value="Oily" <c:if test="${workaccident.work_area=='Oily'}"><c:out value="selected"/></c:if>>Oily</option>
+					<option value="Dirty" <c:if test="${workaccident.work_area=='Dirty'}"><c:out value="selected"/></c:if>>Dirty</option>	
+					<option value="Slippery" <c:if test="${workaccident.work_area=='Slippery'}"><c:out value="selected"/></c:if>>Slippery</option>
 					 <option value="Other" <c:if test="${workaccident.work_area=='Other'}"><c:out value="selected"/></c:if>>Other</option> 
-					 </select>
-					   <br><br> <input type="text" name="warea" class="input_txtbx1" id="warea" maxlength="32" value="${workaccident.warea}" name="warea" style='display:none; width: 171px' onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
-				      <script>
+					 </select>  <script>
 		 window.onload = function()
 {
 if (document.getElementById("workcheck").value == "Other") {
@@ -1014,11 +1012,13 @@ document.getElementById("warea").style.visibility = 'hidden';
 }
 }
 </script>
+					   <br><br> <input type="text" name="warea" class="input_txtbx1" id="warea" maxlength="32" value="${workaccident.warea}" style='display:none; width: 171px' onInput="return validatename(id)";   /></br><span class="err"><form:errors path="workAcc.warea"></form:errors></span></td>
+				    
 				 </tr>
 				   <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you use foot or hand Levers?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="levers" value="yes" class="input_txt"<c:if test="${workaccident.levers=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="levers" value="Yes" class="input_txt"<c:if test="${workaccident.levers=='Yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="levers" value="No" class="input_txt"<c:if test="${workaccident.levers=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  <td></td>    
@@ -1026,7 +1026,7 @@ document.getElementById("warea").style.visibility = 'hidden';
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you work overhead?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="overhead" value="yes" class="input_txt"<c:if test="${workaccident.overhead=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="overhead" value="Yes" class="input_txt"<c:if test="${workaccident.overhead=='Yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="overhead" value="No" class="input_txt"<c:if test="${workaccident.overhead=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
@@ -1041,14 +1041,14 @@ document.getElementById("warea").style.visibility = 'hidden';
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you like your job?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="like_job" value="yes" class="input_txt" <c:if test="${workaccident.like_job=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="like_job" value="Yes" class="input_txt" <c:if test="${workaccident.like_job=='Yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="like_job" value="No" class="input_txt" <c:if test="${workaccident.like_job=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was a pre-employment exam performed or required?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="pre_employment" value="yes" class="input_txt"<c:if test="${workaccident.pre_employment=='yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pre_employment" value="Yes" class="input_txt"<c:if test="${workaccident.pre_employment=='Yes'}"><c:out value="checked=checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="pre_employment" value="No" class="input_txt" <c:if test="${workaccident.pre_employment=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  <td></td>    
@@ -1056,7 +1056,7 @@ document.getElementById("warea").style.visibility = 'hidden';
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Off work, Do you want to return to your job?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="return_job" value="yes" class="input_txt"<c:if test="${workaccident.return_job=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="return_job" value="Yes" class="input_txt"<c:if test="${workaccident.return_job=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="return_job" value="No" class="input_txt" <c:if test="${workaccident.return_job=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>

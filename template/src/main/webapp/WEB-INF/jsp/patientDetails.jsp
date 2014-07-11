@@ -4307,7 +4307,7 @@ function check(id)
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Have You Ever Had Chiropractic Care? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Chiropratic_care" value="yes" class="input_txt" id="yes1" checked="true">yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt" id="No1">No
+				                  	<input type="radio" name="Chiropratic_care" value="Yes" class="input_txt" id="yes1" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Chiropratic_care" value="No" class="input_txt" id="No1">No
 				                  	<span id="Chiropratic_careerror" style="color: red;font-style:italic;"></span></td>
 				                </tr> 
 				               </table>
@@ -4415,7 +4415,7 @@ function check(id)
                         <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Are These Symptoms Due To An Accident?</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  
-				                  	<input type="radio" name="Symptom_Accident" value="yes" class="input_txt" id="yes" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt" id="No">No
+				                  	<input type="radio" name="Symptom_Accident" value="Yes" class="input_txt" id="yes" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Symptom_Accident" value="No" class="input_txt" id="No">No
 				                  	 <span id="Symptom_Accidenterror" style="color: red;font-style:italic;"></span></td>
 				                  	<td></td>
 				                </tr>   
@@ -4445,7 +4445,7 @@ function check(id)
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Accident Reported:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Accident_Reported" value="yes" class="input_txt" id="yes2" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt" id="No2">No
+				                  	<input type="radio" name="Accident_Reported" value="Yes" class="input_txt" id="yes2" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Accident_Reported" value="No" class="input_txt" id="No2">No
 				                  	<span id="Accident_Reportederror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                  
@@ -4465,7 +4465,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Have You Retained An Attorney For This Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Attorney_accident" value="yes" class="input_txt" id="yes5" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt" id="No5">No
+				                  	<input type="radio" name="Attorney_accident" value="Yes" class="input_txt" id="yes5" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Attorney_accident" value="No" class="input_txt" id="No5">No
 				                  	<span id="Attorney_accidenterror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                <td></td>
@@ -4495,7 +4495,7 @@ function check(id)
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Mls There A Claim Open </td>
 				                  <td valign="top" align="left" class="input_txt">
-				 <input type="radio" name="claim_open" value="yes" class="input_txt" id="claim_open" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open1">No
+				 <input type="radio" name="claim_open" value="Yes" class="input_txt" id="claim_open" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="claim_open" value="No" class="input_txt" id="claim_open1">No
 				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
 				                  	<td></td>                                                                                        
 				                 
@@ -4513,7 +4513,7 @@ function check(id)
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Would You Like Us To Send Your Records To Your Family Physician:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="record" value="yes" class="input_txt" id="yes6" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt" id="No6">No
+				                  	<input type="radio" name="record" value="Yes" class="input_txt" id="yes6" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="record" value="No" class="input_txt" id="No6">No
 				                  	 <span id="recorderror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                <td></td>
@@ -4611,7 +4611,7 @@ function check(id)
 				               <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Have You Ever Been Involved In A Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Prev_accident" value="yes" class="input_txt" id="yes7" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt" id="No7">No
+				                  	<input type="radio" name="Prev_accident" value="Yes" class="input_txt" id="yes7" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Prev_accident" value="No" class="input_txt" id="No7">No
 				                  	<span id="Prev_accidenterror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                  	
@@ -4669,25 +4669,25 @@ function check(id)
 				                 
 				                 <tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Anemia" value="Anemia">Anemia </td>
-				                  	 <td class="input_txt" align="left" style="width: 173px; "><input type="checkbox" name="Muscular" value="Muscular">MuscularDystrophy </td>
-				                  	 <td class="input_txt" align="left" style="width: 129px; "><input type="checkbox" name="Rheumatic" value="Rheumatic">RheumaticFever </td>
+				                  	 <td class="input_txt" align="left" style="width: 173px; "><input type="checkbox" name="Muscular" value="Muscular Dystrophy">Muscular Dystrophy </td>
+				                  	 <td class="input_txt" align="left" style="width: 129px; "><input type="checkbox" name="Rheumatic" value="Rheumatic Fever">Rheumatic Fever </td>
 				                  	 
 				                  </tr>
 				                  <tr>
 				                  <td class="input_txt" align="left" style="width: 75px; "><input type="checkbox" name="Allergies" value="Allergies">Allergies</td>
 				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Cancer" value="Cancer">Cancer </td>
-				                   <td class="input_txt" align="left"><input type="checkbox" name="Polio1" value="Polio1">Polio </td>
+				                   <td class="input_txt" align="left"><input type="checkbox" name="Polio" value="Polio">Polio </td>
 				                  </tr>
 				                  <tr>
-				                  	 <td valign="top" align="left" class="input_txt" style="width: 153px; "><input type="checkbox" name="Multiple" value="Multiple">MultipleSclerosis</td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Scarlet" value="Scarlet">ScarletFever </td>
+				                  	 <td valign="top" align="left" class="input_txt" style="width: 153px; "><input type="checkbox" name="Multiple" value="Multiple Sclerosis">Multiple Sclerosis</td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Scarlet" value="Scarlet Fever">Scarlet Fever </td>
                                       <td class="input_txt" align="left"><input type="checkbox" name="HIV" value="HIV">HIV </td>
 
 				                  	            	 </tr>
 				                  	 <tr>
-				                  	  <td class="input_txt" align="left" style="width: 114px; "><input type="checkbox" name="Sinus" value="Sinus">Sinus Trouble </td>
+				                  	  <td class="input_txt" align="left" style="width: 114px; "><input type="checkbox" name="Sinus" value="Sinus Trouble">Sinus Trouble </td>
 				                  	 <td class="input_txt" align="left"><input type="checkbox" name="Asthma" value="Asthma">Asthma </td>
-				                  	 <td class="input_txt" align="left"><input type="checkbox" name="German" value="German">GermanMeasles </td>
+				                  	 <td class="input_txt" align="left"><input type="checkbox" name="German" value="German Measles">German Measles </td>
 				                  	 </tr>
 				                  	 <tr>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Nervousness" value="Nervousness">Nervousness </td>
@@ -4707,27 +4707,27 @@ function check(id)
 				                  	
 				                  	</tr>
 				                  	<tr><td valign="top" align="left" class="input_txt"><input type="checkbox" name="Arthritis" value="Arthritis">Arthritis </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Venereal" value="Venereal">VenerealDisease</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Venereal" value="Venereal Disease">Venereal Disease</td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Backaches" value="Backaches">Backaches </td></tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Tuberculosis" value="Tuberculosis">Tuberculosis	</td>    
-				                    <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Liver" value="Liver">LiverDisease </td>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Kidney" value="Kidney">KidneyDisease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Tuberculosis" value="Tuber Culosis">Tuber Culosis	</td>    
+				                    <td valign="top" align="left" class="input_txt"><input type="checkbox" name="Liver" value="Liver">Liver Disease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Kidney" value="Kidney">Kidney Disease </td>
 				                  	
 				                  	</tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Thyroid" value="Thyroid">ThyroidDisease </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Thyroid" value="Thyroid">Thyroid Disease </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Alcoholism" value="Alcoholism">Alcoholism </td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Hepatitis" value="Hepatitis">Hepatitis </td>
 				                  	</tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental">MentalIllness </td>
-				                  	<td valign="top" align="left" class="input_txt" style="width: 157px; "><input type="checkbox" name="High" value="High">HighBloodPressure</td>
-				                  	<td valign="top" align="left" class="input_txt" style="width: 149px; "><input type="checkbox" name="Digestive" value="Digestive">DigestiveDisorders </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental">Mental Illness </td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 157px; "><input type="checkbox" name="High" value="High">High Blood Pressure</td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 149px; "><input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders </td>
 				                  	
 				                  	</tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart">Heart trouble	</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart">Heart Trouble	</td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Other" value="Other"onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"/>other </td>
 				                 <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="ifother" style="visibility:hidden" name="Ifother" placeholder="If other" /></td>
 				                  	</tr>
@@ -4767,7 +4767,7 @@ function check(id)
 				  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Do You Work Around Hazardous Substances:  </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <div id="send_to">
-				  <input type="radio" name="Hazardous" value="yes" id="Hazardous" class="input_txt" checked="true"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="Hazardous" value="Yes" id="Hazardous" class="input_txt" checked="true"  onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
 				 
     <!-- <span id="listerror" style="color: red;font-style:italic;"></span> --><input type="radio" name="Hazardous" id="Hazardous1" value="No" class="input_txt"onclick="toggle2('hide2')">No
 			       <label> </label><input type="text" id="list" name="Hazardousyes" placeholder="If yes,Please List"  onInput="return validatename55(id)"; /><span class="err" id="Hazardouserror"></span>
@@ -4777,7 +4777,7 @@ function check(id)
 				  <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Females Only:<br>&nbsp;&nbsp;Are You Pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="Female" value="yes" class="input_txt" id="yes9" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt" id="No9">No
+				                  	<input type="radio" name="Female" value="Yes" class="input_txt" id="yes9" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="Female" value="No" class="input_txt" id="No9">No
 				                  	<span id="Femaleerror"style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                

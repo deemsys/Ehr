@@ -1644,9 +1644,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who gave you the estimate?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="estimate" class="input_cmbbx1">
-					<option selected="selected" value="your insurance" >Your Insurance company</option>
-					<option value="other insurance">Other Driver's Insurance company</option>
-					<option value="body shop">Body shop</option>
+					<option selected="selected" value="Your Insurance Company" >Your Insurance Company</option>
+					<option value="Other Drivers Insurance Company">Other Driver's Insurance Company</option>
+					<option value="Body Shop">Body Shop</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1654,10 +1654,10 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were you the:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="seating" class="input_cmbbx1">
-					<option selected="selected" value="driver" >Driver</option>
-					<option value="front seat">Front seat Passenger</option>
-					<option value="back seat">Back seat Passenger</option>
-					<option value="on job">On the job at the time of accident</option>
+					<option selected="selected" value="Driver" >Driver</option>
+					<option value="Front seat Passenger">Front seat Passenger</option>
+					<option value="Back seat Passenger">Back seat Passenger</option>
+					<option value="On the job at the time of accident">On the job at the time of accident</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1699,15 +1699,15 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was you car stopped at the time of accident?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="carstopped" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstopped" value="no" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="carstopped" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="carstopped" value="No" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If you were the driver, was your foot on the brake? </td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="driverposition" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="driverposition" value="no" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="driverposition" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="driverposition" value="No" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was your vehicle moving at time of impact?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="vehicle_moving_time" value="yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="vehicle_moving_time" value="no" class="input_txt">No</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="vehicle_moving_time" value="Yes" class="input_txt" checked="true">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="vehicle_moving_time" value="No" class="input_txt">No</td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was Car:</td>
@@ -1849,7 +1849,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Air bag deployed:</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes" name="airbag" value="yes" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="no" name="airbag" value="no" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes" name="airbag" value="Yes" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="No" name="airbag" value="no" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
 				<span id="yeserror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.airbag"></form:errors></span> <select name="wereyou" class="input_cmbbx1" id="mytext">
 				 <option selected="selected" value="struck" >Struck</option>
 				 <option value="notstruck">Not Struck</option>
@@ -1895,7 +1895,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Hands on wheel:</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="hands_on_wheel" value="one" class="input_txt" checked="true">One&nbsp;&nbsp;&nbsp;<input type="radio" name="hands_on_wheel" value="two" class="input_txt">Two</td>
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="hands_on_wheel" value="One" class="input_txt" checked="true">One&nbsp;&nbsp;&nbsp;<input type="radio" name="hands_on_wheel" value="Two" class="input_txt">Two</td>
 				  </tr>
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Aware of crash:</td>
@@ -1908,7 +1908,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr>
 				   <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did you brace yourself? </td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes1" name="brace" value="yes" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" id="no1" value="no" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes1" name="brace" value="Yes" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" id="no1" value="No" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
 				 <span id="yes1error" style="color: red;font-style:italic;"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
 				  <option selected="selected" value="bracearms" >Braced with arms</option>
 				  <option value="bracelegs">Braced with legs</option>
@@ -1927,8 +1927,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr>  -->
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did this cause further injury: </td>
-				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" id="further_injury" value="yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
-				  <input type="radio" name="further_injury" value="no" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="middle" align="left" class="input_txt"><input type="radio" name="further_injury" id="further_injury" value="Yes" class="input_txt" checked="true" onclick="toggle2('show2')">Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="further_injury" value="No" class="input_txt" onclick="toggle2('hide2')">No&nbsp;&nbsp;&nbsp;
 				  <textarea rows='3' cols='35' id="injury" name="injurytext" onInput="return validatename(id)"; min="4" maxlength="32" placeholder="Please explain"></textarea><br><span id="injuryerror" style="color: red;font-style:italic;">
 				  </td>
 				  </tr>
@@ -1996,7 +1996,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did Patient's Body Strike Interior Of Car:</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="body_strike" value="yes" class="input_txt" checked="true" onchange="change44();">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="body_strike" id="body_strike" value="no" class="input_txt" onchange="change44();">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="body_strike" value="Yes" class="input_txt" checked="true" onchange="change44();">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="body_strike" id="body_strike" value="No" class="input_txt" onchange="change44();">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  </table>
@@ -2059,19 +2059,19 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  </tr> <tr class="row2">
 				  <td  valign="middle" align="left" class="input_txt" style="width: 492px; "><span class="err">* </span>Were you wearing glasses at the time of accident?</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="wearing_glasses" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="wearing_glasses" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="wearing_glasses" value="No" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td><td width="55"></td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were the glasses still in place after impact? </td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="glasses_impact" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="glasses_impact" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="glasses_impact" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="glasses_impact" value="No" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td><td width="55"></td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Unconscious:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <input type="radio" name="unconscious" id="unconscious" value="yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="no" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="unconscious" id="unconscious" value="Yes" class="input_txt" checked="true" onclick="toggle4('show4')" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="unconscious" value="No" class="input_txt" onclick="toggle4('hide4')" >No&nbsp;&nbsp;&nbsp;
 			      <input type="text" class="input_txtbx1" id="uncon" name="uncon" placeholder="If yes, unconscious for (minutes) " onkeypress="return validate(event)";  maxlength="18" style="width: 222px; "/><br> <span id="unconerror" style="color: red;font-style:italic;">
 			      </td><td width="55"></td>
 				  </tr>
@@ -2135,7 +2135,7 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				 <tr class="row1">
 				  <td  valign="middle" align="left" class="input_txt"><span class="err">* </span>Was anyone cited? </td>
 				  <td valign="top" align="left" class="input_txt" width="60%">
-				  <input type="radio" name="was_anyone_cited" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="was_anyone_cited" value="no" class="input_txt" >No&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="was_anyone_cited" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="was_anyone_cited" value="No" class="input_txt" >No&nbsp;&nbsp;&nbsp;
 			      </td> <td width="680" ></td>
 				  </tr> 
 				  <tr class="row2">

@@ -74,7 +74,77 @@ $(function() {
 	});	
 
 </script>
+<script>
 
+
+function enableTextbox11() {
+if (document.getElementById("doyoucheck").value == "Other") {
+document.getElementById("doyou").style.visibility = 'visible';
+
+//document.getElementById("xray").disabled = false;
+}
+else  {
+document.getElementById("doyou").style.visibility = 'hidden';
+//document.getElementById("xray").disabled = true;
+
+
+}
+}
+
+</script>
+<script>
+function enableTextbox() {
+if (document.getElementById("doyoucheck").value == "Other") {
+document.getElementById("doyou").disabled = true;
+
+
+
+}
+else  {
+
+document.getElementById("doyou").disabled = false;
+
+
+}
+}
+</script>
+<script>
+function Checkpos(){
+	 var element=document.getElementById('doyou');
+	  var type1=document.getElementById('doyoucheck');
+	  var type = type1.options[type1.selectedIndex].value;
+
+	 
+	 if(type=='other')
+	   element.style.display='block';
+	 else  
+	   element.style.display='none';
+	} 
+
+function Checklight(){
+		 var element=document.getElementById('lighting_div');
+		  var type1=document.getElementById('typeoflight');
+		  var type = type1.options[type1.selectedIndex].value;
+
+
+		 if(type=='Other')
+		   element.style.display='block';
+		 else  
+		   element.style.display='none';
+		} 
+	function any(){
+		var element = document.getElementById('carry');
+		if(document.getElementById('pickcheck').checked)
+			{
+			
+				element.style.display="block";
+			
+			}
+		else
+			element.style.display="none";
+	}
+	
+	</script>
 
 <script>
   $(function() {
@@ -824,24 +894,24 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				 <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Work Posture:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="doyou_pos" id="doyou_pos" class="input_cmbbx1" onchange='Checkpos(this.value);' style="width: 171px; ">
-					<option selected="selected" value="sit_at_desk" >Sit at desk</option>
-					<option value="walk">Walk</option>
-					<option value="stand">Stand</option>
-					<option value="stoop">Stoop</option>
-					<option value="hold">Hold</option>
-					<option value="carry">Carry</option>
-					<option value="drive_comp_vehi">Drive a company vehicle</option>
-					<option value="load">Load</option>
-					<option id="other" value="other">Other</option>
+				  <select name="doyou_pos" id="doyoucheck" class="input_cmbbx1" onchange="if (this.value=='Other'){this.form['doyou'].style.visibility='visible'}else {this.form['doyou'].style.visibility='hidden'};" style="width: 171px; ">
+					<option selected="selected" value="Sit at desk" >Sit at desk</option>
+					<option value="Walk">Walk</option>
+					<option value="Stand">Stand</option>
+					<option value="Stoop">Stoop</option>
+					<option value="Hold">Hold</option>
+					<option value="Carry">Carry</option>
+					<option value="Drive a company vehicle">Drive a company vehicle</option>
+					<option value="Load">Load</option>
+					<option id="other" value="Other">Other</option>
 					</select>
-					<span id="doyou_poserror" style="color: red;font-style:italic;"></span><br><br>
-				 <input type="text" name="doyou" id="doyou" class="input_txtbx1" maxlength="32" style='display:none; width: 171px' onInput="return validatename(id)";/><span id="doyouerror" style="color: red;font-style:italic;"></span>
+					<span id="doyoucheckerror" style="color: red;font-style:italic;"></span><br><br>
+				 <input type="text" name="doyou" id="doyou" class="input_txtbx1" maxlength="32"  width: 171px' style="visibility:hidden;" onInput="return validatename(id)";/><span id="doyouerror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you carry anything or pick anything up?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="yes" checked="true" class="input_txt" id="yes1" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" id="No1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick" value="Yes" checked="true" class="input_txt" id="yes1" onclick="any('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick" value="No" id="No1" class="input_txt" onclick="any('hide')">No&nbsp;&nbsp;&nbsp;
 				   <input type="hidden" class="input_txtbx1" id="carry" name="carry" placeholder="If yes, What"/>
 				 <span id="carryerror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -872,7 +942,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Has there been a time loss or absentee caused from job injury?</td>
-				  <td valign="top" align="left" class="input_txt" width="20%"><input type="radio" name="time_loss" value="yes" checked="true" class="input_txt" id="yes2" onclick="time('show1')">Yes
+				  <td valign="top" align="left" class="input_txt" width="20%"><input type="radio" name="time_loss" value="Yes" checked="true" class="input_txt" id="yes2" onclick="time('show1')">Yes
 				  <input type="radio" name="time_loss" value="No"  id="No2" class="input_txt" onclick="time('hide1')">No 
 				  <table><tr><td><textarea  rows='3' cols='35' id="absenteeism" name="absenteeism" maxlength="32" onInput="return validatename(id)"; placeholder="If yes, explain(include dates)"  ></textarea><br><span id="absenteeismerror" style="color: red;font-style:italic;"></span></td></tr></table><span id="time_losserror" style="color: red;font-style:italic;"></span></td>
 				  
@@ -880,19 +950,19 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				   <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Type of lighting in the building:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="type_of_light" class="input_cmbbx1" onchange='Checklight(this.value);' id="type_of_light">
-					<option selected="selected" value="fluorescent" >Fluorescent</option>
-					<option value="overhead">Overhead</option>
-					<option value="onmachine">On Machine</option>
-					<option value="others">Other</option>
+				  <select name="type_of_light" class="input_cmbbx1" id="type_of_light" onchange="if (this.value=='Other'){this.form['lighting'].style.visibility='visible'}else {this.form['lighting'].style.visibility='hidden'};" >
+					<option selected="selected" value="Fluorescent" >Fluorescent</option>
+					<option value="Overhead">Overhead</option>
+					<option value="On Machine">On Machine</option>
+					<option value="Other">Other</option>
 					</select>
 					<span id="type_of_lighterror" style="color: red;font-style:italic;"></span>
-				  <br><br> <input type="text" class="input_txtbx1" name="lighting" id="lighting" style='display:none; width: 171px' maxlength="32" onInput="return validatename(id)";/>
+				  <br><br> <input type="text" class="input_txtbx1" name="lighting" id="lighting" style="visibility:hidden;"width: 171px' maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you pick up or lift heavy objects?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="yes" id="yes3" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" id="No3"class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="Yes" id="yes3" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" id="No3"class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
 				 <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -925,16 +995,16 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
                 <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>Do you lift from? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lift_from" class="input_cmbbx1" id="lift_from">
-					<option selected="selected" value="ground" >Ground</option>
-					<option value="bench">Bench</option>
-					<option value="platform">Platform</option>
+					<option selected="selected" value="Ground" >Ground</option>
+					<option value="Bench">Bench</option>
+					<option value="Platform">Platform</option>
 					</select>
 					 <span id="lift_fromerror" style="color: red;font-style:italic;"></span>
 					</td>
 					</tr>
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you lift in or out of a machine?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="yes" checked="true"  id="yes4"class="input_txt"  >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="No" id="No4"class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="liftin_orout" value="Yes" checked="true"  id="yes4"class="input_txt"  >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="liftin_orout" value="No" id="No4"class="input_txt">No&nbsp;&nbsp;&nbsp;
 				 <span id="liftin_orouterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -942,16 +1012,16 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If working at a machine,do you:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="workpos" class="input_cmbbx1" id="workpos">
-					<option selected="selected" value="sit" >Sit</option>
-					<option value="stand">Stand</option>
-					<option value="kneel">Kneel</option>
+					<option selected="selected" value="Sit" >Sit</option>
+					<option value="Stand">Stand</option>
+					<option value="Kneel">Kneel</option>
 					</select>
 					<span id="workposerror" style="color: red;font-style:italic;"></span>
 					</td>
 					</tr>
 					<tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>In your job, do you push or pull?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5"value="yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5"value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="push_pull" id="yes5" value="Yes" class="input_txt" checked="true" onclick="pull('show4')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="push_pull" id="No5" value="No" class="input_txt" onclick="pull('hide4')">No&nbsp;&nbsp;&nbsp;
 				   <input type="text" class="input_txtbx1" id="jobpp" name="jobpp" maxlength="32" placeholder="If yes, give specifics" onInput="return validatename(id)";/> <span id="jobpperror" style="color: red;font-style:italic;"></span>
 				 <span id="push_pullerror" style="color: red;font-style:italic;"></span>
 				  </td>
@@ -1005,9 +1075,9 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Is your work area:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="work_area" class="input_cmbbx1" onchange='work(this.value);'>
-					<option selected="selected" value="oily" >Oily</option>
-					<option value="dirty">Dirty</option>
-					<option value="slippery">Slippery</option>
+					<option selected="selected" value="Oily" >Oily</option>
+					<option value="Dirty">Dirty</option>
+					<option value="Slippery">Slippery</option>
 					<option value="Other">Other</option>
 					</select><br><br>
 				   <input type="text" class="input_txtbx1" name="warea" id="warea" maxlength="32" onInput="return validatename(id)"; style='display:none; width: 171px'/>
@@ -1015,12 +1085,12 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you use foot or hand levers?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="levers" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="levers" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="levers" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="levers" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you work overhead?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="overhead" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="overhead" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="overhead" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="overhead" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -1031,17 +1101,17 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you like your job?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="like_job" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="like_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="like_job" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="like_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was a pre-employment exam performed or required?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pre_employment" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pre_employment" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pre_employment" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pre_employment" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If Off work, Do you want to return to your job?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="return_job" value="yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="return_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="return_job" value="Yes" class="input_txt" checked="true" >Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="return_job" value="No" class="input_txt">No&nbsp;&nbsp;&nbsp;
 				  </td>
 				  </tr>
 				  <tr class="row2">

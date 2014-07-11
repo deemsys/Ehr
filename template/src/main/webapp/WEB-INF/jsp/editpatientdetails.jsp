@@ -3826,7 +3826,7 @@ document.getElementById('employee').style.display="block";
 							</tr>                        
 						    <tr class="row2">
                         		<td><span class="err">*&nbsp;</span>Have You Ever Had Chiropractic Care: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				                <td> 	<input type="radio" name="chiropratic_care" value="yes" id="yes1" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                <td> 	<input type="radio" name="chiropratic_care" value="Yes" id="yes1" class="input_txt" <c:if test="${patientDetails.chiropratic_care=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  		<input type="radio" name="chiropratic_care" value="No" id="No1" class="input_txt"<c:if test="${patientDetails.chiropratic_care=='No'}"><c:out value="checked=checked"/></c:if>>No
 				               	<span id="Chiropratic_careerror" style="color: red;font-style:italic;"></span>
 				                </td>
@@ -3940,7 +3940,7 @@ document.getElementById('employee').style.display="block";
 				                </tr>
 				                 <tr class="row2" >
                         <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Are These Symptoms Due To An Accident:</td>
-				                 <td>	<input type="radio" id="yes" name="symptom_Accident" value="yes" class="input_txt" <c:if test="${patientDetails.symptom_Accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                 <td>	<input type="radio" id="yes" name="symptom_Accident" value="Yes" class="input_txt" <c:if test="${patientDetails.symptom_Accident=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                 	<input type="radio" id="No" name="symptom_Accident" value="No" class="input_txt"<c:if test="${patientDetails.symptom_Accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                 	<span id="Symptom_Accidenterror" style="color: red;font-style:italic;"></span>
 				                 	</td> 
@@ -4032,7 +4032,7 @@ function checkAjaxPost() {
 						   <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Accident Reported:
 						   </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" id="yes2" name="accident_Reported" value="yes" class="input_txt" <c:if test="${patientDetails.accident_Reported=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="yes2" name="accident_Reported" value="Yes" class="input_txt" <c:if test="${patientDetails.accident_Reported=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" id="No2" name="accident_Reported" value="No" class="input_txt"<c:if test="${patientDetails.accident_Reported=='No'}"><c:out value="checked=checked"/></c:if>>No
 				    	<span id="Accident_Reportederror" style="color: red;font-style:italic;"></span>           
 				                </td>
@@ -4049,7 +4049,7 @@ function checkAjaxPost() {
 				         </tr>
 				          <tr class="row2">
                         <td><span class="err">*&nbsp;</span>Have You Retained An Attorney For This Accident:</td>
-				                  <td>	<input type="radio" id="yes5" name="attorney_accident" value="yes" class="input_txt" <c:if test="${patientDetails.attorney_accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  <td>	<input type="radio" id="yes5" name="attorney_accident" value="Yes" class="input_txt" <c:if test="${patientDetails.attorney_accident=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" id="No5" name="attorney_accident" value="No" class="input_txt"<c:if test="${patientDetails.attorney_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 			<span id="Attorney_accidenterror" style="color: red;font-style:italic;"></span>
 									<td></td>
@@ -4075,7 +4075,7 @@ function checkAjaxPost() {
 						<tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Mls There A Claim Open: </td>
 				                  <td valign="top" align="left" class="input_txt">
-				          	<input type="radio" id="claim_open" name="claim_open" value="yes" class="input_txt" <c:if test="${patientDetails.claim_open=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;        
+				          	<input type="radio" id="claim_open" name="claim_open" value="Yes" class="input_txt" <c:if test="${patientDetails.claim_open=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;        
 					<input type="radio" id="No5" name="claim_open" value="No" class="input_txt"<c:if test="${patientDetails.claim_open=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                  	<span id="claim_openerror" style="color: red;font-style:italic;"><form:errors path="PatientDetails.claim_open"></form:errors></span></td>
 				                  	<td></td>                                                                                        
@@ -4092,7 +4092,7 @@ function checkAjaxPost() {
 				                <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Would You Like Us To Send Your Records To Your Family Physician:  </td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" id="yes6" name="record" value="yes" class="input_txt" <c:if test="${patientDetails.record=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="No6" name="record" value="No" class="input_txt" <c:if test="${patientDetails.record=='No'}"><c:out value="checked=checked"/></c:if>>No
+				                  	<input type="radio" id="yes6" name="record" value="Yes" class="input_txt" <c:if test="${patientDetails.record=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="No6" name="record" value="No" class="input_txt" <c:if test="${patientDetails.record=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                  	 <span id="recorderror" style="color: red;font-style:italic;"></span>
 				                  	</td>
 				                <td></td>
@@ -4169,7 +4169,7 @@ function checkAjaxPost() {
 				         <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Have You Ever Been Involved In A Previous Auto or Work Accident:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" id="yes7" name="prev_accident" value="yes" class="input_txt" <c:if test="${patientDetails.prev_accident=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+				                  	<input type="radio" id="yes7" name="prev_accident" value="Yes" class="input_txt" <c:if test="${patientDetails.prev_accident=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				                  	<input type="radio" id="No7" name="prev_accident" value="No" class="input_txt"<c:if test="${patientDetails.prev_accident=='No'}"><c:out value="checked=checked"/></c:if>>No
 				                  <span id="Prev_accidenterror" style="color: red;font-style:italic;"></span>
 				                  	</td>
@@ -4221,21 +4221,21 @@ function checkAjaxPost() {
 				                 <table cellpadding="0" cellspacing="0">
 				                 <tr class="row1">
 				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Anemia" name="anemia" <c:if test="${patientDetails.anemia=='Anemia'}"><c:out value="Checked"/></c:if>   />Anemia</td>
-				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Muscular" name="muscular" <c:if test="${patientDetails.muscular=='Muscular'}"><c:out value="Checked"/></c:if>   />Muscular</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Rheumatic" name="rheumatic" <c:if test="${patientDetails.rheumatic=='Rheumatic'}"><c:out value="Checked"/></c:if>   />Rheumatic</td>
+				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Muscular Dystrophy" name="muscular" <c:if test="${patientDetails.muscular=='Muscular Dystrophy'}"><c:out value="Checked"/></c:if>   />Muscular Dystrophy</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Rheumatic Fever" name="rheumatic" <c:if test="${patientDetails.rheumatic=='Rheumatic Fever'}"><c:out value="Checked"/></c:if>   />Rheumatic Fever</td>
 								 <td valign="top" align="left" class="input_txt" style="width: 108px; "><input type="checkbox"  value="Allergies" name="allergies" <c:if test="${patientDetails.allergies=='Allergies'}"><c:out value="Checked"/></c:if>   />Allergies</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Cancer" name="cancer" <c:if test="${patientDetails.cancer=='Cancer'}"><c:out value="Checked"/></c:if>   />Cancer</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Polio1" name="polio1" <c:if test="${patientDetails.polio1=='Polio1'}"><c:out value="Checked"/></c:if>   />Polio1</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Polio" name="polio" <c:if test="${patientDetails.polio1=='Polio'}"><c:out value="Checked"/></c:if>   />Polio</td>
 								<td></td>
 								 </tr>
 				
 				                 <tr class="row1">
-				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Multiple" name="multiple" <c:if test="${patientDetails.multiple=='Multiple'}"><c:out value="Checked"/></c:if>   />Multiple</td>
+				                 <td valign="top" align="left" class="input_txt" style="width: 145px; "><input type="checkbox"  value="Multiple Sclerosis" name="multiple" <c:if test="${patientDetails.multiple=='Multiple Sclerosis'}"><c:out value="Checked"/></c:if>   />Multiple Sclerosis</td>
 				                 <td valign="top" align="left" class="input_txt" style="width: 135px; "><input type="checkbox"  value="Scarlet" name="scarlet" <c:if test="${patientDetails.scarlet=='Scarlet'}"><c:out value="Checked"/></c:if>   />Scarlet Fever</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="HIV" name="HIV" <c:if test="${patientDetails.HIV=='HIV'}"><c:out value="Checked"/></c:if>   />HIV</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Sinus" name="sinus" <c:if test="${patientDetails.sinus=='Sinus'}"><c:out value="Checked"/></c:if>   />Sinus</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Sinus Trouble" name="sinus" <c:if test="${patientDetails.sinus=='Sinus Trouble'}"><c:out value="Checked"/></c:if>   />Sinus Trouble</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Asthma" name="asthma" <c:if test="${patientDetails.asthma=='Asthma'}"><c:out value="Checked"/></c:if>   />Asthma</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="German" name="german" <c:if test="${patientDetails.german=='German'}"><c:out value="Checked"/></c:if>   />German Measles </td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="German Measles" name="german" <c:if test="${patientDetails.german=='German Measles'}"><c:out value="Checked"/></c:if>   />German Measles </td>
 								 <td></td>
 					
 								 </tr>
@@ -4254,14 +4254,14 @@ function checkAjaxPost() {
 				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Rheumatism" name="rheumatism" <c:if test="${patientDetails.rheumatism=='Rheumatism'}"><c:out value="Checked"/></c:if>   />Rheumatism</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Diabetes" name="diabetes" <c:if test="${patientDetails.diabetes=='Diabetes'}"><c:out value="Checked"/></c:if>   />Diabetes</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Arthritis" name="arthritis" <c:if test="${patientDetails.arthritis=='Arthritis'}"><c:out value="Checked"/></c:if>   />Arthritis</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Venereal" name="venereal" <c:if test="${patientDetails.venereal=='Venereal'}"><c:out value="Checked"/></c:if>   />Venereal</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Venereal Disease" name="venereal" <c:if test="${patientDetails.venereal=='Venereal Disease'}"><c:out value="Checked"/></c:if>   />Venereal Disease</td>
 								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Backaches" name="backaches" <c:if test="${patientDetails.backaches=='Backaches'}"><c:out value="Checked"/></c:if>   />Backaches</td>
 								 <td></td>
 					
 								 
 								 </tr>				 				 				 
 								 <tr class="row1">
-				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Tuberculosis" name="tuberculosis" <c:if test="${patientDetails.tuberculosis=='Tuberculosis'}"><c:out value="Checked"/></c:if>   />Tuberculosis</td>
+				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Tuber Culosis" name="tuberculosis" <c:if test="${patientDetails.tuberculosis=='Tuber Culosis'}"><c:out value="Checked"/></c:if>   />Tuber Culosis</td>
 				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Liver" name="liver" <c:if test="${patientDetails.liver=='Liver'}"><c:out value="Checked"/></c:if>   />Liver Disease</td>
 								 <td valign="top" align="left" class="input_txt" style="width: 136px; "><input type="checkbox"  value="Kidney" name="kidney" <c:if test="${patientDetails.kidney=='Kidney'}"><c:out value="Checked"/></c:if>   />Kidney Disease</td>
 								 <td valign="top" align="left" class="input_txt" style="width: 139px; "><input type="checkbox"  value="Thyroid" name="thyroid" <c:if test="${patientDetails.thyroid=='Thyroid'}"><c:out value="Checked"/></c:if>   />Thyroid Disease</td>
@@ -4270,10 +4270,10 @@ function checkAjaxPost() {
 								 </tr>
 				
 				                 <tr class="row1">
-				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Mental" name="mental" <c:if test="${patientDetails.mental=='Mental'}"><c:out value="Checked"/></c:if>   />Mental</td>
-				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="High" name="high" <c:if test="${patientDetails.high=='High'}"><c:out value="Checked"/></c:if>   />High</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Digestive" name="digestive" <c:if test="${patientDetails.digestive=='Digestive'}"><c:out value="Checked"/></c:if>   />Digestive</td>
-								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Heart" name="heart" <c:if test="${patientDetails.heart=='Heart'}"><c:out value="Checked"/></c:if>   />Heart</td>
+				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Mental" name="mental" <c:if test="${patientDetails.mental=='Mental'}"><c:out value="Checked"/></c:if>   />Mental Illness</td>
+				                 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="High" name="high" <c:if test="${patientDetails.high=='High'}"><c:out value="Checked"/></c:if>   />High Blood Pressure</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Digestive" name="digestive" <c:if test="${patientDetails.digestive=='Digestive'}"><c:out value="Checked"/></c:if>   />Digestive Disorders</td>
+								 <td valign="top" align="left" class="input_txt"><input type="checkbox"  value="Heart" name="heart" <c:if test="${patientDetails.heart=='Heart'}"><c:out value="Checked"/></c:if>   />Heart Trouble</td>
 								 <td valign="top" align="left" class="input_txt">
 								 <input type="checkbox"  value="Other" name="other" id="othercheck"onclick="Other();"<c:if test="${patientDetails.other=='Other'}"><c:out value="Checked"/></c:if>   />Other
 								<input type="text" class="input_txtbx1"   id="other1" style='display:none'  value="${patientDetails.ifother}" name="ifother" /></br><span class="err"><form:errors path="patient.ifother"></form:errors></span></td>
@@ -4305,7 +4305,7 @@ function checkAjaxPost() {
 				                  <input type="checkbox"  id="Drink" value="Drink" name="drink" <c:if test="${patientDetails.drink=='Drink'}"><c:out value="Checked"/></c:if>   />Drink Regularly	&nbsp;&nbsp;&nbsp;&nbsp;
 				                  <input type="checkbox"  id="Smoke" value="Smoke" name="smoke" <c:if test="${patientDetails.smoke=='Smoke'}"><c:out value="Checked"/></c:if>   />Smoke	&nbsp;&nbsp;&nbsp;&nbsp;
 				                  <input type="checkbox"  id="Drugs" value="Drugs" name="drugs" <c:if test="${patientDetails.drugs=='Drugs'}"><c:out value="Checked"/></c:if>   />Take Recreational Drugs	&nbsp;&nbsp;&nbsp;&nbsp;
-				                  <input type="checkbox" id="Diet" value="Diet" name="diet" <c:if test="${patientDetails.diet=='Diet'}"><c:out value="Checked"/></c:if>   />Diet	&nbsp;&nbsp;&nbsp;&nbsp;
+				                  <input type="checkbox" id="Diet" value="Diet" name="diet" <c:if test="${patientDetails.diet=='Diet'}"><c:out value="Checked"/></c:if>   />Eat a Poor Diet	&nbsp;&nbsp;&nbsp;&nbsp;
 				                    <input type="checkbox" id="Exercise" value="Exercise" name="exercise" <c:if test="${patientDetails.exercise=='Exercise'}"><c:out value="Checked"/></c:if>   />Exercise Regularly	&nbsp;&nbsp;&nbsp;&nbsp;
 				                 	<span id="doyouerror" style="color: red;font-style:italic;"></span>
 				                 
@@ -4318,7 +4318,7 @@ function checkAjaxPost() {
 				 			     </td>
 				  				 <td valign="top" align="left" class="input_txt">
 				 
-										  <input type="radio" name="hazardous" value="yes" class="input_txt" id="hazardouscheck" onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
+										  <input type="radio" name="hazardous" value="Yes" class="input_txt" id="hazardouscheck" onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				 						 
 										
 										  <input type="radio" name="hazardous" value="No" class="input_txt"  onclick="Hazardous();"<c:if test="${patientDetails.hazardous=='No'}"><c:out value="checked=checked"/></c:if>>No&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4329,7 +4329,7 @@ function checkAjaxPost() {
 					   <tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*&nbsp;</span>Females Only:<br>&nbsp;&nbsp;Are you Pregnant:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" id="yes9" name="female" value="yes" class="input_txt" <c:if test="${patientDetails.female=='yes'}"><c:out value="checked=checked"/></c:if>>Yes
+				                  	<input type="radio" id="yes9" name="female" value="Yes" class="input_txt" <c:if test="${patientDetails.female=='Yes'}"><c:out value="checked=checked"/></c:if>>Yes
 				                  	<input type="radio" id="No9" name="female" value="No" class="input_txt"<c:if test="${patientDetails.female=='No'}"><c:out value="checked=checked"/></c:if>>No
 				            	<span id="Femaleerror"style="color: red;font-style:italic;"></span>    
 				      </tr>
