@@ -334,7 +334,7 @@ function validatename(id){
   if(document.getElementById("name").value.length<4 || document.getElementById("name").value.length>=32)
   {
   	
-  	document.getElementById("nameerror").innerHTML="Name should be of length 4 to 32";
+  	document.getElementById("nameerror").innerHTML=" should be of length 4 to 32";
   	
       return false;
   }
@@ -363,6 +363,21 @@ function validatename(id){
 
 		}
 		
+			/* if(document.getElementById("painname").value==Other)
+			{
+
+				
+				  if(document.getElementById("otherpainname").value=="")
+				  {
+					  alert("hi");
+				  }
+				  document.getElementById("otherpainnameerror").innerHTML="Required field should not be empty";
+				  return false;
+				  
+				  
+				  } */
+
+			
 		
 	document.getElementById("otherpainnameerror").innerHTML="";
 	if(document.getElementById("otherpainname").value!="")
@@ -370,7 +385,7 @@ function validatename(id){
     if(document.getElementById("otherpainname").value.length<4 || document.getElementById("otherpainname").value.length>=32)
     {
     	
-    	document.getElementById("otherpainnameerror").innerHTML="Name should be of length 4 to 32";
+    	document.getElementById("otherpainnameerror").innerHTML="should be of length 4 to 32";
     	
         return false;
     }
@@ -541,7 +556,7 @@ function checkLength1(){
 	              <option value="Oswestry">Oswestry</option>
 	              <option value="Shoulder">Shoulder</option>
 	               <option value="Other">Other</option>
-	             </select> <span style="color: red;font-style:italic;" id="painnameerror"></span><input type="text" name="otherpainname" id="otherpainname" style="display: none" onInput="return validatename(id)";><br><span style="color: red;font-style:italic;" id="otherpainnameerror"></span> </td>
+	             </select> <span style="color: red;font-style:italic;" id="painnameerror"></span><input type="text"  name="otherpainname" id="otherpainname"  style="display: none" onInput="return validatename(id)";><br><span style="color: red;font-style:italic;" id="otherpainnameerror"></span> </td>
 	             </tr>
 	             <tr height="30">
 	             <td><b>1) What is your pain RIGHT NOW?</b></td>

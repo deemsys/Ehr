@@ -4269,7 +4269,7 @@ function check(id)
 				                
 				                <tr class="row1">
 				               
-				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;Spouse's or significant others name:</td>
+				                  <td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;Spouse's or significant others name:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="SpousesName" name="SpousesName" onInput="return validatename2()";/><br><span id="SpousesNameerror" style="color: red;font-style:italic;" ><form:errors path="PatientDetails.spousesName"></form:errors></span>
 				                  	
