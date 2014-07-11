@@ -362,11 +362,7 @@ function validatename(id){
 		return false;
 		}
 			}
-		else
-			{
-			document.getElementById("med1").innerHTML="Required Field Should Not be Empty";
-			return false;
-			}
+		
 		document.getElementById("med1").value="";
 		document.getElementById("number").innerHTML="";
 		if(document.getElementById("amount").value!="")
@@ -377,11 +373,7 @@ function validatename(id){
 		return false;
 		}
 		}
-		else
-			{
-			document.getElementById("number").innerHTML="Required Field Should not be Empty";
-			return false;
-			}
+		
 		
 		
 		}
