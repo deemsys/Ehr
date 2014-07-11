@@ -510,7 +510,7 @@ $(function() {
            </tr>
            </table>
            <br>
-           <table><tr><Td valign="top"><b>Comments:</b></Td><td width="20"></td><td><textarea rows="5" cols="150"  id="comments" onInput="return validatename(id)"; name="comments"></textarea><span id="commentserror" style="color: red;font-style:italic;"></span></td></tr></table>
+           <table><tr><Td valign="top"><b>Comments:</b></Td><td width="20"></td><td><textarea rows="5" cols="150"  name="comments" id="comments" onInput="return validatename(id)"; ></textarea><span id="commentserror" style="color: red;font-style:italic;"></span></td></tr></table>
            
           
           
