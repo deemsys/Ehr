@@ -151,15 +151,17 @@ document.getElementById("fax").value=phone;
 		
 		}}
 		
-		var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+		var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;  
 		if(document.getElementById("fax").value!='')
 		{	
+		
 	    if(document.getElementById("fax").value.match(phoneno)==null)
 	    {
 	    	document.getElementById("faxerror").innerHTML="Invalid phone Format";
 	    	// document.getElementById('tblbtn').innerHTML="<input type='button' style='visibility: visible;' id='btnvisible1' class='submit_btn' value='Next' onmouseover='checkValid(event);'>";
 	        return false;
 	    }}
+		document.getElementById("faxerror").innerHTML="";
 		if(document.getElementById("fax").value!="")
 		{
 		
@@ -372,7 +374,7 @@ document.getElementById("fax").value=phone;
               </tr>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" placeholder="(513)421-2764" name="fax" id="fax" value="${requestfordemanddetails.fax}" maxlength="12" onkeypress="return validate(event)";><span class="err" id="faxerror"></span></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" placeholder="440-934-3107" name="fax" id="fax" value="${requestfordemanddetails.fax}" maxlength="12" onkeypress="return validate(event)";><span class="err" id="faxerror"></span></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>

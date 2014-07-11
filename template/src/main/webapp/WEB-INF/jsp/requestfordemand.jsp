@@ -323,7 +323,10 @@ function doAjaxPost() {
 		 error="true";
 		
 		}}
-		var phoneno = /^\(?[(]??([0-9]{3})\)?[)]?([0-9]{3})[-]?([0-9]{4})$/;  
+
+
+		
+		var phoneno = /^\(?([0-9]{3})\)?[-]?([0-9]{2})[-]?([0-9]{4})$/;  
 		if(document.getElementById("fax").value!='')
 		{	
 		
@@ -580,7 +583,7 @@ document.getElementById("fax").value=phone;
               <br>
               
               <tr height="20">
-              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="(513)421-2764" name="fax" id="fax" maxlength="12" onkeypress="return validate(event)";><br>&nbsp;&nbsp;&nbsp;<font size="+1" color="red"><span  id="faxerror"></span></font></td>
+              <td><b>Fax:</b>&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1"  placeholder="440-934-3107" name="fax" id="fax" maxlength="12" onkeypress="return validate(event)";><br>&nbsp;&nbsp;&nbsp;<font size="+1" color="red"><span  id="faxerror"></span></font></td>
               <td>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4933 West Tuscarawas Street
               </td>
