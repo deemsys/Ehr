@@ -343,8 +343,8 @@ if(document.getElementById("body_strike").checked)
  <script>
 		 window.onload = function()
 {
-			 
-			 if(document.getElementById("body_strike").checked)
+			 alert("ooo");
+			 if(document.getElementById("body_strike").checked.value=="No")
 			 {
 
 			 		document.getElementById("head_hit").style.visibility = 'hidden';
@@ -370,24 +370,10 @@ if(document.getElementById("body_strike").checked)
 			 		document.getElementById("otherpart_hit").style.visibility = 'visible';
 
 			 		}
-}
+};
 </script> 
- <script>
-		 window.onload = function()
-{
-			 alert("loading");
-if (document.getElementById("road").value == "Select Conditions") {
-document.getElementById("conditions").style.visibility = 'visible';
 
 
-}
-else  {
-document.getElementById("conditions").style.visibility = 'hidden';
-
-
-}
-}
-</script> 
 <script>
 
 
@@ -464,6 +450,26 @@ function validatename(id){
     document.getElementById(id).value = textInput;
 }
 </script>
+
+<script>
+		 window.onload = function()
+/* function enableTextbox() */ {
+			 alert("hai");
+if (document.getElementById("road").value == "Select Conditions") {
+document.getElementById("conditions").style.visibility = 'visible';
+
+//document.getElementById("xray").disabled = false;
+}
+else  {
+document.getElementById("conditions").style.visibility = 'hidden';
+//document.getElementById("xray").disabled = true;
+
+
+}
+
+}
+</script>
+ 
 <script>
 function checkValid(e)
 {
@@ -1364,8 +1370,8 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Road conditions:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="road_conditions" class="input_cmbbx1" id="road" onchange="if (this.value=='Select Conditions'){this.form['conditions'].style.visibility='visible'}else {this.form['conditions'].style.visibility='hidden'};">
-					<option  value="Select Conditions" <c:if test="${autoaccident.road_conditions=='Select Conditions'}"><c:out value="selected"/></c:if> >Select Conditions</option>
+				  <select name="road_conditions" class="input_cmbbx1" id="road" onchange="if (this.value=='Other'){this.form['conditions'].style.visibility='visible'}else {this.form['conditions'].style.visibility='hidden'};">
+					
 					
 					<option value="Dry" <c:if test="${autoaccident.road_conditions=='Dry'}"><c:out value="selected"/></c:if>>Dry</option>
 					<option value="Damp" <c:if test="${autoaccident.road_conditions=='Damp'}"><c:out value="selected"/></c:if>>Damp</option>
@@ -1376,9 +1382,9 @@ document.getElementById("injury").style.visibility = 'hidden';
 					<option value="Unknown" <c:if test="${autoaccident.road_conditions=='Unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select><span class="err"><form:errors path="Autoaccident.road_conditions"></form:errors></span>
 				  
-				
+				 <input type="text" name="conditions" id="conditions" class="input_txtbx1" style="visibility:hidden;" value="${autoaccident.conditions}" name="conditions" />
 				  </td>
-				   <td><input type="text"name="conditions" id="conditions" style="visibility:hidden;" value="${autoaccident.conditions}" name="conditions" /></td>
+				  
 				   
 				   <script>
 		 window.onload = function()
@@ -1699,6 +1705,39 @@ document.getElementById('mytext').style.display="block";
 				  <input type="radio" name="body_strike"  value="Yes" id="yeschecked" onchange="change44();" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='Yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="body_strike" id="body_strike" value="No" id="nochecked" onchange="change44();" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
 				  </td>
+				  
+				   <script>
+		 window.onload = function()
+{
+			 alert("ooo");
+			 if(document.getElementById("body_strike").checked.value=="No")
+			 {
+
+			 		document.getElementById("head_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlshoulder_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlhip_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlknee_hit").style.visibility = 'hidden';
+			 		document.getElementById("chest_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlarm_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlleg_hit").style.visibility = 'hidden';
+			 		document.getElementById("otherpart_hit").style.visibility = 'hidden';
+
+
+
+			 		}
+			 		else  {
+			 			document.getElementById("head_hit").style.visibility = 'visible';
+			 		document.getElementById("rlshoulder_hit").style.visibility = 'visible';
+			 		document.getElementById("rlhip_hit").style.visibility = 'visible';
+			 		document.getElementById("rlknee_hit").style.visibility = 'visible';
+			 		document.getElementById("chest_hit").style.visibility = 'visible';
+			 		document.getElementById("rlarm_hit").style.visibility = 'visible';
+			 		document.getElementById("rlleg_hit").style.visibility = 'visible';
+			 		document.getElementById("otherpart_hit").style.visibility = 'visible';
+
+			 		}
+};
+</script> 
 				  </tr>
 				  
 				  

@@ -1742,10 +1742,10 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Road Conditions:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="road_conditions" class="input_cmbbx1" onchange="if (this.value=='Select Conditions'){this.form['conditions'].style.visibility='visible'}else {this.form['conditions'].style.visibility='hidden'};">
-					<option selected="selected" value="Select Conditions" >Select Conditions</option>
+				  <select name="road_conditions" class="input_cmbbx1" onchange="if (this.value=='Other'){this.form['conditions'].style.visibility='visible'}else {this.form['conditions'].style.visibility='hidden'};">
 					
-					<option  value="Dry">Dry</option>
+					
+					<option  selected="selected" value="Dry">Dry</option>
 					<option value="Damp">Damp</option>
 					<option value="Wet">Wet</option>
 					<option value="Snow">Snow</option>

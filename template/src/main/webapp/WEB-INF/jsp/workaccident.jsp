@@ -960,9 +960,11 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  <br><br> <input type="text" class="input_txtbx1" name="lighting" id="lighting" style="visibility:hidden;"width: 171px' maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr>
+				
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Do you pick up or lift heavy objects?</td>
-				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="Yes" id="yes3" class="input_txt" checked="true" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="pick_lift" value="No" id="No3"class="input_txt" onclick="toggle3('hide3')">No&nbsp;&nbsp;&nbsp;
+				  <td valign="top" align="left" class="input_txt"><input type="radio" name="pick_lift" value="Yes" id="yes3" class="input_txt" checked="true"  onchange="if (this.value=='Yes'){this.form['how_much'].style.visibility='visible';this.form['how_often'].style.visibility='visible'}else {this.form['how_much'].style.visibility='hidden';this.form['how_often'].style.visibility='hidden'};" onclick="toggle3('show3')">Yes&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="pick_lift" id="pick_lift" value="No" id="No3" class="input_txt"  onchange="if (this.value=='Yes'){this.form['how_much'].style.visibility='hidden';this.form['how_often'].style.visibility='hidden'}else {this.form['how_much'].style.visibility='visible';this.form['how_often'].style.visibility='visible'};">No&nbsp;&nbsp;&nbsp;
 				 <span id="pick_lifterror" style="color: red;font-style:italic;"></span>
 				  </td>
 				  </tr>
@@ -989,8 +991,7 @@ document.getElementById("changes_in_joberror").innerHTML=" ";
 				  </td>
 				  </tr>
 				  
-				  
-				 
+				
                   <tr class="row1">
                 <td valign="middle" align="left" class="input_txt" ><span class="err">* </span>Do you lift from? <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --></td>
 				 <td valign="top" align="left" class="input_txt">
@@ -1524,6 +1525,31 @@ else
  e.style.display="none";
 }
 </script>
+
+<!-- <script>
+function change44()
+{
+
+if(document.getElementById("pick_lift").checked)
+{
+
+		document.getElementById("how_much").style.visibility = 'hidden';
+		document.getElementById("how_often").style.visibility = 'hidden';
+		document.getElementById("where_to_where").style.visibility = 'hidden';
+		
+
+
+
+		}
+		else  {
+			document.getElementById("how_much").style.visibility = 'visible';
+		document.getElementById("how_often").style.visibility = 'visible';
+		document.getElementById("where_to_where").style.visibility = 'visible';
+		
+		
+		}
+}
+</script> -->
 <script type="text/javascript">
 function pull(value){
 if(value=='show4')
