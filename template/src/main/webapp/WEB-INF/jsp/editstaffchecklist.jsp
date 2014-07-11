@@ -253,7 +253,7 @@ function validatename5(){
 	    if(document.getElementById("pat_name").value.length<4 || document.getElementById("pat_name").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("pat_nameerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("pat_nameerror").innerHTML="Name should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -268,7 +268,7 @@ function validatename5(){
 	    if(document.getElementById("insure").value.length<4 || document.getElementById("insure").value.length>=32)
 	    {
 	    	
-	    	document.getElementById("insureerror").innerHTML="Name should be min 4 and max 32";
+	    	document.getElementById("insureerror").innerHTML="Should be of length 4 to 32";
 	    	
 	        return false;
 	    }
@@ -280,10 +280,10 @@ function validatename5(){
 	return false;
 	}
 	document.getElementById("damageamterror").innerHTML="";
-    if(document.getElementById("damageamt").value.length<4 || document.getElementById("damageamt").value.length>=32)
+    if(document.getElementById("damageamt").value.length<2 || document.getElementById("damageamt").value.length>=18)
     {
     	
-    	document.getElementById("damageamterror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("damageamterror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -299,7 +299,7 @@ function validatename5(){
     if(document.getElementById("fault_insure").value.length<4 || document.getElementById("fault_insure").value.length>=32)
     {
     	
-    	document.getElementById("fault_insureerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("fault_insureerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -314,7 +314,7 @@ function validatename5(){
     if(document.getElementById("med_pay").value.length<4 || document.getElementById("med_pay").value.length>=32)
     {
     	
-    	document.getElementById("med_payerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("med_payerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -329,7 +329,7 @@ function validatename5(){
     if(document.getElementById("other_attorney").value.length<4 || document.getElementById("other_attorney").value.length>=32)
     {
     	
-    	document.getElementById("other_attorneyerror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("other_attorneyerror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
@@ -344,7 +344,7 @@ function validatename5(){
     if(document.getElementById("protect_received").value.length<4 || document.getElementById("protect_received").value.length>=32)
     {
     	
-    	document.getElementById("protect_receivederror").innerHTML="Name should be min 4 and max 32";
+    	document.getElementById("protect_receivederror").innerHTML="Should be of length 4 to 32";
     	
         return false;
     }
