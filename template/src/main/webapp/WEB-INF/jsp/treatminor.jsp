@@ -178,18 +178,26 @@ function validatename1(){
 		      return false;
 		  }
 			}
-		 /*  document.getElementById("signederror").innerHTML="";
-		  if(document.getElementById("signed").value!="")
+		  
+		   
+		  document.getElementById("signederror").innerHTML=" ";
+			
+			if(document.getElementById("signed").value=="")
 			{
-		  if(document.getElementById("signed").value.length<4 || document.getElementById("signed").value.length>=32)
-		  {
-		  	
-		  	document.getElementById("signederror").innerHTML="should be min 4 and max 32";
-		  	
-		      return false;
-		  }
+			document.getElementById("signederror").innerHTML="Required Field Should not be Empty";
+			
+			return false;
 			}
-		   */
+			
+			document.getElementById("signederror").innerHTML="";
+			
+			  if(document.getElementById("signed").value.length<4 || document.getElementById("signed").value.length>=32)
+			  {
+			  	
+			  	document.getElementById("signederror").innerHTML="should be of length 4 to 32";
+			  	
+			      return false;
+			  }
 			
 		document.getElementById("datepickererror").innerHTML=" ";
 		
@@ -270,7 +278,7 @@ function validatename1(){
                         </table>
                         <table cellpadding="0" cellspacing="0" border="0" width="50%">
                         <tr class="row1">
-				                  	<td valign="middle" align="left" class="input_txt"><span class="err"></span>&nbsp;&nbsp;Signed:  </td>
+				                  	<td valign="middle" align="left" class="input_txt"><span class="err">* </span>Signed:  </td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="text" class="input_txtbx1" id="signed" onInput="return validatename1()"; name="signed"><br><span style="color: red;font-style:italic;" id="signederror"><form:errors path="TreatMinor.signed"></form:errors></span></td>
 				                  <tr> <td></td></tr>
