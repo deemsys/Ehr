@@ -28,12 +28,12 @@ $(function() {
         if(document.getElementById("amount").value==0)
         {
         document.getElementById("amounterr").innerHTML="No Pain";
-        return false;
+       // return false;
         }
         if(document.getElementById("amount").value==10)
         {
         document.getElementById("amounterr").innerHTML="Severe Pain";
-        return false;
+       // return false;
         }
         //var a=document.getElementById("amount").value;
        // a.show();
@@ -58,14 +58,14 @@ $(function() {
     {
  
    document.getElementById("amount1err").innerHTML="No pain";
-   return false;
+  // return false;
     }
    
      if(document.getElementById("amount1").value==10)
     {
     
     document.getElementById("amount1err").innerHTML="Severe pain";
-    return false;
+    //return false;
     }
         
       }

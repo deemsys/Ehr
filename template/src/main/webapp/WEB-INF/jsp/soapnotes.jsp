@@ -65,12 +65,12 @@ $(function() {
         if(document.getElementById("amount").value==0)
         {
         document.getElementById("amounterr").innerHTML="No Pain";
-        return false;
+        //return false;
         }
         if(document.getElementById("amount").value==10)
         {
         document.getElementById("amounterr").innerHTML="Severe Pain";
-        return false;
+        //return false;
         }
       }
     });
@@ -79,7 +79,7 @@ $(function() {
 
 $(function() {
     $( "#slider1" ).slider({
-      value:0,
+      value:1,
       min: 0,
        max: 10,
         step: 1,
@@ -99,7 +99,7 @@ $(function() {
     {
     
     document.getElementById("amount1err").innerHTML="Severe pain";
-    return false;
+   // return false;
     }
         
       }

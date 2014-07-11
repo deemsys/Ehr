@@ -1102,7 +1102,7 @@ $(function() {
 	 
 	   
 	   
-	   if(document.getElementById("views4").value==" ")
+	 /*   if(document.getElementById("views4").value==" ")
 		{
 		document.getElementById("viewserror").innerHTML="Required Field Should not be Spaces";
 		error="true";
@@ -1113,9 +1113,9 @@ $(function() {
 			document.getElementById("viewserror").innerHTML="Required Field Should be 4 to 32";
 			error="true";
 			//return false;
-			}
+			} */
 	 
-	   if(document.getElementById("positivefor4").value==" ")
+	/*    if(document.getElementById("positivefor4").value==" ")
 		{
 		document.getElementById("positivefor4error").innerHTML="Required Field Should not be Spaces";
 		error="true";
@@ -1127,7 +1127,7 @@ $(function() {
 			error="true";
 			//return false;
 			}
-	 
+	  */
 	   if(error == "true")
 		{
 		return false;
