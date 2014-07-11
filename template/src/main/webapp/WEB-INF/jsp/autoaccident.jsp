@@ -1679,12 +1679,12 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Portion of the vehicle hit:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="vehicle_hit" class="input_cmbbx1">
-					<option selected="selected" value="right front" >Right Front</option>
-					<option value="left front">Left Front</option>
-					<option value="right rear">Right Rear</option>
-					<option value="left rear">Left Rear</option>
-					<option value="right side">Right side</option>
-					<option value="left side">Left side</option>
+					<option selected="selected" value="Right Front" >Right Front</option>
+					<option value="Left Front">Left Front</option>
+					<option value="Right Rear">Right Rear</option>
+					<option value="Left Rear">Left Rear</option>
+					<option value="Right Side">Right Side</option>
+					<option value="Left Side">Left Side</option>
 					<option value="Other">Other</option>
 				  </select>
 				  </td>
@@ -1713,9 +1713,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was Car:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="wascar" class="input_cmbbx1">
-					<option selected="selected" value="slowing down" >Slowing Down</option>
-					<option value="gaining speed">Gaining Speed</option>
-					<option value="steady rate of speed">Steady Rate of Speed</option>	
+					<option selected="selected" value="Slowing Down" >Slowing Down</option>
+					<option value="Gaining Speed">Gaining Speed</option>
+					<option value="Steady Rate of Speed">Steady Rate of Speed</option>	
 				  </select>
 				  </td>
 				  </tr>
@@ -1731,37 +1731,38 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Time of day:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="time_of_day" class="input_cmbbx1">
-					<option selected="selected" value="day light" >DayLight</option>
-					<option value="dawn">Dawn</option>
-					<option value="dusk">Dusk</option>
-					<option value="dark">Dark</option>
-					<option value="unknown">Unknown</option>	
+					<option selected="selected" value="DayLight" >DayLight</option>
+					<option value="Dawn">Dawn</option>
+					<option value="Dusk">Dusk</option>
+					<option value="Dark">Dark</option>
+					<option value="Unknown">Unknown</option>	
 				  </select>
 				  </td>
 				  </tr> 
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Road Conditions:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="road_conditions" class="input_cmbbx1" onchange='CheckConditions(this.value);'>
-					<option selected="selected" value="select conditions" >Select conditions</option>
-					<option value="dry">Dry</option>
-					<option value="damp">Damp</option>
-					<option value="wet">Wet</option>
-					<option value="snow">Snow</option>
-					<option value="ice">Ice</option>	
-					<option value="other">Other</option>
-					<option value="unknown">Unknown</option>
+				  <select name="road_conditions" class="input_cmbbx1" onchange="if (this.value=='Select Conditions'){this.form['conditions'].style.visibility='visible'}else {this.form['conditions'].style.visibility='hidden'};">
+					<option selected="selected" value="Select Conditions" >Select Conditions</option>
+					
+					<option  value="Dry">Dry</option>
+					<option value="Damp">Damp</option>
+					<option value="Wet">Wet</option>
+					<option value="Snow">Snow</option>
+					<option value="Ice">Ice</option>	
+					<option value="Other">Other</option>
+					<option value="Unknown">Unknown</option>
 				  </select>
-				  <input type="text" name="conditions" id="conditions" min="4" maxlength="32" style='display:none'/>
+				  <input type="text" name="conditions" class="input_txtbx1" id="conditions" min="4" maxlength="32" style="visibility:hidden;"/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Head Restraints:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="head_restraints" class="input_cmbbx1">
-					<option selected="selected" value="up" >Up</option>
-					<option value="down">Down</option>
-					<option value="do_no">Don't know</option>	
+					<option selected="selected" value="Up" >Up</option>
+					<option value="Down">Down</option>
+					<option value="Dont Know">Don't Know</option>	
 				  </select>
 				  </td>
 				  </tr>
@@ -1812,9 +1813,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat position after accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seatpos_after_accident" class="input_cmbbx1">
-					<option selected="selected" value="was_altered" >Was Altered</option>
-					<option value="was_not_altered">Was Not Altered</option>
-					<option value="dontknow">Don't know</option>
+					<option selected="selected" value="Was Altered" >Was Altered</option>
+					<option value="Was Not Altered">Was Not Altered</option>
+					<option value="Dont Know">Don't Know</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1822,8 +1823,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat after the accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seat_after_accident" class="input_cmbbx1">
-					<option selected="selected" value="broken" >Broken</option>
-					<option value="notbroken">Not Broken</option>
+					<option selected="selected" value="Broken" >Broken</option>
+					<option value="Not Broken">Not Broken</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1831,9 +1832,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Lap seat belt:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lap_seat_belt" class="input_cmbbx1">
-					<option selected="selected" value="worn" >Worn</option>
-					<option value="not_worn">Not Worn</option>
-					<option value="dont_know">Don't know</option>
+					<option selected="selected" value="Worn" >Worn</option>
+					<option value="Not Worn">Not Worn</option>
+					<option value="Dont Know">Don't know</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1841,9 +1842,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Shoulder seat belt:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="shoulder_seat_belt" class="input_cmbbx1">
-					<option selected="selected" value="worns" >Worn</option>
-					<option value="notworn">Not Worn</option>
-					<option value="donno">Don't know</option>
+					<option selected="selected" value="Worn" >Worn</option>
+					<option value="Not Worn">Not Worn</option>
+					<option value="Dont Know">Don't Know</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1851,8 +1852,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Air bag deployed:</td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes" name="airbag" value="Yes" class="input_txt" checked="true" onclick="toggle('show')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" id="No" name="airbag" value="no" class="input_txt" onclick="toggle('hide')">No&nbsp;&nbsp;&nbsp;
 				<span id="yeserror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.airbag"></form:errors></span> <select name="wereyou" class="input_cmbbx1" id="mytext">
-				 <option selected="selected" value="struck" >Struck</option>
-				 <option value="notstruck">Not Struck</option>
+				 <option selected="selected" value="Struck" >Struck</option>
+				 <option value="Not Struck">Not Struck</option>
 				  </select>
 				 </td>
 				  </tr>
@@ -1868,29 +1869,29 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Body position at time of accident:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="body_position" class="input_cmbbx1" id="body_position" onchange='Checkposition(this.value);'>
-					<option selected="selected" value="good" >Good</option>
-					<option value="forward">Forward</option>
-					<option value="leaning">Leaning</option>
-					<option value="others">Other</option>
-					<option value="un_known">Unknown</option>
+				  <select name="body_position" class="input_cmbbx1" id="body_position" onchange="if (this.value=='Other'){this.form['body_position1'].style.visibility='visible'}else {this.form['body_position1'].style.visibility='hidden'};">
+					<option selected="selected" value="Good" >Good</option>
+					<option value="Forward">Forward</option>
+					<option value="Leaning">Leaning</option>
+					<option value="Other">Other</option>
+					<option value="Unknown">Unknown</option>
 				  </select>
-				   <input type="text" name="body_position1" id="body_position1" min="4" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
+				   <input type="text" name="body_position1" class="input_txtbx1" id="body_position1" min="4" maxlength="32" onInput="return validatename(id)"; style="visibility:hidden;"/>
 				  </td>
 				  </tr>
 				 <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Head position:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="head_position" class="input_cmbbx1" id="head_position" onchange='CheckHeadposition(this.value);'>
-					<option selected="selected" value="forwardpos" >Forward</option>
-					<option value="left">Left</option>
-					<option value="right">Right</option>
-					<option value="up_pos">Up</option>
-					<option value="down_pos">Down</option>
-					<option value="others">Other</option>
-					<option value="unknown_pos">Unknown</option>
+				  <select name="head_position" class="input_cmbbx1" id="head_position" onchange="if (this.value=='Other'){this.form['head_position1'].style.visibility='visible'}else {this.form['head_position1'].style.visibility='hidden'};">
+					<option selected="selected" value="Forward" >Forward</option>
+					<option value="Left">Left</option>
+					<option value="Right">Right</option>
+					<option value="Up">Up</option>
+					<option value="Down">Down</option>
+					<option value="Other">Other</option>
+					<option value="Unknown">Unknown</option>
 				  </select>
-				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" onInput="return validatename(id)"; style='display:none'/>
+				   <input type="text" name="head_position1" class="input_txtbx1" id="head_position1" min="4" maxlength="32" onInput="return validatename(id)"; style="visibility:hidden;"/>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -1901,8 +1902,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Aware of crash:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="aware_of_crash" class="input_cmbbx1">
-					<option selected="selected" value="aware" >Aware</option>
-					<option value="surprised">Surprised</option>
+					<option selected="selected" value="Aware" >Aware</option>
+					<option value="Surprised">Surprised</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1910,8 +1911,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did you brace yourself? </td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes1" name="brace" value="Yes" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" id="no1" value="No" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
 				 <span id="yes1error" style="color: red;font-style:italic;"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
-				  <option selected="selected" value="bracearms" >Braced with arms</option>
-				  <option value="bracelegs">Braced with legs</option>
+				  <option selected="selected" value="Braced With Arms" >Braced With Arms</option>
+				  <option value="Braced With Legs">Braced With Legs</option>
 				  </select>
 <form:errors path="PatientDetails.insurance_phone"></form:errors>
 				  </td>
@@ -1982,16 +1983,16 @@ document.getElementById("afteraccidenterror").innerHTML="";
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt" width="590"><span class="err">* </span>Patient's body:</td>
 				 <td valign="top" align="left" class="input_txt" width="50%">
-				  <select name="patient_body" class="input_cmbbx1" id="patient_body" onchange='CheckPatientposition(this.value);'>
-					<option selected="selected" value="jolted" >Jolted</option>
-					<option value="thrown_about">Thrown About</option>
-					<option value="stunned">Stunned</option>
-					<option value="dazed">Dazed</option>
-					<option value="whipped">Whipped</option>
-					<option value="slammed">Slammed</option>
-					<option value="otherbody">Other</option>
+				  <select name="patient_body" class="input_cmbbx1" id="patient_body" onchange="if (this.value=='Other'){this.form['patient_body1'].style.visibility='visible'}else {this.form['patient_body1'].style.visibility='hidden'};">
+					<option selected="selected" value="Jolted" >Jolted</option>
+					<option value="Thrown About">Thrown About</option>
+					<option value="Stunned">Stunned</option>
+					<option value="Dazed">Dazed</option>
+					<option value="Whipped">Whipped</option>
+					<option value="Slammed">Slammed</option>
+					<option value="Other">Other</option>
 				  </select>
-				  <input type="text" name="patient_body1" id="patient_body1" onInput="return validatename(id)"; min="4" maxlength="32" style='display:none'/>
+				  <input type="text" name="patient_body1" class="input_txtbx1" id="patient_body1" onInput="return validatename(id)"; min="4" maxlength="32" style="visibility:hidden;"/>
 				  </td><td width="55"></td>
 				  </tr> 
 				   <tr class="row1">
@@ -2086,10 +2087,10 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damage to the other car: </td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="damage" class="input_cmbbx1" >
-					<option selected="selected" value="minimal" >Minimal</option>
-					<option value="moderate">Moderate</option>
-					<option value="major">Major</option>
-					<option value="totaled">Totaled</option>
+					<option selected="selected" value="Minimal" >Minimal</option>
+					<option value="Moderate">Moderate</option>
+					<option value="Major">Major</option>
+					<option value="Totaled">Totaled</option>
 				  </select>
 				  </td><td width="55"></td>
 				  </tr> 
@@ -2142,8 +2143,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who?</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="who" class="input_cmbbx1" >
-					<option selected="selected" value="you" >You</option>
-					<option value="other_driver">Other Driver</option>
+					<option selected="selected" value="You" >You</option>
+					<option value="Other Driver">Other Driver</option>
 				  </select>
 				  </td> <td width="680" ></td>
 				  </tr> 
@@ -2151,18 +2152,18 @@ document.getElementById("afteraccidenterror").innerHTML="";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After accident, I had the following: </td>
 				 <td valign="top" align="left" class="input_txt" width="20%" style="width: 671px; ">
 				 
-				 <input type="checkbox" id="headache" name="headache" value="headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" id="dizziness" name="dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="nausea"name="nausea" value="nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="confusion" name="confusion" value="confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="headache" name="headache" value="Headache">Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" id="dizziness" name="Dizziness" value="dizziness">Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="nausea"name="nausea" value="Nausea">Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="confusion" name="confusion" value="Confusion">Confusion&nbsp;&nbsp;&nbsp;&nbsp;
 				<span id="afteraccidenterror" style="color: red;font-style:italic;"></span>
 				<span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
 				 </td> <td width="680" ></td>
 				  <tr class="row1"> <td valign="middle" align="left" class="input_txt"><span class="err"></span></td>
 				 <td valign="top" align="left" class="input_txt" width="20%">
-				  <input type="checkbox" id="disorientation" name="disorientation" value="disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="neckpain" name="neckpain" value="neckpain">Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="otherpain" name="otherpain" value="otherpain" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
+				  <input type="checkbox" id="disorientation" name="disorientation" value="Disorientation">Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="neckpain" name="neckpain" value="Neck Pain">Neck Pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="otherpain" name="otherpain" value="Other" id="otherpaincheck" onclick="this.form.otherplain1.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;&nbsp;&nbsp;&nbsp;
 				 <input type="text" class="input_txtbx1" id="otherplain1" name="otherpaintext" placeholder="If other" style="visibility:hidden"/>
 				<span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span></td> <td width="680" ></td>
 				 </tr>
@@ -2170,26 +2171,26 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Symptoms first appeared: </td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="first_symptom" class="input_cmbbx1"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="immediately" >Immediately</option>
-					<option value="hours">hours after the accident</option>
-					<option value="next_day">The next day</option>
-					<option value="days">days</option>
+					<option selected="selected" value="Immediately" >Immediately</option>
+					<option value="Hours After The Accident">Hours After The Accident</option>
+					<option value="The Next Day">The Next Day</option>
+					<option value="Days">Days</option>
 				  </select>
-				 <input type="text" name="symptom" id="symptom"  min="4" maxlength="32"style='display:none'/>
+				 <input type="text" name="symptom" id="symptom" class="input_txtbx1" min="4" maxlength="32" style="visibility:hidden;"/>
 				  </td> <td width="680" ></td>
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After the accident I went </td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="after_accident" class="input_cmbbx1"  onchange='Check(this.value);'>
-					<option selected="selected" value="hospital" >Hospital</option>
-					<option value="work">Work</option>
-					<option value="home">Home</option>
-					<option value="family">Family</option>
-					<option value="physician">Physician</option>
-					<option value="otheracc">Other</option>
+				  <select name="after_accident" class="input_cmbbx1" onchange="if (this.value=='Other'){this.form['accident'].style.visibility='visible'}else {this.form['accident'].style.visibility='hidden'};" >
+					<option selected="selected" value="Hospital" >Hospital</option>
+					<option value="Work">Work</option>
+					<option value="Home">Home</option>
+					<option value="Family">Family</option>
+					<option value="Physician">Physician</option>
+					<option value="Other">Other</option>
 				  </select>
-				 <input type="text" name="accident" id="accident" style='display:none' min="4" maxlength="32"/>
+				 <input type="text" name="accident" class="input_txtbx1" id="accident" style="visibility:hidden;" min="4" maxlength="32"/>
 				  </td> <td width="680" ></td>
 				  </tr> 
 				  
@@ -2222,11 +2223,11 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How did you get to the hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</td><td>
-				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange='Checkhospital(this.value);'>
-					<option selected="selected" value="ambulance" >Ambulance</option>
-					<option value="other hos">Other</option>
+				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange="if (this.value=='Other'){this.form['hospital1'].style.visibility='visible'}else {this.form['hospital1'].style.visibility='hidden'};">
+					<option selected="selected" value="Ambulance" >Ambulance</option>
+					<option value="Other">Other</option>
 				  </select>
-				 <input type="text" name="hospital1" id="hospital1" style='display:none' min="4" maxlength="32" onInput="return validatename(id)";/>
+				 <input type="text" name="hospital1" id="hospital1" class="input_txtbx1" style="visibility:hidden;" min="4" maxlength="32" onInput="return validatename(id)";/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">

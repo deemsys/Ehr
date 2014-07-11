@@ -340,6 +340,52 @@ if(document.getElementById("body_strike").checked)
 		}
 }
 </script>
+ <script>
+		 window.onload = function()
+{
+			 if(document.getElementById("body_strike").checked)
+			 {
+
+			 		document.getElementById("head_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlshoulder_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlhip_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlknee_hit").style.visibility = 'hidden';
+			 		document.getElementById("chest_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlarm_hit").style.visibility = 'hidden';
+			 		document.getElementById("rlleg_hit").style.visibility = 'hidden';
+			 		document.getElementById("otherpart_hit").style.visibility = 'hidden';
+
+
+
+			 		}
+			 		else  {
+			 			document.getElementById("head_hit").style.visibility = 'visible';
+			 		document.getElementById("rlshoulder_hit").style.visibility = 'visible';
+			 		document.getElementById("rlhip_hit").style.visibility = 'visible';
+			 		document.getElementById("rlknee_hit").style.visibility = 'visible';
+			 		document.getElementById("chest_hit").style.visibility = 'visible';
+			 		document.getElementById("rlarm_hit").style.visibility = 'visible';
+			 		document.getElementById("rlleg_hit").style.visibility = 'visible';
+			 		document.getElementById("otherpart_hit").style.visibility = 'visible';
+
+			 		}
+}
+</script> 
+ <script>
+		 window.onload = function()
+{
+if (document.getElementById("road").value == "Select Conditions") {
+document.getElementById("conditions").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("conditions").style.visibility = 'hidden';
+
+
+}
+}
+</script> 
 <script>
 
 
@@ -1207,14 +1253,13 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="hidden" class="input_txtbx1" id="inp_id" value="${autoaccident.patient_number}" name="patient_number" />
 				  <input type="text" class="input_txtbx1" id="claimno" name="claimnumber" maxlength="10" value="${autoaccident.claimnumber }" onInput="return validateusername()"; /><br><span id="claimnoerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.claimnumber"></form:errors></span></td>
-
+<td width="10%">
 				  </tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Adjuster's Name:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="adjustersname" name="adjustersname" value="${autoaccident.adjustersname }" min="4" maxlength="32" onInput="return validatename(id)";/><br><span id="adjustersnameerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.adjustersname"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who gave you the estimate?</td>
 				  <td valign="top" align="left" class="input_txt">
@@ -1223,8 +1268,7 @@ document.getElementById("injury").style.visibility = 'hidden';
 					<option value="Other Drivers Insurance Company" <c:if test="${autoaccident.estimate=='Other Drivers Insurance Company'}"><c:out value="selected"/></c:if>>Other Driver's Insurance company</option>
 					<option value="Body Shop" <c:if test="${autoaccident.estimate=='Body Shop'}"><c:out value="selected"/></c:if>>Body shop</option>
 				  </select><span class="err"><form:errors path="Autoaccident.estimate"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Were you the:</td>
 				  <td valign="top" align="left" class="input_txt">
@@ -1234,119 +1278,131 @@ document.getElementById("injury").style.visibility = 'hidden';
 					<option value="Back seat Passenger" <c:if test="${autoaccident.seating=='Back seat Passenger'}"><c:out value="selected"/></c:if>>Back seat Passenger</option>
 					<option value="On the job at the time of accident" <c:if test="${autoaccident.seating=='On the job at the time of accident'}"><c:out value="selected"/></c:if>>On the job at the time of accident</option>
 				  </select><span class="err"><form:errors path="Autoaccident.seating"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was anyone else in the car with you during the accident? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="companion" min="4" maxlength="32" name="companion" value="${autoaccident.companion }" onInput="return validatename1()"; /><br><span id="companionerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.companion"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description of vehicle you were in: </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_make" name="vehicle_make" style="width:70px" onInput="return validatename2()"; value="${autoaccident.vehicle_make }"/><span id="vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_model" name="vehicle_model" style="width:70px" onInput="return validatename3()"; value="${autoaccident.vehicle_model }" /><span id="vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_model"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="vehicle_year" maxlength="4" name="vehicle_year" style="width:70px" maxlength="4"  onkeypress="return validate(event)"; value="${autoaccident.vehicle_year }"/><span id="vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.vehicle_year"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Portion of the vehicle hit: </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="vehicle_hit" class="input_cmbbx1">
-					<option  value="right front" <c:if test="${autoaccident.vehicle_hit=='right front'}"><c:out value="selected"/></c:if>>Right Front</option>
-					<option value="left front" <c:if test="${autoaccident.vehicle_hit=='left front'}"><c:out value="selected"/></c:if>>Left Front</option>
-					<option value="right rear" <c:if test="${autoaccident.vehicle_hit=='right rear'}"><c:out value="selected"/></c:if>>Right Rear</option>
-					<option value="left rear" <c:if test="${autoaccident.vehicle_hit=='left rear'}"><c:out value="selected"/></c:if>>Left Rear</option>
-					<option value="right side" <c:if test="${autoaccident.vehicle_hit=='right side'}"><c:out value="selected"/></c:if>>Right side</option>
-					<option value="left side" <c:if test="${autoaccident.vehicle_hit=='left side'}"><c:out value="selected"/></c:if>>Left side</option>
+					<option  value="Right Front" <c:if test="${autoaccident.vehicle_hit=='Right Front'}"><c:out value="selected"/></c:if>>Right Front</option>
+					<option value="Left Front" <c:if test="${autoaccident.vehicle_hit=='Left Front'}"><c:out value="selected"/></c:if>>Left Front</option>
+					<option value="Right Rear" <c:if test="${autoaccident.vehicle_hit=='Right Rear'}"><c:out value="selected"/></c:if>>Right Rear</option>
+					<option value="Left Rear" <c:if test="${autoaccident.vehicle_hit=='Left Rear'}"><c:out value="selected"/></c:if>>Left Rear</option>
+					<option value="Right Side" <c:if test="${autoaccident.vehicle_hit=='Right Side'}"><c:out value="selected"/></c:if>>Right side</option>
+					<option value="Left Side" <c:if test="${autoaccident.vehicle_hit=='Left Side'}"><c:out value="selected"/></c:if>>Left side</option>
 					
 						<option value="Other" <c:if test="${autoaccident.vehicle_hit=='Other'}"><c:out value="selected"/></c:if>>Other</option>
 					
 				  </select><span class="err"><form:errors path="Autoaccident.vehicle_hit"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row2">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Description of other vehicle: </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_make" name="other_vehicle_make" value="${autoaccident.other_vehicle_make }" onInput="return validatename4()"; style="width:70px" value="${autoaccident.other_vehicle_make }" /><span id="other_vehicle_makeerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_make"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_model" name="other_vehicle_model" onInput="return validatename5()";style="width:70px" value="${autoaccident.other_vehicle_model }" /><span id="other_vehicle_modelerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_model"></form:errors></span>
 				  <input type="text" class="smlinput_txtbx1" id="other_vehicle_year" maxlength="4" name="other_vehicle_year" style="width:70px" onkeypress="return validate(event)"; value="${autoaccident.other_vehicle_year }"/><span id="other_vehicle_yearerror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.other_vehicle_year"></form:errors></span>
-				  </td>
-				  </tr>
+				  </td><td width="10%"></tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was your car stopped at the time of the accident? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="carstopped" value="Yes" class="input_txt"  <c:if test="${autoaccident.carstopped=='Yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="carstopped" value="No" class="input_txt"  <c:if test="${autoaccident.carstopped=='No'}"><c:out value="Checked"/></c:if>>No<span class="err"><form:errors path="Autoaccident.carstopped"></form:errors></span></td>
-				  </tr>
+				  <td width="10%"></tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>If you were the driver, was your foot on the brake? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="driverposition" value="Yes" class="input_txt" <c:if test="${autoaccident.driverposition=='Yes'}"><c:out value="Checked"/></c:if> >Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="driverposition" value="No" class="input_txt" <c:if test="${autoaccident.driverposition=='No'}"><c:out value="Checked"/></c:if>>No <span class="err"><form:errors path="Autoaccident.driverposition"></form:errors></span></td>
-				  </tr>
+				 <td width="10%"> </tr>
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was your vehicle moving at time of impact?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="vehicle_moving_time" value="Yes" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='Yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="vehicle_moving_time" value="No" class="input_txt" <c:if test="${autoaccident.vehicle_moving_time=='No'}"><c:out value="Checked"/></c:if>>No<span class="err"><form:errors path="Autoaccident.vehicle_moving_time"></form:errors></span></td>
-				  </tr>
+				  <td width="10%"></tr>
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Was car:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="wascar" class="input_cmbbx1">
-					<option  value="slowing down" <c:if test="${autoaccident.wascar=='slowing down'}"><c:out value="selected"/></c:if> >Slowing Down</option>
-					<option value="gaining speed" <c:if test="${autoaccident.wascar=='gaining speed'}"><c:out value="selected"/></c:if>>Gaining Speed</option>
-					<option value="steady rate of speed" <c:if test="${autoaccident.wascar=='steady rate of speed'}"><c:out value="selected"/></c:if>>Steady Rate of Speed</option>	
+					<option  value="Slowing Down" <c:if test="${autoaccident.wascar=='Slowing Down'}"><c:out value="selected"/></c:if> >Slowing Down</option>
+					<option value="Gaining Speed" <c:if test="${autoaccident.wascar=='Gaining Speed'}"><c:out value="selected"/></c:if>>Gaining Speed</option>
+					<option value="Steady Rate of Speed" <c:if test="${autoaccident.wascar=='Steady Rate of Speed'}"><c:out value="selected"/></c:if>>Steady Rate of Speed</option>	
 				  </select><span class="err"><form:errors path="Autoaccident.wascar"></form:errors></span>
-				  </td>
+				  </td><td width="10%">
 				  </tr>
 				  <tr class="row1">
                   <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Estimated rate of speed?</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="text" class="input_txtbx1" id="speed" placeholder="MPH"  name="estimated_rate" maxlength="18"  onkeypress="return validate(event)"; value="${autoaccident.estimated_rate }"/><br><span id="speederror" style="color: red;font-style:italic;"><form:errors path="Autoaccident.estimated_rate"></form:errors></span>
-				  </td>
+				  </td><td width="10%">
 				  </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Time of day:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="time_of_day" class="input_cmbbx1">
-					<option  value="day light" <c:if test="${autoaccident.time_of_day=='day light'}"><c:out value="selected"/></c:if>>DayLight</option>
-					<option value="dawn" <c:if test="${autoaccident.time_of_day=='dawn'}"><c:out value="selected"/></c:if>>Dawn</option>
-					<option value="dusk" <c:if test="${autoaccident.time_of_day=='dusk'}"><c:out value="selected"/></c:if>>Dusk</option>
-					<option value="dark" <c:if test="${autoaccident.time_of_day=='dark'}"><c:out value="selected"/></c:if>>Dark</option>
-					<option value="unknown" <c:if test="${autoaccident.time_of_day=='unknown'}"><c:out value="selected"/></c:if>>Unknown</option>	
+					<option  value="DayLight" <c:if test="${autoaccident.time_of_day=='DayLight'}"><c:out value="selected"/></c:if>>DayLight</option>
+					<option value="Dawn" <c:if test="${autoaccident.time_of_day=='Dawn'}"><c:out value="selected"/></c:if>>Dawn</option>
+					<option value="Dusk" <c:if test="${autoaccident.time_of_day=='Dusk'}"><c:out value="selected"/></c:if>>Dusk</option>
+					<option value="Dark" <c:if test="${autoaccident.time_of_day=='Dark'}"><c:out value="selected"/></c:if>>Dark</option>
+					<option value="Unknown" <c:if test="${autoaccident.time_of_day=='Unknown'}"><c:out value="selected"/></c:if>>Unknown</option>	
 				  </select><span class="err"><form:errors path="Autoaccident.time_of_day"></form:errors></span>
-				  </td>
+				  </td><td width="10%">
 				  </tr> 
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Road conditions:</td>
 				  <td valign="top" align="left" class="input_txt">
-				  <select name="road_conditions" class="input_cmbbx1" id="road" onclick='CheckConditions();'>
-					<option  value=" conditions" <c:if test="${autoaccident.road_conditions==' conditions'}"><c:out value="selected"/></c:if> > conditions</option>
-					<option value="dry" <c:if test="${autoaccident.road_conditions=='dry'}"><c:out value="selected"/></c:if>>Dry</option>
-					<option value="damp" <c:if test="${autoaccident.road_conditions=='damp'}"><c:out value="selected"/></c:if>>Damp</option>
-					<option value="wet" <c:if test="${autoaccident.road_conditions=='wet'}"><c:out value="selected"/></c:if>>Wet</option>
-					<option value="snow" <c:if test="${autoaccident.road_conditions=='snow'}"><c:out value="selected"/></c:if>>Snow</option>
-					<option value="ice" <c:if test="${autoaccident.road_conditions=='ice'}"><c:out value="selected"/></c:if>>Ice</option>	
-					<option value="other" <c:if test="${autoaccident.road_conditions=='other'}"><c:out value="selected"/></c:if>>Other</option>
-					<option value="unknown" <c:if test="${autoaccident.road_conditions=='unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
+				  <select name="road_conditions" class="input_cmbbx1" id="road" onchange="if (this.value=='Select Conditions'){this.form['conditions'].style.visibility='visible'}else {this.form['conditions'].style.visibility='hidden'};">
+					<option  value="Select Conditions" <c:if test="${autoaccident.road_conditions=='Select Conditions'}"><c:out value="selected"/></c:if> >Select Conditions</option>
+					
+					<option value="Dry" <c:if test="${autoaccident.road_conditions=='Dry'}"><c:out value="selected"/></c:if>>Dry</option>
+					<option value="Damp" <c:if test="${autoaccident.road_conditions=='Damp'}"><c:out value="selected"/></c:if>>Damp</option>
+					<option value="Wet" <c:if test="${autoaccident.road_conditions=='Wet'}"><c:out value="selected"/></c:if>>Wet</option>
+					<option value="Snow" <c:if test="${autoaccident.road_conditions=='Snow'}"><c:out value="selected"/></c:if>>Snow</option>
+					<option value="Ice" <c:if test="${autoaccident.road_conditions=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>	
+					<option value="Other" <c:if test="${autoaccident.road_conditions=='Other'}"><c:out value="selected"/></c:if>>Other</option>
+					<option value="Unknown" <c:if test="${autoaccident.road_conditions=='Unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select><span class="err"><form:errors path="Autoaccident.road_conditions"></form:errors></span>
 				  
 				
 				  </td>
-				   <td><input type="text"name="conditions" id="conditions" style='display:none' value="${autoaccident.conditions}" name="conditions" /></td>
+				   <td><input type="text"name="conditions" id="conditions" style="visibility:hidden;" value="${autoaccident.conditions}" name="conditions" /></td>
+				   
+				   <script>
+		 window.onload = function()
+{
+if (document.getElementById("road").value == "Select Conditions") {
+document.getElementById("conditions").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("conditions").style.visibility = 'hidden';
+
+
+}
+}
+</script> 
 				  </tr> 
 				  <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Head Restraints:</td>
 				  <td valign="top" align="left" class="input_txt">
 				  <select name="head_restraints" class="input_cmbbx1">
-					<option value="up" <c:if test="${autoaccident.head_restraints=='up'}"><c:out value="selected"/></c:if> >Up</option>
-					<option value="down" <c:if test="${autoaccident.head_restraints=='down'}"><c:out value="selected"/></c:if>>Down</option>
-					<option value="do_no" <c:if test="${autoaccident.head_restraints=='do_no'}"><c:out value="selected"/></c:if>>Don't know</option>	
+					<option value="Up" <c:if test="${autoaccident.head_restraints=='Up'}"><c:out value="selected"/></c:if> >Up</option>
+					<option value="Down" <c:if test="${autoaccident.head_restraints=='Down'}"><c:out value="selected"/></c:if>>Down</option>
+					<option value="Dont Know" <c:if test="${autoaccident.head_restraints=='Dont Know'}"><c:out value="selected"/></c:if>>Don't Know</option>	
 				  </select><span class="err"><form:errors path="Autoaccident.head_restraints"></form:errors></span>
-				  </td>
+				  </td><td width="10%">
 				  </tr>
 				  
 				  </table>
@@ -1396,9 +1452,9 @@ document.getElementById("injury").style.visibility = 'hidden';
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat position after accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seatpos_after_accident" class="input_cmbbx1">
-					<option  value="was_altered" <c:if test="${autoaccident.seatpos_after_accident=='was_altered'}"><c:out value="selected"/></c:if>>Was Altered</option>
-					<option value="was_not_altered" <c:if test="${autoaccident.seatpos_after_accident=='was_not_altered'}"><c:out value="selected"/></c:if>>Was Not Altered</option>
-					<option value="dontknow" <c:if test="${autoaccident.seatpos_after_accident=='dontknow'}"><c:out value="selected"/></c:if>>Don't know</option>
+					<option  value="Was Altered" <c:if test="${autoaccident.seatpos_after_accident=='Was Altered'}"><c:out value="selected"/></c:if>>Was Altered</option>
+					<option value="Was Not Altered" <c:if test="${autoaccident.seatpos_after_accident=='Was Not Altered'}"><c:out value="selected"/></c:if>>Was Not Altered</option>
+					<option value="Dont know" <c:if test="${autoaccident.seatpos_after_accident=='Dont Know'}"><c:out value="selected"/></c:if>>Don't know</option>
 				  </select><span class="err"><form:errors path="Autoaccident.seatpos_after_accident"></form:errors></span>
 				  </td>
 				  </tr>
@@ -1406,8 +1462,8 @@ document.getElementById("injury").style.visibility = 'hidden';
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Seat after the accident:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="seat_after_accident" class="input_cmbbx1">
-					<option  value="broken" <c:if test="${autoaccident.seat_after_accident=='broken'}"><c:out value="selected"/></c:if> >Broken</option>
-					<option value="notbroken" <c:if test="${autoaccident.seat_after_accident=='notbroken'}"><c:out value="selected"/></c:if>>Not Broken</option>
+					<option  value="Broken" <c:if test="${autoaccident.seat_after_accident=='Broken'}"><c:out value="selected"/></c:if> >Broken</option>
+					<option value="Not Broken" <c:if test="${autoaccident.seat_after_accident=='Not Broken'}"><c:out value="selected"/></c:if>>Not Broken</option>
 				  </select><span class="err"><form:errors path="Autoaccident.seat_after_accident"></form:errors></span>
 				  </td>
 				  </tr>
@@ -1415,9 +1471,9 @@ document.getElementById("injury").style.visibility = 'hidden';
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Lap seat belt:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="lap_seat_belt" class="input_cmbbx1">
-					<option  value="worn" <c:if test="${autoaccident.lap_seat_belt=='worn'}"><c:out value="selected"/></c:if>>Worn</option>
-					<option value="not_worn" <c:if test="${autoaccident.lap_seat_belt=='not_worn'}"><c:out value="selected"/></c:if>>Not Worn</option>
-					<option value="dont_know" <c:if test="${autoaccident.lap_seat_belt=='dont_know'}"><c:out value="selected"/></c:if>>Don't know</option>
+					<option  value="Worn" <c:if test="${autoaccident.lap_seat_belt=='Worn'}"><c:out value="selected"/></c:if>>Worn</option>
+					<option value="Not Worn" <c:if test="${autoaccident.lap_seat_belt=='Not Worn'}"><c:out value="selected"/></c:if>>Not Worn</option>
+					<option value="Dont Know" <c:if test="${autoaccident.lap_seat_belt=='Dont Know'}"><c:out value="selected"/></c:if>>Don't know</option>
 				  </select><span class="err"><form:errors path="Autoaccident.lap_seat_belt"></form:errors></span>
 				  </td>
 				  </tr>
@@ -1425,9 +1481,9 @@ document.getElementById("injury").style.visibility = 'hidden';
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Shoulder seat belt:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="shoulder_seat_belt" class="input_cmbbx1">
-					<option  value="worns" <c:if test="${autoaccident.shoulder_seat_belt=='worns'}"><c:out value="selected"/></c:if>>Worn</option>
-					<option value="notworn" <c:if test="${autoaccident.shoulder_seat_belt=='notworn'}"><c:out value="selected"/></c:if>>Not Worn</option>
-					<option value="donno" <c:if test="${autoaccident.shoulder_seat_belt=='donno'}"><c:out value="selected"/></c:if>>Don't know</option>
+					<option  value="Worn" <c:if test="${autoaccident.shoulder_seat_belt=='Worn'}"><c:out value="selected"/></c:if>>Worn</option>
+					<option value="Not Worn" <c:if test="${autoaccident.shoulder_seat_belt=='Not Worn'}"><c:out value="selected"/></c:if>>Not Worn</option>
+					<option value="Dont Know" <c:if test="${autoaccident.shoulder_seat_belt=='Dont Know'}"><c:out value="selected"/></c:if>>Don't know</option>
 				  </select><span class="err"><form:errors path="Autoaccident.shoulder_seat_belt"></form:errors></span>
 				  </td>
 				  </tr>
@@ -1437,8 +1493,8 @@ document.getElementById("injury").style.visibility = 'hidden';
 				  <input type="radio" name="airbag" value="Yes" class="input_txt" id="airbagcheck" onclick="toggle()"<c:if test="${autoaccident.airbag=='Yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="airbag" value="No" class="input_txt" onclick="toggle()"<c:if test="${autoaccident.airbag=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;
 				 <span class="err"><form:errors path="Autoaccident.airbag"></form:errors></span>  <select name="wereyou" class="input_cmbbx1" id="mytext"  style='display:none'>
-				 <option  value="struck" <c:if test="${autoaccident.wereyou=='struck'}"><c:out value="selected"/></c:if>>Struck</option>
-				 <option value="notstruck" <c:if test="${autoaccident.wereyou=='notstruck'}"><c:out value="selected"/></c:if>>Not Struck</option>
+				 <option  value="Struck" <c:if test="${autoaccident.wereyou=='Struck'}"><c:out value="selected"/></c:if>>Struck</option>
+				 <option value="Not Struck" <c:if test="${autoaccident.wereyou=='Not Struck'}"><c:out value="selected"/></c:if>>Not Struck</option>
 				  </select><span class="err"><form:errors path="Autoaccident.wereyou"></form:errors></span>
 				 </td>
 				  </tr>
@@ -1454,29 +1510,29 @@ document.getElementById('mytext').style.display="block";
 				  <tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Body position at time of accident:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="body_position" class="input_cmbbx1" id="bodyposition" onclick='Checkposition();'>
-					<option  value="good" <c:if test="${autoaccident.body_position=='good'}"><c:out value="selected"/></c:if>>Good</option>
-					<option value="forward" <c:if test="${autoaccident.body_position=='forward'}"><c:out value="selected"/></c:if>>Forward</option>
-					<option value="leaning" <c:if test="${autoaccident.body_position=='learning'}"><c:out value="selected"/></c:if>>Leaning</option>
-					<option value="others" <c:if test="${autoaccident.body_position=='others'}"><c:out value="selected"/></c:if>>Other</option>
-					<option value="un_known" <c:if test="${autoaccident.body_position=='un_known'}"><c:out value="selected"/></c:if>>Unknown</option>
+				  <select name="body_position" class="input_cmbbx1" id="bodyposition" onchange="if (this.value=='Other'){this.form['body_position1'].style.visibility='visible'}else {this.form['body_position1'].style.visibility='hidden'};">
+					<option  value="Good" <c:if test="${autoaccident.body_position=='Good'}"><c:out value="selected"/></c:if>>Good</option>
+					<option value="Forward" <c:if test="${autoaccident.body_position=='Forward'}"><c:out value="selected"/></c:if>>Forward</option>
+					<option value="Leaning" <c:if test="${autoaccident.body_position=='Leaning'}"><c:out value="selected"/></c:if>>Leaning</option>
+					<option value="Other" <c:if test="${autoaccident.body_position=='Other'}"><c:out value="selected"/></c:if>>Other</option>
+					<option value="Unknown" <c:if test="${autoaccident.body_position=='Unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select><span class="err"><form:errors path="Autoaccident.body_position"></form:errors></span>
-				   <input type="text" name="body_position1" id="body_position1" value="${autoaccident.body_position1}"style='display:none' min="4" maxlength="32" onInput="return validatename(id)";/><span class="err"><form:errors path="Autoaccident.body_position1"></form:errors></span>
+				   <input type="text" name="body_position1" id="body_position1" value="${autoaccident.body_position1}" style="visibility:hidden;" min="4" maxlength="32" onInput="return validatename(id)";/><span class="err"><form:errors path="Autoaccident.body_position1"></form:errors></span>
 				  </td>
 				  </tr>
 				 <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Head Position:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="head_position" class="input_cmbbx1" id="headposition"onclick='CheckHeadposition();'>
-					<option  value="forwardpos" <c:if test="${autoaccident.head_position=='forwardpos'}"><c:out value="selected"/></c:if>>Forward</option>
-					<option value="left" <c:if test="${autoaccident.head_position=='left'}"><c:out value="selected"/></c:if>>Left</option>
-					<option value="right" <c:if test="${autoaccident.head_position=='right'}"><c:out value="selected"/></c:if>>Right</option>
-					<option value="up_pos" <c:if test="${autoaccident.head_position=='up_pos'}"><c:out value="selected"/></c:if>>Up</option>
-					<option value="down_pos" <c:if test="${autoaccident.head_position=='down_pos'}"><c:out value="selected"/></c:if>>Down</option>
-					<option value="others" <c:if test="${autoaccident.head_position=='others'}"><c:out value="selected"/></c:if>>Other</option>
-					<option value="unknown_pos" <c:if test="${autoaccident.head_position=='unknown_pos'}"><c:out value="selected"/></c:if>>Unknown</option>
+				  <select name="head_position" class="input_cmbbx1" id="headposition" onchange="if (this.value=='Other'){this.form['head_position1'].style.visibility='visible'}else {this.form['head_position1'].style.visibility='hidden'};">
+					<option  value="Forward" <c:if test="${autoaccident.head_position=='Forward'}"><c:out value="selected"/></c:if>>Forward</option>
+					<option value="Left" <c:if test="${autoaccident.head_position=='Left'}"><c:out value="selected"/></c:if>>Left</option>
+					<option value="Right" <c:if test="${autoaccident.head_position=='Right'}"><c:out value="selected"/></c:if>>Right</option>
+					<option value="Up" <c:if test="${autoaccident.head_position=='Up'}"><c:out value="selected"/></c:if>>Up</option>
+					<option value="Down" <c:if test="${autoaccident.head_position=='Down'}"><c:out value="selected"/></c:if>>Down</option>
+					<option value="Other" <c:if test="${autoaccident.head_position=='Other'}"><c:out value="selected"/></c:if>>Other</option>
+					<option value="Unknown" <c:if test="${autoaccident.head_position=='Unknown'}"><c:out value="selected"/></c:if>>Unknown</option>
 				  </select><span class="err"><form:errors path="Autoaccident.head_position"></form:errors></span>
-				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" onInput="return validatename(id)"; value="${autoaccident.head_position1}"style='display:none' /><span class="err"><form:errors path="Autoaccident.head_position1"></form:errors></span>
+				   <input type="text" name="head_position1" id="head_position1" min="4" maxlength="32" onInput="return validatename(id)"; value="${autoaccident.head_position1}" style="visibility:hidden;" /><span class="err"><form:errors path="Autoaccident.head_position1"></form:errors></span>
 				  </td>
 				  </tr>
 				  <tr class="row2">
@@ -1489,8 +1545,8 @@ document.getElementById('mytext').style.display="block";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Aware of crash:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="aware_of_crash" class="input_cmbbx1" >
-					<option value="aware" <c:if test="${autoaccident.aware_of_crash=='aware'}"><c:out value="selected"/></c:if> >Aware</option>
-					<option value="surprised" <c:if test="${autoaccident.aware_of_crash=='surprised'}"><c:out value="selected"/></c:if>>Surprised</option>
+					<option value="Aware" <c:if test="${autoaccident.aware_of_crash=='Aware'}"><c:out value="selected"/></c:if> >Aware</option>
+					<option value="Surprised" <c:if test="${autoaccident.aware_of_crash=='Surprised'}"><c:out value="selected"/></c:if>>Surprised</option>
 				  </select><span class="err"><form:errors path="Autoaccident.aware_of_crash"></form:errors></span>
 				  </td>
 				  </tr>
@@ -1500,8 +1556,8 @@ document.getElementById('mytext').style.display="block";
 				  <input type="radio" name="brace" value="Yes" class="input_txt" id="bracecheck" onclick="toggle1();"<c:if test="${autoaccident.brace=='Yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.brace"></form:errors></span>
 				<select name="ifyes" class="input_cmbbx1" id="mybrace"  style='display:none'>
-				  <option  value="bracearms" <c:if test="${autoaccident.ifyes=='bracearms'}"><c:out value="selected"/></c:if>>Braced with arms</option>
-				  <option value="bracelegs" <c:if test="${autoaccident.ifyes=='bracelegs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
+				  <option  value="Braced With Arms" <c:if test="${autoaccident.ifyes=='Braced With Arms'}"><c:out value="selected"/></c:if>>Braced With Arms</option>
+				  <option value="Braced With Legs" <c:if test="${autoaccident.ifyes=='Braced With Legs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1623,20 +1679,20 @@ document.getElementById('mytext').style.display="block";
   				<tr class="row2">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Patient's Body:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="patient_body" class="input_cmbbx1" id="patientbody" onclick='CheckPatientposition();'>
-					<option value="jolted" <c:if test="${autoaccident.patient_body=='jolted'}"><c:out value="selected"/></c:if>>Jolted</option>
-					<option value="thrown_about" <c:if test="${autoaccident.patient_body=='thrown_about'}"><c:out value="selected"/></c:if>>Thrown About</option>
-					<option value="stunned" <c:if test="${autoaccident.patient_body=='stunned'}"><c:out value="selected"/></c:if>>Stunned</option>
-					<option value="dazed" <c:if test="${autoaccident.patient_body=='dazed'}"><c:out value="selected"/></c:if>>Dazed</option>
-					<option value="whipped" <c:if test="${autoaccident.patient_body=='whipped'}"><c:out value="selected"/></c:if>>Whipped</option>
-					<option value="slammed" <c:if test="${autoaccident.patient_body=='slammed'}"><c:out value="selected"/></c:if>>Slammed</option>
-					<option value="otherbody" <c:if test="${autoaccident.patient_body=='otherbody'}"><c:out value="selected"/></c:if>>Other</option>
+				  <select name="patient_body" class="input_cmbbx1" id="patientbody" onchange="if (this.value=='Other'){this.form['patient_body1'].style.visibility='visible'}else {this.form['patient_body1'].style.visibility='hidden'};">
+					<option value="Jolted" <c:if test="${autoaccident.patient_body=='Jolted'}"><c:out value="selected"/></c:if>>Jolted</option>
+					<option value="Thrown About" <c:if test="${autoaccident.patient_body=='Thrown About'}"><c:out value="selected"/></c:if>>Thrown About</option>
+					<option value="Stunned" <c:if test="${autoaccident.patient_body=='Stunned'}"><c:out value="selected"/></c:if>>Stunned</option>
+					<option value="Dazed" <c:if test="${autoaccident.patient_body=='Dazed'}"><c:out value="selected"/></c:if>>Dazed</option>
+					<option value="Whipped" <c:if test="${autoaccident.patient_body=='Whipped'}"><c:out value="selected"/></c:if>>Whipped</option>
+					<option value="Slammed" <c:if test="${autoaccident.patient_body=='Slammed'}"><c:out value="selected"/></c:if>>Slammed</option>
+					<option value="Other" <c:if test="${autoaccident.patient_body=='Other'}"><c:out value="selected"/></c:if>>Other</option>
 				  </select><span class="err"><form:errors path="Autoaccident.patient_body"></form:errors></span>
-				  <input type="text" name="patient_body1" id="patient_body1" onInput="return validatename(id)"; min="4" maxlength="32" value="${autoaccident.patient_body1}"style='display:none'/><span class="err"><form:errors path="Autoaccident.patient_body1"></form:errors></span>
+				  <input type="text" name="patient_body1" id="patient_body1" onInput="return validatename(id)"; min="4" maxlength="32" value="${autoaccident.patient_body1}" style="visibility:hidden;"/><span class="err"><form:errors path="Autoaccident.patient_body1"></form:errors></span>
 				  </td>
 				  </tr> 
 				   <tr class="row1">
-				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did patient’s body strike interior of car? </td>
+				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did patient's body strike interior of car? </td>
 				  <td valign="top" align="left" class="input_txt">
 				  <input type="radio" name="body_strike"  value="Yes" id="yeschecked" onchange="change44();" class="input_txt"  onclick="strike();" <c:if test="${autoaccident.body_strike=='Yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="body_strike" id="body_strike" value="No" id="nochecked" onchange="change44();" class="input_txt"  onclick="strike();"<c:if test="${autoaccident.body_strike=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.body_strike"></form:errors></span>
@@ -1754,10 +1810,10 @@ document.getElementById('mytext').style.display="block";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Damage to the other car:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="damage" class="input_cmbbx1" >
-					<option ed="ed" value="minimal" <c:if test="${autoaccident.damage=='minimal'}"><c:out value="selected"/></c:if>>Minimal</option>
-					<option value="moderate" <c:if test="${autoaccident.damage=='moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
-					<option value="major" <c:if test="${autoaccident.damage=='major'}"><c:out value="selected"/></c:if>>Major</option>
-					<option value="totaled" <c:if test="${autoaccident.damage=='totaled'}"><c:out value="selected"/></c:if>>Totaled</option>
+					<option ed="ed" value="Minimal" <c:if test="${autoaccident.damage=='Minimal'}"><c:out value="selected"/></c:if>>Minimal</option>
+					<option value="Moderate" <c:if test="${autoaccident.damage=='Moderate'}"><c:out value="selected"/></c:if>>Moderate</option>
+					<option value="Major" <c:if test="${autoaccident.damage=='Major'}"><c:out value="selected"/></c:if>>Major</option>
+					<option value="Totaled" <c:if test="${autoaccident.damage=='Totaled'}"><c:out value="selected"/></c:if>>Totaled</option>
 				  </select><span class="err"><form:errors path="Autoaccident.damage"></form:errors></span>
 				  </td>
 				  </tr> 
@@ -1810,52 +1866,86 @@ document.getElementById('mytext').style.display="block";
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Who?</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="who" class="input_cmbbx1" >
-					<option  value="you" <c:if test="${autoaccident.who=='you'}"><c:out value="selected"/></c:if>>You</option>
-					<option value="other_driver" <c:if test="${autoaccident.who=='other_driver'}"><c:out value="selected"/></c:if>>Other Driver</option>
+					<option  value="You" <c:if test="${autoaccident.who=='You'}"><c:out value="selected"/></c:if>>You</option>
+					<option value="Other Driver" <c:if test="${autoaccident.who=='Other Driver'}"><c:out value="selected"/></c:if>>Other Driver</option>
 				  </select><span class="err"><form:errors path="Autoaccident.who"></form:errors></span>
 				  </td><td width="680" ></td>
 				  </tr> 
 				  <tr class="row1">
                 <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After Accident,I had the following:</td>
 				 <td valign="top" align="left" class="input_txt" style="width: 886px; ">
-				 <input type="checkbox" id="headache" name="headache" value="headache" <c:if test="${autoaccident.headache=='headache'}"><c:out value="Checked"/></c:if> >Headache&nbsp;&nbsp;&nbsp;&nbsp; 
-				 <input type="checkbox" id="dizziness" name="dizziness" value="dizziness" <c:if test="${autoaccident.dizziness=='dizziness'}"><c:out value="Checked"/></c:if> >Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="nausea" name="nausea" value="nausea" <c:if test="${autoaccident.nausea=='nausea'}"><c:out value="Checked"/></c:if> >Nausea&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="confusion" name="confusion" value="confusion" <c:if test="${autoaccident.confusion=='confusion'}"><c:out value="Checked"/></c:if> >Confusion&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="disorientation"name="disorientation" value="disorientation" <c:if test="${autoaccident.disorientation=='disorientation'}"><c:out value="Checked"/></c:if> >Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="checkbox" id="neckpain" name="neckpain" value="neckpain" <c:if test="${autoaccident.neckpain=='neckpain'}"><c:out value="Checked"/></c:if> >Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="headache" name="headache" value="Headache" <c:if test="${autoaccident.headache=='Headache'}"><c:out value="Checked"/></c:if> >Headache&nbsp;&nbsp;&nbsp;&nbsp; 
+				 <input type="checkbox" id="dizziness" name="dizziness" value="Dizziness" <c:if test="${autoaccident.dizziness=='Dizziness'}"><c:out value="Checked"/></c:if> >Dizziness&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="nausea" name="nausea" value="Nausea" <c:if test="${autoaccident.nausea=='Nausea'}"><c:out value="Checked"/></c:if> >Nausea&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="confusion" name="confusion" value="Confusion" <c:if test="${autoaccident.confusion=='Confusion'}"><c:out value="Checked"/></c:if> >Confusion&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="disorientation"name="disorientation" value="Disorientation" <c:if test="${autoaccident.disorientation=='Disorientation'}"><c:out value="Checked"/></c:if> >Disorientation&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="checkbox" id="neckpain" name="neckpain" value="Neck Pain" <c:if test="${autoaccident.neckpain=='Neck Pain'}"><c:out value="Checked"/></c:if> >Neck pain&nbsp;&nbsp;&nbsp;&nbsp;
 				 
-				 <input type="checkbox" id="otherpain" name="otherpain" value="other pain" id="othercheck" onclick="Other();" <c:if test="${autoaccident.otherpain=='other pain'}"><c:out value="Checked"/></c:if> >Other&nbsp;&nbsp;&nbsp;&nbsp;
-				 <input type="text" class="input_txtbx1" id="other1" name="otherpaintext"  placeholder="If other" value="${autoaccident.otherpaintext}" style='display:none'/>
+				 <input type="checkbox" id="otherpain" name="otherpain" value="Other"   <c:if test="${autoaccident.otherpain=='Other'}" ><c:out value="Checked"/></c:if> onchange="if (this.value=='Other'){this.form['otherpaintext'].style.visibility='visible'}else {this.form['otherpaintext'].style.visibility='hidden'};" >Other&nbsp;&nbsp;&nbsp;&nbsp;
+				 <input type="text" class="input_txtbx1" id="otherpaintext" name="otherpaintext"  placeholder="If other" value="${autoaccident.otherpaintext}" style="visibility:hidden;"/>
 				 
 				<br> <span id="afteraccidenterror" style="color: red;font-style:italic;">
 				 </td><form:errors path="Autoaccident.after_accident"></form:errors></span>
+				 
+				 <script>
+		 window.onload = function()
+{
+if (document.getElementById("otherpain").value == "Other") {
+document.getElementById("otherpaintext").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("otherpaintext").style.visibility = 'hidden';
+
+
+}
+}
+</script>                    	
+				 
 				 </tr>
 				 <tr class="row2">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Symptoms first appeared:</td>
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="first_symptom" class="input_cmbbx1" id="firstsymptom"  onchange='Checksymptom();'>
-					<option  value="immediately" <c:if test="${autoaccident.first_symptom=='immediately'}"><c:out value="selected"/></c:if> >Immediately</option>
-					<option value="hours" <c:if test="${autoaccident.first_symptom=='hours'}"><c:out value="selected"/></c:if> >hours after the accident</option>
-					<option value="next_day" <c:if test="${autoaccident.first_symptom=='next_day'}"><c:out value="selected"/></c:if> >The next day</option>
-					<option value="days" <c:if test="${autoaccident.first_symptom=='days'}"><c:out value="selected"/></c:if> >days</option>
+					<option  value="Immediately" <c:if test="${autoaccident.first_symptom=='Immediately'}"><c:out value="selected"/></c:if> >Immediately</option>
+					<option value="Hours After The Accident" <c:if test="${autoaccident.first_symptom=='Hours After The Accident'}"><c:out value="selected"/></c:if> >Hours After The Accident</option>
+					<option value="The Next Day" <c:if test="${autoaccident.first_symptom=='The Next Day'}"><c:out value="selected"/></c:if> >The Next Day</option>
+					<option value="Days" <c:if test="${autoaccident.first_symptom=='Days'}"><c:out value="selected"/></c:if> >Days</option>
 				  </select><span class="err"><form:errors path="Autoaccident.first_symptom"></form:errors></span>
-				 <input type="text" name="symptom" id="symptom" value="${autoaccident.symptom}"style='display:none'/>
+				 <input type="text" name="symptom" id="symptom" value="${autoaccident.symptom}"style="visibility:hidden;"/>
 				  </td><td width="680" ></td>
 				  </tr> 
 				   <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>After the accident i went:</td>
 				 <td valign="top" align="left" class="input_txt">
-				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident"onclick='Check();'>
-					<option  value="hospital" <c:if test="${autoaccident.after_accident=='hospital'}"><c:out  value="selected"/></c:if>  >Hospital</option>
-					<option value="work" <c:if test="${autoaccident.after_accident=='work'}"><c:out  value="selected"/></c:if> >Work</option>
-					<option value="home" <c:if test="${autoaccident.after_accident=='home'}"><c:out  value="selected"/></c:if> >Home</option>
-					<option value="family" <c:if test="${autoaccident.after_accident=='family'}"><c:out  value="selected"/></c:if> >Family</option>
-					<option value="physician" <c:if test="${autoaccident.after_accident=='physician'}"><c:out  value="selected"/></c:if> >Physician</option>
-					<option value="otheracc" <c:if test="${autoaccident.after_accident=='otheracc'}"><c:out  value="selected"/></c:if> >Other</option>
+				  <select name="after_accident" class="input_cmbbx1"  id="afteraccident" onchange="if (this.value=='Other'){this.form['accident'].style.visibility='visible'}else {this.form['accident'].style.visibility='hidden'};">
+					<option  value="Hospital" <c:if test="${autoaccident.after_accident=='Hospital'}"><c:out  value="selected"/></c:if>  >Hospital</option>
+					<option value="Work" <c:if test="${autoaccident.after_accident=='Work'}"><c:out  value="selected"/></c:if> >Work</option>
+					<option value="Home" <c:if test="${autoaccident.after_accident=='Home'}"><c:out  value="selected"/></c:if> >Home</option>
+					<option value="Family" <c:if test="${autoaccident.after_accident=='Family'}"><c:out  value="selected"/></c:if> >Family</option>
+					<option value="Physician" <c:if test="${autoaccident.after_accident=='Physician'}"><c:out  value="selected"/></c:if> >Physician</option>
+					<option value="Other" <c:if test="${autoaccident.after_accident=='Other'}"><c:out  value="selected"/></c:if> >Other</option>
 				  </select><span class="err"><form:errors path="Autoaccident.after_accident"></form:errors></span>
-				 <input type="text" name="accident" id="accident" value="${autoaccident.accident}"style='display:none'/><span class="err"><form:errors path="Autoaccident.accident"></form:errors></span>
+				 <input type="text" name="accident" id="accident" value="${autoaccident.accident}" style="visibility:hidden;"/><span class="err"><form:errors path="Autoaccident.accident"></form:errors></span>
 				  </td>
+				  
+				  <script>
+		 window.onload = function()
+{
+if (document.getElementById("afteraccident").value == "Other") {
+document.getElementById("accident").style.visibility = 'visible';
+
+
+}
+else  {
+document.getElementById("accident").style.visibility = 'hidden';
+
+
+}
+}
+</script>                    	
+				  
 				  </tr> 
 				  
 				   
@@ -1888,11 +1978,11 @@ document.getElementById('mytext').style.display="block";
 				  <tr class="row1">
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>How did you get to the  &nbsp;&nbsp;hospital?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</td><td>
-				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange='Checkhospital(this.value);'>
-					<option  value="ambulance" <c:if test="${autoaccident.hospitalget=='ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
-					<option value="otherhos" <c:if test="${autoaccident.hospitalget=='otherhos'}"><c:out value="selected"/></c:if>>Other</option>
+				  <select name="hospitalget" class="input_cmbbx1" id="hospitalget" onchange="if (this.value=='Other'){this.form['hospital1'].style.visibility='visible'}else {this.form['hospital1'].style.visibility='hidden'};">
+					<option  value="Ambulance" <c:if test="${autoaccident.hospitalget=='Ambulance'}"><c:out value="selected"/></c:if>>Ambulance</option>
+					<option value="Other" <c:if test="${autoaccident.hospitalget=='Other'}"><c:out value="selected"/></c:if>>Other</option>
 				   </select>
-				 <input type="text" name="hospital1" id="hospital1" value="${autoaccident.hospital1}" style='display:none'/>
+				 <input type="text" name="hospital1" id="hospital1" value="${autoaccident.hospital1}" style="visibility:hidden;"/>
 				  </td>
 				  </tr> 
 				  <tr class="row2">
