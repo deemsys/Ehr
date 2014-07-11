@@ -4425,13 +4425,14 @@ function check(id)
 				                  		<select name="Type_Of_Accident" class="input_cmbbx1" id="type_of_accident" onchange="checkAjaxPost()"  onclick='Checklight(this.value)'; style="width: 173px; ">
 
 						                        <option selected="selected" value="" >--Select--</option>
-						                    <option value="autoaccident" >Auto</option>				                   
+						                    <option value="Auto" >Auto</option>				                   
 
-											<option value="workaccident" >Work</option>
+											<option value="Work" >Work</option>
 											
-											<option value="other" id="other">Other</option>
+											<option value="Other" id="other">Other</option>
 				                   		</select>
-				        		                   <input type="text" name="accident" id="accident" onInput="return validatename55(id)"; style='display:none' />
+				                   		<br><br>
+				        		                   <input type="text" name="accident" id="accident" class="input_txtbx1" onInput="return validatename55(id)"; style='display:none; width: 173px' />
 				                  <span id="type_of_accidenterror" style="color: red;font-style:italic;"></span> 	</td>
 				                   	
 				                </tr>  
@@ -4721,13 +4722,13 @@ function check(id)
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Hepatitis" value="Hepatitis">Hepatitis </td>
 				                  	</tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental">Mental Illness </td>
-				                  	<td valign="top" align="left" class="input_txt" style="width: 157px; "><input type="checkbox" name="High" value="High">High Blood Pressure</td>
-				                  	<td valign="top" align="left" class="input_txt" style="width: 149px; "><input type="checkbox" name="Digestive" value="Digestive">Digestive Disorders </td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Mental" value="Mental Illness">Mental Illness </td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 157px; "><input type="checkbox" name="High" value="High Blood Pressure">High Blood Pressure</td>
+				                  	<td valign="top" align="left" class="input_txt" style="width: 149px; "><input type="checkbox" name="Digestive" value="Digestive Disorders">Digestive Disorders </td>
 				                  	
 				                  	</tr>
 				                  	<tr>
-				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart">Heart Trouble	</td>
+				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Heart" value="Heart Trouble">Heart Trouble	</td>
 				                  	<td valign="top" align="left" class="input_txt"><input type="checkbox" name="Other" value="Other"onclick="this.form.ifother.style.visibility = this.checked? 'visible' : 'hidden'"/>other </td>
 				                 <td valign="top" align="left" class="input_txt"> <input type="text" class="input_txtbx1" id="ifother" style="visibility:hidden" name="Ifother" placeholder="If other" /></td>
 				                  	</tr>
@@ -4755,11 +4756,11 @@ function check(id)
 				                  	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*  </span>Do You:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="checkbox" id="Drink" name="Drink" value="Drink">Drink Regularly&nbsp; 
+				                  	<input type="checkbox" id="Drink" name="Drink" value="Drink Regularly">Drink Regularly&nbsp; 
 				                  	<input type="checkbox" id="Smoke"name="Smoke" value="Smoke">Smoke&nbsp;
-				                  	<input type="checkbox" id="Drugs"name="Drugs" value="Drugs">Take Recreational Drugs &nbsp;
-				                  	<input type="checkbox" id="Diet"name="Diet" value="Diet">Eat a Poor Diet &nbsp;&nbsp;&nbsp;
-				                  	<input type="checkbox" id="Exercise" name="Exercise" value="Exercise">Exercise Regularly &nbsp;
+				                  	<input type="checkbox" id="Drugs"name="Drugs" value="Take Recreational Drugs">Take Recreational Drugs &nbsp;
+				                  	<input type="checkbox" id="Diet"name="Diet" value="Eat a Poor Diet">Eat a Poor Diet &nbsp;&nbsp;&nbsp;
+				                  	<input type="checkbox" id="Exercise" name="Exercise" value="Exercise Regularly">Exercise Regularly &nbsp;
 				                  	
 				                  	<span id="doyouerror" style="color: red;font-style:italic;"></span>
 				                  	</tr> 

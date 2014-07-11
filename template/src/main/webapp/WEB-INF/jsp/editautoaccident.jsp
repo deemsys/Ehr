@@ -343,6 +343,7 @@ if(document.getElementById("body_strike").checked)
  <script>
 		 window.onload = function()
 {
+			 
 			 if(document.getElementById("body_strike").checked)
 			 {
 
@@ -374,6 +375,7 @@ if(document.getElementById("body_strike").checked)
  <script>
 		 window.onload = function()
 {
+			 alert("loading");
 if (document.getElementById("road").value == "Select Conditions") {
 document.getElementById("conditions").style.visibility = 'visible';
 
