@@ -551,7 +551,7 @@ function checkLength1(){
 	             <td><span class="err">* </span>Pain Name : <select name="painname" id="painname" onchange="doajax()">
 	             <option value="">--Select--</option>
 	             <option value="Wrist/Hand">Wrist/Hand</option>
-	              <option value="Low Back">Low Back</option>
+	              <option value="LowBack">Low Back</option>
 	              <option value="Neck/Mid Back">Neck/Mid Back</option>
 	              <option value="Oswestry">Oswestry</option>
 	              <option value="Shoulder">Shoulder</option>

@@ -453,7 +453,7 @@ $(function() {
 	             <td><span class="err">* </span>Pain Name : <select name="painname" id="painname" onchange="doajax()">
 	             <option value="">--Select--</option>
 	             <option  value="Wrist/Hand" <c:if test="${quadraplevisualdetails.painname=='Wrist/Hand'}"><c:out value="selected"></c:out></c:if>>Wrist/Hand</option>
-	              <option value="Low Back" <c:if test="${quadraplevisualdetails.painname=='Low Back'}"><c:out value="selected"></c:out></c:if>>Low Back</option>
+	              <option value="LowBack" <c:if test="${quadraplevisualdetails.painname=='LowBack'}"><c:out value="selected"></c:out></c:if>>Low Back</option>
 	              <option value="Neck/Mid Back"<c:if test="${quadraplevisualdetails.painname=='Neck/Mid Back'}"><c:out value="selected"></c:out></c:if>>Neck/Mid Back</option>
 	              <option value="Oswestry"<c:if test="${quadraplevisualdetails.painname=='Oswestry'}"><c:out value="selected"></c:out></c:if>>Oswestry</option>
 	              <option value="Shoulder"<c:if test="${quadraplevisualdetails.painname=='Shoulder'}"><c:out value="selected"></c:out></c:if>>Shoulder</option>
