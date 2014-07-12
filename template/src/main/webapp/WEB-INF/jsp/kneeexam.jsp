@@ -823,28 +823,28 @@ $(function() {
  </tr>
  <tr class="row1">
  <td width="200">Gait:</td><td><select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="normal" >Normal</option>
-					<option value="antalgic">Antalgic</option>
-					<option value="shuffling">Shuffling</option>
-					<option value="limp">Limp</option>
-					<option value="stagger">Stagger</option>
-					<option value="caneassited">Cane Assisted</option>
-					<option value="wheelchair">Wheel Chair</option>
+					<option selected="selected" value="Normal" >Normal</option>
+					<option value="Antalgic">Antalgic</option>
+					<option value="Shuffling">Shuffling</option>
+					<option value="Limp">Limp</option>
+					<option value="Stagger">Stagger</option>
+					<option value="Cane Assisted">Cane Assisted</option>
+					<option value="Wheel Chair">Wheel Chair</option>
 					</select></td> 
  <td></td> 
  <td></td>
  </tr>
  <tr class="row1">
  <td width="200">Pelvic Unleveling:</td><td><select style="width:180px" name="pelvicunleveling" id="pelvicunleveling"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="none" >None</option>
-					<option value="superiorilliaccrestright">superior illiac crest right</option>
-					<option value="superioriliaccrestleft">superior iliac crest left</option>
+					<option selected="selected" value="None" >None</option>
+					<option value="Superior Illiac crest right">superior illiac crest right</option>
+					<option value="Superior Illiac crest left">superior iliac crest left</option>
 					</select></td> 
   <td>A & O:<select name="ao" id="ao"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="excellent" >Excellent</option>
-					<option value="good">Good</option>
-					<option value="fair">Fair</option>
-					<option value="severe">Severe</option>
+					<option selected="selected" value="Excellent" >Excellent</option>
+					<option value="Good">Good</option>
+					<option value="Fair">Fair</option>
+					<option value="Severe">Severe</option>
 					</select> </td>
  <td></td>
  <td><input type="text" style="visibility:hidden"> </td> 
@@ -862,10 +862,10 @@ $(function() {
  
   <tr class="row1">
  <td width="200">Leg Length (ASIS to Medial Malleolus): </td> 
- <td><input type="checkbox" name="leglengthl" value="left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
+ <td><input type="checkbox" name="leglengthl" value="Left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
 					<input type="text" name="leglengthtextl" id="break5" style="visibility:hidden">
 					</td>
-					<td><input type="checkbox" name="leglengthr" value="right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
+					<td><input type="checkbox" name="leglengthr" value="Right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
 					<td><input type="text" name="leglengthtextr" id="break6" style="visibility:hidden"></td>					
 					<td></td>
 					<td></td> 

@@ -839,28 +839,28 @@ function validatename3(id){
  <table>
  <tr class="row1">
  <td width="200">Gait:</td><td>  <select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
-					<option value="normal" <c:if test="${kneeexam.gait=='normal'}"><c:out value="selected"/></c:if> >Normal</option>
-					<option value="antalgic" <c:if test="${kneeexam.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
-					<option value="shuffling" <c:if test="${kneeexam.gait=='shuffling'}"><c:out value="selected"/></c:if>>Shuffling</option>
-					<option value="limp" <c:if test="${kneeexam.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
-					<option value="stagger" <c:if test="${kneeexam.gait=='stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
-					<option value="caneassited" <c:if test="${kneeexam.gait=='caneassited'}"><c:out value="selected"/></c:if>>Cane Assisted</option>
-					<option value="wheelchair" <c:if test="${kneeexam.gait=='wheelchair'}"><c:out value="selected"/></c:if>>Wheel Chair</option>
+					<option value="Normal" <c:if test="${kneeexam.gait=='Normal'}"><c:out value="selected"/></c:if> >Normal</option>
+					<option value="Antalgic" <c:if test="${kneeexam.gait=='Antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
+					<option value="Shuffling" <c:if test="${kneeexam.gait=='Shuffling'}"><c:out value="selected"/></c:if>>Shuffling</option>
+					<option value="Limp" <c:if test="${kneeexam.gait=='Limp'}"><c:out value="selected"/></c:if>>Limp</option>
+					<option value="Stagger" <c:if test="${kneeexam.gait=='Stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
+					<option value="Cane Assisted" <c:if test="${kneeexam.gait=='Cane Assisted'}"><c:out value="selected"/></c:if>>Cane Assisted</option>
+					<option value="Wheel Chair" <c:if test="${kneeexam.gait=='Wheel Chair'}"><c:out value="selected"/></c:if>>Wheel Chair</option>
 					</select></td> 
  <td></td> 
  <td></td>
  </tr>
  <tr class="row1">
  <td width="200">Pelvic Unleveling:</td><td><select style="width:180px" name="pelvicunleveling" id="pelvicunleveling"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="none" <c:if test="${kneeexam.pelvicunleveling=='none'}"><c:out value="selected"/></c:if>>None</option>
-					<option value="superiorilliaccrestright" <c:if test="${kneeexam.pelvicunleveling=='superiorilliaccrestright'}"><c:out value="selected"/></c:if>>superior illiac crest right</option>
-					<option value="superioriliaccrestleft" <c:if test="${kneeexam.pelvicunleveling=='superiorilliaccrestleft'}"><c:out value="selected"/></c:if>>superior iliac crest left</option>
+					<option selected="selected" value="None" <c:if test="${kneeexam.pelvicunleveling=='None'}"><c:out value="selected"/></c:if>>None</option>
+					<option value="Superior Illiac crest right" <c:if test="${kneeexam.pelvicunleveling=='Superior Illiac crest right'}"><c:out value="selected"/></c:if>>superior illiac crest right</option>
+					<option value="Superior Illiac crest right" <c:if test="${kneeexam.pelvicunleveling=='Superior Illiac crest left'}"><c:out value="selected"/></c:if>>superior iliac crest left</option>
 					</select></td> 
   <td>A & O:<select name="ao" id="ao"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="excellent" <c:if test="${kneeexam.ao=='excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
-					<option value="good" <c:if test="${kneeexam.ao=='good'}"><c:out value="selected"/></c:if>>Good</option>
-					<option value="fair" <c:if test="${kneeexam.ao=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
-					<option value="severe" <c:if test="${kneeexam.ao=='severe'}"><c:out value="selected"/></c:if>>Severe</option>
+					<option selected="selected" value="Excellent" <c:if test="${kneeexam.ao=='Excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
+					<option value="Good" <c:if test="${kneeexam.ao=='Good'}"><c:out value="selected"/></c:if>>Good</option>
+					<option value="Fair" <c:if test="${kneeexam.ao=='Fair'}"><c:out value="selected"/></c:if>>Fair</option>
+					<option value="Severe" <c:if test="${kneeexam.ao=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
 					</select> </td>
  <td></td>
  <td></td> 
@@ -881,11 +881,11 @@ function validatename3(id){
  <table>
   <tr class="row1">
  <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
- <td><input type="checkbox" id="leglengthl" name="leglengthl" value="left" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthl=='left'}"><c:out value="Checked"/></c:if>>Left</td>
+ <td><input type="checkbox" id="leglengthl" name="leglengthl" value="Left" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthl=='Left'}"><c:out value="Checked"/></c:if>>Left</td>
  <td><input type="text" name="leglengthtextl" id="break5" style="display:none" value="${kneeexam.leglengthtextl}"onInput="return validatename(id);">
  <span id="break5error" style="color:red"> </span>
  </td>
- <td><input type="checkbox" id="leglengthr" name="leglengthr" value="right" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthr=='right'}"><c:out value="Checked"/></c:if>>Right</td>
+ <td><input type="checkbox" id="leglengthr" name="leglengthr" value="Right" onclick="visible(this.value)" <c:if test="${kneeexam.leglengthr=='Right'}"><c:out value="Checked"/></c:if>>Right</td>
  <td><input type="text" name="leglengthtextr" id="break6" style="display:none" value="${kneeexam.leglengthtextr}" onInput="return validatename(id);">
  <span id="break6error" style="color:red"> </span>
  </td>
