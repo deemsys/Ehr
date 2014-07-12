@@ -567,10 +567,10 @@ document.getElementById("pnameerror").innerHTML=" ";
              <td width="40"><input type="text" name="swelling" id="swelling" value="${shoulderexamdetails.swelling}" onInput="return validatename(id)";></td>
            
            <td width="59"></td>
-           <td width="120">A & O</td><td><select name="ao" ><option <c:if test="${shoulderexamdetails.ao=='excellent'}"></c:if> <c:out value="selected"></c:out>>excellent</option>
-           <option <c:if test="${shoulderexamdetails.ao=='good'}"></c:if> <c:out value="selected"></c:out>> good</option>
-           <option <c:if test="${shoulderexamdetails.ao=='fair'}"></c:if> <c:out value="selected"></c:out>> fair</option>
-           <option <c:if test="${shoulderexamdetails.ao=='severe'}"></c:if> <c:out value="selected"></c:out>> severe</option></select></td>
+           <td width="120">A & O</td><td><select name="ao" ><option <c:if test="${shoulderexamdetails.ao=='Excellent'}"></c:if> <c:out value="selected"></c:out>>Excellent</option>
+           <option <c:if test="${shoulderexamdetails.ao=='Good'}"></c:if> <c:out value="selected"></c:out>> Good</option>
+           <option <c:if test="${shoulderexamdetails.ao=='Fair'}"></c:if> <c:out value="selected"></c:out>> Fair</option>
+           <option <c:if test="${shoulderexamdetails.ao=='Severe'}"></c:if> <c:out value="selected"></c:out>> Severe</option></select></td>
            </tr>  
            </table> 
           <br> 
@@ -578,25 +578,25 @@ document.getElementById("pnameerror").innerHTML=" ";
          <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
          <td width="40"></td>
-         <td align="left"><input type="checkbox" value="Unremarkable" name="dysfunction" id="functional" <c:if test="${shoulderexamdetails.dysfunction=='Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if>>All Soft Tissue Unremarkable</td>
+         <td align="left"><input type="checkbox" value="All Soft Tissue Unremarkable" name="dysfunction" id="functional" <c:if test="${shoulderexamdetails.dysfunction=='All Soft Tissue Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if>>All Soft Tissue Unremarkable</td>
          <td width="180"></td>
           </tr>  </table>
            <table>
            <tr>
-           <td width="129">Pectoralis Minor:</td><td><input type="radio" value="left"  <c:if test="${shoulderexamdetails.pectoralisminor=='left'}"> <c:out value="checked"></c:out></c:if> name="pectoralisminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="right"  <c:if test="${shoulderexamdetails.pectoralisminor=='right'}"> <c:out value="checked"></c:out></c:if> name="pectoralisminor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Pectoralis Minor:</td><td><input type="radio" value="Left"  <c:if test="${shoulderexamdetails.pectoralisminor=='Left'}"> <c:out value="checked"></c:out></c:if> name="pectoralisminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="Right"  <c:if test="${shoulderexamdetails.pectoralisminor=='Right'}"> <c:out value="checked"></c:out></c:if> name="pectoralisminor">&nbsp;&nbsp;&nbsp;Right</td>
                      
-           <td width="130">Supraspinatus:</td><td><input type="radio" value="left"  <c:if test="${shoulderexamdetails.supraspinatus=='left'}"> <c:out value="checked"></c:out></c:if> name="supraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right"  <c:if test="${shoulderexamdetails.supraspinatus=='right'}"> <c:out value="checked"></c:out></c:if> name="supraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Supraspinatus:</td><td><input type="radio" value="Left"  <c:if test="${shoulderexamdetails.supraspinatus=='Left'}"> <c:out value="checked"></c:out></c:if> name="supraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="Right"  <c:if test="${shoulderexamdetails.supraspinatus=='Right'}"> <c:out value="checked"></c:out></c:if> name="supraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="35"></td>
-           <td width="120">Infraspinatus:</td><td><input type="radio" value="left" <c:if test="${shoulderexamdetails.infraspinatus=='left'}"> <c:out value="checked"></c:out></c:if>  name="infraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" <c:if test="${shoulderexamdetails.infraspinatus=='right'}"> <c:out value="checked"></c:out></c:if>  name="infraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Infraspinatus:</td><td><input type="radio" value="Left" <c:if test="${shoulderexamdetails.infraspinatus=='Left'}"> <c:out value="checked"></c:out></c:if>  name="infraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" <c:if test="${shoulderexamdetails.infraspinatus=='Right'}"> <c:out value="checked"></c:out></c:if>  name="infraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="73"></td>
-           <td width="120">Serratus Ant</td><td><input type="radio" value="left"  <c:if test="${shoulderexamdetails.serratusant=='left'}"> <c:out value="checked"></c:out></c:if> name="serratusant">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right"  <c:if test="${shoulderexamdetails.serratusant=='right'}"> <c:out value="checked"></c:out></c:if> name="serratusant">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Serratus Ant</td><td><input type="radio" value="Left"  <c:if test="${shoulderexamdetails.serratusant=='Left'}"> <c:out value="checked"></c:out></c:if> name="serratusant">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right"  <c:if test="${shoulderexamdetails.serratusant=='Right'}"> <c:out value="checked"></c:out></c:if> name="serratusant">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
            <tr height="10"></tr>
            <tr>
-           <td width="129">Teres Minor:</td><td><input type="radio" value="left" <c:if test="${shoulderexamdetails.teresminor=='left'}"> <c:out value="checked"></c:out></c:if> name="teresminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right"  <c:if test="${shoulderexamdetails.teresminor=='right'}"> <c:out value="checked"></c:out></c:if> name="teresminor">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="130">Teres Major:</td><td><input type="radio" value="left"  <c:if test="${shoulderexamdetails.teresmajor=='left'}"> <c:out value="checked"></c:out></c:if> name="teresmajor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right"  <c:if test="${shoulderexamdetails.teresmajor=='right'}"> <c:out value="checked"></c:out></c:if> name="teresmajor">&nbsp;&nbsp;&nbsp;Right</td>
-           <td></td><td>Rhomboids:</td><td><input type="radio" value="left" <c:if test="${shoulderexamdetails.rhomboids=='left'}"> <c:out value="checked"></c:out></c:if> name="rhomboids">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right"  <c:if test="${shoulderexamdetails.rhomboids=='right'}"> <c:out value="checked"></c:out></c:if> name="rhomboids">&nbsp;&nbsp;&nbsp;Right</td>
-           <td></td><td>Trapezius:</td><td><input type="radio" value="left" <c:if test="${shoulderexamdetails.trapezius=='left'}"> <c:out value="checked"></c:out></c:if>  name="trapezius">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right"  <c:if test="${shoulderexamdetails.trapezius=='right'}"> <c:out value="checked"></c:out></c:if> name="trapezius">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Teres Minor:</td><td><input type="radio" value="Left" <c:if test="${shoulderexamdetails.teresminor=='Left'}"> <c:out value="checked"></c:out></c:if> name="teresminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right"  <c:if test="${shoulderexamdetails.teresminor=='Right'}"> <c:out value="checked"></c:out></c:if> name="teresminor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Teres Major:</td><td><input type="radio" value="Left"  <c:if test="${shoulderexamdetails.teresmajor=='Left'}"> <c:out value="checked"></c:out></c:if> name="teresmajor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right"  <c:if test="${shoulderexamdetails.teresmajor=='Right'}"> <c:out value="checked"></c:out></c:if> name="teresmajor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td></td><td>Rhomboids:</td><td><input type="radio" value="Left" <c:if test="${shoulderexamdetails.rhomboids=='Left'}"> <c:out value="checked"></c:out></c:if> name="rhomboids">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right"  <c:if test="${shoulderexamdetails.rhomboids=='Right'}"> <c:out value="checked"></c:out></c:if> name="rhomboids">&nbsp;&nbsp;&nbsp;Right</td>
+           <td></td><td>Trapezius:</td><td><input type="radio" value="Left" <c:if test="${shoulderexamdetails.trapezius=='Left'}"> <c:out value="checked"></c:out></c:if>  name="trapezius">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right"  <c:if test="${shoulderexamdetails.trapezius=='Right'}"> <c:out value="checked"></c:out></c:if> name="trapezius">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
                
            </table>
@@ -696,7 +696,7 @@ document.getElementById("pnameerror").innerHTML=" ";
                <option  <c:if test="${shoulderexamdetails.patientstatus=='Excellent'}"> <c:out value="selected"></c:out></c:if>  >Excellent</option> 
                  <option <c:if test="${shoulderexamdetails.patientstatus=='Good'}"> <c:out value="selected"></c:out></c:if>> Good</option>  
                   <option <c:if test="${shoulderexamdetails.patientstatus=='Fair'}"> <c:out value="selected"></c:out></c:if>> Fair</option> 
-                    <option <c:if test="${shoulderexamdetails.patientstatus=='Poor'}"> <c:out value="selected"></c:out></c:if>>Poor</option>               
+                    <option <c:if test="${shoulderexamdetails.patientstatus=='poor'}"> <c:out value="selected"></c:out></c:if>>poor</option>               
                </select></td></tr>      
                 </table>
                 </br>
@@ -719,7 +719,7 @@ document.getElementById("pnameerror").innerHTML=" ";
            </tr>   
             <tr height="10"></tr>
            <tr><td width="95"></td><td width="160">
-           <input type="checkbox" id="others" name="others" <c:if test="${shoulderexamdetails.others=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other" onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" value="${shoulderexamdetails.othervalue}" id="othervalue" style="display:none " onInput="return validatename(id)";>
+           <input type="checkbox" id="others" name="others" <c:if test="${shoulderexamdetails.others=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other" onclick="othervisible('this.value')">other</td><td><input type="text" name="othervalue" value="${shoulderexamdetails.othervalue}" id="othervalue" style="display:none " onInput="return validatename(id)";>
            </td></tr>   
                       
            </table>

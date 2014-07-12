@@ -844,7 +844,7 @@ function validatename(id){
              <td width="40"><input type="text" name="swelling" id="swelling" onInput="return validatename(id)";></td>
            
            <td width="59"></td>
-           <td width="120">A & O</td><td><select name="ao"><option>excellent</option><option> good</option><option> fair</option><option> severe</option></select></td>
+           <td width="120">A & O</td><td><select name="ao"><option value="Excellent">Excellent</option><option value="Good"> Good</option><option value="Fair"> Fair</option><option value="Severe"> Severe</option></select></td>
            </tr>  
            </table> 
           <br> 
@@ -857,20 +857,20 @@ function validatename(id){
           </tr>  </table>
            <table>
            <tr>
-           <td width="129">Pectoralis Minor:</td><td><input type="radio" value="left" name="pectoralisminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="right" name="pectoralisminor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Pectoralis Minor:</td><td><input type="radio" value="Left" name="pectoralisminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" value="Right" name="pectoralisminor">&nbsp;&nbsp;&nbsp;Right</td>
                      
-           <td width="130">Supraspinatus:</td><td><input type="radio" value="left" name="supraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right" name="supraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Supraspinatus:</td><td><input type="radio" value="Left" name="supraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right" name="supraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="35"></td>
-           <td width="120">Infraspinatus:</td><td><input type="radio" value="left" name="infraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="infraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Infraspinatus:</td><td><input type="radio" value="Left" name="infraspinatus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="infraspinatus">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="73"></td>
-           <td width="120">Serratus Ant</td><td><input type="radio" value="left" name="serratusant">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="serratusant">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Serratus Ant</td><td><input type="radio" value="Left" name="serratusant">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="serratusant">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
            <tr height="10"></tr>
            <tr>
-           <td width="129">Teres Minor:</td><td><input type="radio" value="left" name="teresminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="teresminor">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="130">Teres Major:</td><td><input type="radio" value="left" name="teresmajor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="teresmajor">&nbsp;&nbsp;&nbsp;Right</td>
-           <td></td><td>Rhomboids:</td><td><input type="radio" value="left" name="rhomboids">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="rhomboids">&nbsp;&nbsp;&nbsp;Right</td>
-           <td></td><td>Trapezius:</td><td><input type="radio" value="left" name="trapezius">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="trapezius">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Teres Minor:</td><td><input type="radio" value="Left" name="teresminor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right" name="teresminor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Teres Major:</td><td><input type="radio" value="Left" name="teresmajor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right" name="teresmajor">&nbsp;&nbsp;&nbsp;Right</td>
+           <td></td><td>Rhomboids:</td><td><input type="radio" value="Left" name="rhomboids">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="rhomboids">&nbsp;&nbsp;&nbsp;Right</td>
+           <td></td><td>Trapezius:</td><td><input type="radio" value="Left" name="trapezius">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="trapezius">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
                
            </table>
@@ -892,7 +892,7 @@ function validatename(id){
          </td>
          <td width="230"></td>
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="145"></td>
-         <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
+         <td><input type="checkbox" name="orthotpedic" value="Unremarkable">Unremarkable
         
          </td>  </tr></table>
          </br>
@@ -968,7 +968,7 @@ function validatename(id){
            <tr height="10"></tr>
            <tr><td>Patient's Status for being a candidate for conservative care:</td>
                <td><select name="patientstatus">
-               <option>Excellent</option>   <option> Good</option>   <option> Fair</option>   <option>Poor</option>               
+               <option value="Excellent">Excellent</option>   <option value="Good"> Good</option>   <option value="Fair"> Fair</option>   <option value="poor">poor</option>               
                </select></td></tr>      
                 </table>
                 </br>
@@ -991,7 +991,7 @@ function validatename(id){
            </tr>   
             <tr height="10"></tr>
            <tr><td width="95"></td><td width="160">
-           <input type="checkbox" id="others" name="others" value="other" onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" id="othervalue" style="display:none " onInput="return validatename(id)";>
+           <input type="checkbox" id="others" name="others" value="other" onclick="othervisible('this.value')">other</td><td><input type="text" name="othervalue" id="othervalue" style="display:none " onInput="return validatename(id)";>
            </td></tr>   
                       
            </table>
