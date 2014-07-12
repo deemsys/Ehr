@@ -509,7 +509,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date1" id="datepicker1" class="input_txtbx1"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date1" id="datepicker1" class="input_txtbx1" readonly="readonly"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved"  onInput="checkLength(id)" id="improved" onkeypress="return validate(event)"; class="input_txtbx1">&nbsp; %  <!--  <select  id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -634,7 +634,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date2" id="datepicker" class="input_txtbx1"><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date2" id="datepicker" class="input_txtbx1" readonly="readonly"><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp; &nbsp; Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved1" id="improved1" onkeypress="return validate(event)"; onInput="checkLength(id)"class="input_txtbx1" class="input_txtbx1">&nbsp;%<!-- <select name="improved1" id="improved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
@@ -714,7 +714,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date3" id="datepicker2" class="input_txtbx1"><span id="datepicker2error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date3" id="datepicker2" class="input_txtbx1" readonly="readonly"><span id="datepicker2error" style="color: red;font-style:italic;" ></span></td>
  <td>
 
  
@@ -792,7 +792,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date4" id="datepicker3" class="input_txtbx1"><span id="datepicker3error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date4" id="datepicker3" class="input_txtbx1" readonly="readonly"><span id="datepicker3error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved3" id="improved3" onkeypress="return validate(event)"; onInput="checkLength(id)" class="input_txtbx1">&nbsp;%<!-- <select name="improved3" id="improved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -862,7 +862,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date5" id="datepicker4" class="input_txtbx1"><span id="datepicker4error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date5" id="datepicker4" class="input_txtbx1" readonly="readonly"><span id="datepicker4error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved4" id="improved4" onkeypress="return validate(event)"; onInput="checkLength(id)" class="input_txtbx1" class="input_txtbx1">&nbsp;%<!-- <select name="improved4" id="improved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -932,7 +932,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date6" id="datepicker5" class="input_txtbx1"><span id="datepicker5error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date6" id="datepicker5" class="input_txtbx1" readonly="readonly"><span id="datepicker5error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved5" id="improved5" onkeypress="return validate(event)"; onInput="checkLength(id)" class="input_txtbx1">&nbsp;% <!-- <select name="improved5" id="improved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -1004,7 +1004,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date7" id="datepicker6" class="input_txtbx1"><span id="datepicker6error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date7" id="datepicker6" class="input_txtbx1" readonly="readonly"><span id="datepicker6error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved6" id="improved6" onkeypress="return validate(event)"; onInput="checkLength(id)" class="input_txtbx1">&nbsp;% <!-- <select name="improved6" id="improved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -1073,7 +1073,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date8" id="datepicker7" class="input_txtbx1"><span id="datepicker7error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date8" id="datepicker7" class="input_txtbx1" readonly="readonly"><span id="datepicker7error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="improved7" id="improved7" class="input_txtbx1" onkeypress="return validate(event)"; onInput="checkLength(id)">&nbsp;%<!-- <select name="improved7" id="improved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -1143,7 +1143,7 @@ document.getElementById("leftproxi").style.display="none";
  </tr>
  <tr>
  <td>&nbsp;&nbsp;
- <input type="text" name="date9" id="datepicker8" class="input_txtbx1"><span id="datepicker8error" style="color: red;font-style:italic;" ></span></td>
+ <input type="text" name="date9" id="datepicker8" class="input_txtbx1" readonly="readonly"><span id="datepicker8error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>&nbsp; &nbsp;Improved:&nbsp;&nbsp;&nbsp;<input type="text" name="improved8" id="improved8" onkeypress="return validate(event)"; onInput="checkLength(id)" class="input_txtbx1">&nbsp;%<!-- <select name="improved8" id="improved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" >10%</option>
@@ -1403,7 +1403,7 @@ document.getElementById("leftproxi").style.display="none";
 			}
 			  if(error == "true")
 				{
-				  alert("sdgsdg");
+				
 				return false;
 				}
 	}	
