@@ -1044,14 +1044,14 @@ var note = document.getElementById('comments').value;
          <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
          <td width="100"></td>
-         <td align="left"><input type="checkbox" value="All Soft Tissue Unremarkable" <c:if test="${hipexamdetails.dysfunction=='All Soft Tissue Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> onclick="softtissuevalidate()" name="dysfunction" >All Soft Tissue Unremarkable</td>
+         <td align="left"><input type="checkbox" name="dysfunction" value="All Soft Tissue Unremarkable" <c:if test="${hipexamdetails.dysfunction=='All Soft Tissue Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> onclick="softtissuevalidate()"  >All Soft Tissue Unremarkable</td>
          <td width="180"></td>
           </tr>  </table>       
 <br>
 <table id="softtissue" >	
 	<tr><td  width="300">Leg Length Discrepancy:  Short Leg-  </td>
 
-	<td ><input type="checkbox" id="leftvalue"  <c:if test="${hipexamdetails.shortlegleft=='left'}"> <c:out value="checked=checked"></c:out></c:if> onclick="shortlegvalidate(this.value)" name="shortlegleft" value="left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<td ><input type="checkbox" id="leftvalue" value="Left" <c:if test="${hipexamdetails.shortlegleft=='Left'}"> <c:out value="checked=checked"></c:out></c:if> onclick="shortlegvalidate(this.value)" name="shortlegleft" >&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<td><select  id="shortlegleft" style="display: none"name="shortlegleftvalue" onchange='Checksymptom(this.value)'>	
 	<option value="1/8"  <c:if test="${hipexamdetails.shortlegleftvalue=='1/8'}"> <c:out value="selected"></c:out></c:if>>1/8</option>
 	<option  value="1/4"<c:if test="${hipexamdetails.shortlegleftvalue=='1/4'}"><c:out value="selected"></c:out></c:if>>1/4</option>
@@ -1088,13 +1088,13 @@ var note = document.getElementById('comments').value;
 	</tr></table>
 	<table id="softtissue1" >
 	<tr height="10"></tr>
-	<tr ><td width="300"><c:out value="${hipexamdetails.piriformisleft}"></c:out>Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  <c:if test="${hipexamdetails.piriformisleft=='left'}"><c:out value="checked"></c:out></c:if> value="left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" <c:if test="${hipexamdetails.piriformisleft=='right'}"> <c:out value="checked=checked"></c:out></c:if> value="right" name="piriformisleft">Right</td>
+	<tr ><td width="300"><c:out value="${hipexamdetails.piriformisleft}"></c:out>Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  <c:if test="${hipexamdetails.piriformisleft=='Left'}"><c:out value="checked"></c:out></c:if> value="Left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" <c:if test="${hipexamdetails.piriformisleft=='Right'}"> <c:out value="checked=checked"></c:out></c:if> value="Right" name="piriformisleft">Right</td>
 	
-	<td width="210">Gluteus Medius:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" <c:if test="${hipexamdetails.gluteusleft=='left'}"> <c:out value="checked"></c:out></c:if> value="left" name="gluteusleft">Left&nbsp;&nbsp;<input <c:if test="${hipexamdetails.gluteusleft=='right'}"> <c:out value="checked"></c:out></c:if> type="radio" name="gluteusleft" value="right">Right</td>
+	<td width="210">Gluteus Medius:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" <c:if test="${hipexamdetails.gluteusleft=='Left'}"> <c:out value="checked"></c:out></c:if> value="Left" name="gluteusleft">Left&nbsp;&nbsp;<input <c:if test="${hipexamdetails.gluteusleft=='Right'}"> <c:out value="checked"></c:out></c:if> type="radio" name="gluteusleft" value="Right">Right</td>
 	<td></td>
-	<td width="230">Iliopsoas:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="iliopsoasleft"  <c:if test="${hipexamdetails.iliopsoasleft=='left'}"> <c:out value="checked"></c:out></c:if> value="left">Left&nbsp;&nbsp;<input type="radio" <c:if test="${hipexamdetails.iliopsoasleft=='right'}"> <c:out value="checked"></c:out></c:if> name="iliopsoasleft" value="right">Right</td>
+	<td width="230">Iliopsoas:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="iliopsoasleft"  <c:if test="${hipexamdetails.iliopsoasleft=='Left'}"> <c:out value="checked"></c:out></c:if> value="Left">Left&nbsp;&nbsp;<input type="radio" <c:if test="${hipexamdetails.iliopsoasleft=='Right'}"> <c:out value="checked"></c:out></c:if> name="iliopsoasleft" value="Right">Right</td>
 	
-	<td>Hamstrings:&nbsp;&nbsp;&nbsp;&nbsp;<input <c:if test="${hipexamdetails.hamstringsleft=='left'}"> <c:out value="checked"></c:out></c:if> type="radio" name="hamstringsleft" value="left">Left&nbsp;&nbsp;<input <c:if test="${hipexamdetails.hamstringsleft=='right'}"> <c:out value="checked"></c:out></c:if> type="radio" name="hamstringsleft" value="right">Right</td>
+	<td>Hamstrings:&nbsp;&nbsp;&nbsp;&nbsp;<input <c:if test="${hipexamdetails.hamstringsleft=='Left'}"> <c:out value="checked"></c:out></c:if> type="radio" name="hamstringsleft" value="Left">Left&nbsp;&nbsp;<input <c:if test="${hipexamdetails.hamstringsleft=='Right'}"> <c:out value="checked"></c:out></c:if> type="radio" name="hamstringsleft" value="Right">Right</td>
 	
 	</tr>
 	<tr height="10"></tr></table>
@@ -1112,7 +1112,7 @@ var note = document.getElementById('comments').value;
          </td>
          <td width="120"></td>
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="70"></td>
-         <td><input type="checkbox" name="orthotpedic" <c:if test="${hipexamdetails.orthotpedic=='unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> value="unremarkable">Unremarkable
+         <td><input type="checkbox" name="orthotpedic" <c:if test="${hipexamdetails.orthotpedic=='Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> value="Unremarkable">Unremarkable
         
          </td>  </tr></table>
          </br>

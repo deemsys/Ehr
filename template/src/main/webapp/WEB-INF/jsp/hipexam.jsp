@@ -811,7 +811,7 @@ function validatename(id){
 <table id="softtissue" ">	
 	<tr><td  width="300">Leg Length Discrepancy:  Short Leg-  </td>
 
-	<td ><input type="checkbox" id="leftvalue" onclick="shortlegvalidate(this.value)" name="shortlegleft" value="left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<td ><input type="checkbox" id="leftvalue" onclick="shortlegvalidate(this.value)" name="shortlegleft" value="Left">&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<td><select style="display:none" id="shortlegleft" name="shortlegleftvalue" onchange='Checksymptom(this.value)'>	
 	<option>1/8	</option>
 	<option>1/4	</option>
@@ -845,13 +845,13 @@ function validatename(id){
 	</tr></table>
 	<table >
 	<tr height="10"></tr>
-	<tr ><td width="300">Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" value="right" name="piriformisleft">Right</td>
+	<tr ><td width="300">Piriformis:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="Left" name="piriformisleft">Left&nbsp;&nbsp;<input type="radio" value="Right" name="piriformisleft">Right</td>
 	
-	<td width="210">Gluteus Medius:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="left" name="gluteusleft">Left&nbsp;&nbsp;<input type="radio" name="gluteusleft" value="right">Right</td>
+	<td width="210">Gluteus Medius:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="Left" name="gluteusleft">Left&nbsp;&nbsp;<input type="radio" name="gluteusleft" value="Right">Right</td>
 	<td></td>
-	<td width="230">Iliopsoas:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="iliopsoasleft" value="left">Left&nbsp;&nbsp;<input type="radio" name="iliopsoasleft" value="right">Right</td>
+	<td width="230">Iliopsoas:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="iliopsoasleft" value="Left">Left&nbsp;&nbsp;<input type="radio" name="iliopsoasleft" value="Right">Right</td>
 	
-	<td>Hamstrings:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="hamstringsleft" value="left">Left&nbsp;&nbsp;<input type="radio" value="right" name="hamstringsleft">Right</td>
+	<td>Hamstrings:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="hamstringsleft" value="Left">Left&nbsp;&nbsp;<input type="radio" value="Right" name="hamstringsleft">Right</td>
 	
 	</tr>
 	<tr height="10"></tr></table>
@@ -867,7 +867,7 @@ function validatename(id){
          </td>
          <td width="120"></td>
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="70"></td>
-         <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
+         <td><input type="checkbox" name="orthotpedic" value="Unremarkable">Unremarkable
         
          </td>  </tr></table>
          </br>
