@@ -831,7 +831,7 @@ else
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation1=='fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation1=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
 					<option value="Spasm" <c:if test="${soapnotes.fixation1=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="Trigger pts" <c:if test="${soapnotes.fixation1=='Trigger pts'}"><c:out value="selected"/></c:if>>Trigger pts</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation1=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation1=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
 					<option value="Edema" <c:if test="${soapnotes.fixation1=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
 					<option value="Decreased ROM" <c:if test="${soapnotes.fixation1=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
@@ -866,7 +866,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm1=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm1=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm1=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm1=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm1=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm1=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm1=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm1=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -927,7 +927,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm2=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm2=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm2=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm2=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm2=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm2=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm2=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm2=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -990,7 +990,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm3=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm3=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm3=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm3=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm3=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm3=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm3=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm3=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1056,7 +1056,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm4=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm4=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm4=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm4=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm4=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm4=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm4=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm4=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1118,7 +1118,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm5=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm5=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm5=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm5=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm5=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm5=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm5=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm5=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1179,7 +1179,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm6=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm6=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm6=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm6=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm6=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm6=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm6=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm6=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1239,7 +1239,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm7=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm7=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm7=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm7=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm7=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm7=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm7=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm7=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
@@ -1302,7 +1302,7 @@ else
 					<option value="NMR" <c:if test="${soapnotes.scsm8=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
 					<option value="TP" <c:if test="${soapnotes.scsm8=='TP'}"><c:out value="selected"/></c:if>>TP</option>
 					<option value="US" <c:if test="${soapnotes.scsm8=='US'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="Iontophoresis" <c:if test="${soapnotes.scsm8=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Lontophoresis" <c:if test="${soapnotes.scsm8=='Lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
 					<option value="Traction" <c:if test="${soapnotes.scsm8=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
 					<option value="Nutrition" <c:if test="${soapnotes.scsm8=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
 					<option value="Off Work" <c:if test="${soapnotes.scsm8=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
