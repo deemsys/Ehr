@@ -1911,8 +1911,8 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				  <td valign="middle" align="left" class="input_txt"><span class="err">* </span>Did you brace yourself? </td>
 				  <td valign="top" align="left" class="input_txt"><input type="radio" id="yes1" name="brace" value="Yes" class="input_txt" checked="true" onclick="toggle1('show1')">Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="brace" id="no1" value="No" class="input_txt" onclick="toggle1('hide1')">No&nbsp;&nbsp;&nbsp;
 				 <span id="yes1error" style="color: red;font-style:italic;"><form:errors path="Autoaccident.brace"></form:errors></span> <select name="ifyes" class="input_cmbbx1" id="mybrace">
-				  <option selected="selected" value="Braced With Arms" >Braced With Arms</option>
-				  <option value="Braced With Legs">Braced With Legs</option>
+				  <option selected="selected" value="Braced with arms" >Braced with arms</option>
+				  <option value="Braced with legs">Braced with legs</option>
 				  </select>
 <form:errors path="PatientDetails.insurance_phone"></form:errors>
 				  </td>
@@ -2172,9 +2172,9 @@ document.getElementById("afteraccidenterror").innerHTML="";
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="first_symptom" class="input_cmbbx1"  onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Immediately" >Immediately</option>
-					<option value="Hours After The Accident">Hours After The Accident</option>
-					<option value="The Next Day">The Next Day</option>
-					<option value="Days">Days</option>
+					<option value="hours after the accident">hours after the accident</option>
+					<option value="The Next day">The Next day</option>
+					<option value="days">days</option>
 				  </select>
 				 <input type="text" name="symptom" id="symptom" class="input_txtbx1" min="4" maxlength="32" style="visibility:hidden;"/>
 				  </td> <td width="680" ></td>

@@ -1564,8 +1564,8 @@ document.getElementById('mytext').style.display="block";
 				  <input type="radio" name="brace" value="Yes" class="input_txt" id="bracecheck" onclick="toggle1();"<c:if test="${autoaccident.brace=='Yes'}"><c:out value="Checked"/></c:if>>Yes&nbsp;&nbsp;&nbsp;
 				  <input type="radio" name="brace" value="No" class="input_txt" onclick="toggle1()"<c:if test="${autoaccident.brace=='No'}"><c:out value="Checked"/></c:if>>No&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Autoaccident.brace"></form:errors></span>
 				<select name="ifyes" class="input_cmbbx1" id="mybrace"  style='display:none'>
-				  <option  value="Braced With Arms" <c:if test="${autoaccident.ifyes=='Braced With Arms'}"><c:out value="selected"/></c:if>>Braced With Arms</option>
-				  <option value="Braced With Legs" <c:if test="${autoaccident.ifyes=='Braced With Legs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
+				  <option  value="Braced with arms" <c:if test="${autoaccident.ifyes=='Braced with arms'}"><c:out value="selected"/></c:if>>Braced with arms</option>
+				  <option value="Braced with legs" <c:if test="${autoaccident.ifyes=='Braced with legs'}"><c:out value="selected"/></c:if>>Braced with legs</option>
 				  </select>
 				  </td>
 				  </tr>
@@ -1950,9 +1950,9 @@ document.getElementById("otherpaintext").style.visibility = 'hidden';
 				 <td valign="top" align="left" class="input_txt">
 				  <select name="first_symptom" class="input_cmbbx1" id="firstsymptom"  onchange='Checksymptom();'>
 					<option  value="Immediately" <c:if test="${autoaccident.first_symptom=='Immediately'}"><c:out value="selected"/></c:if> >Immediately</option>
-					<option value="Hours After The Accident" <c:if test="${autoaccident.first_symptom=='Hours After The Accident'}"><c:out value="selected"/></c:if> >Hours After The Accident</option>
-					<option value="The Next Day" <c:if test="${autoaccident.first_symptom=='The Next Day'}"><c:out value="selected"/></c:if> >The Next Day</option>
-					<option value="Days" <c:if test="${autoaccident.first_symptom=='Days'}"><c:out value="selected"/></c:if> >Days</option>
+					<option value="hours after the accident" <c:if test="${autoaccident.first_symptom=='hours after the accident'}"><c:out value="selected"/></c:if> >hours after the accident</option>
+					<option value="The Next day" <c:if test="${autoaccident.first_symptom=='The Next day'}"><c:out value="selected"/></c:if> >The Next day</option>
+					<option value="days" <c:if test="${autoaccident.first_symptom=='Days'}"><c:out value="selected"/></c:if> >days</option>
 				  </select><span class="err"><form:errors path="Autoaccident.first_symptom"></form:errors></span>
 				 <input type="text" name="symptom" id="symptom" value="${autoaccident.symptom}"style="visibility:hidden;"/>
 				  </td><td width="680" ></td>
