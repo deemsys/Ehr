@@ -155,13 +155,14 @@ $(function() {
 
 <script>
 	function checkSubmit()
-	{	
+	{
+		
 		 var regex = /^[A-Za-z0-9 ]*$/;
    	 var error="";
    	document.getElementById("pnameerr").innerHTML="";
    	document.getElementById("signerror").innerHTML="";
     
- 	 if((document.getElementById("diagonosis").value.length < 4) || (document.getElementById("diagonosis").value.length > 32))
+ 	 /* if((document.getElementById("diagonosis").value.length < 4) || (document.getElementById("diagonosis").value.length > 32))
 		{
 		//alert("DFGDF");
 		document.getElementById("diagnosiserr1").innerHtml="Required Field Should between 4 to 32";	
@@ -202,7 +203,7 @@ $(function() {
   	   }
   	
   	 
-	
+	 */
 	if(document.getElementById("pname").value=="")
 		{	
 		document.getElementById("pnameerr").innerHTML="Required Field Should Not Empty";	
@@ -224,7 +225,7 @@ $(function() {
 		document.getElementById("signerror").innerHTML="Required Field Should between 4 to 45";	
 		 error="true";
 		}
-		document.getElementById("datepicker1error").innerHTML="";
+	/* 	document.getElementById("datepicker1error").innerHTML="";
 var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 		
 		
@@ -313,11 +314,11 @@ var re = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
 			  document.getElementById("datepicker8error").innerHTML="Invalid Date Format";
 			   error="true";
 		  }
-		}
+		} */
 		
 		 if(error == "true")
 			{
-			// alert("false");
+			 alert("Validation fails");
 			return false;
 			}
 		}
@@ -681,7 +682,7 @@ else
  </td>
  </tr>
  <tr>
- <td><br><br>&nbsp;&nbsp;<input type="text" id="datepicker1" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
+ <td><br><br>&nbsp;&nbsp;<input type="text" id="datepicker1" readonly="readonly" class="input_txtbx1"  name="date1" value="${soapnotes.date1}"><span id="datepicker1error" style="color: red;font-style:italic;" ></span></td>
  <td> <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="input_txtbx1"  name="improved" id="improved" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved}">  &nbsp;%<%-- <select name="improved" id="improved" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="10%" <c:if test="${soapnotes.improved=='10%'}"><c:out value="selected"/></c:if>>10%</option>
@@ -799,7 +800,7 @@ else
 				  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker" class="input_txtbx1"  name="date2" value="${soapnotes.date2}"><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker" readonly="readonly" class="input_txtbx1"  name="date2" value="${soapnotes.date2}"><span id="datepickererror" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved1" id="improved1" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved1}">&nbsp;%
@@ -881,7 +882,7 @@ else
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date3" id="datepicker2" value="${soapnotes.date3}"><span id="datepicker2error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="date3" id="datepicker2" readonly="readonly" value="${soapnotes.date3}"><span id="datepicker2error" style="color: red;font-style:italic;" ></span></td>
  <td>
 <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  class="input_txtbx1" name="improved2" id="improved2" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved2}">&nbsp;%
@@ -944,7 +945,7 @@ else
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker3" name="date4" value="${soapnotes.date4}"><span id="datepicker3error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" class="input_txtbx1" id="datepicker3" name="date4" readonly="readonly" value="${soapnotes.date4}"><span id="datepicker3error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved3" id="improved3" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved3}">&nbsp;%
@@ -1006,7 +1007,7 @@ else
   </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker4" class="input_txtbx1" name="date5"  value="${soapnotes.date5}"><span id="datepicker4error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker4" class="input_txtbx1" name="date5" readonly="readonly"  value="${soapnotes.date5}"><span id="datepicker4error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved4" id="improved4" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved4}">&nbsp;%
@@ -1071,7 +1072,7 @@ else
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text"  class="input_txtbx1" id="datepicker5" name="date6"  value="${soapnotes.date6}"><span id="datepicker5error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text"  class="input_txtbx1" id="datepicker5" name="date6" readonly="readonly"  value="${soapnotes.date6}"><span id="datepicker5error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved5" id="improved5" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved5}">&nbsp;%
@@ -1133,7 +1134,7 @@ else
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker6" name="date7" class="input_txtbx1" value="${soapnotes.date7}"><span id="datepicker6error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker6" name="date7" class="input_txtbx1" readonly="readonly" value="${soapnotes.date7}"><span id="datepicker6error" style="color: red;font-style:italic;" ></span></td>
  <td>
 <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved6" id="improved6" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved6}">&nbsp;%
@@ -1194,7 +1195,7 @@ else
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker7" class="input_txtbx1"  name="date8" value="${soapnotes.date8}"><span id="datepicker7error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker7" class="input_txtbx1"  name="date8"  readonly="readonly" value="${soapnotes.date8}"><span id="datepicker7error" style="color: red;font-style:italic;" ></span></td>
  <td>
  <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved7" id="improved7" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved7}">&nbsp;%
@@ -1254,7 +1255,7 @@ else
  </td>
  </tr>
  <tr>
- <td>&nbsp;&nbsp;<input type="text" id="datepicker8" class="input_txtbx1" name="date9" value="${soapnotes.date9}"><span id="datepicker8error" style="color: red;font-style:italic;" ></span></td>
+ <td>&nbsp;&nbsp;<input type="text" id="datepicker8" class="input_txtbx1" name="date9" readonly="readonly" value="${soapnotes.date9}"><span id="datepicker8error" style="color: red;font-style:italic;" ></span></td>
  <td>
 <br/>
 &nbsp;&nbsp;Improved:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="input_txtbx1" name="improved8" id="improved8" onInput="checkLength(id)" onkeypress="return Validate(event)"; value="${soapnotes.improved8}">&nbsp;%
