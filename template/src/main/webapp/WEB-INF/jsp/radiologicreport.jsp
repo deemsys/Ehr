@@ -1379,7 +1379,7 @@ $(function() {
 				                  		<select name="views1" class="input_cmbbx1">
 						                    <option selected="selected" value="A-P lower" >A-P lower</option>
 											<option value="APOM">APOM</option>
-											
+											<option value="L lateral">L lateral</option>
 											<option value="RLF">RLF</option>
 											<option value="LLF">LLF</option>
 											<option value="RPO">RPO</option>
