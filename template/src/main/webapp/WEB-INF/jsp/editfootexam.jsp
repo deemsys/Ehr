@@ -741,17 +741,17 @@ var swelling = document.getElementById('diagnosis1').value;
            
            <table>
            <tr>
-           <td width="129">Pronation:</td><td><input type="radio" value="left" name="pronation" <c:if test="${footexamdetails.pronation=='left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" <c:if test="${footexamdetails.pronation=='right'}"> <c:out value="checked"></c:out></c:if> value="right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Pronation:</td><td><input type="radio" value="Left" name="pronation" <c:if test="${footexamdetails.pronation=='Left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140"><input type="radio" <c:if test="${footexamdetails.pronation=='Right'}"> <c:out value="checked"></c:out></c:if> value="Right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
                      
-           <td width="130">Supination:</td><td><input type="radio" value="left" <c:if test="${footexamdetails.supination=='left'}"> <c:out value="checked"></c:out></c:if> name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="right"  <c:if test="${footexamdetails.supination=='right'}"> <c:out value="checked"></c:out></c:if> name="supination">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Supination:</td><td><input type="radio" value="Left" <c:if test="${footexamdetails.supination=='Left'}"> <c:out value="checked"></c:out></c:if> name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110"> <input type="radio" value="Right"  <c:if test="${footexamdetails.supination=='Right'}"> <c:out value="checked"></c:out></c:if> name="supination">&nbsp;&nbsp;&nbsp;Right</td>
            <td width="35"></td>
-           <td width="120">Calcaneus Varus:</td><td><input type="radio" value="left" name="calcaneus" <c:if test="${footexamdetails.calcaneus=='left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus" <c:if test="${footexamdetails.calcaneus=='right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Calcaneus Varus:</td><td><input type="radio" value="Left" name="calcaneus" <c:if test="${footexamdetails.calcaneus=='Left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="calcaneus" <c:if test="${footexamdetails.calcaneus=='Right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
            <td width="73"></td>
-           <td width="120">Calcaneus Valgus:</td><td><input type="radio" value="left" name="valgus" <c:if test="${footexamdetails.valgus=='left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus" <c:if test="${footexamdetails.valgus=='right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Calcaneus Valgus:</td><td><input type="radio" value="Left" name="valgus" <c:if test="${footexamdetails.valgus=='Left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="valgus" <c:if test="${footexamdetails.valgus=='Right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
            </tr><tr>
            <tr height="10"></tr>
-           <td width="129">Forefoot Varus:</td><td><input type="radio" value="left" name="forefoot" <c:if test="${footexamdetails.forefoot=='left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefoot" <c:if test="${footexamdetails.forefoot=='right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="130">Forefoot Valgus:</td><td><input type="radio" value="left" name="forefootvalgus" <c:if test="${footexamdetails.forefootvalgus=='left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefootvalgus" <c:if test="${footexamdetails.forefootvalgus=='right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Forefoot Varus:</td><td><input type="radio" value="Left" name="forefoot" <c:if test="${footexamdetails.forefoot=='Left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right" name="forefoot" <c:if test="${footexamdetails.forefoot=='Right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Forefoot Valgus:</td><td><input type="radio" value="Left" name="forefootvalgus" <c:if test="${footexamdetails.forefootvalgus=='Left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right" name="forefootvalgus" <c:if test="${footexamdetails.forefootvalgus=='Right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
                
            </table>
@@ -761,7 +761,7 @@ var swelling = document.getElementById('diagnosis1').value;
          <tr><td> <b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION
  </b></td>
          <td width="40"></td>
-         <td align="left"><input type="checkbox" value="Unremarkable" name="dysfunction" id="functional" <c:if test="${footexamdetails.dysfunction=='Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if>>All Soft Tissue Unremarkable</td>
+         <td align="left"><input type="checkbox" value="All Soft Tissue Unremarkable" name="dysfunction" id="functional" <c:if test="${footexamdetails.dysfunction=='All Soft Tissue Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if>>All Soft Tissue Unremarkable</td>
          <td width="180"></td>
           </tr>  </table>       
 <br>
@@ -781,7 +781,7 @@ var swelling = document.getElementById('diagnosis1').value;
          </td>
          <td width="230"></td>
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="145"></td>
-         <td><input type="checkbox" name="orthotpedic" <c:if test="${footexamdetails.orthotpedic=='unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> value="unremarkable">Unremarkable
+         <td><input type="checkbox" name="orthotpedic" value="Unremarkable"<c:if test="${footexamdetails.orthotpedic=='Unremarkable'}"> <c:out value="checked=checked"></c:out></c:if> >Unremarkable
         
          </td>  </tr></table>
          </br>
@@ -933,11 +933,11 @@ var swelling = document.getElementById('diagnosis1').value;
            <tr height="10"></tr>
            <tr><td width="95"></td><td width="160"><input type="checkbox" name="radiographic"   <c:if test="${footexamdetails.radiographic=='Radiographic X-Ray'}"> <c:out value="checked=checked"></c:out></c:if> value="Radiographic X-Ray">Radiographic X-Ray</td><td width="100"><input type="checkbox" name="mri"   <c:if test="${footexamdetails.mri=='MRI'}"> <c:out value="checked=checked"></c:out></c:if> value="MRI">MRI</td>
            <td width="150"><input type="checkbox" name="scan"  <c:if test="${footexamdetails.scan=='CT Scan'}"> <c:out value="checked=checked"></c:out></c:if> value="CT Scan">CT Scan</td><td width="150"><input type="checkbox" name="conduction"  <c:if test="${footexamdetails.conduction=='Nerve Conduction'}"> <c:out value="checked=checked"></c:out></c:if>  value="Nerve Conduction">Nerve Conduction</td>
-           <td width="150"><input type="checkbox" name="emg"  <c:if test="${footexamdetails.emg=='EMG'}"> <c:out value="checked=checked"></c:out></c:if> value="EMG"	>EMG	</td> <td width="150"><input type="checkbox"   <c:if test="${footexamdetails.outsidereferral=='Outside Referral'}"> <c:out value="checked=checked"></c:out></c:if> name="outsidereferral" value="Outside Referral">Outside Referral 	</td><td><input type="checkbox"  <c:if test="${footexamdetails.dc=='D/C'}"> <c:out value="checked=checked"></c:out></c:if>  name="dc" value="D/C">D/C</td>
+           <td width="150"><input type="checkbox" name="emg"  <c:if test="${footexamdetails.emg=='EMG'}"> <c:out value="checked=checked"></c:out></c:if> value="EMG"	>EMG	</td> <td width="150"><input type="checkbox"  name="outsidereferral" value="Outside Referral" <c:if test="${footexamdetails.outsidereferral=='Outside Referral'}"> <c:out value="checked=checked"></c:out></c:if> >Outside Referral 	</td><td><input type="checkbox"  <c:if test="${footexamdetails.dc=='D/C'}"> <c:out value="checked=checked"></c:out></c:if>  name="dc" value="D/C">D/C</td>
            </tr>   
             <tr height="10"></tr>
            <tr><td width="95"></td><td width="160">
-           <input type="checkbox" id="others" name="others" <c:if test="${footexamdetails.others=='other'}"> <c:out value="checked=checked"></c:out></c:if> value="other" onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" value="${footexamdetails.othervalue}" id="othervalue" onInput="return validatename(id)";style="display:none ">
+           <input type="checkbox" id="others" name="others" value="Other" <c:if test="${footexamdetails.others=='Other'}"> <c:out value="checked=checked"></c:out></c:if>  onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" value="${footexamdetails.othervalue}" id="othervalue" onInput="return validatename(id)";style="display:none ">
            <span id="otherserror" style="color:red"></span>
            </td></tr>   
                       

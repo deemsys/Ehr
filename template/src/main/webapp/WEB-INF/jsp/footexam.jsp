@@ -940,18 +940,18 @@ function validatename(id){
            
            <table>
            <tr>
-           <td width="129" style="width: 95px; ">Pronation:</td><td style="width: 95px; "><input type="radio" value="left" name="pronation">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140" style="width: 97px; "><input type="radio" value="right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129" style="width: 95px; ">Pronation:</td><td style="width: 95px; "><input type="radio" value="Left" name="pronation">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td> <td width="140" style="width: 97px; "><input type="radio" value="Right" name="pronation">&nbsp;&nbsp;&nbsp;Right</td>
                      
-           <td width="130" style="width: 102px; ">Supination:</td><td style="width: 89px; "><input type="radio" value="left" name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110" style="width: 89px; "> <input type="radio" value="right" name="supination">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130" style="width: 102px; ">Supination:</td><td style="width: 89px; "><input type="radio" value="Left" name="supination">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;<td width="110" style="width: 89px; "> <input type="radio" value="Right" name="supination">&nbsp;&nbsp;&nbsp;Right</td>
            
-           <td width="120">Calcaneus Varus:</td><td style="width: 181px; "><input type="radio" value="left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Calcaneus Varus:</td><td style="width: 181px; "><input type="radio" value="Left" name="calcaneus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="calcaneus">&nbsp;&nbsp;&nbsp;Right</td>
            
-           <td width="120">Calcaneus Valgus:</td><td style="width: 196px; "><input type="radio" value="left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="120">Calcaneus Valgus:</td><td style="width: 196px; "><input type="radio" value="Left" name="valgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp; <input type="radio" value="Right" name="valgus">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
            <tr height="10"></tr>
            <tr>
-           <td width="129">Forefoot Varus:</td><td><input type="radio" value="left" name="forefoot">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefoot">&nbsp;&nbsp;&nbsp;Right</td>
-           <td width="130">Forefoot Valgus:</td><td><input type="radio" value="left" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="right" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="129">Forefoot Varus:</td><td><input type="radio" value="Left" name="forefoot">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right" name="forefoot">&nbsp;&nbsp;&nbsp;Right</td>
+           <td width="130">Forefoot Valgus:</td><td><input type="radio" value="Left" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td><td width="110"> <input type="radio" value="Right" name="forefootvalgus">&nbsp;&nbsp;&nbsp;Right</td>
            </tr>
                
            </table>
@@ -979,7 +979,7 @@ function validatename(id){
          </td>
          <td width="230"></td>
          <td> <b style="font-size:14px">ORTHOTPEDIC TESTING    </b></td><td width="120"></td>
-         <td><input type="checkbox" name="orthotpedic" value="unremarkable">Unremarkable
+         <td><input type="checkbox" name="orthotpedic" value="Unremarkable">Unremarkable
         
          </td>  </tr></table>
          </br>
@@ -1073,11 +1073,11 @@ function validatename(id){
            <tr height="10"></tr>
            <tr><td width="95"></td><td width="160"><input type="checkbox" name="radiographic" value="Radiographic X-Ray">Radiographic X-Ray</td><td width="100"><input type="checkbox" name="mri" value="MRI">MRI</td>
            <td width="150"><input type="checkbox" name="scan" value="CT Scan">CT Scan</td><td width="150"><input type="checkbox" name="conduction" value="Nerve Conduction">Nerve Conduction</td>
-           <td width="150"><input type="checkbox" name="emg" value="EMG">EMG	</td> <td width="150"><input type="checkbox" name="outsidereferral" value="Outside Referral ">Outside Referral 	</td><td><input type="checkbox" name="dc" value="D/C">D/C</td>
+           <td width="150"><input type="checkbox" name="emg" value="EMG">EMG	</td> <td width="150"><input type="checkbox" name="outsidereferral" value="Outside Referral">Outside Referral 	</td><td><input type="checkbox" name="dc" value="D/C">D/C</td>
            </tr>   
             <tr height="10"></tr>
            <tr><td width="95"></td><td width="160">
-           <input type="checkbox" id="others" name="others" value="other" onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" id="othervalue" style="display:none " onInput="return validatename(id)";>
+           <input type="checkbox" id="others" name="others" value="Other" onclick="othervisible('this.value')">Other</td><td><input type="text" name="othervalue" id="othervalue" style="display:none " onInput="return validatename(id)";>
            </td></tr>   
                       
            </table>
