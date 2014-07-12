@@ -240,7 +240,7 @@ function validatename(id){
      <c:set value="${shoulderpainscoreForm.shoulderpainscore[0]}" var="shoulderpainscore"/>      
  <tr class="row1">
  <input type="hidden" name="shoulderpainno" value="${shoulderpainscore.shoulderpainno }"  />
-<td><h2><span class="err">* </span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname"  onInput="return validatename(id)";value="${shoulderpainscore.pname }"/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span>Patient Name:</h2></td><td width="400"><input type="text"  name="pname" id="pname" value="${shoulderpainscore.pname}"  onInput="return validatename(id)";/><span style="color: red;font-style:italic;" id="pnameerror"><form:errors path="Shoulderpainscore.pname"></form:errors></span></td>
 <td><h2><span class="err">* </span>Number:</h2></td><td width="400"><input type="text"  name="number" id="number1" onkeypress="return validate(event)"; value="${shoulderpainscore.number}"/><span style="color: red;font-style:italic;" id="number1error"><form:errors path="Shoulderpainscore.number"></form:errors></span></td>
 <td><h2><span class="err">* </span>Date:</h2></td><td><input type="text"  id="datepicker" name="date" value="${shoulderpainscore.date}"/><span style="color: red;font-style:italic;" id="datepickererror"><form:errors path="Shoulderpainscore.date"></form:errors></span></td>
 </tr>
@@ -263,7 +263,7 @@ function validatename(id){
 <td></td><td width="250">Incapablity of lying on the painful side</td><td width="120"><input type="radio" name="incapability" value="None" <c:if test="${shoulderpainscore.incapability=='None'}"> <c:out value="checked"></c:out></c:if>>None</td><td width="120"><input type="radio" name="incapability" value="Light" <c:if test="${shoulderpainscore.incapability=='Light'}"> <c:out value="checked"></c:out></c:if>>Light</td><td width="120"><input type="radio" name="incapability" value="Average" <c:if test="${shoulderpainscore.incapability=='Average'}"> <c:out value="checked"></c:out></c:if>>Average</td><td width="120"><input type="radio" name="incapability" value="Severe" <c:if test="${shoulderpainscore.incapability=='Severe'}"> <c:out value="checked"></c:out></c:if>>Severe</td><td></td>
 
 <tr >
-<td width="250">Degree of Radiation</td><td width="180"><input type="radio" name="degreeofradiation" value="None" <c:if test="${shoulderpainscore.degreeofradiation=='None'}"> <c:out value="checked"></c:out></c:if>>None</td><td width="180" style="width: 208px; "><input type="radio" name="degreeofradiation" value="Till halfway the upper Arm" <c:if test="${shoulderpainscore.degreeofradiation=='Till half way the upper Arm'}"> <c:out value="checked"></c:out></c:if>>Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Till the elbow'}"> <c:out value="checked"></c:out></c:if>>Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Past the elbow'}"> <c:out value="checked"></c:out></c:if>>Past the elbow</td><td></td>
+<td width="250">Degree of Radiation</td><td width="180"><input type="radio" name="degreeofradiation" value="None" <c:if test="${shoulderpainscore.degreeofradiation=='None'}"> <c:out value="checked"></c:out></c:if>>None</td><td width="180" style="width: 208px; "><input type="radio" name="degreeofradiation" value="Till halfway the upper arm" <c:if test="${shoulderpainscore.degreeofradiation=='Till halfway the upper arm'}"> <c:out value="checked"></c:out></c:if>>Till halfway the upper Arm</td><td width="180"><input type="radio" name="degreeofradiation" value="Till the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Till the elbow'}"> <c:out value="checked"></c:out></c:if>>Till the elbow</td><td width="180"><input type="radio" name="degreeofradiation" value="Past the elbow" <c:if test="${shoulderpainscore.degreeofradiation=='Past the elbow'}"> <c:out value="checked"></c:out></c:if>>Past the elbow</td><td></td>
 </tr>
 </table>
 <table align="center">
@@ -328,9 +328,9 @@ function validatename(id){
 <td><input type="radio" name="headache" value="more than one per week" <c:if test="${shoulderpainscore.headache=='more than one per week'}"> <c:out value="checked"></c:out></c:if>>more than one per week</td>
 </tr>
 <tr class="row1">
-<td>2)&nbsp;&nbsp; My headaches is:</td><td><input type="radio" name="myheadache" value="mild" <c:if test="${shoulderpainscore.myheadache=='mild'}"> <c:out value="checked"></c:out></c:if>>mild</td>
-<td><input type="radio" name="myheadache" value="moderate" <c:if test="${shoulderpainscore.headache=='moderate'}"> <c:out value="checked"></c:out></c:if>>moderate</td>
-<td><input type="radio" name="myheadache" value="severe" <c:if test="${shoulderpainscore.headache=='severe'}"> <c:out value="checked"></c:out></c:if>>severe</td>
+<td>2)&nbsp;&nbsp; My headaches is:</td><td><input type="radio" name="myheadache" value="Mild" <c:if test="${shoulderpainscore.myheadache=='Mild'}"> <c:out value="checked"></c:out></c:if>>Mild</td>
+<td><input type="radio" name="myheadache" value="Moderate" <c:if test="${shoulderpainscore.headache=='Moderate'}"> <c:out value="checked"></c:out></c:if>>Moderate</td>
+<td><input type="radio" name="myheadache" value="Severe" <c:if test="${shoulderpainscore.headache=='Severe'}"> <c:out value="checked"></c:out></c:if>>Severe</td>
 </tr>
 <table>
 <tr><td><h2>Instructions:PLEASE READ CAREFULLY:</h2>The purpose of scale is to identify difficulties that you may be experiencing because of your headache.Please check off "YES" ,"SOMETIMES",or "NO" to each item.Answer each item as it pertains to your headache only.</td>

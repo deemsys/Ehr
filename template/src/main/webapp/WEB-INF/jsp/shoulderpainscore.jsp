@@ -382,7 +382,7 @@ function validatename(id){
 </tr>
 
 <tr >
-<td style="width: 148px; ">Degree of Radiation</td><td width="120"><input type="radio" name="degreeofradiation" value="None">None</td><td width="180" style="width: 256px; ">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Till halfway the upper Arm">Till halfway the upper Arm</td><td width="180">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Till the elbow">Till the elbow</td><td width="180">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Past the elbow">Past the elbow</td><td></td>
+<td style="width: 148px; ">Degree of Radiation</td><td width="120"><input type="radio" name="degreeofradiation" value="None">None</td><td width="180" style="width: 256px; ">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Till halfway the upper arm">Till halfway the upper arm</td><td width="180">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Till the elbow">Till the elbow</td><td width="180">&nbsp;&nbsp;&nbsp;<input type="radio" name="degreeofradiation" value="Past the elbow">Past the elbow</td><td></td>
 </tr>
 </table>
 <table align="center">
@@ -450,9 +450,9 @@ function validatename(id){
 <td><input type="radio" name="headache" value="more than one per week">more than one per week</td>
 </tr>
 <tr class="row1">
-<td>2)&nbsp;&nbsp; My headaches is:</td><td><input type="radio" name="myheadache" value="mild">mild</td>
-<td><input type="radio" name="myheadache" value="moderate">moderate</td>
-<td><input type="radio" name="myheadache" value="severe">severe</td>
+<td>2)&nbsp;&nbsp; My headaches is:</td><td><input type="radio" name="myheadache" value="Mild">Mild</td>
+<td><input type="radio" name="myheadache" value="Moderate">Moderate</td>
+<td><input type="radio" name="myheadache" value="Severe">Severe</td>
 </tr>
 <table>
 <tr><td><h4>Instructions:PLEASE READ CAREFULLY:</h4>The purpose of scale is to identify difficulties that you may be experiencing because of your headache.Please check off "YES" ,"SOMETIMES",or "NO" to each item.Answer each item as it pertains to your headache only.</td>

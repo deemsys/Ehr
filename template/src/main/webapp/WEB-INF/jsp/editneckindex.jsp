@@ -273,7 +273,7 @@ document.getElementById("pnameerror").innerHTML=" ";
             <p><b>Please read:</b>This questionairre has been designed to give the Physical Therapist information as to how your wrist/hand pain has affected your ability to manage everyday life.</p>
            <table width="100%" class="margin_table" >
            <tr ><td width="50%" class="margin_table" ><b>Section 1-Pain Intensity</b></td><td width="500"><b>Section 6-Work</b></td></tr>
-           <tr><td><input type="radio" class="painintensity"  onclick="return doAjaxPost()" id="painintensity"  <c:if test= "${neckindexdetails.painintensity== '0'}"> <c:out value="checked"></c:out></c:if> name="painintensity" value="0">&nbsp;&nbsp;I have no pain at the moment.</td>
+           <tr><td><input type="radio" class="painintensity"  onclick="return doAjaxPost()" id="painintensity"  <c:if test= "${neckindexdetails.painintensity=='0'}"> <c:out value="checked"></c:out></c:if> name="painintensity" value="0">&nbsp;&nbsp;I have no pain at the moment.</td>
            <td><input type="radio" name="work"  onclick="return doAjaxPost()"  <c:if test= "${neckindexdetails.work== '0'}"> <c:out value="checked"></c:out></c:if> class="work" id="work" value="0">&nbsp;&nbsp;I can do as much work as I want to.</td>
            </tr>
            <tr><td><input type="radio" class="painintensity"  onclick="return doAjaxPost()"   <c:if test= "${neckindexdetails.painintensity== '1'}"> <c:out value="checked"></c:out></c:if> id="painintensity" name="painintensity" value="1">&nbsp;&nbsp;The pain is very mild at the moment.</td>
