@@ -506,28 +506,28 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr class="row1">
  <td width="200">Gait:</td><td><select style="width:180px" name="gait" id="gait"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="normal" <c:if test="${lumbopelvicexam.gait=='normal'}"><c:out value="selected"/></c:if> >Normal</option>
-					<option value="antalgic" <c:if test="${lumbopelvicexam.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
-					<option value="shuffling" <c:if test="${lumbopelvicexam.gait=='shuffling'}"><c:out value="selected"/></c:if>>Shuffling</option>
-					<option value="limp" <c:if test="${lumbopelvicexam.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
-					<option value="stagger" <c:if test="${lumbopelvicexam.gait=='stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
-					<option value="caneassited" <c:if test="${lumbopelvicexam.gait=='caneassited'}"><c:out value="selected"/></c:if>>Cane Assisted</option>
-					<option value="wheelchair" <c:if test="${lumbopelvicexam.gait=='wheelchair'}"><c:out value="selected"/></c:if>>Wheel Chair</option>
+					<option selected="selected" value="Normal" <c:if test="${lumbopelvicexam.gait=='Normal'}"><c:out value="selected"/></c:if> >Normal</option>
+					<option value="Antalgic" <c:if test="${lumbopelvicexam.gait=='Antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
+					<option value="Shuffling" <c:if test="${lumbopelvicexam.gait=='Shuffling'}"><c:out value="selected"/></c:if>>Shuffling</option>
+					<option value="Limp" <c:if test="${lumbopelvicexam.gait=='Limp'}"><c:out value="selected"/></c:if>>Limp</option>
+					<option value="Stagger" <c:if test="${lumbopelvicexam.gait=='Stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
+					<option value="Cane Assisted" <c:if test="${lumbopelvicexam.gait=='Cane Assisted'}"><c:out value="selected"/></c:if>>Cane Assisted</option>
+					<option value="Wheel Chair" <c:if test="${lumbopelvicexam.gait=='Wheel Chair'}"><c:out value="selected"/></c:if>>Wheel Chair</option>
 					</select></td> 
  <td></td> 
  <td></td>
  </tr>
  <tr class="row1">
  <td width="200">Pelvic Unleveling:</td><td><select style="width:180px" name="pelvicunleveling" id="pelvicunleveling"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="none" <c:if test="${lumbopelvicexam.pelvicunleveling=='none'}"><c:out value="selected"/></c:if>>None</option>
-					<option value="superiorilliaccrestright" <c:if test="${lumbopelvicexam.pelvicunleveling=='superiorilliaccrestright'}"><c:out value="selected"/></c:if>>superior illiac crest right</option>
-					<option value="superioriliaccrestleft" <c:if test="${lumbopelvicexam.pelvicunleveling=='superiorilliaccrestleft'}"><c:out value="selected"/></c:if>>superior iliac crest left</option>
+					<option selected="selected" value="None" <c:if test="${lumbopelvicexam.pelvicunleveling=='None'}"><c:out value="selected"/></c:if>>None</option>
+					<option value="Crest Right" <c:if test="${lumbopelvicexam.pelvicunleveling=='Crest Right'}"><c:out value="selected"/></c:if>>superior illiac crest right</option>
+					<option value="Crest Left" <c:if test="${lumbopelvicexam.pelvicunleveling=='Crest Left'}"><c:out value="selected"/></c:if>>superior iliac crest left</option>
 					</select></td> 
   <td>A & O:<select name="ao" id="ao"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="excellent" <c:if test="${lumbopelvicexam.ao=='excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
-					<option value="good" <c:if test="${lumbopelvicexam.ao=='good'}"><c:out value="selected"/></c:if>>Good</option>
-					<option value="fair" <c:if test="${lumbopelvicexam.ao=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
-					<option value="severe" <c:if test="${lumbopelvicexam.ao=='severe'}"><c:out value="selected"/></c:if>>Severe</option>
+					<option selected="selected" value="Excellent" <c:if test="${lumbopelvicexam.ao=='Excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
+					<option value="Good" <c:if test="${lumbopelvicexam.ao=='Good'}"><c:out value="selected"/></c:if>>Good</option>
+					<option value="Fair" <c:if test="${lumbopelvicexam.ao=='Fair'}"><c:out value="selected"/></c:if>>Fair</option>
+					<option value="Severe" <c:if test="${lumbopelvicexam.ao=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
 					</select> </td>
  <td></td>
  <td></td> 
@@ -543,8 +543,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
   <tr class="row1">
  <td width="200">Leg Length Discrepancy:Short Leg-  </td> 
- <td><input type="checkbox" id="leglengthcheckl" name="leglengthcheckl" value="left" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.leglengthcheckl=='left'}"><c:out value="Checked"/></c:if> >Left</td>
- <td><select name="leglengthl" id="break5" style="display:none" onchange='Checksymptom(this.value);'>
+ <td><input type="checkbox" id="leglengthcheckl" name="leglengthcheckl" value="Left" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.leglengthcheckl=='Left'}"><c:out value="Checked"/></c:if> >Left</td>
+ <td><select name="leglengthl" id="break5" style="display:none" onchange="if (this.value=='other'){this.form['other1'].style.visibility='visible'}else {this.form['other1'].style.visibility='hidden'};">
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthl=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthl=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
 					<option value="3/8" <c:if test="${lumbopelvicexam.leglengthl=='3/8'}"><c:out value="Selected"/></c:if>>3/8</option>
@@ -554,12 +554,14 @@ document.getElementById("pnameerror").innerHTML=" ";
 					<option value="7/8" <c:if test="${lumbopelvicexam.leglengthl=='7/8'}"><c:out value="Selected"/></c:if>>7/8</option>
 					<option value="1" <c:if test="${lumbopelvicexam.leglengthl=='1'}"><c:out value="Selected"/></c:if>>1</option>
 					<option value="other" <c:if test="${lumbopelvicexam.leglengthl=='other'}"><c:out value="Selected"/></c:if>>other</option>
-					</td>
-					<td>
-					<input type="text" name="other1" id="other1" style='display:none' value="${lumbopelvicexam.other1 }" >
-					</select></td>
-					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="right" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if>onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right</td>
-					 <td><select name="leglengthr" id="break6" style="display:none" onchange='Checksymptom(this.value);'>
+					</select>
+					<td><input type="text" name="other1" class="input_txtbx1" id="other1" style="visibility:hidden;" value="${lumbopelvicexam.other1 }" ></td>
+					
+					
+					
+					
+					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="Right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'"  <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if> >Right</td>
+					 <td><select name="leglengthr" id="break6" style="display:none" onchange="if (this.value=='other'){this.form['other2'].style.visibility='visible'}else {this.form['other2'].style.visibility='hidden'};">
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthr=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthr=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
 					<option value="3/8" <c:if test="${lumbopelvicexam.leglengthr=='3/8'}"><c:out value="Selected"/></c:if>>3/8</option>
@@ -568,9 +570,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 					<option value="3/4" <c:if test="${lumbopelvicexam.leglengthr=='3/4'}"><c:out value="Selected"/></c:if>>3/4</option>
 					<option value="7/8" <c:if test="${lumbopelvicexam.leglengthr=='7/8'}"><c:out value="Selected"/></c:if>>7/8</option>
 					<option value="1" <c:if test="${lumbopelvicexam.leglengthr=='1'}"><c:out value="Selected"/></c:if>>1</option>
-					<option value="other" <c:if test="${lumbopelvicexam.leglengthr=='other'}"><c:out value="Selected"/></c:if>>other</option></td>
-					<td><input type="text" name="other2" id="other2"  style='display:none' value=${lumbopelvicexam.other2 }>
-					</select></td>
+					<option value="other" <c:if test="${lumbopelvicexam.leglengthr=='other'}"><c:out value="Selected"/></c:if>>other</option></select></td>
+					<td><input type="text" name="other2" class="input_txtbx1" id="other2"  style="visibility:hidden;" value=${lumbopelvicexam.other2 }>
+					</td>
 					<td></td>
 					<td></td>
 					<td></td> 
@@ -753,7 +755,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
 <table>         
  <tr class="row1">
- <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting to Standing" <c:if test="${lumbopelvicexam.sitting=='Sitting to Standing'}"><c:out value="Checked"/></c:if>>Sitting to Standing	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lifting" value="Lifting" <c:if test="${lumbopelvicexam.lifting=='Lifting'}"><c:out value="Checked"/></c:if>>Lifting	</td>
+ <td><B style="font-size:14px">FUNCTIONAL DEFICIT:</B></td><td><input type="checkbox" name="sitting" value="Sitting" <c:if test="${lumbopelvicexam.sitting=='Sitting'}"><c:out value="Checked"/></c:if>>Sitting to Standing	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="lifting" value="Lifting" <c:if test="${lumbopelvicexam.lifting=='Lifting'}"><c:out value="Checked"/></c:if>>Lifting	</td>
  <td width="150"><input type="checkbox" name="walking" value="Walking" <c:if test="${lumbopelvicexam.walking=='Walking'}"><c:out value="Checked"/></c:if>>Walking</td><td width="150"><input type="checkbox" name="stairs" value="Stairs" <c:if test="${lumbopelvicexam.stairs=='Stairs'}"><c:out value="Checked"/></c:if>>Stairs</td>
  <td width="150"><input type="checkbox" id="otherfunctional" name="otherfunctional" value="Other" onclick="visible(this.value)" <c:if test="${lumbopelvicexam.otherfunctional=='Other'}"><c:out value="Checked"/></c:if> >Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3"  style="display:none"  value="${lumbopelvicexam.break_text3 }" onInput="return validatename(id)";/></td>
  </tr>         

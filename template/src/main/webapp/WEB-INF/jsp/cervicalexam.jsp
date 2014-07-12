@@ -447,10 +447,10 @@ $(function() {
  <td>Rounded Shoulders: </td> <td><input type="radio" name="roundshoulder" value="Left">Left <input type="radio" name="roundshoulder" value="Right">Right</td>
   <td>A & O: </td>
  <td><select name="ao" id="ao"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="excellent" >Excellent</option>
-					<option value="good">Good</option>
-					<option value="fair">Fair</option>
-					<option value="severe">Severe</option>
+					<option selected="selected" value="Excellent" >Excellent</option>
+					<option value="Good">Good</option>
+					<option value="Fair">Fair</option>
+					<option value="Severe">Severe</option>
 					</select></td> 
  
  </tr>

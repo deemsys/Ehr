@@ -462,10 +462,10 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td>Rounded Shoulders: </td> <td><input type="radio" name="roundshoulder" value="Left" <c:if test="${cervicalexam.roundshoulder=='Left'}"><c:out value="checked=checked"/></c:if>>Left <input type="radio" name="roundshoulder" value="Right" <c:if test="${cervicalexam.roundshoulder=='Right'}"><c:out value="checked=checked"/></c:if>>Right</td>
   <td>A & O: </td>
  <td><select name="ao" id="ao"  onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="excellent" <c:if test="${cervicalexam.ao=='excellent'}"><c:out value="selected"/></c:if> >Excellent</option>
-					<option value="good" <c:if test="${cervicalexam.ao=='good'}"><c:out value="selected"/></c:if>>Good</option>
-					<option value="fair" <c:if test="${cervicalexam.ao=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
-					<option value="severe" <c:if test="${cervicalexam.ao=='severe'}"><c:out value="selected"/></c:if>>Severe</option>
+					<option selected="selected" value="Excellent" <c:if test="${cervicalexam.ao=='Excellent'}"><c:out value="selected"/></c:if> >Excellent</option>
+					<option value="Good" <c:if test="${cervicalexam.ao=='Good'}"><c:out value="selected"/></c:if>>Good</option>
+					<option value="Fair" <c:if test="${cervicalexam.ao=='Fair'}"><c:out value="selected"/></c:if>>Fair</option>
+					<option value="Severe" <c:if test="${cervicalexam.ao=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
 					</select></td> 
  
  </tr>

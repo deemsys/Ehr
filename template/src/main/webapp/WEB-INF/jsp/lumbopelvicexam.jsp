@@ -508,28 +508,28 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
  <tr class="row1">
  <td width="200">Gait:</td><td><select style="width:180px" name="gait" id="gait" onchange="Checksymptom(this.value);">
-					<option selected="selected" value="normal">Normal</option>
-					<option value="antalgic">Antalgic</option>
-					<option value="shuffling">Shuffling</option>
-					<option value="limp">Limp</option>
-					<option value="stagger">Stagger</option>
-					<option value="caneassited">Cane Assisted</option>
-					<option value="wheelchair">Wheel Chair</option>
+					<option selected="selected" value="Normal">Normal</option>
+					<option value="Antalgic">Antalgic</option>
+					<option value="Shuffling">Shuffling</option>
+					<option value="Limp">Limp</option>
+					<option value="Stagger">Stagger</option>
+					<option value="Cane Assisted">Cane Assisted</option>
+					<option value="Wheel Chair">Wheel Chair</option>
 					</select></td> 
  <td style="width: 144px; "></td> 
  <td></td>
  </tr>
  <tr class="row1">
  <td width="200">Pelvic Unleveling:</td><td><select style="width:180px" name="pelvicunleveling" id="pelvicunleveling" onchange="Checksymptom(this.value);">
-					<option selected="selected" value="none">None</option>
-					<option value="superiorilliaccrestright">superior illiac crest right</option>
-					<option value="superioriliaccrestleft">superior iliac crest left</option>
+					<option selected="selected" value="None">None</option>
+					<option value="Crest Right">superior illiac crest right</option>
+					<option value="Crest Left">superior iliac crest left</option>
 					</select></td> 
   <td>A & O:<select name="ao" id="ao" onchange="Checksymptom(this.value);">
-					<option selected="selected" value="excellent">Excellent</option>
-					<option value="good">Good</option>
-					<option value="fair">Fair</option>
-					<option value="severe">Severe</option>
+					<option selected="selected" value="Excellent">Excellent</option>
+					<option value="Good">Good</option>
+					<option value="Fair">Fair</option>
+					<option value="Severe">Severe</option>
 					</select> </td>
  <td></td>
  <td style="width: 108px; "></td> 
@@ -546,8 +546,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  </tr>
   <tr class="row1">
  <td width="200" style="width: 241px; ">Leg Length Discrepancy:Short Leg-  </td> 
- <td style="width: 250px; "><input type="checkbox" name="leglengthcheckl" value="left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
- <select name="leglengthl" id="break5" style="visibility:hidden" onchange="Checksymptom(this.value);">
+ <td style="width: 250px; "><input type="checkbox" name="leglengthcheckl" value="Left" onclick="this.form.break5.style.visibility = this.checked? 'visible' : 'hidden'">Left
+ <select name="leglengthl" id="break5" style="visibility:hidden" onchange="if (this.value=='other'){this.form['other1'].style.visibility='visible'}else {this.form['other1'].style.visibility='hidden'};">
 					<option selected="selected" value="1/8">1/8</option>
 					<option value="1/4">1/4</option>
 					<option value="3/8">3/8</option>
@@ -557,9 +557,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 					<option value="7/8">7/8</option>
 					<option value="1">1</option>
 					<option value="other">other</option>
-					</select><input type="text" name="other1" id="other1" style="display:none"></td>
-					<td style="width: 252px; "><input type="checkbox" name="leglengthcheckr" value="right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
-					<select name="leglengthr" id="break6" style="visibility:hidden" onchange="Checksymptom(this.value);">
+					</select><br><input type="text" name="other1" id="other1" class="input_txtbx1" style="visibility:hidden;"></td>
+					<td style="width: 252px; "><input type="checkbox" name="leglengthcheckr" value="Right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'">Right
+					<select name="leglengthr" id="break6" style="visibility:hidden" onchange="if (this.value=='other'){this.form['other2'].style.visibility='visible'}else {this.form['other2'].style.visibility='hidden'};">
 					<option selected="selected" value="1/8">1/8</option>
 					<option value="1/4">1/4</option>
 					<option value="3/8">3/8</option>
@@ -569,7 +569,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 					<option value="7/8">7/8</option>
 					<option value="1">1</option>
 					<option value="other">other</option>
-					</select><input type="text" name="other2" id="other2" style="display:none">
+					</select><br><input type="text" name="other2" id="other2" class="input_txtbx1" style="visibility:hidden;">
 					</td>
 					<td></td>
 					<td></td>
@@ -766,7 +766,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  </table>
 <table cellpadding="0" cellspacing="0" border="0">         
  <tr class="row1">
- <td style="width: 358px; height: 43px"><b style="font-size:14px">FUNCTIONAL DEFICIT:</b></td><td style="height: 72px; "><input type="checkbox" name="sitting" value="Sitting to Standing">Sitting to Standing &nbsp; <input type="checkbox" name="lifting" value="Lifting">Lifting	
+ <td style="width: 358px; height: 43px"><b style="font-size:14px">FUNCTIONAL DEFICIT:</b></td><td style="height: 72px; "><input type="checkbox" name="sitting" value="Sitting">Sitting to Standing &nbsp; <input type="checkbox" name="lifting" value="Lifting">Lifting	
 &nbsp; <input type="checkbox" name="walking" value="Walking">Walking&nbsp;<input type="checkbox" name="stairs" value="Stairs">Stairs
  &nbsp;<input type="checkbox" name="otherfunctional" value="Other" onclick="this.form.break3.style.visibility = this.checked? 'visible' : 'hidden'">Other&nbsp;</td><td> <input type="text" class="input_txtbx1" id="break3" name="break_text3" style="visibility:hidden"></td>
  </tr>         
