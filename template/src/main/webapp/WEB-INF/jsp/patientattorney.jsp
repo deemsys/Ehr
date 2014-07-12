@@ -535,7 +535,7 @@ function openWindow(h, w, url) {
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="120" style="width: 155px; "><span class="err">&nbsp;</span>Address</td>
+              <td height="25" width="120" style="width: 155px; "><span class="err"></span>&nbsp;&nbsp;Address</td>
               <td ><textarea rows="" cols="" name="address" class="input_txtarea" id="address"style="width: 169px; height: 62px"></textarea><span class="err"><form:errors path="Patientattorney.address"></form:errors></span></td>
               </tr>
               </table>
@@ -700,11 +700,11 @@ Opinion 2007-7 provides the following further ethical directions:
             
              
               <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="nameofclinic" id="nameofclinic" onInput="return validatename(id)";><br><font size="+1" color="red"><span id="nameofclinicerror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.nameofclinic"></form:errors></span></font></td></tr>
-              <tr><td></td><td><span class="err">*</span>Name of Clinic</td>
+              <tr><td></td><td><span class="err">* </span>Name of Clinic</td>
               </tr>
               
                <tr ><td width="70%"></td><td><input type="text" class="input_txtbx1" name="treat" id="treat" onInput="return validatename(id)";><br><font size="+1" color="red"><span  id="treaterror"  style="color: red;font-style:italic;"><form:errors path="Patientattorney.treat"></form:errors></span></font></td></tr>
-              <tr><td ></td><td><span class="err">*</span>Treating Physician</td>
+              <tr><td ></td><td><span class="err">* </span>Treating Physician</td>
               </tr>
               
               

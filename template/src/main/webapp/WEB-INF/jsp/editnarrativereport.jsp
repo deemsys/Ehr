@@ -1507,7 +1507,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Present at the" <c:if test="${narrativereport.gender54=='Present at the'}"><c:out value="Selected"/></c:if>>Present at the</option>
 					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level" value="${narrativereport.presentlevel}">levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Anterior" <c:if test="${narrativereport.gender55=='Anterior'}"><c:out value="Selected"/></c:if>>Anterior</option>
-					<option value="Posterior" <c:if test="${narrativereport.gender55=='Posterior'}"><c:out value="Selected"/></c:if>>Thoracic</option>
+					<option value="Thoracic" <c:if test="${narrativereport.gender55=='Thoracic'}"><c:out value="Selected"/></c:if>>Thoracic</option>
 					</select> vertebral body osteophytes of <input type="text" id="oid7" oninput="validateo();"  class="input_txtbx1" name="osteophytes" value="${narrativereport.osteophytes}"><span id="oerror7" style="color: red;font-style:italic;"></span>.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Mild" <c:if test="${narrativereport.gender56=='Mild'}"><c:out value="Selected"/></c:if>>Mild</option>
 					<option value="Moderate" <c:if test="${narrativereport.gender56=='Moderate'}"><c:out value="Selected"/></c:if>>Moderate</option>

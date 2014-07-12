@@ -501,7 +501,7 @@ The Sheffield Village Plaza
               </table>
               <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
-              <td height="25" width="50%"><span class="err">&nbsp;</span>Address:</td>
+              <td height="25" width="50%"><span class="err"></span>&nbsp;&nbsp;Address:</td>
               <td ><textarea rows="" cols="" name="address"  id="address" class ="input_txtarea" style="width: 162px; height: 62px"></textarea><span class="err"><form:errors path="Perrychiropractic.address"></form:errors></td>
               </tr>
               </table>

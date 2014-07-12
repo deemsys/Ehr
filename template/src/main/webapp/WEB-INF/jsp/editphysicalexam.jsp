@@ -613,9 +613,9 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Appearance:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="appearance" class="input_cmbbx1">
-				                  		<option value="excellent" <c:if test="${physical.appearance=='excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
-						                 <option value="good" <c:if test="${physical.appearance=='good'}"><c:out value="selected"/></c:if>>Good</option>   
-						                 <option value="fair" <c:if test="${physical.appearance=='fair'}"><c:out value="selected"/></c:if>>Fair</option>
+				                  		<option value="Excellent" <c:if test="${physical.appearance=='Excellent'}"><c:out value="selected"/></c:if>>Excellent</option>
+						                 <option value="Good" <c:if test="${physical.appearance=='Good'}"><c:out value="selected"/></c:if>>Good</option>   
+						                 <option value="Fair" <c:if test="${physical.appearance=='Fair'}"><c:out value="selected"/></c:if>>Fair</option>
 						                 <option value="Severe" <c:if test="${physical.appearance=='Severe'}"><c:out value="selected"/></c:if>>Severe</option>
 						          
 				                   		</select><span class="err"><form:errors path="Physicalexam.appearance"></form:errors></span>
@@ -624,9 +624,9 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>Nourishment:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="weight1" class="input_cmbbx1">
-				                  		<option value="un" <c:if test="${physical.weight1=='un'}"><c:out value="selected"/></c:if>>UN</option>
-				                  		<option value="n" <c:if test="${physical.weight1=='n'}"><c:out value="selected"/></c:if>>N</option>
-				                  		<option value="wn" <c:if test="${physical.weight1=='wn'}"><c:out value="selected"/></c:if>>WN</option>
+				                  		<option value="UN" <c:if test="${physical.weight1=='UN'}"><c:out value="selected"/></c:if>>UN</option>
+				                  		<option value="N" <c:if test="${physical.weight1=='N'}"><c:out value="selected"/></c:if>>N</option>
+				                  		<option value="WN" <c:if test="${physical.weight1=='WN'}"><c:out value="selected"/></c:if>>WN</option>
 						                    
 				                   		</select><span class="err"><form:errors path="Physicalexam.weight1"></form:errors></span>
 				                   	</td> </tr>  
@@ -634,11 +634,11 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span>GAIT:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="gait" class="input_cmbbx1">
-				                  		<option value="antalgic" <c:if test="${physical.gait=='antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
-				                  		<option value="limp" <c:if test="${physical.gait=='limp'}"><c:out value="selected"/></c:if>>Limp</option>
-				                  		<option value="sway" <c:if test="${physical.gait=='sway'}"><c:out value="selected"/></c:if>>Sway</option>
-				                  		<option value="stagger" <c:if test="${physical.gait=='stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
-				                  		<option value="normal" <c:if test="${physical.gait=='normal'}"><c:out value="selected"/></c:if>>Normal</option>
+				                  		<option value="Antalgic" <c:if test="${physical.gait=='Antalgic'}"><c:out value="selected"/></c:if>>Antalgic</option>
+				                  		<option value="Limp" <c:if test="${physical.gait=='Limp'}"><c:out value="selected"/></c:if>>Limp</option>
+				                  		<option value="Sway" <c:if test="${physical.gait=='Sway'}"><c:out value="selected"/></c:if>>Sway</option>
+				                  		<option value="Stagger" <c:if test="${physical.gait=='Stagger'}"><c:out value="selected"/></c:if>>Stagger</option>
+				                  		<option value="Normal" <c:if test="${physical.gait=='Normal'}"><c:out value="selected"/></c:if>>Normal</option>
 				                  		
 				                   		</select><span class="err"><form:errors path="Physicalexam.gait"></form:errors></span>
 				                   		
@@ -667,7 +667,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>Romberg's Sign:</td>
 				                  <td valign="top" align="left" class="input_txt">
 				                  	<input type="radio" name="romber" value="Present" class="input_txt"  <c:if test="${physical.romber=='Present'}"><c:out value="checked=checked"/></c:if>>Present&nbsp;&nbsp;&nbsp;
-				                  	<input type="radio" name="romber" value="NotPresent" class="input_txt"  <c:if test="${physical.romber=='NotPresent'}"><c:out value="checked=checked"/></c:if>>NotPresent&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.romber"></form:errors></span></td>
+				                  	<input type="radio" name="romber" value="Not Present" class="input_txt"  <c:if test="${physical.romber=='Not Present'}"><c:out value="checked=checked"/></c:if>>Not Present&nbsp;&nbsp;&nbsp;<span class="err"><form:errors path="Physicalexam.romber"></form:errors></span></td>
 				                </tr>
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span>CN Exam:</td>
@@ -830,7 +830,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebraefix" value="Fixations" <c:if test="${physical.vertebraefix=='Fixations'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No_fixations" <c:if test="${physical.vertebraenofix=='No_fixations'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No Fixations" <c:if test="${physical.vertebraenofix=='No Fixations'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
 				                  </tr>
 				                  </table>
 				               <table border="0">
@@ -1271,7 +1271,7 @@ document.getElementById("patientsmokererror").innerHTML=" ";
 				                   <tr class="row1">
 				                  <td>Vertebrae:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertefix" value="Fixation"<c:if test="${physical.vertefix=='Fixation'}"><c:out value="checked=checked"/></c:if>>Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No_Fixation" <c:if test="${physical.vertenofix=='No_Fixation'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No Fixation" <c:if test="${physical.vertenofix=='No Fixation'}"><c:out value="checked=checked"/></c:if>>No Fixations</td>
 				                  </tr>
 				                  </table>
 				                   <table border="0">

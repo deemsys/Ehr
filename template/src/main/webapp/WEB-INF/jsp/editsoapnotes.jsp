@@ -389,7 +389,7 @@ document.getElementById("xray").style.visibility = 'hidden';
     					<br>
 <table align="right">
     <tr class="row1">
-       <td><h2><span class="err">*</span> Patient:</h2></td>
+       <td><h2><span class="err">* </span> Patient:</h2></td>
              <input type="hidden" value="${username}" name="username" />
               <input type="hidden" class="input_txtbx1" id="inp_id" value="${soapnotes.soapid}" name="soapid" />
               <td><input type="text" class="input_txtbx1" name="pname" id="pname" onInput="return validatename(id)"; value="${soapnotes.pname}" /><span class="err" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
@@ -400,7 +400,7 @@ document.getElementById("xray").style.visibility = 'hidden';
 <tr class="row1">
 <td>Chief Complaint:</td>
 <td><input type="checkbox" name="headache" value="Headache" <c:if test="${soapnotes.headache=='Headache'}"><c:out value="Checked"/></c:if>   />Headache</td>
-<td><input type="checkbox" name="neckpain" value="Neck pain" <c:if test="${soapnotes.neckpain=='Neck pain'}"><c:out value="checked=checked"/></c:if>>Neck Pain</td>
+<td><input type="checkbox" name="neckpain" value="Neck Pain" <c:if test="${soapnotes.neckpain=='Neck Pain'}"><c:out value="checked=checked"/></c:if>>Neck Pain</td>
 <td><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" <c:if test="${soapnotes.rightshoulderpain=='Right Shoulder pain'}"><c:out value="checked=checked"/></c:if>>Right Shoulder pain</td>
 <td><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" <c:if test="${soapnotes.leftshoulderpain=='Left Shoulder Pain'}"><c:out value="checked=checked"/></c:if>>Left Shoulder Pain</td>
 <td><input type="checkbox" name="chestpain" value="Chest Pain" <c:if test="${soapnotes.chestpain=='Chest Pain'}"><c:out value="checked=checked"/></c:if>>Chest Pain</td>
@@ -408,16 +408,16 @@ document.getElementById("xray").style.visibility = 'hidden';
 
 <br>
 <select name="rightproxi" id="rightproxi" style="display:none">
-<option <c:if test="${soapnotes.rightproxi=='proximal'}"><c:out value="selected"/></c:if> value="proximal">proximal</option>
-<option <c:if test="${soapnotes.rightproxi=='distal'}"><c:out value="selected"/></c:if> value="distal">distal portion</option></select>
+<option <c:if test="${soapnotes.rightproxi=='Proximal'}"><c:out value="selected"/></c:if> value="Proximal">Proximal</option>
+<option <c:if test="${soapnotes.rightproxi=='Distal Portion'}"><c:out value="selected"/></c:if> value="Distal Portion">Distal Portion</option></select>
 
 
 </td>
 <td><input type="checkbox" id="leftarmpain" name="leftarmpain" value="Left Arm Pain"  onclick="rightcheck()" <c:if test="${soapnotes.leftarmpain=='Left Arm Pain'}"><c:out value="checked=checked"/></c:if>>Left Arm Pain
 <br>
 <select name="leftproxi" id="leftproxi" style="display:none">
-<option <c:if test="${soapnotes.leftproxi=='proximal'}"><c:out value="selected"/></c:if> value="proximal">proximal</option>
-<option <c:if test="${soapnotes.leftproxi=='distal'}"><c:out value="selected"/></c:if> value="distal">distal portion</option></select>
+<option <c:if test="${soapnotes.leftproxi=='Proximal'}"><c:out value="selected"/></c:if> value="Proximal">Proximal</option>
+<option <c:if test="${soapnotes.leftproxi=='Distal Portion'}"><c:out value="selected"/></c:if> value="Distal Portion">Distal Portion</option></select>
 
 </td>
 <script>
@@ -653,7 +653,7 @@ else
 </tr>
 <tr class="row1">
 <td></td>
-<td><input type="checkbox" name="leftanklepain" value="Left Ankle Pain" <c:if test="${soapnotes.leftanklepain=='Left Ankle Pain'}"><c:out value="checked=checked"/></c:if>>Right Rib Pain</td>
+<td><input type="checkbox" name="leftanklepain" value="Left Ankle Pain" <c:if test="${soapnotes.leftanklepain=='Left Ankle Pain'}"><c:out value="checked=checked"/></c:if>>Left Ankle Pain</td>
 <td><input type="checkbox" name="rightfootpain" value="Right Foot Pain" <c:if test="${soapnotes.rightfootpain=='Right Foot Pain'}"><c:out value="checked=checked"/></c:if>>Right Foot Pain</td>
 <td><input type="checkbox" name="leftfootpain" value="Left Foot Pain" <c:if test="${soapnotes.leftfootpain=='Left Foot Pain'}"><c:out value="checked=checked"/></c:if>>Left Foot Pain</td>
 <td></td>
@@ -772,25 +772,25 @@ else
 					<option value="extraspinal 1 or more regions" <c:if test="${soapnotes.e1e2=='extraspinal 1 or more regions'}"><c:out value="selected"/></c:if>>extraspinal 1 or more regions</option>
 					<option value="MR" <c:if test="${soapnotes.e1e2=='MR'}"><c:out value="selected"/></c:if>>MR</option>
 					<option value="Home Exercises" <c:if test="${soapnotes.e1e2=='Home Exercises'}"><c:out value="selected"/></c:if>>Home Exercises</option>
-					<option value="scsm" <c:if test="${soapnotes.e1e2=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.e1e2=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.e1e2=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.e1e2=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.e1e2=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.e1e2=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.e1e2=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.e1e2=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.e1e2=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.e1e2=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="mri" <c:if test="${soapnotes.e1e2=='mri'}"><c:out value="selected"/></c:if>>MRI</option>
-					<option value="lab" <c:if test="${soapnotes.e1e2=='lab'}"><c:out value="selected"/></c:if>>LAB</option>
+					<option value="SCSM" <c:if test="${soapnotes.e1e2=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.e1e2=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.e1e2=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.e1e2=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.e1e2=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.e1e2=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.e1e2=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.e1e2=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.e1e2=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.e1e2=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="MRI" <c:if test="${soapnotes.e1e2=='MRI'}"><c:out value="selected"/></c:if>>MRI</option>
+					<option value="LAB" <c:if test="${soapnotes.e1e2=='LAB'}"><c:out value="selected"/></c:if>>LAB</option>
 					<option value="opinion" <c:if test="${soapnotes.e1e2=='opinion'}"><c:out value="selected"/></c:if>>2nd Opinion</option>
-					<option value="rehab" <c:if test="${soapnotes.e1e2=='rehab'}"><c:out value="selected"/></c:if>>Rehab</option>
-					<option value="stretchexer" <c:if test="${soapnotes.e1e2=='stretchexer'}"><c:out value="selected"/></c:if>>Stretch exer</option>
-					<option value="offwork" <c:if test="${soapnotes.e1e2=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="backtowork" <c:if test="${soapnotes.e1e2=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.e1e2=='strengthexcer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="lifestyle" <c:if test="${soapnotes.e1e2=='lifestyle'}"><c:out value="selected"/></c:if>>Lifestyle modifications</option>
+					<option value=Rehab <c:if test="${soapnotes.e1e2=='Rehab'}"><c:out value="selected"/></c:if>>Rehab</option>
+					<option value="Stretchexer" <c:if test="${soapnotes.e1e2=='Stretchexer'}"><c:out value="selected"/></c:if>>Stretch exer</option>
+					<option value="off Work" <c:if test="${soapnotes.e1e2=='off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Back To Work " <c:if test="${soapnotes.e1e2=='Back To Work '}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.e1e2=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="Lifestyle Modifications" <c:if test="${soapnotes.e1e2=='Lifestyle Modifications'}"><c:out value="selected"/></c:if>>Lifestyle Modifications</option>
 					<option value="reeval" <c:if test="${soapnotes.e1e2=='reeval'}"><c:out value="selected"/></c:if>>Re Eval.in </option>
 				  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" width="5%"name="xray" class="input_txtbx1" id="xray"  onblur="return validate2();" value="${soapnotes.xray}" style="visibility:hidden;" >
 				    <span id="xrayerror"style="color:red"></span>
@@ -829,54 +829,54 @@ else
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation1=='fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation1=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation1=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation1=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation1=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts" <c:if test="${soapnotes.fixation1=='Trigger pts'}"><c:out value="selected"/></c:if>>Trigger pts</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation1=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation1=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation1=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation1=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation1=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation1=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation1=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
-					<option value="atrophy" <c:if test="${soapnotes.fixation1=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation1=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation1=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation1=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
 					</select></td>
  <td>
 
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved1=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved1=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
 					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
 					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved1=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved1=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved1=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved1=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups'}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved1=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved1=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved1=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved1=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
 					</select></td>
 					
  <td>
 
   &nbsp &nbsp <select name="scsm1" id="scsm1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm1=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm1=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm1=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm1=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm1=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm1=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm1=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm1=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm1=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm1=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm1=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm1=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm1=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm1=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm1=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm1=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm1=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm1=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm1=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm1=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm1=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm1=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm1=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm1=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm1=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm1=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm1=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm1=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm1=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm1=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm1=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm1=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm1=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm1=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm1=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm1=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm1=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm1=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm1=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm1=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 				  </select>
  </td>
  </tr>
@@ -894,50 +894,50 @@ else
   &nbsp &nbsp <select name="fixation2" id="fixation2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation2=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation2=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation2=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation2=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation2=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation2=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation2=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation2=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation2=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation2=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation2=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation2=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation2=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
-					<option value="atrophy" <c:if test="${soapnotes.fixation2=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation2=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation2=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation2=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved2" id="notimproved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved2=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved2=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
 					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
 					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
 					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved2=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved2=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved2=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved2=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved2=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved2=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved2=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved2=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
 				</select></td>
  <td>&nbsp &nbsp <select name="scsm2" id="scsm2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm2=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm2=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm2=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm2=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm2=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm2=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm2=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm2=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm2=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm2=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm2=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm2=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm2=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm2=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm2=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm2=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm2=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm2=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm2=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm2=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm2=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm2=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm2=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm2=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm2=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm2=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm2=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm2=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm2=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm2=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm2=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm2=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm2=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm2=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm2=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm2=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm2=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm2=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm2=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm2=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
 			
 				  </select>
  
@@ -956,51 +956,51 @@ else
   &nbsp &nbsp<select name="fixation3" id="fixation3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation3=='Fixation'}"><c:out value="selected"/></c:if>
 					>Fixations</option>
-					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation3==' to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation3=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation3=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation3=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation3=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation3=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation3=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation3=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation3=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation3=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation3=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation3=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation3=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
-						<option value="atrophy" <c:if test="${soapnotes.fixation3=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation3=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+						<option value="Atrophy" <c:if test="${soapnotes.fixation3=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation3=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved3" id="notimproved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved3=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-				<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved3=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved3=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved3=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved3=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved3=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+				<option value="Progressing Slow" <c:if test="${soapnotes.notimproved3=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved3=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved3=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved3=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved3=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved3=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved3=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
 			
 					</select></td>
   <td>&nbsp &nbsp <select name="scsm3" id="scsm3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm3=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm3=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm3=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm3=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm3=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm3=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm3=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm3=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm3=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm3=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm3=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm3=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm3=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm3=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm3=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm3=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm3=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm3=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm3=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm3=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm3=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm3=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm3=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm3=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm3=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm3=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm3=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm3=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm3=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm3=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm3=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm3=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm3=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm3=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm3=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm3=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm3=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm3=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm3=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm3=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 			  </select>
   
   </td>
@@ -1017,51 +1017,56 @@ else
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation4=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation4=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation4=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation4=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation4=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation4=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation4=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation4=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation4=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation4=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
-					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation4=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
-				
-					<option value="atrophy" <c:if test="${soapnotes.fixation4=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation4=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation4=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation4=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation4=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation4=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation4=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation4=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+
+
+
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved4" id="notimproved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved4=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved4=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved4=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved4=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved4=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					
+<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved4=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved4=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved4=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved4=='Flare-ups'}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved4=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved4=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved4=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved4=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+
 				</select></td>
  
  <td>&nbsp &nbsp <select name="scsm4" id="scsm4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm4=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm4=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm4=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm4=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm4=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm4=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm4=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm4=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm4=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm4=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm4=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm4=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm4=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm4=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm4=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm4=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm4=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm4=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm4=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm4=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					
+<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm4=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm4=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm4=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm4=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm4=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm4=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm4=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm4=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm4=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm4=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm4=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm4=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm4=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm4=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm4=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm4=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm4=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm4=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm4=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm4=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 					  </select>
  </td>
  </tr>
@@ -1078,49 +1083,52 @@ else
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation5=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation5=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation5=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation5=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation5=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation5=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation5=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation5=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation5=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-						<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation5=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
-					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation5=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
-				
-					<option value="atrophy" <c:if test="${soapnotes.fixation5=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation5=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation5=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation5=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation5=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation5=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation5=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation5=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+
+
+
+
 		</select></td>
 <td>&nbsp &nbsp <select name="notimproved5" id="notimproved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved5=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved5=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved5=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved5=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved5=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved5=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved5=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved5=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved5=='Flare-ups'}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved5=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved5=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved5=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved5=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
 				</select></td>
  <td>&nbsp &nbsp <select name="scsm5" id="scsm5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm5=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm5=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm5=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm5=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm5=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm5=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm5=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm5=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm5=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm5=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm5=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm5=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm5=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm5=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm5=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm5=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm5=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm5=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm5=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm5=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm5=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm5=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm5=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm5=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm5=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm5=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm5=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm5=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm5=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm5=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm5=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm5=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm5=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm5=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm5=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm5=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm5=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm5=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm5=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm5=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 					  </select>
  </td>
  </tr>
@@ -1136,50 +1144,52 @@ else
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation6=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation6=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation6=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation6=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation6=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation6=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation6=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation6=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation6=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation6=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
-					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation6=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
-				
-					<option value="atrophy" <c:if test="${soapnotes.fixation6=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation6=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation6=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation6=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation6=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation6=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation6=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation6=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+
+
 	</select></td>
 <td> &nbsp &nbsp<select name="notimproved6" id="notimproved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved6=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved6=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved6=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved6=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved6=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved6=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved6=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved6=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved6=='Flare-ups'}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved6=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved6=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved6=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved6=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
 			
 					</select></td>
  <td>&nbsp &nbsp <select name="scsm6" id="scsm6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm6=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm6=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm6=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm6=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm6=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm6=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm6=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm6=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm6=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm6=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm6=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm6=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm6=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm6=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm6=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm6=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm6=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm6=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm6=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm6=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					
+<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm6=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm6=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm6=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm6=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm6=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm6=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm6=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm6=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm6=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm6=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm6=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm6=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm6=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm6=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm6=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm6=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm6=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm6=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm6=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm6=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 			  </select>
  </td>
  </tr>
@@ -1195,50 +1205,51 @@ else
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation7=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation7=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation7=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation7=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation7=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation7=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation7=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation7=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation7=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation7=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
-					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation7=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
-				
-					<option value="atrophy" <c:if test="${soapnotes.fixation7=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation7=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation7=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation7=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation7=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation7=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation7=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation7=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+
 
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved7" id="notimproved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved7=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of C.C.</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved7=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved7=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved7=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved7=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					
+<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved7=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved7=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved7=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved7=='Flare-ups'}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved7=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved7=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved7=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved7=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
 								</select></td>
  <td>&nbsp &nbsp <select name="scsm7" id="scsm7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm7=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm7=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm7=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm7=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm7=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm7=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm7=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm7=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm7=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm7=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm7=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm7=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm7=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm7=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm7=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm7=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm7=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm7=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm7=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm7=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm7=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm7=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm7=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm7=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm7=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm7=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm7=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm7=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm7=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm7=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm7=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm7=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm7=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm7=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm7=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm7=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm7=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm7=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm7=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm7=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 			  </select>
  </td>
  </tr>
@@ -1254,54 +1265,59 @@ else
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixation" <c:if test="${soapnotes.fixation8=='Fixation'}"><c:out value="selected"/></c:if>>Fixations</option>
 					<option value="Tenderness to palpation" <c:if test="${soapnotes.fixation8=='Tenderness to palpation'}"><c:out value="selected"/></c:if>>Tenderness to palpation</option>
-					<option value="spasm" <c:if test="${soapnotes.fixation8=='spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
-					<option value="trigger" <c:if test="${soapnotes.fixation8=='trigger'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
+					<option value="Spasm" <c:if test="${soapnotes.fixation8=='Spasm'}"><c:out value="selected"/></c:if>>Spasm</option>
+					<option value="Trigger pts." <c:if test="${soapnotes.fixation8=='Trigger pts.'}"><c:out value="selected"/></c:if>>Trigger pts.</option>
 					<option value="Hypertonicity" <c:if test="${soapnotes.fixation8=='Hypertonicity'}"><c:out value="selected"/></c:if>>Hypertonicity</option>
-					<option value="edema" <c:if test="${soapnotes.fixation8=='edema'}"><c:out value="selected"/></c:if>>Edema</option>
-					<option value="Decreased ROM" <c:if test="${soapnotes.fixation8=='decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
-					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation8=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Right Temp.Change</option>
-					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation8=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short leg Left Temp.Change</option>
-				
-					<option value="atrophy" <c:if test="${soapnotes.fixation8=='atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
-					<option value="decr strength" <c:if test="${soapnotes.fixation8=='decr strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+					<option value="Edema" <c:if test="${soapnotes.fixation8=='Edema'}"><c:out value="selected"/></c:if>>Edema</option>
+					<option value="Decreased ROM" <c:if test="${soapnotes.fixation8=='Decreased ROM'}"><c:out value="selected"/></c:if>>Decreased ROM</option>
+					<option value="Short Leg Right Temp.Change" <c:if test="${soapnotes.fixation8=='Short Leg Right Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change" <c:if test="${soapnotes.fixation8=='Short Leg Left Temp.Change'}"><c:out value="selected"/></c:if>>Short Leg Left Temp.Change</option>
+					<option value="Atrophy" <c:if test="${soapnotes.fixation8=='Atrophy'}"><c:out value="selected"/></c:if>>Atrophy</option>
+					<option value="Decr Strength" <c:if test="${soapnotes.fixation8=='Decr Strength'}"><c:out value="selected"/></c:if>>Decr Strength</option>
+
+
+
 	</select></td>
  <td>&nbsp &nbsp<select name="notimproved8" id="notimproved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" <c:if test="${soapnotes.notimproved8=='notimproved'}"><c:out value="selected"/></c:if>>Not Improved</option>
-					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved1=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
-					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved1=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
-					<option value="Flare-ups" <c:if test="${soapnotes.notimproved1=='Flare-ups '}"><c:out value="selected"/></c:if>>Flare-ups</option>
-					<option value="mildly" <c:if test="${soapnotes.notimproved8=='mildly'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
-					<option value="moderatly" <c:if test="${soapnotes.notimproved8=='moderatly'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
-					<option value="plateu" <c:if test="${soapnotes.notimproved8=='plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
-					<option value="preinjury" <c:if test="${soapnotes.notimproved8=='preinjury'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+					
+<option selected="selected" value="Not Improved" <c:if test="${soapnotes.notimproved8=='Not Improved'}"><c:out value="selected"/></c:if>>Not Improved</option>
+					<option value="Progressing Slow" <c:if test="${soapnotes.notimproved8=='Progressing Slow'}"><c:out value="selected"/></c:if>>Progressing Slow</option>
+					<option value="Exacerbation of C.C." <c:if test="${soapnotes.notimproved8=='Exacerbation of C.C.'}"><c:out value="selected"/></c:if>>Exacerbation of CC</option>
+					<option value="Flare-ups" <c:if test="${soapnotes.notimproved8=='Flare-ups'}"><c:out value="selected"/></c:if>>Flare-ups</option>
+					<option value="Mildly imp." <c:if test="${soapnotes.notimproved8=='Mildly imp.'}"><c:out value="selected"/></c:if>>Mildly imp.</option>
+					<option value="Moderatly imp." <c:if test="${soapnotes.notimproved8=='Moderatly imp.'}"><c:out value="selected"/></c:if>>Moderatly imp.</option>
+					<option value="Plateu" <c:if test="${soapnotes.notimproved8=='Plateu'}"><c:out value="selected"/></c:if>>Plateu</option>
+					<option value="Pre Injury Status" <c:if test="${soapnotes.notimproved8=='Pre Injury Status'}"><c:out value="selected"/></c:if>>Pre Injury Status</option>
+
+
 				</select></td>
  <td>&nbsp &nbsp <select name="scsm8" id="scsm8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm" <c:if test="${soapnotes.scsm8=='scsm'}"><c:out value="selected"/></c:if>>SCSM</option>
-					<option value="ems" <c:if test="${soapnotes.scsm8=='ems'}"><c:out value="selected"/></c:if>>EMS</option>
-					<option value="mass" <c:if test="${soapnotes.scsm8=='mass'}"><c:out value="selected"/></c:if>>MASS</option>
-					<option value="ice" <c:if test="${soapnotes.scsm8=='ice'}"><c:out value="selected"/></c:if>>Ice</option>
-					<option value="heat" <c:if test="${soapnotes.scsm8=='heat'}"><c:out value="selected"/></c:if>>Heat</option>
-					<option value="nmr" <c:if test="${soapnotes.scsm8=='nmr'}"><c:out value="selected"/></c:if>>NMR</option>
-					<option value="tp" <c:if test="${soapnotes.scsm8=='tp'}"><c:out value="selected"/></c:if>>TP</option>
-					<option value="us" <c:if test="${soapnotes.scsm8=='us'}"><c:out value="selected"/></c:if>>US</option>
-					<option value="lontophoresis" <c:if test="${soapnotes.scsm8=='lontophoresis'}"><c:out value="selected"/></c:if>>Lontophoresis</option>
-					<option value="traction" <c:if test="${soapnotes.scsm8=='traction'}"><c:out value="selected"/></c:if>>Traction</option>
-					<option value="nutrition" <c:if test="${soapnotes.scsm8=='nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
-					<option value="offwork" <c:if test="${soapnotes.scsm8=='offwork'}"><c:out value="selected"/></c:if>>Off Work</option>
-					<option value="lightduty" <c:if test="${soapnotes.scsm8=='lightduty'}"><c:out value="selected"/></c:if>>Light Duty</option>
-					<option value="rom" <c:if test="${soapnotes.scsm8=='rom'}"><c:out value="selected"/></c:if>>ROM</option>					
-					<option value="backtowork" <c:if test="${soapnotes.scsm8=='backtowork'}"><c:out value="selected"/></c:if>>Back To Work </option>
-					<option value="strengthexcer" <c:if test="${soapnotes.scsm8=='strengthexer'}"><c:out value="selected"/></c:if>>Strength excer</option>
-					<option value="rof" <c:if test="${soapnotes.scsm8=='rof'}"><c:out value="selected"/></c:if>>ROF</option>
-					<option value="reexam" <c:if test="${soapnotes.scsm8=='reexam'}"><c:out value="selected"/></c:if>>Re Exam </option>
-					<option value="referto" <c:if test="${soapnotes.scsm8=='referto'}"><c:out value="selected"/></c:if>>Refer to </option>
-					<option value="release" <c:if test="${soapnotes.scsm8=='release'}"><c:out value="selected"/></c:if>>Release from care </option>
+					<option selected="selected" value="SCSM" <c:if test="${soapnotes.scsm8=='SCSM'}"><c:out value="selected"/></c:if>>SCSM</option>
+					<option value="EMS" <c:if test="${soapnotes.scsm8=='EMS'}"><c:out value="selected"/></c:if>>EMS</option>
+					<option value="MASS" <c:if test="${soapnotes.scsm8=='MASS'}"><c:out value="selected"/></c:if>>MASS</option>
+					<option value="Ice" <c:if test="${soapnotes.scsm8=='Ice'}"><c:out value="selected"/></c:if>>Ice</option>
+					<option value="Heat" <c:if test="${soapnotes.scsm8=='Heat'}"><c:out value="selected"/></c:if>>Heat</option>
+					<option value="NMR" <c:if test="${soapnotes.scsm8=='NMR'}"><c:out value="selected"/></c:if>>NMR</option>
+					<option value="TP" <c:if test="${soapnotes.scsm8=='TP'}"><c:out value="selected"/></c:if>>TP</option>
+					<option value="US" <c:if test="${soapnotes.scsm8=='US'}"><c:out value="selected"/></c:if>>US</option>
+					<option value="Iontophoresis" <c:if test="${soapnotes.scsm8=='Iontophoresis'}"><c:out value="selected"/></c:if>>Iontophoresis</option>
+					<option value="Traction" <c:if test="${soapnotes.scsm8=='Traction'}"><c:out value="selected"/></c:if>>Traction</option>
+					<option value="Nutrition" <c:if test="${soapnotes.scsm8=='Nutrition'}"><c:out value="selected"/></c:if>>Nutrition</option>
+					<option value="Off Work" <c:if test="${soapnotes.scsm8=='Off Work'}"><c:out value="selected"/></c:if>>Off Work</option>
+					<option value="Light Duty" <c:if test="${soapnotes.scsm8=='Light Duty'}"><c:out value="selected"/></c:if>>Light Duty</option>
+					<option value="ROM" <c:if test="${soapnotes.scsm8=='ROM'}"><c:out value="selected"/></c:if>>ROM</option>					
+					<option value="Back To Work" <c:if test="${soapnotes.scsm8=='Back To Work'}"><c:out value="selected"/></c:if>>Back To Work </option>
+					<option value="Strength excer" <c:if test="${soapnotes.scsm8=='Strength excer'}"><c:out value="selected"/></c:if>>Strength excer</option>
+					<option value="ROF" <c:if test="${soapnotes.scsm8=='ROF'}"><c:out value="selected"/></c:if>>ROF</option>
+					<option value="Re Exam" <c:if test="${soapnotes.scsm8=='Re Exam'}"><c:out value="selected"/></c:if>>Re Exam </option>
+					<option value="Refer to" <c:if test="${soapnotes.scsm8=='Refer to'}"><c:out value="selected"/></c:if>>Refer to </option>
+					<option value="Release from care" <c:if test="${soapnotes.scsm8=='Release from care'}"><c:out value="selected"/></c:if>>Release from care </option>
 					  </select>
  </td>
  </tr>
   </table>
-  <table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign" onInput="return validatename(id)"; value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
+  <table align="right"><tr><td><span class="err">* </span> Physicians Signature:<input type="text" name="sign" class="input_txtbx1" id="sign" onInput="return validatename(id)"; value="${soapnotes.sign}"><span class="err" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr></table>
 				                   </table>
  <table align="right"> <tr>
 				                   <td><input type="submit" class="submit_btn" value="Update" onclick="return checkSubmit('this');"></td>

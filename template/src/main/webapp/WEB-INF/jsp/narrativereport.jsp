@@ -1938,7 +1938,7 @@ document.getElementById("signerror").innerHTML=" ";
 					<option value="Present at the">Present at the</option>
 					</select><input type="text" class="input_txtbx1"  name="presentlevel" id="presentlevel" style='display:none' placeholder="specify the level"> levels. There were <select  name="gender55" id="gender55" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Anterior">Anterior</option>
-					<option value="Posterior">Thoracic</option>
+					<option value="Thoracic">Thoracic</option>
 					</select> vertebral body osteophytes of <input type="text" class="input_txtbx1" id="oid7" oninput="validateo();" name="osteophytes"><span id="oerror7" style="color: red;font-style:italic;"></span>.  A <select  name="gender56" id="gender56" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Mild">Mild</option>
 					<option value="Moderate">Moderate</option>

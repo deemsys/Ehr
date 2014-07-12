@@ -229,9 +229,9 @@ $(function() {
 <td valign="top" align="left">
  <div id="block1">
 	            <div class="headings altheading">
-	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" >
+	           <img  src="resources/images/print.png" id="print" width = "46px" height = "46px" style="float:right ;" onclick="printPage('block1');" ><center> <h2>SOAP NOTES</h2> </center>
 	          
-	            <center> <h2>SOAP NOTES</h2> </center><br/>
+	            <br/>
 	            
 	            </div>
 	            
@@ -243,12 +243,12 @@ $(function() {
           <tr class="row1">
 <td></td><td></td>
 <td></td><td></td><td></td><td></td>
-<td><h2><span class="err">*</span> Patient</h2></td><td><input type="text" name="pname" id="pname" value="${name}" onInput="return validatename(id)";  class="input_txtbx1"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
+<td><h2><span class="err">* </span> Patient</h2></td><td><input type="text" name="pname" id="pname" value="${name}" onInput="return validatename(id)";  class="input_txtbx1"><span style="color:red" id="pnameerr"><form:errors path="SoapNotes.pname"></form:errors></span></td>
 </tr>
 <tr class="row1">
 <td height="20">Chief Complaint:</td>
 <td valign="top"><input type="checkbox" name="headache" value="Headache" >Headache</td>
-<td valign="top"><input type="checkbox" name="neckpain" value="Neck pain" >Neck Pain</td>
+<td valign="top"><input type="checkbox" name="neckpain" value="Neck Pain" >Neck Pain</td>
 <td valign="top" style="width: 152px; "><input type="checkbox" name="rightshoulderpain" value="Right Shoulder pain" >Right Shoulder pain</td>
 <td valign="top" style="width: 142px; "><input type="checkbox" name="leftshoulderpain" value="Left Shoulder Pain" >Left Shoulder Pain</td>
 <td valign="top" style="width: 98px; "><input type="checkbox" name="chestpain" value="Chest Pain" >Chest Pain</td>
@@ -432,13 +432,13 @@ document.getElementById("leftproxi").style.display="none";
 }
 }
 </script>
-<select name="rightproxi"  class="input_cmbbx1" id="rightproxi" style="display:none"><option value="proximal">proximal</option>
-<option value="distal">distal portion</option></select>
+<select name="rightproxi"  class="input_cmbbx1" id="rightproxi" style="display:none"><option value="Proximal">Proximal</option>
+<option value="Distal Portion">Distal Portion</option></select>
 </td>
 <td><input type="checkbox" name="leftarmpain" id="leftarmpain" value="Left Arm Pain" onclick="rightcheck()">Left Arm Pain<br>
 <select name="leftproxi" id="leftproxi" class="input_cmbbx1" style="display:none">
-<option value="proximal">proximal</option>
-<option value="distal">distal portion</option></select>
+<option value="Proximal">Proximal</option>
+<option value="Distal Portion">Distal Portion</option></select>
 
 </td>
 </tr>
@@ -484,8 +484,8 @@ document.getElementById("leftproxi").style.display="none";
 </tr>
 <tr class="row1">
 <td height="20"></td>
-<td><input type="checkbox" name="leftanklepain" value="Right Rib Pain" >Left Ankle Pain</td>
-<td><input type="checkbox" name="rightfootpain" value="right Foot Pain" >right Foot Pain</td>
+<td><input type="checkbox" name="leftanklepain" value="Left Ankle Pain" >Left Ankle Pain</td>
+<td><input type="checkbox" name="rightfootpain" value="Right Foot Pain" >Right Foot Pain</td>
 <td><input type="checkbox" name="leftfootpain" value="Left Foot Pain" >Left Foot Pain</td>
 </tr>
 </table>
@@ -604,25 +604,25 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="extraspinal 1 or more regions">extraspinal 1 or more regions</option>
 					<option value="MR">MR</option>
 					<option value="Home Exercises">Home Exercises</option>					
-					<option value="scsm">SCSM</option>
-					<option value="ems">EMS</option>
-					<option value="mass">MASS</option>
-					<option value="ice">Ice</option>
-					<option value="heat">Heat</option>
-					<option value="nmr">NMR</option>
-					<option value="tp">TP</option>
-					<option value="us">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
-					<option value="traction">Traction</option>
-					<option value="mri">MRI</option>
-					<option value="lab">LAB</option>
+					<option value="SCSM">SCSM</option>
+					<option value="EMS">EMS</option>
+					<option value="MASS">MASS</option>
+					<option value="Ice">Ice</option>
+					<option value="Heat">Heat</option>
+					<option value="NMR">NMR</option>
+					<option value="TP">TP</option>
+					<option value="US">US</option>
+					<option value="Iontophoresis">Iontophoresis  </option>
+					<option value="Traction">Traction</option>
+					<option value="MRI">MRI</option>
+					<option value="LAB">LAB</option>
 					<option value="opinion">2nd Opinion</option>
-					<option value="rehab">Rehab</option>
-					<option value="stretchexer">Stretch exer</option>
-					<option value="offwork">Off Work</option>
-					<option value="backtowork">Back To Work </option>
-					<option value="strengthexcer">Strength excer</option>
-					<option value="lifestyle">Lifestyle modifications</option>
+					<option value="Rehab">Rehab</option>
+					<option value="Stretchexer">Stretch exer</option>
+					<option value="off Work">Off Work</option>
+					<option value="Back To Work ">Back To Work </option>
+					<option value="Strength excer">Strength excer</option>
+					<option value="Lifestyle Modifications">Lifestyle Modifications</option>
 					<option value="reeval">Re Eval.in </option>
 				  </select><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<input  class="input_txtbx1"type="text" name="xray" id="xray" onInput="return validatename(id);"style="visibility:hidden;"/><br>
 				  <span id="xrayerror"style="color:red"></span>
@@ -662,26 +662,26 @@ document.getElementById("leftproxi").style.display="none";
  &nbsp &nbsp <select name="fixation1" id="fixation1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
-					<option value="spasm">Spasm</option>
-					<option value="Trigger pts">Trigger pts.</option>
+					<option value="Spasm">Spasm</option>
+					<option value="Trigger pts">Trigger pts</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
-					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
-					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
+					<option value="Short Leg Right Temp.Change">Short Leg Right Temp.Change</option>
+					<option value="Short Leg Left Temp.Change">Short Leg Left Temp.Change</option>
 					<option value="Atrophy">Atrophy</option>
-					<option value="Decr strength">Decr Strength</option>
+					<option value="Decr Strength">Decr Strength</option>
 
 					</select></td>
  <td>
 
  &nbsp &nbsp<select name="notimproved1" id="notimproved1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow">Progressing Slow</option>
+					<option selected="selected" value="Not Improved" >Not Improved</option>
+					<option value="Progressing Slow">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="Mildly imp">Mildly imp.</option>
-					<option value="Moderatly imp">Moderatly imp.</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
 					<option value="Plateu">Plateu</option>
 					<option value="Pre Injury Status">Pre Injury Status</option>
 					</select></td>
@@ -689,15 +689,15 @@ document.getElementById("leftproxi").style.display="none";
 
   &nbsp &nbsp <select name="scsm1" id="scsm1" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm">SCSM</option>
+					<option selected="selected" value="SCSM">SCSM</option>
 					<option value="EMS">EMS</option>
 					<option value="MASS">MASS</option>
 					<option value="Ice">Ice</option>
 					<option value="Heat">Heat</option>
-					<option value="nmr">NMR</option>
+					<option value="NMR">NMR</option>
 					<option value="TP">TP</option>
 					<option value="US">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
+					<option value="Iontophoresis">Iontophoresis  </option>
 					<option value="Traction">Traction</option>
 					<option value="Nutrition">Nutrition</option>
 					<option value="Off Work">Off Work</option>
@@ -744,7 +744,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="Spasm">Spasm</option>
-					<option value="Trigger pts">Trigger pts.</option>
+					<option value="Trigger pts.">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
@@ -756,17 +756,17 @@ document.getElementById("leftproxi").style.display="none";
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved2" id="notimproved2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Improved" >Not Improved</option>
-					<option value="Progressinging Slow ">Progressing Slow</option>
+					<option value="Progressing Slow ">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="Mildly imp">Mildly imp</option>
-					<option value="Moderatly imp">Moderatly imp</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
 					<option value="Plateu">Plateu</option>
-					<option value="Preinjury status">Pre Injury Status</option>
+					<option value="Pre Injury Status">Pre Injury Status</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="scsm2" id="scsm2" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm">SCSM</option>
+					<option selected="selected" value="SCSM">SCSM</option>
 					<option value="EMS">EMS</option>
 					<option value="MASS">MASS</option>
 					<option value="Ice">Ice</option>
@@ -815,7 +815,7 @@ document.getElementById("leftproxi").style.display="none";
 					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="Spasm">Spasm</option>
-					<option value="Trigger">Trigger pts.</option>
+					<option value="Trigger pts.">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
 					<option value="Decreased ROM">Decreased ROM</option>
@@ -826,17 +826,17 @@ document.getElementById("leftproxi").style.display="none";
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved3" id="notimproved3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					<option selected="selected" value="Not Improved" >Not Improved</option>
-					<option value="Progressinging Slow">Progressing Slow</option>
+					<option value="Progressing Slow">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="Mildly imp">Mildly imp</option>
-					<option value="Moderatly imp">Moderatly imp</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
 					<option value="Plateu">Plateu</option>
 					<option value="Pre Injury Status">Pre Injury Status</option>
 					</select></td>
   <td>&nbsp &nbsp<select name="scsm3" id="scsm3" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm">SCSM</option>
+				<option selected="selected" value="SCSM">SCSM</option>
 					<option value="EMS">EMS</option>
 					<option value="MASS">MASS</option>
 					<option value="Ice">Ice</option>
@@ -844,14 +844,14 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="NMR">NMR</option>
 					<option value="TP">TP</option>
 					<option value="US">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
+					<option value="Iontophoresis">Iontophoresis  </option>
 					<option value="Traction">Traction</option>
 					<option value="Nutrition">Nutrition</option>
-					<option value="offwork">Off Work</option>
-					<option value="Lightduty">Light Duty</option>
-					<option value="Rom">ROM</option>					
+					<option value="Off Work">Off Work</option>
+					<option value="Light Duty">Light Duty</option>
+					<option value="ROM">ROM</option>					
 					<option value="Back To Work ">Back To Work </option>
-					<option value="strength excer">Strength excer</option>
+					<option value="Strength excer">Strength excer</option>
 					<option value="ROF">ROF</option>
 					<option value="Re Exam">Re Exam </option>
 					<option value="Refer to">Refer to </option>
@@ -881,51 +881,52 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95%">95%</option>
 					</select> --><br/><br/><br/><span id="worsened5error" style="color: red;font-style:italic;"></span></td>
  <td>&nbsp &nbsp <select name="fixation4" id="fixation4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="Fixation" >Fixations</option>
+					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
 					<option value="Spasm">Spasm</option>
-					<option value="Trigger pts">Trigger pts.</option>
+					<option value="Trigger pts.">Trigger pts.</option>
 					<option value="Hypertonicity">Hypertonicity</option>
 					<option value="Edema">Edema</option>
-					<option value="Decreased">Decreased ROM</option>
+					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
-					<option value="Atrophy">Atrophy</option>
+				<option value="Atrophy">Atrophy</option>
 					<option value="Decr Strength">Decr Strength</option>
+
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved4" id="notimproved4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="not improved" >Not Improved</option>
-					<option value="Progressinging Slow">Progressing Slow</option>
+					<option selected="selected" value="Not Improved" >Not Improved</option>
+					<option value="Progressing Slow">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="mildly imp">Mildly imp.</option>
-					<option value="moderatly imp">Moderatly imp.</option>
-					<option value="plateu">Plateu</option>
-					<option value="preinjury">Pre Injury Status</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
+					<option value="Plateu">Plateu</option>
+					<option value="Pre Injury Status">Pre Injury Status</option>
 					</select></td>
  
  <td>&nbsp &nbsp<select name="scsm4" id="scsm4" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm">SCSM</option>
-					<option value="ems">EMS</option>
-					<option value="mass">MASS</option>
-					<option value="ice">Ice</option>
-					<option value="heat">Heat</option>
-					<option value="nmr">NMR</option>
-					<option value="tp">TP</option>
-					<option value="us">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
-					<option value="traction">Traction</option>
-					<option value="nutrition">Nutrition</option>
-					<option value="offwork">Off Work</option>
-					<option value="lightduty">Light Duty</option>
-					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work </option>
-					<option value="strengthexcer">Strength excer</option>
-					<option value="rof">ROF</option>
-					<option value="reexam">Re Exam </option>
-					<option value="referto">Refer to </option>
-					<option value="release">Release from care </option>
+					<option selected="selected" value="SCSM">SCSM</option>
+					<option value="EMS">EMS</option>
+					<option value="MASS">MASS</option>
+					<option value="Ice">Ice</option>
+					<option value="Heat">Heat</option>
+					<option value="NMR">NMR</option>
+					<option value="TP">TP</option>
+					<option value="US">US</option>
+					<option value="Iontophoresis">Iontophoresis  </option>
+					<option value="Traction">Traction</option>
+					<option value="Nutrition">Nutrition</option>
+					<option value="Off Work">Off Work</option>
+					<option value="Light Duty">Light Duty</option>
+					<option value="ROM">ROM</option>					
+					<option value="Back To Work ">Back To Work </option>
+					<option value="Strength excer">Strength excer</option>
+					<option value="ROF">ROF</option>
+					<option value="Re Exam">Re Exam </option>
+					<option value="Refer to">Refer to </option>
+					<option value="Release from care">Release from care </option>
 				  </select>
  </td>
  </tr>
@@ -951,51 +952,53 @@ document.getElementById("leftproxi").style.display="none";
 					</select> --><br/><br/><br/><span id="worsened6error" style="color: red;font-style:italic;"></span></td>
  <td>
   &nbsp &nbsp<select name="fixation5" id="fixation5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="fixation" >Fixations</option>
+					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
-					<option value="spasm">Spasm</option>
-					<option value="trigger pts">Trigger pts.</option>
-					<option value="hypertonicity">Hypertonicity</option>
-					<option value="edema">Edema</option>
-					<option value="decreased ROM">Decreased ROM</option>
+					<option value="Spasm">Spasm</option>
+					<option value="Trigger pts.">Trigger pts.</option>
+					<option value="Hypertonicity">Hypertonicity</option>
+					<option value="Edema">Edema</option>
+					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
-				
-					<option value="atrophy">Atrophy</option>
-					<option value="decr strength">Decr Strength</option>
+				<option value="Atrophy">Atrophy</option>
+					<option value="Decr Strength">Decr Strength</option>
+
+
 					</select></td>
 <td>&nbsp &nbsp <select name="notimproved5" id="notimproved5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow">Progressing Slow</option>
-					<option value="Exacerbation of C.C.">Exacerbation of C.C</option>
+					<option selected="selected" value="Not Improved" >Not Improved</option>
+					<option value="Progressing Slow">Progressing Slow</option>
+					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="mildly imp">Mildly imp.</option>
-					<option value="moderatly imp">Moderatly imp.</option>
-					<option value="plateu">Plateu</option>
-					<option value="preinjury">Pre Injury Status</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
+					<option value="Plateu">Plateu</option>
+					<option value="Pre Injury Status">Pre Injury Status</option>
+
 					</select></td>
  <td>&nbsp &nbsp<select name="scsm5" id="scsm5" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm">SCSM</option>
-					<option value="ems">EMS</option>
-					<option value="mass">MASS</option>
-					<option value="ice">Ice</option>
-					<option value="heat">Heat</option>
-					<option value="nmr">NMR</option>
-					<option value="tp">TP</option>
-					<option value="us">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
-					<option value="traction">Traction</option>
-					<option value="nutrition">Nutrition</option>
-					<option value="offwork">Off Work</option>
-					<option value="lightduty">Light Duty</option>
-					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work </option>
-					<option value="strengthexcer">Strength excer</option>
-					<option value="rof">ROF</option>
-					<option value="reexam">Re Exam </option>
-					<option value="referto">Refer to </option>
-					<option value="release">Release from care </option>
+					<option selected="selected" value="SCSM">SCSM</option>
+					<option value="EMS">EMS</option>
+					<option value="MASS">MASS</option>
+					<option value="Ice">Ice</option>
+					<option value="Heat">Heat</option>
+					<option value="NMR">NMR</option>
+					<option value="TP">TP</option>
+					<option value="US">US</option>
+					<option value="Iontophoresis">Iontophoresis  </option>
+					<option value="Traction">Traction</option>
+					<option value="Nutrition">Nutrition</option>
+					<option value="Off Work">Off Work</option>
+					<option value="Light Duty">Light Duty</option>
+					<option value="ROM">ROM</option>					
+					<option value="Back To Work ">Back To Work </option>
+					<option value="Strength excer">Strength excer</option>
+					<option value="ROF">ROF</option>
+					<option value="Re Exam">Re Exam </option>
+					<option value="Refer to">Refer to </option>
+					<option value="Release from care">Release from care </option>
 				  </select>
  </td>
  </tr>
@@ -1020,51 +1023,51 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95%">95%</option>
 					</select> --><br/><br/><br/><span id="worsened7error" style="color: red;font-style:italic;"></span></td>
  <td>&nbsp &nbsp <select name="fixation6" id="fixation6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="fixation" >Fixations</option>
+					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
-					<option value="spasm">Spasm</option>
-					<option value="trigger">Trigger pts.</option>
-					<option value="hypertonicity">Hypertonicity</option>
-					<option value="edema">Edema</option>
-					<option value="decreased ROM">Decreased ROM</option>
+					<option value="Spasm">Spasm</option>
+					<option value="Trigger pts.">Trigger pts.</option>
+					<option value="Hypertonicity">Hypertonicity</option>
+					<option value="Edema">Edema</option>
+					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
-				
-					<option value="atrophy">Atrophy</option>
-					<option value="decr">Decr Strength</option>
+				<option value="Atrophy">Atrophy</option>
+					<option value="Decr Strength">Decr Strength</option>
 					</select></td>
 <td> &nbsp &nbsp<select name="notimproved6" id="notimproved6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow">Progressing Slow</option>
+					<option selected="selected" value="Not Improved" >Not Improved</option>
+					<option value="Progressing Slow">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="mildly imp">Mildly imp.</option>
-					<option value="moderatly imp">Moderatly imp.</option>
-					<option value="plateu">Plateu</option>
-					<option value="preinjury">Pre Injury Status</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
+					<option value="Plateu">Plateu</option>
+					<option value="Pre Injury Status">Pre Injury Status</option>
+
 					</select></td>
  <td>&nbsp &nbsp<select name="scsm6" id="scsm6" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected" value="scsm">SCSM</option>
-					<option value="ems">EMS</option>
-					<option value="mass">MASS</option>
-					<option value="ice">Ice</option>
-					<option value="heat">Heat</option>
-					<option value="nmr">NMR</option>
-					<option value="tp">TP</option>
-					<option value="us">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
-					<option value="traction">Traction</option>
-					<option value="nutrition">Nutrition</option>
-					<option value="offwork">Off Work</option>
-					<option value="lightduty">Light Duty</option>
-					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work </option>
-					<option value="strengthexcer">Strength excer</option>
-					<option value="rof">ROF</option>
-					<option value="reexam">Re Exam </option>
-					<option value="referto">Refer to </option>
-					<option value="release">Release from care </option>
+					<option selected="selected" value="SCSM">SCSM</option>
+					<option value="EMS">EMS</option>
+					<option value="MASS">MASS</option>
+					<option value="Ice">Ice</option>
+					<option value="Heat">Heat</option>
+					<option value="NMR">NMR</option>
+					<option value="TP">TP</option>
+					<option value="US">US</option>
+					<option value="Iontophoresis">Iontophoresis  </option>
+					<option value="Traction">Traction</option>
+					<option value="Nutrition">Nutrition</option>
+					<option value="Off Work">Off Work</option>
+					<option value="Light Duty">Light Duty</option>
+					<option value="ROM">ROM</option>					
+					<option value="Back To Work ">Back To Work </option>
+					<option value="Strength excer">Strength excer</option>
+					<option value="ROF">ROF</option>
+					<option value="Re Exam">Re Exam </option>
+					<option value="Refer to">Refer to </option>
+					<option value="Release from care">Release from care </option>
 				  </select>
  </td>
  </tr>
@@ -1090,51 +1093,51 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95%">95%</option>
 					</select> --><br/><br/><br/><span id="worsened8error" style="color: red;font-style:italic;"></span></td>
  <td> &nbsp &nbsp<select name="fixation7" id="fixation7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="fixations" >Fixations</option>
+					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
-					<option value="spasm">Spasm</option>
-					<option value="trigger pts">Trigger pts.</option>
-					<option value="hypertonicity">Hypertonicity</option>
-					<option value="edema">Edema</option>
-					<option value="decreased ROM">Decreased ROM</option>
+					<option value="Spasm">Spasm</option>
+					<option value="Trigger pts.">Trigger pts.</option>
+					<option value="Hypertonicity">Hypertonicity</option>
+					<option value="Edema">Edema</option>
+					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
-				
-					<option value="atrophy">Atrophy</option>
-					<option value="decr strength">Decr Strength</option>
+				<option value="Atrophy">Atrophy</option>
+					<option value="Decr Strength">Decr Strength</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved7" id="notimproved7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" >Not Improved</option>
-				<option value="Progressinging Slow">Progressing Slow</option>
+					
+<option selected="selected" value="Not Improved" >Not Improved</option>
+					<option value="Progressing Slow">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="mildly imp">Mildly imp.</option>
-					<option value="moderatly imp">Moderatly imp.</option>
-					<option value="plateu">Plateu</option>
-					<option value="preinjury ">Pre Injury Status</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
+					<option value="Plateu">Plateu</option>
+					<option value="Pre Injury Status">Pre Injury Status</option>
+
 					</select></td>
  <td>&nbsp &nbsp<select name="scsm7" id="scsm7" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					
-					<option selected="selected" value="scsm">SCSM</option>
-					<option value="ems">EMS</option>
-					<option value="mass">MASS</option>
-					<option value="ice">Ice</option>
-					<option value="heat">Heat</option>
-					<option value="nmr">NMR</option>
-					<option value="tp">TP</option>
-					<option value="us">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
-					<option value="traction">Traction</option>
-					<option value="nutrition">Nutrition</option>
-					<option value="offwork">Off Work</option>
-					<option value="lightduty">Light Duty</option>
-					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work </option>
-					<option value="strengthexcer">Strength excer</option>
-					<option value="rof">ROF</option>
-					<option value="reexam">Re Exam </option>
-					<option value="referto">Refer to </option>
-					<option value="release">Release from care </option>
+					<option selected="selected" value="SCSM">SCSM</option>
+					<option value="EMS">EMS</option>
+					<option value="MASS">MASS</option>
+					<option value="Ice">Ice</option>
+					<option value="Heat">Heat</option>
+					<option value="NMR">NMR</option>
+					<option value="TP">TP</option>
+					<option value="US">US</option>
+					<option value="Iontophoresis">Iontophoresis  </option>
+					<option value="Traction">Traction</option>
+					<option value="Nutrition">Nutrition</option>
+					<option value="Off Work">Off Work</option>
+					<option value="Light Duty">Light Duty</option>
+					<option value="ROM">ROM</option>					
+					<option value="Back To Work ">Back To Work </option>
+					<option value="Strength excer">Strength excer</option>
+					<option value="ROF">ROF</option>
+					<option value="Re Exam">Re Exam </option>
+					<option value="Refer to">Refer to </option>
+					<option value="Release from care">Release from care </option>
 				  </select>
  </td>
  </tr>
@@ -1159,51 +1162,51 @@ document.getElementById("leftproxi").style.display="none";
 					<option value="95%">95%</option>
 					</select> --><br/><br/><br/></td>
  <td> &nbsp &nbsp<select name="fixation8" id="fixation8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="fixation" >Fixations</option>
+					<option selected="selected" value="Fixations" >Fixations</option>
 					<option value="Tenderness to palpation">Tenderness to palpation</option>
-					<option value="spasm">Spasm</option>
-					<option value="trigger">Trigger pts.</option>
-					<option value="hypertonicity">Hypertonicity</option>
-					<option value="edema">Edema</option>
-					<option value="decreased">Decreased ROM</option>
+					<option value="Spasm">Spasm</option>
+					<option value="Trigger pts.">Trigger pts.</option>
+					<option value="Hypertonicity">Hypertonicity</option>
+					<option value="Edema">Edema</option>
+					<option value="Decreased ROM">Decreased ROM</option>
 					<option value="Short Leg Right Temp.Change">Short leg Right Temp.Change</option>
 					<option value="Short Leg Left Temp.Change">Short leg Left Temp.Change</option>
-				
-					<option value="atrophy">Atrophy</option>
-					<option value="decr strength">Decr Strength</option>
+				<option value="Atrophy">Atrophy</option>
+					<option value="Decr Strength">Decr Strength</option>
+
 					</select></td>
  <td>&nbsp &nbsp<select name="notimproved8" id="notimproved8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
-					<option selected="selected" value="notimproved" >Not Improved</option>
-					<option value="Progressinging Slow">Progressing Slow</option>
+					<option selected="selected" value="Not Improved" >Not Improved</option>
+					<option value="Progressing Slow">Progressing Slow</option>
 					<option value="Exacerbation of C.C.">Exacerbation of C.C.</option>
 					<option value="Flare-ups">Flare-ups</option>
-					<option value="mildly imp">Mildly imp.</option>
-					<option value="moderatly imp">Moderatly imp.</option>
-					<option value="plateu">Plateu</option>
-					<option value="preinjury ">Pre Injury Status</option>
+					<option value="Mildly imp.">Mildly imp.</option>
+					<option value="Moderatly imp.">Moderatly imp.</option>
+					<option value="Plateu">Plateu</option>
+					<option value="Pre Injury Status">Pre Injury Status</option>
 					</select></td>
  <td>&nbsp &nbsp<select name="scsm8" id="scsm8" class="input_cmbbx1" onchange='Checksymptom(this.value);'>
 					
-					<option selected="selected8" value="scsm">SCSM</option>
-					<option value="ems">EMS</option>
-					<option value="mass">MASS</option>
-					<option value="ice">Ice</option>
-					<option value="heat">Heat</option>
-					<option value="nmr">NMR</option>
-					<option value="tp">TP</option>
-					<option value="us">US</option>
-					<option value="Iontophoresis  ">Iontophoresis  </option>
-					<option value="traction">Traction</option>
-					<option value="nutrition">Nutrition</option>
-					<option value="offwork">Off Work</option>
-					<option value="lightduty">Light Duty</option>
-					<option value="rom">ROM</option>					
-					<option value="backtowork">Back To Work </option>
-					<option value="strengthexcer">Strength excer</option>
-					<option value="rof">ROF</option>
-					<option value="reexam">Re Exam </option>
-					<option value="referto">Refer to </option>
-					<option value="release">Release from care </option>
+					<option selected="selected" value="SCSM">SCSM</option>
+					<option value="EMS">EMS</option>
+					<option value="MASS">MASS</option>
+					<option value="Ice">Ice</option>
+					<option value="Heat">Heat</option>
+					<option value="NMR">NMR</option>
+					<option value="TP">TP</option>
+					<option value="US">US</option>
+					<option value="Iontophoresis">Iontophoresis  </option>
+					<option value="Traction">Traction</option>
+					<option value="Nutrition">Nutrition</option>
+					<option value="Off Work">Off Work</option>
+					<option value="Light Duty">Light Duty</option>
+					<option value="ROM">ROM</option>					
+					<option value="Back To Work ">Back To Work </option>
+					<option value="Strength excer">Strength excer</option>
+					<option value="ROF">ROF</option>
+					<option value="Re Exam">Re Exam </option>
+					<option value="Refer to">Refer to </option>
+					<option value="Release from care">Release from care </option>
 				  </select>
  </td>
  </tr>
@@ -1211,7 +1214,7 @@ document.getElementById("leftproxi").style.display="none";
  
 				                   
 <br/><br/>
-<table align="right"><tr><td><span class="err">*</span> Physicians Signature:<input type="text" name="sign" id="sign" onInput="return validatename(id)"; class="input_txtbx1"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr>
+<table align="right"><tr><td><span class="err">* </span> Physicians Signature:<input type="text" name="sign" id="sign" onInput="return validatename(id)"; class="input_txtbx1"><span style="color:red" id="signerror"><form:errors path="SoapNotes.sign"></form:errors></span></td></tr>
 				                <tr height="10"></tr> 
 				                  <tr>
 				                   <td align="right"><input type="submit" class="submit_btn" value="Save" id="saveid" onclick="return check('this')"></td>

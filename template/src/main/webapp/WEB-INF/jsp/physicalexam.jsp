@@ -57,6 +57,24 @@ $(function(){
 });
 
   </script>
+  
+  
+<script>
+  $(function() {
+	$("#sign").on("keypress", function(e) {
+		if (e.which === 32 && !this.value.length)
+	        e.preventDefault();
+	});
+	});	
+
+</script>
+<script>
+function validatename55(id){
+    var textInput = document.getElementById(id).value;
+    textInput = textInput.replace(/[^A-Za-z ]/g, "");
+    document.getElementById(id).value = textInput;
+}
+</script>
   <script>
 
 	function checkSubmit()
@@ -513,7 +531,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 	                            <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt" style="width: 207px; "><span class="err">*</span> Physician Signature :</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  <input type="text" class="input_txtbx1"onInput="validate1(id);"id="sign" name="sign" />
+				                  <input type="text" class="input_txtbx1" id="sign" name="sign" onInput="return validatename55(id)";/>
 				                  <br>
 				                  <span class="err" id="error1" style="color:red"></span>
 				                  <span class="err" id="signerror"><form:errors path="Physicalexam.sign"></form:errors></span>
@@ -864,9 +882,9 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span> Appearance:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="appearance" class="input_cmbbx1">
-						                    <option selected="selected" value="excellent" >Excellent</option>
-											<option value="good">Good</option>
-											<option value="fair">Fair</option>
+						                    <option selected="selected" value="Excellent" >Excellent</option>
+											<option value="Good">Good</option>
+											<option value="Fair">Fair</option>
 											<option value="Severe">Severe</option>
 				                   		</select>
 				                   	</td> </tr>  
@@ -874,20 +892,20 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span> Nourishment</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="weight1" class="input_cmbbx1">
-						                    <option selected="selected" value="un" >UN</option>
-											<option value="n">N</option>
-											<option value="wn">WN</option>
+						                    <option selected="selected" value="UN" >UN</option>
+											<option value="N">N</option>
+											<option value="WN">WN</option>
 				                   		</select>
 				                   	</td> </tr>  
 				                   	 <tr class="row1">
 				                 	<td valign="middle" align="left" class="input_txt"><span class="err">*</span> GAIT:</td>
 				                  	<td valign="top" align="left" class="input_txt">
 				                  		<select name="gait" class="input_cmbbx1">
-						                    <option selected="selected" value="antalgic" >Antalgic</option>
-											<option value="limp">Limp</option>
-											<option value="sway">Sway</option>
-											<option value="stagger">Stagger</option>
-											<option value="normal">Normal</option>
+						                    <option selected="selected" value="Antalgic" >Antalgic</option>
+											<option value="Limp">Limp</option>
+											<option value="Sway">Sway</option>
+											<option value="Stagger">Stagger</option>
+											<option value="Normal">Normal</option>
 				                   		</select>
 				                   		
 				                   	</td> </tr>
@@ -910,7 +928,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                   	<tr class="row1">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> Romberg's Sign:</td>
 				                  <td valign="top" align="left" class="input_txt">
-				                  	<input type="radio" name="romber" value="Present" class="input_txt" checked="true">Present&nbsp;&nbsp;&nbsp;<input type="radio" name="romber" value="NotPresent" class="input_txt">NotPresent&nbsp;&nbsp;&nbsp;</td>
+				                  	<input type="radio" name="romber" value="Present" class="input_txt" checked="true">Present&nbsp;&nbsp;&nbsp;<input type="radio" name="romber" value="Not Present" class="input_txt">Not Present&nbsp;&nbsp;&nbsp;</td>
 				                </tr>
 				                 <tr class="row2">
 				                  <td valign="middle" align="left" class="input_txt"><span class="err">*</span> CN Exam:</td>
@@ -1014,9 +1032,9 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  <td>Paraspinal:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="paraspain" value="Pain">Pain</td>
 				                 <td class="input_txt" align="left"> <input type="checkbox" name="parasspasm" value="Spasm">Spasm</td>
-				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" onInput="validate1(id);"id="edema1"class="input_txtbx1">
+				                  <td class="input_txt" align="left"> <span id="edema">Edema </span><input type="text" name="parasedema" id="edema1"class="input_txtbx1" onInput="validate1(id);">
 				                  <span id="edema1error" style="color:red"></span></td>
-				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" id="triggerpoint1" onInput="validate1(id);"name="parastriggerpoint" class="input_txtbx1">
+				                   <td class="input_txt" align="left"><span id="TriggerPoint">TriggerPoint </span> <input type="text" id="triggerpoint1" name="parastriggerpoint" class="input_txtbx1"  onInput="validate1(id);">
 				                   <span id="triggerpoint1error" style="color:red"></span>
 				                   </td>
 				                  </tr>
@@ -1075,7 +1093,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                  <tr class="row1">
 				                  <td>Vertebrae:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertebraefix" value="Fixations">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No_fixations">No Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertebraenofix" value="No Fixations">No Fixations</td>
 				                  </tr>
 				                  </table>
 				               <table border="0">
@@ -1500,7 +1518,7 @@ document.getElementById("abnormalerror").innerHTML=" ";
 				                   <tr class="row1">
 				                  <td>Vertebrae:</td>
 				                  <td valign="top" align="left" class="input_txt"> <input type="checkbox" name="vertefix" value="Fixation">Fixations</td>
-				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No_Fixation">No Fixations</td>
+				                 <td class="input_txt" align="left"> <input type="checkbox" name="vertenofix" value="No Fixation">No Fixations</td>
 				                  </tr>
 				                  </table>
 				                   <table border="0">
