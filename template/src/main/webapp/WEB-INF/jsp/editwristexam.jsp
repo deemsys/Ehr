@@ -591,9 +591,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 
 												<td width="49"></td>
 												<td width="139">Dominant Hand</td>
-												<td><input type="radio" value="left"
+												<td><input type="radio" value="Left"
 													name="dominanthand"
-													<c:if test="${wristexamdetails.dominanthand=='left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;<input
+													<c:if test="${wristexamdetails.dominanthand=='Left'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;<input
 													type="radio" value="right" name="dominanthand"
 													<c:if test="${wristexamdetails.dominanthand=='right'}"> <c:out value="checked"></c:out></c:if>>&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="75"></td>
@@ -629,36 +629,36 @@ document.getElementById("pnameerror").innerHTML=" ";
 										<table>
 											<tr>
 												<td width="129">Thenar Eminence:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.thenareminence=='left'}"> <c:out value="checked"></c:out></c:if>="" name="thenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
-												<td width="140"><input type="radio" value="right" <c:if test="${wristexamdetails.thenareminence=='left'}"> <c:out value="checked"></c:out></c:if>="" name="thenareminence">&nbsp;&nbsp;&nbsp;Right</td>
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.thenareminence=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="thenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
+												<td width="140"><input type="radio" value="Right" <c:if test="${wristexamdetails.thenareminence=='Right'}"> <c:out value="checked"></c:out></c:if>="" name="thenareminence">&nbsp;&nbsp;&nbsp;Right</td>
 
 												<td width="130">Flexor Carpi Radialis:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.flexorcarpiradialis=='left'}"> <c:out value="checked"></c:out></c:if>="" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;
-												<td width="110"><input type="radio" value="right" <c:if test="${wristexamdetails.flexorcarpiradialis=='right'}"> <c:out value="checked"></c:out></c:if>="" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.flexorcarpiradialis=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;
+												<td width="110"><input type="radio" value="Right" <c:if test="${wristexamdetails.flexorcarpiradialis=='Right'}"> <c:out value="checked"></c:out></c:if>="" name="flexorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="35"></td>
 												<td width="120">Common Flexors:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.commonflexors=='left'}"> <c:out value="checked"></c:out></c:if>="" name="commonflexors">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
-													<input type="radio" value="right" <c:if test="${wristexamdetails.commonflexors=='right'}"> <c:out value="checked"></c:out></c:if>="" name="commonflexors">&nbsp;&nbsp;&nbsp;Right</td>
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.commonflexors=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="commonflexors">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
+													<input type="radio" value="Right" <c:if test="${wristexamdetails.commonflexors=='Right'}"> <c:out value="checked"></c:out></c:if>="" name="commonflexors">&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="73"></td>
 												<td width="120">Hypothenar Eminence:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.hypothenareminence=='left'}"> <c:out value="checked"></c:out></c:if>="" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.hypothenareminence=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
 													<input type="radio" value="right" <c:if test="${wristexamdetails.hypothenareminence=='right'}"> <c:out value="checked"></c:out></c:if>="" name="hypothenareminence">&nbsp;&nbsp;&nbsp;Right</td>
 											</tr>
 											<tr height="10"></tr>
 											<tr>
 												<td width="129">Extensor Carpi Radialis:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.extensorcarpiradialis=='left'}"> <c:out value="checked"></c:out></c:if>="" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
-												<td width="110"><input type="radio" value="right" <c:if test="${wristexamdetails.extensorcarpiradialis=='right'}"> <c:out value="checked"></c:out></c:if>="" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.extensorcarpiradialis=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
+												<td width="110"><input type="radio" value="Right" <c:if test="${wristexamdetails.extensorcarpiradialis=='Right'}"> <c:out value="checked"></c:out></c:if>="" name="extensorcarpiradialis">&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="130">Common Extensor:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.commonextensor=='left'}"> <c:out value="checked"></c:out></c:if>="" name="commonextensor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
-												<td width="110"><input type="radio" value="right" <c:if test="${wristexamdetails.commonextensor=='right'}"> <c:out value="checked"></c:out></c:if>="" name="commonextensor">&nbsp;&nbsp;&nbsp;Right</td>
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.commonextensor=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="commonextensor">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
+												<td width="110"><input type="radio" value="Right" <c:if test="${wristexamdetails.commonextensor=='Right'}"> <c:out value="checked"></c:out></c:if>="" name="commonextensor">&nbsp;&nbsp;&nbsp;Right</td>
 												<td></td>
 												<td>Abductor Pollius Longus:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.abductorpolliuslongus=='left'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
-													<input type="radio" value="right" <c:if test="${wristexamdetails.abductorpolliuslongus=='right'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Right</td>
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.abductorpolliuslongus=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
+													<input type="radio" value="Right" <c:if test="${wristexamdetails.abductorpolliuslongus=='Right'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpolliuslongus">&nbsp;&nbsp;&nbsp;Right</td>
 												<td></td>
 												<td>Abductor Pollicis Brevis:</td>
-												<td><input type="radio" value="left" <c:if test="${wristexamdetails.abductorpollicisbrevis=='left'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
+												<td><input type="radio" value="Left" <c:if test="${wristexamdetails.abductorpollicisbrevis=='Left'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;
 													<input type="radio" value="right" <c:if test="${wristexamdetails.abductorpollicisbrevis=='right'}"> <c:out value="checked"></c:out></c:if>="" name="abductorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td>
 											</tr>
 
@@ -669,11 +669,11 @@ document.getElementById("pnameerror").innerHTML=" ";
 										<table>
 											<tr>
 												<td width="129">Extensor Pollicis Brevis:</td>
-												<td><input type="radio" value="left"
-													<c:if test="${wristexamdetails.extensorpollicisbrevis=='left'}"> <c:out value="checked"></c:out></c:if>
+												<td><input type="radio" value="Left"
+													<c:if test="${wristexamdetails.extensorpollicisbrevis=='Left'}"> <c:out value="checked"></c:out></c:if>
 													name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Left&nbsp;&nbsp;&nbsp;</td>
-												<td width="140"><input type="radio" value="right"
-													<c:if test="${wristexamdetails.extensorpollicisbrevis=='right'}"> <c:out value="checked"></c:out></c:if>
+												<td width="140"><input type="radio" value="Right"
+													<c:if test="${wristexamdetails.extensorpollicisbrevis=='Right'}"> <c:out value="checked"></c:out></c:if>
 													name="extensorpollicisbrevis">&nbsp;&nbsp;&nbsp;Right</td>
 												<td width="130">Other / Note:</td>
 												<td><textarea rows="5" cols="50" name="note" id="note" onInput="return validatename(id)";>${wristexamdetails.note}</textarea></td>
@@ -990,8 +990,8 @@ document.getElementById("pnameerror").innerHTML=" ";
 												<c:if test="${wristexamdetails.driving=='Driving'}"> <c:out value="checked=checked"></c:out></c:if>
 												value="Driving"> Driving</td>
 											<td><input type="checkbox" id="other" name="other"
-												value="other" onclick="visible('this.value')"
-												<c:if test="${wristexamdetails.other=='other'}"> <c:out value="checked=checked"></c:out></c:if>>Other</td>
+												value="Other" onclick="visible('this.value')"
+												<c:if test="${wristexamdetails.other=='Other'}"> <c:out value="checked=checked"></c:out></c:if>>Other</td>
 											<td><input type="text" name="otherdefict"
 												id="otherdefict" value="${wristexamdetails.otherdefict}"
 												style="display: none"></td>
@@ -1113,9 +1113,9 @@ document.getElementById("pnameerror").innerHTML=" ";
 										<tr>
 											<td width="95"></td>
 											<td width="160"><input type="checkbox" id="others"
-												name="others"
-												<c:if test="${wristexamdetails.others=='other'}"> <c:out value="checked=checked"></c:out></c:if>
-												value="other" onclick="othervisible('this.value')">Other</td>
+												name="others" value="Other" 
+												<c:if test="${wristexamdetails.others=='Other'}"> <c:out value="checked=checked"></c:out></c:if>
+												onclick="othervisible('this.value')">Other</td>
 											<td><input type="text" name="othervalue"
 												value="${wristexamdetails.othervalue}" id="othervalue"
 												style="display: none"></td>
