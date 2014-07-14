@@ -535,7 +535,7 @@ document.getElementById("faxno").value=phone;
                <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
               <td height="25" width="120"><span class="err"></span>Fax#:</td>
-              <td ><input type="text" class="input_txtbx1" name="faxno" placeholder="(000)000-0000" id="faxno" maxlength=13 onInput="return validateusername()"; onkeypress="return validate(event)"; style="width: 164px; "/><br><font size="+1" color="red"><span  id="faxnoerror"></span></font><form:errors path="Faxcover.faxno"></form:errors>
+              <td ><input type="text" class="input_txtbx1" name="faxno" placeholder="(330) 477-3037" id="faxno" maxlength=13 onInput="return validateusername()"; onkeypress="return validate(event)"; style="width: 164px; "/><br><font size="+1" color="red"><span  id="faxnoerror"></span></font><form:errors path="Faxcover.faxno"></form:errors>
               </span><span class="err" id="faxerror"></span>
               </td>
               </tr>
