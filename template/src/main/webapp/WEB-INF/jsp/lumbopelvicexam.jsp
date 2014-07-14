@@ -536,7 +536,7 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td style="width: 125px; "></td>
  </tr>
  <tr class="row1">
- <td width="200"><b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</b></td> 
+ <td width="200" style="width: 376px; "><b style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</b></td> 
  <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable"> All Soft Tissue Unremarkable</td> 
  <!-- <td> <input type="checkbox" name="except" value="Except"> Except </td> -->
  <td style="width: 150px; "></td>

@@ -534,8 +534,8 @@ document.getElementById("pnameerror").innerHTML=" ";
  <td></td>
  </tr>
  <tr class="row1">
- <td width="200"><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
- <td width="200"><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable" <c:if test="${lumbopelvicexam.allsoft=='All Soft Tissue Unremarkable'}"><c:out value="Checked"/></c:if>> All Soft Tissue Unremarkable</td> 
+ <td width="200" style="width: 377px; "><B style="font-size:14px">PALPATION / SOFT TISSUE DYSFUNCTION</B></td> 
+ <td width="200" style="width: 470px; "><input type="checkbox" name="allsoft" value="All Soft Tissue Unremarkable" <c:if test="${lumbopelvicexam.allsoft=='All Soft Tissue Unremarkable'}"><c:out value="Checked"/></c:if>> All Soft Tissue Unremarkable</td> 
  <td> <%-- <input type="checkbox" name="except" value="Except" <c:if test="${lumbopelvicexam.except=='Except'}"><c:out value="Checked"/></c:if>> Except --%> </td>
  <td></td>
  <td></td> 
@@ -560,7 +560,7 @@ document.getElementById("pnameerror").innerHTML=" ";
 					
 					
 					
-					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="Right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'"  <c:if test="${lumbopelvicexam.leglengthcheckr=='right'}"><c:out value="Checked"/></c:if> >Right</td>
+					<td><input type="checkbox" id="leglengthcheckr" name="leglengthcheckr" value="Right" onclick="this.form.break6.style.visibility = this.checked? 'visible' : 'hidden'"  <c:if test="${lumbopelvicexam.leglengthcheckr=='Right'}"><c:out value="Checked"/></c:if> >Right</td>
 					 <td><select name="leglengthr" id="break6" style="display:none" onchange="if (this.value=='other'){this.form['other2'].style.visibility='visible'}else {this.form['other2'].style.visibility='hidden'};">
 					<option selected="selected" value="1/8" <c:if test="${lumbopelvicexam.leglengthr=='1/8'}"><c:out value="Selected"/></c:if>>1/8</option>
 					<option value="1/4" <c:if test="${lumbopelvicexam.leglengthr=='1/4'}"><c:out value="Selected"/></c:if>>1/4</option>
